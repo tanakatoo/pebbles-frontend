@@ -1,3 +1,114 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");/*English base font*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");/*Japanese base font and Study Support jA Bold version*/ 
+@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap"); /*English and Japanese community*/
+@import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap"); /*studybuddyJA*/
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+
+  @font-face { 
+    font-family: 'EnglishMarketJA'; 
+    src: url('/public/fonts/JapaneseOldHandwrittenBold.ttf'); 
+    }
+  /* japanese english market bold used*/
+  @font-face { 
+    font-family: 'EnglishMarketJA'; 
+    src: url('/public/fonts/JapaneseOldHandwrittenBold.ttf'); 
+    }
+  
+  /*english english market*/
+  
+  @font-face { 
+    font-family: 'EnglishMarketEN'; 
+    src: url('/public/fonts/Monsier Regular.otf'); 
+    }   
+
+
+  /*regular used for english study support*/
+    @font-face { 
+      font-family: 'EnglishStudyEN'; 
+      src: url('/public/fonts/monrope-regular.otf'); 
+      }
+
+
+    /*used for english kids support*/
+    @font-face { 
+      font-family: 'KidsSupportEN'; 
+      src: url('/public/fonts/Sketching Universe.ttf'); 
+      }
+  
+  /*used for japanese kids support*/
+  @font-face { 
+    font-family: 'KidsSupportJA'; 
+    src: url('/public/fonts/craftmincho.otf'); 
+    }
+  
+    /* using this one for digital library*/
+    @font-face { 
+      font-family: 'DigitalLibraryEN'; 
+      src: url('/public/fonts/Westryderslab.ttf'); 
+      }
+
+  
+    /*using this one for japanese digital library*/
+    @font-face { 
+      font-family: 'DigitalLibraryJA'; 
+      src: url('/public/fonts/JapaneseDigitalFont.woff2'); 
+      }
+
+      
+  /*using this one for study buddy English*/
+  @font-face { 
+    font-family: 'StudyBuddyEN'; 
+    src: url('/public/fonts/AddingtonCF-Regular.otf'); 
+    }
+    
+/*     
+  
+    @font-face { 
+      font-family: 'Noto Serif JP Bold'; 
+      src: url('/fonts/NotoSerifJP-Bold.otf'); 
+      font-weight: bold; 
+      font-style: bold;
+      }
+    
+    .useNotoSerifJPBold{
+      font-family: 'Noto Serif JP Bold' !important;
+      unicode-range: 'U+00-FF', 'U+980-9FF';
+    }
+    @font-face { 
+      font-family: 'Noto Serif JP'; 
+      src: url('/fonts/NotoSerifJP-Regular.otf'); 
+      font-weight: bold; 
+      font-style: bold;
+      }
+    
+    .useNotoSerifJPRegular{
+      font-family: 'Noto Serif JP' !important;
+      unicode-range: 'U+00-FF', 'U+980-9FF';
+    } */
+
+    /* html{
+      font-family: 'Poppins';
+    } */
+    *[dir='ltr'] {
+      @apply font-poppins !important;
+    }
+    
+    *[dir='rtl'] {
+      @apply font-notoJP !important;
+    }
+
+}
+
+
+/* 
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +121,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */

@@ -1,0 +1,11 @@
+{
+  "DEFAULT":"JA",
+  "FONTS":
+  {
+    "DEFAULT":"font-notoJP",
+    "EN":"font-poppins",
+    "JA":"font-notoJP",
+    "STUDY_BUDDY_JA":"font-StudyBuddyJA",
+    "STUDY_BUDDY_EN":"font-StudyBuddyEN"
+  }
+}
