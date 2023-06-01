@@ -11,11 +11,11 @@ class AuthApi extends PebblesApi {
     }
 
     /* Login user*/
-    static async login(userData) {
-        const { username, password } = userData
-        let res = await this.request(`auth/token`, { username, password }, "POST")
-        this.token = res.token
-        return res.token
+    static async login(username, password) {
+        let res = await this.request(`auth/login`, { username, password }, "POST")
+        this.token = res
+        console.log('token got back', res)
+        return res
     }
 
     /* Get logged in user data*/

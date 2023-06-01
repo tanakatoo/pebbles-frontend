@@ -1,0 +1,10 @@
+{
+    "EN":{
+        "H1":"title of messages",
+        "BODY":"bod of messages check if font is setting correctly"
+    },
+    "JA":{
+        "H1":"あろあろあろ hello to check in messages ",
+        "BODY":"これはボディーです。これは漢字です。check if font is setting corretly in messages"
+    }
+}

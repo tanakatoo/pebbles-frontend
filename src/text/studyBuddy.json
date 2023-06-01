@@ -1,0 +1,10 @@
+{
+    "EN":{
+        "H1":"title of study buddy",
+        "BODY":"bod of study buddy check if font is setting correctly"
+    },
+    "JA":{
+        "H1":"あろあろあろ hello to check ",
+        "BODY":"これはボディーです。これは漢字です。check if font is setting corretly"
+    }
+}

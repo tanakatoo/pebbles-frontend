@@ -1,0 +1,18 @@
+{
+    "EN":{
+        "H1":"Register",
+        "USERNAME":"Username or email",
+        "EMAIL":"Email",
+        "PASSWORD":"Password",
+        "PASSWORD_CHECK":"Re-enter password",
+        "SUBMIT":"Register"
+    },
+    "JA":{
+        "H1":"ユーザー登録",
+        "USERNAME":"ユーザー名",
+        "EMAIL":"メールアドレス",
+        "PASSWORD":"パスワード",
+        "PASSWORD_CHECK":"パスワードを再記入",
+        "SUBMIT":"無料登録"
+    }
+}

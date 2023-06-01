@@ -1,0 +1,16 @@
+{
+    "EN":{
+        "H1":"Login",
+        "USERNAME":"Username or email",
+        "PASSWORD":"Password",
+        "FORGOT_PASSWORD":"Forgot password",
+        "SUBMIT":"Login"
+    },
+    "JA":{
+        "H1":"ログイン",
+        "USERNAME":"ユーザー名・メールアドレス",
+        "PASSWORD":"パスワード",
+        "FORGOT_PASSWORD":"パスワードを忘れた場合",
+        "SUBMIT":"ログイン"
+    }
+}

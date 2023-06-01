@@ -1,10 +1,10 @@
 {
     "JA":{
-        "H1": "This is the home for Japanese, it should be a different font",
-        "BODY":"This is the body for Japanese, it should be the default japanese font"
+        "H1": "これはホームの日本語版のタイトル This is Japanese",
+        "BODY":"これはホームの日本語版のボディー this is jap changed"
     },
     "EN":{
-        "H1": "This is the home for English, it should be a not poppins",
+        "H1": "This is the home for English, it should be a not poppins changed",
         "BODY":"This is the body for English, it should be the default english font"
     }
 }

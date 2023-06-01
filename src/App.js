@@ -2,19 +2,18 @@ import './styles/app.css';
 import NavBar from "./components/common/NavBar"
 import "./styles/app.css"
 import { useSelector } from 'react-redux';
-
+import MyRoutes from "./MyRoutes"
 
 function App() {
-  //get the font from the store and set this for the whole site
+  //get the font from the store
   const font = useSelector(state => state.langFont.font)
 
-  return (
+  //we have to hardcode the string of the font because tailwind won't know what to use at build
 
-    <div className={`App ${font}`}>
+  return (
+    <div className={`App ${font == 'font-poppins' ? 'font-poppins' : 'font-notoJP'}`}>
       <NavBar />
-      <p className="">this should change according to the font selected</p>
-      <p >poppins </p>
-      <p >テストどうですか？ </p>
+      <MyRoutes />
     </div >
   );
 }

@@ -2,7 +2,6 @@ import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
-
 class PebblesApi {
     // the token for interaction with the API will be stored here.
     static token;
