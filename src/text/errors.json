@@ -1,0 +1,18 @@
+{
+    "JA":{
+        "USERNAME_REQUIRED": "ユーザー名をご記入ください",
+        "USERNAME_MAX":"ユーザー名",
+        "PASSWORD_REQUIRED":"パスワードをご記入ください",
+        "PASSWORD_MIN":"パスワード",
+        "EMAIL_REQUIRED":"メールをご記入ください",
+        "EMAIL_FORMAT":"正しいメールアドレスをご記入ください"
+    },
+    "EN":{
+        "USERNAME_REQUIRED": "Username required",
+        "USERNAME_MAX":"Username must be less than XX",
+        "PASSWORD_REQUIRED":"Password required",
+        "PASSWORD_MIN":"Password must be more than XX charcters",
+        "EMAIL_REQUIRED":"Email required",
+        "EMAIL_FORMAT":"Email format is incorrect"
+    }
+}

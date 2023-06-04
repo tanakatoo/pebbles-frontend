@@ -8,8 +8,7 @@ function App() {
   //get the font from the store
   const font = useSelector(state => state.langFont.font)
 
-  //we have to hardcode the string of the font because tailwind won't know what to use at build
-
+  //we have to hardcode the string of the font because tailwind doesn't know what to use at build
   return (
     <div className={`App ${font == 'font-poppins' ? 'font-poppins' : 'font-notoJP'}`}>
       <NavBar />

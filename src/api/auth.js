@@ -3,11 +3,11 @@ import PebblesApi from "./base"
 class AuthApi extends PebblesApi {
 
     /* Register new user */
-    static async register(userData) {
-        const { username, password, email } = userData
+    static async register(username, password, email) {
         let res = await this.request(`auth/register`, { username, password, email }, "POST")
-        this.token = res.token
-        return res.token
+        console.log('res from api', res)
+        this.token = res
+        return res
     }
 
     /* Login user*/

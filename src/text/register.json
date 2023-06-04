@@ -1,7 +1,7 @@
 {
     "EN":{
         "H1":"Register",
-        "USERNAME":"Username or email",
+        "USERNAME":"Username",
         "EMAIL":"Email",
         "PASSWORD":"Password",
         "PASSWORD_CHECK":"Re-enter password",

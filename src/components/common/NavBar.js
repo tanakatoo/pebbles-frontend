@@ -10,6 +10,7 @@ import { Link } from "react-router-dom"
 const NavBar = () => {
     //get the current language from the store to set the language of localstorage if it is not yet set
     const currentLang = useSelector(state => state.langFont)
+
     const [lang, setLang] = useLocalStorage("lang", currentLang.lang)
     const dispatch = useDispatch()
 
@@ -28,10 +29,11 @@ const NavBar = () => {
                 <a href="#" className="flex items-center">
                     <img src={logo} className="h-12" alt="Pebbles logo" />
                 </a>
-                <button onClick={() => setLang('EN')}>English</button>
+                <button onClick={() => setLang("EN")}>English</button>
                 <button onClick={() => setLang("JA")}>Japanese</button>
                 <button><Link to='/login'>Login</Link></button>
                 <button onClick={logout}> Logout</button>
+                <button><Link to='/register'>Register</Link></button>
                 {/* <div className="flex">
                     <ul className=" flex font-medium p-4 md:p-0 mt-4">
 

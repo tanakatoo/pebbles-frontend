@@ -8,14 +8,11 @@ const profileReducer = (state = INITIAL_STATE, action) => {
             //loads the profile 
             return action.profile
         case LOGIN:
-            console.log('token in reducer', action.token)
-            //sets id in local storage and this state
-
-            window.localStorage.setItem('token', action.token)
+            window.localStorage.setItem("token", action.token)
+            return { ...state, token: action.token }
         case LOGOUT:
-            //remove from localstorage and state
-            window.localStorage.removeItem('token')
-            return {}
+            window.localStorage.removeItem("token")
+            return { ...state, token: null }
         default:
             return state
 

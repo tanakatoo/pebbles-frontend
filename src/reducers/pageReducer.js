@@ -4,6 +4,7 @@ import studyBuddy from '../text/studyBuddy.json';
 import login from "../text/login.json"
 import message from "../text/message.json"
 import register from "../text/register.json"
+import error from "../text/register.json"
 
 const text = {
     home: home,
@@ -12,9 +13,8 @@ const text = {
     message: message,
     register: register
 }
-console.log(text)
 
-const INITIAL_STATE = { pageText: '' }
+const INITIAL_STATE = { pageText: '', error: error }
 
 const pageReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
