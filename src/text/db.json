@@ -1,14 +1,14 @@
 {
-    "gender_id":{
-        "1":{
+    "genders":{
+        "male":{
             "EN":"male",
             "JA":"男性"
         },
-        "2":{
+        "female":{
             "EN":"female",
             "JA":"女性"
         },
-        "3":{
+        "other":{
             "EN":"other",
             "JA":"その他"
         }

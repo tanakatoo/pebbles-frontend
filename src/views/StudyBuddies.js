@@ -7,6 +7,13 @@ const StudyBuddies = () => {
     const langFont = useSelector(state => state.langFont)
     const [pageText] = usePageText("studyBuddy")
 
+    useEffect(() => {
+        const x = async () => {
+
+        }
+        x()
+    }, [])
+
     return (
         <div className="StudyBuddy">
             <h1 className={`${langFont.lang == 'EN' ? 'font-StudyBuddyEN' : 'font-StudyBuddyJA'} `}>{pageText.H1}</h1>

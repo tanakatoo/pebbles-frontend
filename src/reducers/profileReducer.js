@@ -1,4 +1,4 @@
-import { LOAD_PROFILE, LOGOUT, LOGIN } from "./actionTypes"
+import { LOAD_PROFILE, LOGOUT, LOGIN, ERROR } from "./actionTypes"
 
 const INITIAL_STATE = {}
 

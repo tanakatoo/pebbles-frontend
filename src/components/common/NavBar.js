@@ -33,6 +33,7 @@ const NavBar = () => {
                 <button onClick={() => setLang("JA")}>Japanese</button>
                 <button><Link to='/login'>Login</Link></button>
                 <button onClick={logout}> Logout</button>
+                <button><Link to='/users/:username'> Profile</Link></button>
                 <button><Link to='/register'>Register</Link></button>
                 {/* <div className="flex">
                     <ul className=" flex font-medium p-4 md:p-0 mt-4">

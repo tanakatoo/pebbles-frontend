@@ -4,7 +4,6 @@ import studyBuddyReducer from "./studyBuddyReducer"
 import langFontReducer from "./langFontReducer.js"
 import pageReducer from "./pageReducer.js"
 
-
 const rootReducer = combineReducers({
     langFont: langFontReducer,
     pageText: pageReducer,

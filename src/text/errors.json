@@ -1,11 +1,13 @@
 {
     "JA":{
+        "EMAIL_REQUIRED":"メールをご記入ください",
         "USERNAME_REQUIRED": "ユーザー名をご記入ください",
         "USERNAME_MAX":"ユーザー名",
         "PASSWORD_REQUIRED":"パスワードをご記入ください",
-        "PASSWORD_MIN":"パスワード",
-        "EMAIL_REQUIRED":"メールをご記入ください",
-        "EMAIL_FORMAT":"正しいメールアドレスをご記入ください"
+        "PASSWORD_MIN":"パスワードは8桁以上",
+        "EMAIL_FORMAT":"正しいメールアドレスをご記入ください",
+        "PASSWORD_CHECK_NOT_SAME":"パスワードが一致ではない",
+        "PASSWORD_CHECK_REQUIRED":"もう一度パスワードをご記入ください"
     },
     "EN":{
         "USERNAME_REQUIRED": "Username required",
@@ -13,6 +15,8 @@
         "PASSWORD_REQUIRED":"Password required",
         "PASSWORD_MIN":"Password must be more than XX charcters",
         "EMAIL_REQUIRED":"Email required",
-        "EMAIL_FORMAT":"Email format is incorrect"
+        "EMAIL_FORMAT":"Email format is incorrect",
+        "PASSWORD_CHECK_NOT_SAME":"Passwords must match",
+        "PASSWORD_CHECK_REQUIRED":"Please reenter password"
     }
 }

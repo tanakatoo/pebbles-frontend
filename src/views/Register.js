@@ -1,17 +1,19 @@
 import React, { useState } from "react"
 import usePageText from "../hooks/usePageText";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import AuthApi from "../api/auth";
 import { LOGIN } from "../reducers/actionTypes";
-import InputError from "../components/common/InputError";
+import InputError from "../components/form/InputError";
 import { Formik, Form, ErrorMessage } from "formik"
 import registerSchema from "../components/form/validation/registerSchema";
 import { TextInput } from "../components/form/Fields";
 import { Button } from "../components/button/Button";
 
+
 const Register = () => {
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
+    const lang = useSelector(state => state.langFont.lang)
 
     const [pageText] = usePageText("register")
     const INITIAL_DATA = {
@@ -50,11 +52,12 @@ const Register = () => {
                     try {
                         const res = await AuthApi.register(values.username, values.password, values.email)
                         //call dispatch to set token in profileReducer
-                        console.log(res)
+                        console.log('this is res', res)
                         dispatch({ type: LOGIN, token: res })
 
                     } catch (e) {
                         console.log(e)
+
                         setErrors(e)
                     }
 

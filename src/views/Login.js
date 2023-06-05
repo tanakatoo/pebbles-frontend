@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import usePageText from "../hooks/usePageText";
 import { useDispatch } from "react-redux";
 import { LOGIN } from "../reducers/actionTypes";
-import InputError from "../components/common/InputError";
+import InputError from "../components/form/InputError";
 import loginSchema from "../components/form/validation/loginSchema";
 import { actionLogin } from "../reducers/actionCreator";
 import { TextInput } from "../components/form/Fields";
@@ -13,6 +13,7 @@ import AuthApi from "../api/auth";
 const Login = () => {
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
+
     const [pageText] = usePageText("login")
     const INITIAL_DATA = {
         username: '',
