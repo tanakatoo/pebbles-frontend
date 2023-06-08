@@ -4,9 +4,10 @@ class UserApi extends PebblesApi {
 
     /* Get public or private user data*/
     static async getUserInfo(username) {
-
+        console.log('token is in api', this.token)
         let res = await this.request(`users/${username}`)
-        return res.user
+        console.log('in api gettting user,', username)
+        return res
     }
 
     /* Update user info */

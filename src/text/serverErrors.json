@@ -1,14 +1,30 @@
     {
-        "duplicateEmail":{
+        "DUPLICATE_EMAIL":{
             "EN":"Email is already registered",
             "JA":"Jap Email is already registered"
         },
-        "usernameTaken":{
+        "USERNAME_TAKEN":{
             "EN":"Username is already taken",
             "JA":"Jap Username is already taken"
         },
-        "invalidCredentials":{
+        "INVALID_CREDENTIALS":{
             "EN":"Invalid username or password",
             "JA":"Jap Invalid username or password"
+        },
+        "NOT_FOUND":{
+            "EN":"Not found",
+            "JA":"JapNot found"
+        },
+        "UNAUTHORIZED":{
+            "EN":"No permissions to view content",
+            "JA":"Jap not allowed to view content"
+        },
+        "BAD_REQUEST":{
+            "EN":"Not a proper request",
+            "JA":"Jap not allowed to view content"
+        },
+        "FORBIDDEN":{
+            "EN":"No permissions to view content",
+            "JA":"Jap not allowed to view content"
         }
     }

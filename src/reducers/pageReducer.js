@@ -4,14 +4,19 @@ import studyBuddy from '../text/studyBuddy.json';
 import login from "../text/login.json"
 import message from "../text/message.json"
 import register from "../text/register.json"
-
+import password from "../text/changePassword.json"
+import setPassword from "../text/password.json"
+import profile from "../text/profile.json"
 
 const text = {
     home: home,
     studyBuddy: studyBuddy,
     login: login,
     message: message,
-    register: register
+    register: register,
+    password: password,
+    setPassword: setPassword,
+    profile: profile
 }
 
 const INITIAL_STATE = { pageText: '' }

@@ -1,10 +1,6 @@
-export const ERROR = "error"
-export const RESET_ERROR = "resetError"
-
 /* PROFILE action types */
 
-
-export const LOAD_PROFILE = "loadProfile"
+export const SAVE_PROFILE = "saveProfile"
 export const LOGOUT = "logout"
 export const LOGIN = "login"
 

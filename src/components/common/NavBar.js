@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { CHANGE_LANG, LOGOUT } from "../../reducers/actionTypes"
 import useLocalStorage from "../../hooks/useLocalStorage"
 import { Link } from "react-router-dom"
+import { actionLogout } from "../../reducers/actionCreator"
 
 
 const NavBar = () => {
@@ -20,7 +21,7 @@ const NavBar = () => {
     }, [lang])
 
     const logout = () => {
-        dispatch({ type: LOGOUT })
+        dispatch(actionLogout())
     }
     return (
         <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
@@ -33,7 +34,9 @@ const NavBar = () => {
                 <button onClick={() => setLang("JA")}>Japanese</button>
                 <button><Link to='/login'>Login</Link></button>
                 <button onClick={logout}> Logout</button>
-                <button><Link to='/users/:username'> Profile</Link></button>
+                <button><Link to='/change-password'>requestPassword</Link></button>
+                <button><Link to='/reset-password'>setpassword</Link></button>
+                <button><Link to='/users/ktoo'> Profile</Link></button>
                 <button><Link to='/register'>Register</Link></button>
                 {/* <div className="flex">
                     <ul className=" flex font-medium p-4 md:p-0 mt-4">

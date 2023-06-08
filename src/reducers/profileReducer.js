@@ -1,17 +1,16 @@
-import { LOAD_PROFILE, LOGOUT, LOGIN, ERROR } from "./actionTypes"
+import { SAVE_PROFILE, LOGOUT, LOGIN } from "./actionTypes"
 
-const INITIAL_STATE = {}
+const INITIAL_STATE = { token: null }
 
 const profileReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case LOAD_PROFILE:
-            //loads the profile 
-            return action.profile
+        case SAVE_PROFILE:
+            //saves the profile 
+            return { ...state, profile: action.profile }
         case LOGIN:
-            window.localStorage.setItem("token", action.token)
-            return { ...state, token: action.token }
+            return { ...state, token: action.token, profile: action.profile }
         case LOGOUT:
-            window.localStorage.removeItem("token")
+
             return { ...state, token: null }
         default:
             return state

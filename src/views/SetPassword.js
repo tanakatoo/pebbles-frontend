@@ -5,23 +5,30 @@ import AuthApi from "../api/auth";
 import { LOGIN } from "../reducers/actionTypes";
 import ServerError from "../components/form/ServerError";
 import { Formik, Form, ErrorMessage } from "formik"
-import registerSchema from "../components/form/validation/registerSchema";
+import setPasswordSchema from "../components/form/validation/setPassword";
 import { TextInput } from "../components/form/Fields";
 import { Button } from "../components/button/Button";
+import { useParams, useSearchParams } from "react-router-dom";
 
 
-const Register = () => {
+const SetPassword = () => {
+    const [searchParams, setSearchParams] = useSearchParams()
+    const token = searchParams.get("token")
+    console.log('from search params', token)
     const dispatch = useDispatch()
+
+
     const [errors, setErrors] = useState([])
     const lang = useSelector(state => state.langFont.lang)
 
-    const [pageText] = usePageText("register")
+    const [pageText] = usePageText("setPassword")
     const INITIAL_DATA = {
-        username: '',
         password: '',
-        password_check: '',
-        email: ''
+        password_check: ''
     }
+
+    //verify password and get user id from it
+
 
     return (
         <>
@@ -29,14 +36,14 @@ const Register = () => {
             {Object.keys(errors).length > 0 && <ServerError msg={errors} />}
             <Formik
                 initialValues={INITIAL_DATA}
-                validationSchema={registerSchema}
+                validationSchema={setPasswordSchema}
                 onSubmit={async (values, { setSubmitting }) => {
 
                     setSubmitting(false)
                     try {
                         setErrors([])
 
-                        const res = await AuthApi.register(values.username, values.password, values.email)
+                        const res = await AuthApi.setPassword(values.username, values.password)
                         //call dispatch to set token in profileReducer
                         dispatch({ type: LOGIN, token: res })
 
@@ -50,25 +57,11 @@ const Register = () => {
             >
                 <Form>
                     <TextInput
-                        label={pageText.USERNAME}
-                        name="username"
-                        type="text"
-                        placeholder={pageText.USERNAME}
-                    />
-
-                    <TextInput
-                        label={pageText.EMAIL}
-                        name="email"
-                        type="email"
-                        placeholder="" />
-
-                    <TextInput
                         label={pageText.PASSWORD}
                         name="password"
                         type="password"
                         placeholder=""
                     />
-
                     <TextInput
                         label={pageText.PASSWORD_CHECK}
                         name="password_check"
@@ -83,4 +76,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default SetPassword;

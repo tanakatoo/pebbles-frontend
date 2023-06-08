@@ -12,5 +12,172 @@
             "EN":"other",
             "JA":"その他"
         }
+    },
+    "timezones":{
+       "Los Angeles":{
+            "EN":"Los Angeles (UTC-7)",
+            "JA":"ロサンゼルス (UTC-7)"
+       },
+       "Chicago":{
+            "EN":"Chicago (UTC-5)",
+            "JA":"シカゴ (UTC-5)"
+        },
+        "New York":{
+            "EN":"New York (UTC-4)",
+            "JA":"ニューヨーク (UTC-5)"
+        },
+        "Toronto":{
+            "EN":"Toronto (UTC-4)",
+            "JA":"トロント (UTC-5)"
+        },
+        "Sao Paulo":{
+            "EN":"Sao Paulo (UTC-3)",
+            "JA":"サンパウロ (UTC-5)"
+        },
+        "London":{
+            "EN":"London (UTC+1)",
+            "JA":"ロンドン (UTC-5)"
+        },
+        "Paris":{
+            "EN":"Paris (UTC+2)",
+            "JA":"パリ (UTC-7)"
+       },
+       "Zurich":{
+            "EN":"Zurich (UTC+2)",
+            "JA":"チューリッヒ (UTC-5)"
+        },
+        "Cairo":{
+            "EN":"Cairo (UTC+3)",
+            "JA":"カイロ (UTC-5)"
+        },
+        "Moscow":{
+            "EN":"Moscow (UTC+3)",
+            "JA":"モスクワ (UTC-5)"
+        },
+        "Dubai":{
+            "EN":"Dubai (UTC+4)",
+            "JA":"ドバイ (UTC-5)"
+        },
+        "Hong Kong":{
+            "EN":"Hong Kong (UTC+8)",
+            "JA":"香港 (UTC-5)"
+        },
+        "Shanghai":{
+            "EN":"Shanghai (UTC+8)",
+            "JA":"上海 (UTC-5)"
+        },
+        "Singapore":{
+            "EN":"Singapore (UTC+8)",
+            "JA":"シンガポール (UTC-5)"
+        },
+        "Tokyo":{
+            "EN":"Tokyo (UTC+9)",
+            "JA":"東京 (UTC-5)"
+        },
+        "Sydney":{
+            "EN":"Sydney (UTC+10)",
+            "JA":"シドニー (UTC-5)"
+        }
+    },   
+    "goals":{
+        "Vocabulary":{
+            "EN":"Vocabulary",
+            "JA":"語彙"
+        },
+        "Pronunciation":{
+            "EN":"Vocabulary",
+            "JA":"発音"
+        },
+        "Listening":{
+            "EN":"Vocabulary",
+            "JA":"リスニング"
+        },
+        "Writing":{
+            "EN":"Vocabulary",
+            "JA":"書く"
+        },
+        "Speaking":{
+            "EN":"Vocabulary",
+            "JA":"スピーキング"
+        }
+    },
+    "motivation_levels":{
+        "Very":{
+            "EN":"Very",
+            "JA":"いっぱい"
+        },
+        "Average":{
+            "EN":"Average",
+            "JA":"まま"
+        },
+        "Low":{
+            "EN":"Low",
+            "JA":"ちょっと"
+        },
+        "None":{
+            "EN":"None",
+            "JA":"ありません"
+        }
+    },
+    "study_time":{
+        "everyday":{
+            "EN":"Everyday",
+            "JA":"毎日"
+        },
+        "three":{
+            "EN":"3 times a week",
+            "JA":"週３"
+        },
+        "once":{
+            "EN":"Once a week",
+            "JA":"週1"
+        },
+        "notFrequent":{
+            "EN":"Not frequent",
+            "JA":"あまり"
+        },
+        "never":{
+            "EN":"Never",
+            "JA":"しません"
+        }
+    },
+    "study_buddy_types":{
+        "Study buddy":{
+            "EN":"Study buddy",
+            "JA":"一緒に学習"
+        },
+        "Language exchange":{
+            "EN":"Language exchange",
+            "JA":"言語交換"
+        },
+        "Volunteer":{
+            "EN":"Volunteer",
+            "JA":"ボランティア"
+        }    
+    },
+    "languages":{
+        "English":{
+            "EN":"English",
+            "JA":"英語"
+        },
+        "Japanese":{
+            "EN":"Japanese",
+            "JA":"日本語"
+        }         
+    },
+    "language_levels":{
+        "Beginner":{
+            "EN":"Beginner",
+            "JA":"初心者"
+        },
+        "Intermediate":{
+            "EN":"Intermediate",
+            "JA":"中級者"
+        },
+        "Advanced":{
+            "EN":"Advanced",
+            "JA":"上級者"
+        }   
     }
 }
+

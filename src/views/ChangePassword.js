@@ -1,46 +1,37 @@
 import React, { useState } from "react"
 import usePageText from "../hooks/usePageText";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ServerError from "../components/form/ServerError";
-import loginSchema from "../components/form/validation/loginSchema";
 import { actionLogin } from "../reducers/actionCreator";
 import { TextInput } from "../components/form/Fields";
 import { Formik, Form } from "formik"
 import { Button } from "../components/button/Button";
 import AuthApi from "../api/auth";
+import passwordSchema from "../components/form/validation/changePassword"
 
-
-const Login = () => {
+const ChangePassword = () => {
     const dispatch = useDispatch()
+    const [pageText] = usePageText("password")
     const [errors, setErrors] = useState([])
-
-    const [pageText] = usePageText("login")
-    const INITIAL_DATA = {
-        username: '',
-        password: ''
-    }
-
+    const lang = useSelector(state => state.langFont.lang)
 
     return (
         <>
             <h1>{pageText.H1}</h1>
             {Object.keys(errors).length > 0 && <ServerError msg={errors} />}
             <Formik
-                initialValues={INITIAL_DATA}
-                validationSchema={loginSchema}
+                initialValues={{ username: '' }}
+                validationSchema={passwordSchema}
                 onSubmit={async (values, { setSubmitting }) => {
                     setSubmitting(false)
                     try {
-                        const res = await AuthApi.login(values.username, values.password)
-                        //call dispatch to set token in profileReducer
-                        dispatch(actionLogin(res)) //save token and then profile
+                        const res = await AuthApi.changePassword(values.username, lang)
+                        console.log('should be completed', res)
 
                     } catch (e) {
                         console.log(e)
                         setErrors(e)
                     }
-
-
                 }}
             >
                 <Form>
@@ -51,20 +42,13 @@ const Login = () => {
                         placeholder={pageText.USERNAME}
                     />
 
-                    <TextInput
-                        label={pageText.PASSWORD}
-                        name="password"
-                        type="password"
-                        placeholder=""
-                    />
                     <Button btnText={pageText.SUBMIT} type="submit" />
                 </Form>
 
             </Formik>
 
         </>
-    );
+    )
+}
 
-};
-
-export default Login;
+export default ChangePassword

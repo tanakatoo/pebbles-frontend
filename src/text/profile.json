@@ -1,0 +1,14 @@
+{
+    "JA":{
+        "H1": "Jap profile home",
+        "USERNAME":"Jap Username",
+        "GENDER":"Jap Gender",
+        "SUBMIT":"Jap submit"
+    },
+    "EN":{
+        "H1": "Profile home",
+        "USERNAME":"Username",
+        "GENDER":"Gender",
+        "SUBMIT":"Submit"
+    }
+}

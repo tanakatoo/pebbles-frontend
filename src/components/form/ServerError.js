@@ -5,7 +5,7 @@ import serverErrors from "../../text/serverErrors.json"
 
 /* Takes an argument msg and makes a component for the error that goes underneath the inputs */
 
-const InputError = ({ msg }) => {
+const ServerError = ({ msg }) => {
     const lang = useSelector(state => state.langFont.lang)
     return (
         <div style={{ backgroundColor: 'red' }}>
@@ -15,4 +15,4 @@ const InputError = ({ msg }) => {
     )
 }
 
-export default InputError
+export default ServerError

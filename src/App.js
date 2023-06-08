@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import MyRoutes from "./MyRoutes"
 
 function App() {
+
   //get the font from the store
   const font = useSelector(state => state.langFont.font)
 
