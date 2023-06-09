@@ -4,8 +4,27 @@
     
 }
 
+/*Forms */
+
 .error{
     color: red;
+}
+
+.form-control{
+    margin-top:3px;
+    margin-bottom:3px;
+}
+
+.Input{
+
+}
+
+.Textarea{
+    border: 1px solid black;
+}
+
+.ServerError{
+
 }
 
 /* Study Buddy */

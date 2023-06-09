@@ -12,7 +12,7 @@ import TextError from "../form/errorComponents/TextError"
 
 const Input = ({ label, name, ...rest }) => {
     return (
-        <div className='form-control'>
+        <div >
             <label htmlFor={name}>{label}</label>
             <Field id={name} name={name} {...rest} />
             <ErrorMessage name={name} component={TextError} />

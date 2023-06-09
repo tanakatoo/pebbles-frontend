@@ -21,7 +21,7 @@ const SetPassword = () => {
     const [errors, setErrors] = useState([])
     const lang = useSelector(state => state.langFont.lang)
 
-    const [pageText] = usePageText("setPassword")
+    const pageText = usePageText("setPassword")
     const INITIAL_DATA = {
         password: '',
         password_check: ''

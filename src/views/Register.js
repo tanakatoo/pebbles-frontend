@@ -15,7 +15,7 @@ const Register = () => {
     const [errors, setErrors] = useState([])
     const lang = useSelector(state => state.langFont.lang)
 
-    const [pageText] = usePageText("register")
+    const pageText = usePageText("register")
     const INITIAL_DATA = {
         username: '',
         password: '',

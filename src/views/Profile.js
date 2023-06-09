@@ -4,8 +4,10 @@ import { useParams } from 'react-router-dom'
 import ServerError from '../components/form/ServerError'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import dbText from "../text/db.json"
+import { Tab } from '@headlessui/react'
 import usePageText from '../hooks/usePageText'
+import ProfileTabProfile from '../components/common/ProfileTabProfile'
+import dbText from "../text/db.json"
 
 
 /**this is used to display profiles of other users not the logged in user, 
@@ -15,23 +17,20 @@ import usePageText from '../hooks/usePageText'
 
 const Profile = () => {
     const { username } = useParams()
-    const [pageText] = usePageText("profile")
+    const pageText = usePageText("profile")
     const lang = useSelector(state => state.langFont.lang)
-    console.log(lang)
     const [errors, setErrors] = useState([])
-    // const profile = useSelector(state => state.profile)
     const [currentProfile, setCurrrentProfile] = useState()
-    console.log('curent profile is now', currentProfile)
+    const tabs = ['Profile', 'Habits', 'Study Buddy']
+
+    //get the user public profile
     let res
     useEffect(() => {
         const getUser = async () => {
             try {
                 res = await UserApi.getUserInfo(username)
-                // dispatch(actionSaveProfile(res))
                 setCurrrentProfile(res)
-
             } catch (e) {
-                console.log('got error', e)
                 setErrors(e)
             }
         }
@@ -45,10 +44,26 @@ const Profile = () => {
             <h1>{pageText.H1}</h1>
             {!!currentProfile && <div>
                 {errors.length > 0 && <ServerError msg={errors} />}
-                {pageText.USERNAME}: {currentProfile.username}
-                {currentProfile.gender && < p > {pageText.GENDER}:  {dbText.genders[currentProfile.gender][lang]}</p >}
-                <p>< Link to='/users/hello' >click to go to hello profile</Link ></p>
-                <p><Link to="/users/profile">login as ktoo first and clicking this displays ktoo</Link></p></div>
+                <Tab.Group>
+                    <Tab.List>
+                        <Tab>{tabs[0]}</Tab>
+                        <Tab>{tabs[1]}</Tab>
+                        <Tab>{tabs[2]}</Tab>
+                    </Tab.List>
+                    <Tab.Panels>
+                        <Tab.Panel>
+                            {pageText.USERNAME}: {currentProfile.username}
+                            {currentProfile.gender && < p > {pageText.GENDER}:  {dbText.genders[currentProfile.gender][lang]}</p >}
+                            <p>< Link to='/users/hello' >click to go to hello profile</Link ></p>
+                            <p><Link to="/users/profile">login as ktoo first and clicking this displays ktoo</Link></p>
+                        </Tab.Panel>
+                        <Tab.Panel>Content 2</Tab.Panel>
+                        <Tab.Panel>Content 3</Tab.Panel>
+                    </Tab.Panels>
+                </Tab.Group>
+            </div>
+
+
             }
         </div >
     )

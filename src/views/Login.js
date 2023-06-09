@@ -14,7 +14,7 @@ const Login = () => {
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
 
-    const [pageText] = usePageText("login")
+    const pageText = usePageText("login")
     const INITIAL_DATA = {
         username: '',
         password: ''

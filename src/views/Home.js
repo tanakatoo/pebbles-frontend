@@ -3,7 +3,7 @@ import React from "react"
 import usePageText from "../hooks/usePageText"
 
 const Home = () => {
-    const [pageText] = usePageText("home")
+    const pageText = usePageText("home")
 
     return (
         <div>

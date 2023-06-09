@@ -11,7 +11,7 @@ import passwordSchema from "../components/form/validation/changePassword"
 
 const ChangePassword = () => {
     const dispatch = useDispatch()
-    const [pageText] = usePageText("password")
+    const pageText = usePageText("password")
     const [errors, setErrors] = useState([])
     const lang = useSelector(state => state.langFont.lang)
 

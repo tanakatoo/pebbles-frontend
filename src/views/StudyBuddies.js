@@ -5,7 +5,7 @@ import usePageText from "../hooks/usePageText"
 
 const StudyBuddies = () => {
     const langFont = useSelector(state => state.langFont)
-    const [pageText] = usePageText("studyBuddy")
+    const pageText = usePageText("studyBuddy")
 
     useEffect(() => {
         const x = async () => {
