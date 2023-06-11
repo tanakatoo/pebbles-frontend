@@ -1,17 +1,32 @@
+import React, { useEffect, useState } from "react"
 import { Combobox } from '@headlessui/react';
-import { useEffect, useState, Fragment } from 'react';
 import ExternalApi from '../../api/external';
 import { Field } from 'formik';
 import ServerError from './ServerError';
+import { v4 as uuid } from "uuid"
 
-const Autocomplete = ({ name, name_hidden, onSelect, ...props }) => {
+const Autocomplete = ({ name, onSelect, ...props }) => {
     const [query, setQuery] = useState('')
     const [listOfLocations, setListOfLocations] = useState([])
     const [errors, setErrors] = useState([])
-    const [getNewData, setGetNewData] = useState(false)
+    const [sessionToken, setSessionToken] = useState('')
+
+    console.log('session token at the top', sessionToken)
 
     const getLocationsFromAPI = async (q) => {
-        const res = await ExternalApi.autocompleteLocation(q, "EN")
+        let res
+        if (!sessionToken) {
+            //generate a new token to use now 
+            const newSessionToken = uuid()
+            setSessionToken(newSessionToken)
+            console.log('new token', newSessionToken)
+            res = await ExternalApi.autocompleteLocation(q, "EN", newSessionToken)
+
+        } else {
+            //use the current sessionToken
+            console.log('token is before calling, this was set before', sessionToken)
+            res = await ExternalApi.autocompleteLocation(q, "EN", sessionToken)
+        }
         console.log(res)
         return res
     }
@@ -19,9 +34,13 @@ const Autocomplete = ({ name, name_hidden, onSelect, ...props }) => {
     const handleChange = async (q = '') => {
         setQuery(q)
 
+        //if the user types more than 2 characters OR they deleted some characters
         if (q.length > 2 || (q.length > 2 && q.length < query.length)) {
             //get data from api
+            //check if sessionToken is ok, if it's empty generate one 
+
             try {
+
                 const res = await getLocationsFromAPI(q)
                 setListOfLocations(res)
             } catch (e) {
@@ -31,16 +50,7 @@ const Autocomplete = ({ name, name_hidden, onSelect, ...props }) => {
         } else if (q.length === 0) {
             //user cleared locations so clear location
             setListOfLocations([])
-        } else if (listOfLocations.length > 0) {
-            console.log('getting from our store!')
-            //get from saved list if not empty
-            setListOfLocations(() => {
-                listOfLocations.map(l => {
-                    if (l.description.includes(q)) {
-                        return l
-                    }
-                })
-            })
+            console.log('user cleared locations so empty locations')
         }
 
     }
@@ -48,10 +58,31 @@ const Autocomplete = ({ name, name_hidden, onSelect, ...props }) => {
     const handleKeyDown = (e) => {
         console.log(e.key)
         if (e.key === 'backspace') {
-            //user pressed backspce, so if the data is less than 
+            //user pressed backspce, so if the data is less than
         }
     }
 
+
+    const handleSelection = async (val, setFieldValue) => {
+        //sets the value of the place id and description
+
+        setFieldValue(name, val)
+        //now need to get the long namesof the selected place using the same sessiontoken 
+
+        console.log("to send", val.place_id, sessionToken)
+        const res = await ExternalApi.autocompleteSelectLocation(val.place_id, sessionToken)
+
+
+        setFieldValue("country_en", res.EN.country)
+        setFieldValue("state_en", res.EN.state)
+        setFieldValue("city_en", res.EN.city)
+        setFieldValue("country_ja", res.JA.country)
+        setFieldValue("state_ja", res.JA.state)
+        setFieldValue("city_ja", res.JA.city)
+
+        setSessionToken(undefined)
+        //reset the session token as we can't use it anymore for the next call because we used it to call already
+    }
 
     return (
         <div className='form-control'>
@@ -62,9 +93,10 @@ const Autocomplete = ({ name, name_hidden, onSelect, ...props }) => {
 
                         const { setFieldValue } = form
                         const { value } = field
+                        console.log('values of the form are', form.values)
                         return (
                             <div>
-                                < Combobox value={value.description} as='div' {...field} onChange={val => setFieldValue(name, val)} >
+                                < Combobox value={value.description} as='div' {...field} onChange={val => handleSelection(val, setFieldValue)} >
                                     <Combobox.Input displayValue={(val) => val.description} onChange={(event) => handleChange(event.target.value)} onKeyDown={handleKeyDown} />
                                     <Combobox.Options>
                                         {listOfLocations.length === 0 && (query && query.length > 3) ? (

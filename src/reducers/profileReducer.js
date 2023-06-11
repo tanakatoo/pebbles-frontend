@@ -1,6 +1,6 @@
 import { SAVE_PROFILE, LOGOUT, LOGIN } from "./actionTypes"
 
-const INITIAL_STATE = { token: null }
+const INITIAL_STATE = { token: null, profile: null }
 
 const profileReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -10,8 +10,7 @@ const profileReducer = (state = INITIAL_STATE, action) => {
         case LOGIN:
             return { ...state, token: action.token, profile: action.profile }
         case LOGOUT:
-
-            return { ...state, token: null }
+            return { ...state, token: null, profile: null }
         default:
             return state
 

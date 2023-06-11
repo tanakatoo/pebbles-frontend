@@ -1,14 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import {
     Formik, Form
 } from "formik"
 import * as Yup from "yup"
 import profileSchema from "../form/validation/profileSchema"
 import FormikControl from "./FormikControl"
+import { v4 as uuid } from "uuid"
 
 
 const FormikContainerProfile = ({ pageText }) => {
-    console.log(pageText)
+
+
     const initialValues = {
         gender: '',
         email: '',
@@ -20,7 +22,14 @@ const FormikContainerProfile = ({ pageText }) => {
         location: {
             description: '',
             place_id: ''
-        }
+        },
+        country_en: '',
+        state_en: '',
+        city_en: '',
+        country_ja: '',
+        state_ja: '',
+        city_ja: '',
+
 
     }
     const validationSchema = profileSchema
@@ -44,6 +53,8 @@ const FormikContainerProfile = ({ pageText }) => {
         { key: "Language exchange", value: '2' },
         { key: "Volunteer", value: '3' }
     ]
+
+
 
 
     return (
