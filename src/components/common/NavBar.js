@@ -32,7 +32,7 @@ const NavBar = () => {
                 </a>
                 <button onClick={() => setLang("EN")}>English</button>
                 <button onClick={() => setLang("JA")}>Japanese</button>
-                <button><Link to='/login'>Login</Link></button>
+                <button><Link to={`/${lang}/login`}>Login</Link></button>
                 <button onClick={logout}> Logout</button>
                 <button><Link to='/change-password'>requestPassword</Link></button>
                 <button><Link to='/reset-password'>setpassword</Link></button>

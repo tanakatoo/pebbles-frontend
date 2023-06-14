@@ -14,7 +14,7 @@
         }
     },
     "timezones":{
-       "Los Angeles":{
+       "LosAngeles":{
             "EN":"Los Angeles (UTC-7)",
             "JA":"ロサンゼルス (UTC-7)"
        },
@@ -22,7 +22,7 @@
             "EN":"Chicago (UTC-5)",
             "JA":"シカゴ (UTC-5)"
         },
-        "New York":{
+        "NewYork":{
             "EN":"New York (UTC-4)",
             "JA":"ニューヨーク (UTC-5)"
         },
@@ -30,7 +30,7 @@
             "EN":"Toronto (UTC-4)",
             "JA":"トロント (UTC-5)"
         },
-        "Sao Paulo":{
+        "SaoPaulo":{
             "EN":"Sao Paulo (UTC-3)",
             "JA":"サンパウロ (UTC-5)"
         },
@@ -58,7 +58,7 @@
             "EN":"Dubai (UTC+4)",
             "JA":"ドバイ (UTC-5)"
         },
-        "Hong Kong":{
+        "HongKong":{
             "EN":"Hong Kong (UTC+8)",
             "JA":"香港 (UTC-5)"
         },
@@ -142,11 +142,11 @@
         }
     },
     "study_buddy_types":{
-        "Study buddy":{
+        "StudyBuddy":{
             "EN":"Study buddy",
             "JA":"一緒に学習"
         },
-        "Language exchange":{
+        "LanguageExchange":{
             "EN":"Language exchange",
             "JA":"言語交換"
         },
@@ -178,6 +178,28 @@
             "EN":"Advanced",
             "JA":"上級者"
         }   
+    },
+    "age_range":{
+        "18-25":{
+            "EN":"18 - 25",
+            "JA":"18 - 25"
+        },
+        "26-35":{
+            "EN":"26 - 35",
+            "JA":"26 - 35"
+        },
+        "36-45":{
+            "EN":"36 - 45",
+            "JA":"36 - 45"
+        },
+        "46-59":{
+            "EN":"46 - 59",
+            "JA":"46 - 59"
+        },
+        "60+":{
+            "EN":"60+",
+            "JA":"60+"
+        }
     }
 }
 

@@ -15,7 +15,7 @@ const MyRoutes = (props) => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/:lang/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/study-buddies" element={<StudyBuddies />} />
             <Route path="/users">

@@ -11,8 +11,6 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
     const [errors, setErrors] = useState([])
     const [sessionToken, setSessionToken] = useState('')
 
-    console.log('session token at the top', sessionToken)
-
     const getLocationsFromAPI = async (q) => {
         let res
         if (!sessionToken) {
