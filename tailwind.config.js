@@ -36,9 +36,13 @@ module.exports = {
       'link': '#2004CE'
     },
     fontFamily: {
-      sans: ['Poppins', ...defaultTheme.fontFamily.sans],
-      'poppins': ['Poppins', ...defaultTheme.fontFamily.sans],
-      'notoJP': ['"Noto Sans JP"', ...defaultTheme.fontFamily.sans],
+      sans: ['PoppinsRegular', ...defaultTheme.fontFamily.sans],
+      'poppins': ['PoppinsRegular', ...defaultTheme.fontFamily.sans],
+      'PoppinsMedium': ['PoppinsMedium', ...defaultTheme.fontFamily.sans],
+      'PoppinsBold': ['PoppinsBold', ...defaultTheme.fontFamily.sans],
+      'NotoSansJPRegular': ['NotoSansJPRegular', ...defaultTheme.fontFamily.sans],
+      'NotoSansJPMedium': ['NotoSansJPMedium', ...defaultTheme.fontFamily.sans],
+      'NotoSansJPBold': ['NotoSansJPBold', ...defaultTheme.fontFamily.sans],
       'EnglishMarketJA': ['EnglishMarketJA', 'sans-serif'],
       'EnglishMarketEN': ['EnglishMarketEN', 'sans-serif'],
       'EnglishStudyEN': ['EnglishStudyEN', 'sans-serif'],
@@ -49,7 +53,32 @@ module.exports = {
       'StudyBuddyEN': ['StudyBuddyEN', 'sans-serif'],
       'StudyBuddyJA': ['"Zen Old Mincho"', 'sans-serif']
     },
-    extend: {},
+    container: {
+      padding: {
+        DEFAULT: '16px',
+        md: '32px',
+        lg: '160px'
+      }
+    },
+    extend: {
+      fontSize: {
+        'mobile-card-header': ['14px', '24px'],
+        'mobile-card-body': ['14px', '24px'],
+        'mobile-label-1': ['12px', '16px'],
+        'mobile-label-2': ['12px', '16px'],
+        'mobile-body-1': ['16px', '24px'],
+        'mobile-body-2': ['16px', '24px'],
+        'mobile-body-3': ['16px', '24px'],
+        'mobile-section-header': ['18px', '32px'],
+        'mobile-page-header': ['24px', '32px'],
+        'mobile-header-1': ['32px', '48px'],
+        'mobile-header-2': ['32px', '48px'],
+      },
+      boxShadow: {
+        'dropdown': '0px 4px 8px rgba(0, 0, 0, 0.25)'
+      }
+
+    },
   },
   plugins: [require('@tailwindcss/forms'),
   require('@headlessui/tailwindcss')],

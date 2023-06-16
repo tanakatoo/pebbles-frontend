@@ -1,13 +1,17 @@
+import React, { useState } from "react"
 import './styles/app.css';
 import NavBar from "./components/common/NavBar"
 import "./styles/app.css"
 import { useSelector } from 'react-redux';
 import MyRoutes from "./MyRoutes"
+import PebblesApi from "./api/base";
 
 function App() {
 
+
   //get the font from the store
   const font = useSelector(state => state.langFont.font)
+
 
   //we have to hardcode the string of the font because tailwind doesn't know what to use at build
   return (

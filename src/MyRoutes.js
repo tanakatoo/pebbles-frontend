@@ -5,7 +5,7 @@ import Login from "./views/Login"
 import Register from "./views/Register"
 import Profile from "./views/Profile"
 import ProfileOwn from "./views/ProfileOwn"
-
+import MessageMain from "./views/MessageMain"
 import StudyBuddies from "./views/StudyBuddies"
 import ChangePassword from "./views/ChangePassword"
 import SetPassword from "./views/SetPassword"
@@ -18,6 +18,7 @@ const MyRoutes = (props) => {
             <Route path="/:lang/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/study-buddies" element={<StudyBuddies />} />
+            <Route path="/messages" element={<MessageMain />} />
             <Route path="/users">
                 <Route path="profile" element={<ProfileOwn />} />
                 <Route path="profile/edit" element={<ProfileEdit />} />

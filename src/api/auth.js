@@ -15,7 +15,6 @@ class AuthApi extends PebblesApi {
         let res = await this.request(`auth/login`, { username, password }, "POST")
         this.token = res.token
 
-        console.log('token got back', res)
         return res
     }
 
@@ -23,7 +22,7 @@ class AuthApi extends PebblesApi {
     static async changePassword(username, lang) {
         let res = await this.request(`auth/password`, { username, lang }, "POST")
         this.token = res
-        console.log('password token got back', res)
+
         return res
     }
 
@@ -31,7 +30,7 @@ class AuthApi extends PebblesApi {
     static async setPassword(username, password) {
         let res = await this.request(`auth/set-password`, { username, password }, "POST")
         this.token = res
-        console.log('token got back', res)
+
         return res
     }
 

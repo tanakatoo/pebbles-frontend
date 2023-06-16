@@ -1,7 +1,7 @@
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");/*English base font*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");/*English base font
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");/*Japanese base font and Study Support jA Bold version*/ 
-@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap"); /*English and Japanese community*/
+@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&display=swap"); /*English and Japanese community*/
 @import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap"); /*studybuddyJA*/
 
 
@@ -10,6 +10,50 @@
 @tailwind utilities;
 
 @layer base{
+
+
+  @font-face { 
+    font-family: 'PoppinsRegular'; 
+    font-style:regular;
+    font-weight:400;
+    src: url('/public/fonts/Poppins-Regular.ttf'); 
+    }
+
+  @font-face { 
+    font-family: 'PoppinsBold'; 
+    font-style:bold;
+    font-weight:700;
+    src: url('/public/fonts/Poppins-Bold.ttf'); 
+    }
+
+  @font-face { 
+    font-family: 'PoppinsMedium'; 
+    font-style:medium;
+    font-weight:500;
+    src: url('/public/fonts/Poppins-Medium.ttf'); 
+    }
+
+    @font-face { 
+      font-family: 'NotoSansJPRegular'; 
+      font-style:regular;
+      font-weight:400;
+      src: url('/public/fonts/NotoSansJP-Regular.ttf'); 
+      }
+  
+    @font-face { 
+      font-family: 'NotoSansJPBold'; 
+      font-style:bold;
+      font-weight:700;
+      src: url('/public/fonts/NotoSansJP-Bold.ttf'); 
+      }
+  
+    @font-face { 
+      font-family: 'NotoSansJPMedium'; 
+      font-style:medium;
+      font-weight:500;
+      src: url('/public/fonts/NotoSansJP-Medium.ttf'); 
+      }
+  
 
   @font-face { 
     font-family: 'EnglishMarketJA'; 
@@ -96,13 +140,7 @@
     /* html{
       font-family: 'Poppins';
     } */
-    *[dir='ltr'] {
-      @apply font-poppins !important;
-    }
     
-    *[dir='rtl'] {
-      @apply font-notoJP !important;
-    }
 
 }
 

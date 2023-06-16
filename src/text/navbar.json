@@ -1,0 +1,40 @@
+{
+    "JA":{
+        "ABOUT": "Pebblesとは",
+        "STUDY_SUPPORT":"学習サポート",
+        "WHAT_WE_SUPPORT":"サポートいろいろ",
+        "PRICING":"価格",
+        "COMMUNITY":"コミュニティ",
+        "ENGLISH_COMMUNITY":"英語コミュニティ",
+        "REGIONAL_COMMUNITY":"地域コミュニティ",
+        "MARKETPLACE":"マーケット",
+        "STUDY_BUDDY":"スタディーバディー",
+        "LOGIN":"ログイン",
+        "SIGN_UP":"無料登録",
+        "DASHBOARD":"マイホーム",
+        "PROFILE":"プロフィール",
+        "MESSAGES":"メッセージ",
+        "SAVED":"お気に入り",
+        "SETTINGS":"設定",
+        "LOGOUT":"ログアウト"
+    },
+    "EN":{
+        "ABOUT": "About",
+        "STUDY_SUPPORT":"Study support",
+        "WHAT_WE_SUPPORT":"What we support",
+        "PRICING":"Pricing",
+        "COMMUNITY":"Community",
+        "ENGLISH_COMMUNITY":"English community",
+        "REGIONAL_COMMUNITY":"Regional community",
+        "MARKETPLACE":"Marketplace",
+        "STUDY_BUDDY":"Study buddy",
+        "LOGIN":"Login",
+        "SIGN_UP":"Sign up",
+        "DASHBOARD":"Dashboard",
+        "PROFILE":"Profile",
+        "MESSAGES":"Messages",
+        "SAVED":"Favorites",
+        "SETTINGS":"Settings",
+        "LOGOUT":"Logout"
+    }
+}

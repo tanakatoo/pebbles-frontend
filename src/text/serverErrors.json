@@ -26,5 +26,10 @@
         "FORBIDDEN":{
             "EN":"No permissions to view content",
             "JA":"Jap not allowed to view content"
+        },
+        "UNKNOWN":{
+            "EN":"Server error. Please contact us to solve.",
+            "JA":"Jap server error. Contact us to solve"
         }
+
     }

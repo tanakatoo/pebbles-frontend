@@ -1,29 +1,24 @@
 import { useDispatch, useSelector } from 'react-redux';
 import PebblesApi from "../api/base";
 import { actionLogin } from "../reducers/actionCreator"
+import React, { useState } from "react"
 
-/**Used to set token in api and redux */
+/**Used to set token in PebblesApi */
 
 const useSetToken = () => {
-    const dispatch = useDispatch()
-    const user = useSelector(state => state.profile)
 
-    //Check at each render if user has a token in their profile or in localStorage
-    console.log('user token is', user.token)
-    if (!user.token) {
-        // const user = JSON.parse(window.localStorage.getItem("user"))
+    //Check at each render if user is logged in or in localStorage
+    const [token, setToken] = useState(null)
+
+    if (!token) {
         const token = JSON.parse(window.localStorage.getItem("token"))
+
         if (token) {
-            //log them in
-            dispatch(actionLogin(token))
-        } else {
-            window.localStorage.removeItem('token')
+            setToken(token)
+            PebblesApi.token = token
         }
     }
-    else {
-        PebblesApi.token = user.token
-    }
-    return [user.token]
+    return [token]
 }
 
 export default useSetToken

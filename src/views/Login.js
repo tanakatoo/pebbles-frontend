@@ -8,18 +8,23 @@ import { TextInput } from "../components/form/Fields";
 import { Formik, Form } from "formik"
 import { Button } from "../components/button/Button";
 import AuthApi from "../api/auth";
+import { useNavigate } from "react-router-dom";
+import PebblesApi from "../api/base";
 
 
 const Login = () => {
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
-
+    const navigate = useNavigate()
     const pageText = usePageText("login")
     const INITIAL_DATA = {
         username: '',
         password: ''
     }
-
+    if (PebblesApi.token) {
+        //should go to their dashboard
+        navigate('/')
+    }
 
     return (
         <>
@@ -30,11 +35,12 @@ const Login = () => {
                 validationSchema={loginSchema}
                 onSubmit={async (values, { setSubmitting }) => {
                     setSubmitting(false)
+                    setErrors([])
                     try {
                         const res = await AuthApi.login(values.username, values.password)
                         //call dispatch to set token in profileReducer
                         dispatch(actionLogin(res)) //save token and then profile
-
+                        navigate('/')
                     } catch (e) {
                         console.log(e)
                         setErrors(e)
