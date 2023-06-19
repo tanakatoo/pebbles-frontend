@@ -1,6 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import searchText from "../../text/searchBar.json"
 
 function SearchBar({ handleSearch }) {
+    const lang = useSelector(state => state.langFont.lang)
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
@@ -11,7 +14,7 @@ function SearchBar({ handleSearch }) {
 
     return (
         <div>
-            <input type="text" onKeyDown={handleKeyDown} />
+            <input className='rounded-ml w-full placeholder-gray' type="text" onKeyDown={handleKeyDown} placeholder={searchText[lang].PLACEHOLDER} />
         </div>
     )
 }

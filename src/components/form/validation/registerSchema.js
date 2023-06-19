@@ -5,7 +5,7 @@ const registerSchema = Yup.object().shape({
     email: Yup.string().email('EMAIL_FORMAT').required("EMAIL_REQUIRED"),
     password: Yup.string().required('PASSWORD_REQUIRED').min(8, 'PASSWORD_MIN'),
     password_check: Yup.string().required("PASSWORD_CHECK_REQUIRED")
-        .oneOf([Yup.ref('password')], 'PASSWORD_CHECK_NOT_SAME ')
+        .oneOf([Yup.ref('password')], 'PASSWORD_CHECK_NOT_SAME')
 })
 
 

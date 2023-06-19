@@ -1,17 +1,4 @@
-import axios from "axios"
-import useLocalStorage from "../hooks/useLocalStorage"
-import { LOGIN, LOGOUT, ERROR, RESET_ERROR, SAVE_PROFILE } from "./actionTypes"
-import AuthApi from "../api/auth";
-
-
-
-// export function actionLogin(username, password) {
-
-//     return async function (dispatch) {
-//         const res = await AuthApi.login(username, password)
-//         dispatch(actionLoggedIn(res))
-//     }
-// }
+import { LOGIN, LOGOUT, SET_MSG, REMOVE_MSG, SAVE_PROFILE } from "./actionTypes"
 
 export function actionLogin(data) {
     window.localStorage.setItem("token", JSON.stringify(data.token))

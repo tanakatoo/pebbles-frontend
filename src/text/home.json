@@ -1,10 +1,22 @@
 {
     "JA":{
-        "H1": "これはホームの日本語版のタイトル This is Japanese",
-        "BODY":"これはホームの日本語版のボディー this is jap changed"
+        "H1": "英語の自己学習者、海外への旅行者＆任者をサポートするコミュニティー",
+        "H2":"Our mission 日本語"
     },
     "EN":{
-        "H1": "This is the home for English, it should be a not poppins changed",
-        "BODY":"This is the body for English, it should be the default english font"
+        "H1": "Community for learning Japanese and living in Japan",
+        "H2":"Our mission",
+        "MISSION1":"Connect with other expats and immigrants in Japan",
+        "MISSION2":"Get information for living and travelling in Japan",
+        "MISSION3":"Find resources for studying Japanese",
+        "HERO2":"It's free! Find connections. Share resources. Learn together.",
+        "HOW_TO_HELP":"How can Pebbles Community help?",
+        "HELP1":"Japanese sub-community: Join groups to practice writing and reading Japanese. Ask and answer any questions related to the Japanese language.",
+        "HELP2":"Regional sub-community: Join regional groups to get resources and connect with others in that region. Ask and answer questions related to travelling and living in that area.",
+        "HELP3":"Study buddy: Become a study buddy and find like-minded students to study Japanese. Do a cultural and language exchange in the comfort of your home. Volunteer to teach Japanese people learn English.",
+        "HELP4":"Marketplace: Going back home? Moving to Japan? Buy, sell or offer your used goods to future expats and immigrants.",
+        "HELP5":"",
+        "HELP_BTN":"Learn more",
+        "HERO3":"We just began our journey, but is striving to be the biggest online community for English speakers learning Japanese and living in Japan."
     }
 }

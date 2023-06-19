@@ -1,12 +1,20 @@
 import React, { useState, useRef } from 'react'
 import { v4 as uuid } from "uuid"
 import { AwesomeChevronDown } from '../../styles/Icons'
+import { NavLink } from 'react-router-dom'
 
-function Dropdown({ items, subitems = {}, divide = false, css = null, pr = null, width = null }) {
+function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr = null, width = null }) {
     const [dropdown, setDropdown] = useState({ id: null, display: false })
 
     const handleClickingItself = (e) => {
-        e.stopPropagation()
+        console.log('clicked', e.target.parentElement.id)
+        if (e.target.id ||
+            e.target.parentElement.id ||
+            e.target.parentElement.parentElement.id ||
+            e.target.parentElement.parentElement.parentElement.id) {
+
+            e.stopPropagation()
+        }
     }
 
     const handleDropdown = (e) => {
@@ -28,21 +36,54 @@ function Dropdown({ items, subitems = {}, divide = false, css = null, pr = null,
             <ul className={divide ? 'divide-gray divide-y' : ''}>
                 {items.map((i, idx) => {
                     return (
-                        <div key={uuid()} >
+                        <div key={uuid()} className={`${lang === "JA" ? "font-NotoSansJPRegular" : ''} `} >
                             <li className='py-3 px-4' >
-                                <div className='flex ' id={idx} onClick={handleDropdown}>
-                                    <span className={`grow ${width ? width : ''} ${pr ? pr : ''}`}>{i}</span>
-                                    {pr && subitems[idx] &&
-                                        <span ><AwesomeChevronDown /></span>
-                                    }
-                                </div>
+                                {i.link ?
+                                    <NavLink to={`${i.link}`} style={({ isActive }) => ({ color: isActive ? "text-secondary-dark" : "" })}>
+                                        <div className='flex ' >
+                                            <span className={`grow ${width ? width : ''} ${pr ? pr : ''}`}>
+                                                {i.text}
+                                            </span>
+                                            {pr && subitems[idx] &&
+                                                <span ><AwesomeChevronDown /></span>
+                                            }
+                                        </div>
+                                    </NavLink>
+                                    : <div className='flex ' id={idx} onClick={handleDropdown}>
+                                        <span className={`grow ${width ? width : ''} ${pr ? pr : ''}`}>
+                                            {i.text}
+                                        </span>
+                                        {pr && subitems[idx] &&
+                                            <span ><AwesomeChevronDown /></span>
+                                        }
+                                    </div>
+                                }
+
                             </li>
-                            {subitems[idx] && dropdown.display && dropdown.id == idx ? subitems[idx].items.map(j => <li key={uuid()} className='py-3 px-4 text-gray-text'>{j}</li>) : ''}
+                            {
+                                subitems[idx] && dropdown.display && dropdown.id == idx ?
+                                    subitems[idx].items.map(j => {
+                                        return (
+                                            <li key={uuid()} className='py-3 px-4 text-gray-text'>
+                                                {j.link
+                                                    ?
+                                                    <NavLink to={`${j.link}`} style={({ isActive }) => ({ color: isActive ? "text-secondary-dark" : "" })} >
+                                                        <div className='flex'>
+                                                            {j.text}
+                                                        </div>
+                                                    </NavLink>
+                                                    :
+                                                    j.text}
+                                            </li>
+                                        )
+                                    })
+                                    : ''
+                            }
                         </div>
                     )
                 })}
-            </ul>
-        </div>
+            </ul >
+        </div >
     )
 }
 

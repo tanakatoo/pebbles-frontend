@@ -1,10 +1,12 @@
 {
     "EN":{
-        "H1":"title of messages",
-        "BODY":"bod of messages check if font is setting correctly"
+        "BLOCK_CONTACTS":"Block contacts",
+        "UNBLOCK_CONTACTS":"Unblock contacts",
+        "EDIT":"Edit"
     },
     "JA":{
-        "H1":"あろあろあろ hello to check in messages ",
-        "BODY":"これはボディーです。これは漢字です。check if font is setting corretly in messages"
+        "BLOCK_CONTACTS":"ブロックユーザー",
+        "UNBLOCK_CONTACTS":"ブロック解除",
+        "EDIT":"編集"
     }
 }

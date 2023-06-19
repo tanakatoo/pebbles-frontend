@@ -1,0 +1,11 @@
+{
+    "JA":{
+        "LOGOUT":"ログアウトしました",
+        "LOGIN":"LOGGED IN JAP"
+    },
+    "EN":{
+        "LOGOUT": "Logged out",
+        "LOGIN":"LOGGED IN"
+       
+    }
+}

@@ -8,13 +8,14 @@ import useSetToken from '../hooks/useSetToken'
 import SearchBar from '../components/common/SearchBar'
 import Dropdown from '../components/common/Dropdown'
 import useClickOutside from '../hooks/useClickOutside'
+import usePageText from "../hooks/usePageText"
 
 function MessageMain() {
     const [data, setData] = useState(null)
     const [errors, setErrors] = useState([])
-    const [token] = useSetToken()
+    const [token = null] = useSetToken()
     const [dropdown, setDropdown] = useState(false)
-
+    const pageText = usePageText("messages")
 
     useEffect(() => {
         const getData = async () => {
@@ -23,7 +24,7 @@ function MessageMain() {
                 setData(res)
             } catch (e) {
                 if (e instanceof TypeError) {
-                    //mean server is down
+                    //means server is down
                     setErrors(["UNKNOWN"])
                 } else {
                     setErrors(e)
@@ -47,9 +48,14 @@ function MessageMain() {
     }
     const ref = useClickOutside(closeDropdown)
 
-    const dropdownItems = ["Block contacts", "Unblock contacts"]
+    const dropdownItems =
+        [
+            { text: pageText.BLOCK_CONTACTS, link: null },
+            { text: pageText.UNBLOCK_CONTACTS, link: null }
+        ]
 
     return (<div>
+
         {errors.length > 0 && <ServerError msg={errors} />}
         {!data && errors.length == 0 ?
             <Spinner />
@@ -57,7 +63,7 @@ function MessageMain() {
                 <div className='container grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12'>
                     {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
                     <div className="flex col-span-full justify-end relative">
-                        <span className='cursor-pointer' ref={ref} onClick={handleDropdown}>Edit</span>
+                        <span className='cursor-pointer' ref={ref} onClick={handleDropdown}>{pageText.EDIT}</span>
                         {dropdown && <Dropdown items={dropdownItems}
                             divide={true}
                             css="rounded shadow-dropdown top-8" />}

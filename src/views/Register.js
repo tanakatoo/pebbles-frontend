@@ -6,9 +6,11 @@ import { LOGIN } from "../reducers/actionTypes";
 import ServerError from "../components/form/ServerError";
 import { Formik, Form, ErrorMessage } from "formik"
 import registerSchema from "../components/form/validation/registerSchema";
-import { TextInput } from "../components/form/Fields";
+// import { TextInput } from "../components/form/Fields";
+import Input from "../components/form/Input";
 import { Button } from "../components/button/Button";
-
+import CTA from "../components/common/CTA";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const dispatch = useDispatch()
@@ -22,63 +24,82 @@ const Register = () => {
         password_check: '',
         email: ''
     }
+    console.log(errors)
 
     return (
         <>
-            <h1>{pageText.H1}</h1>
-            {Object.keys(errors).length > 0 && <ServerError msg={errors} />}
-            <Formik
-                initialValues={INITIAL_DATA}
-                validationSchema={registerSchema}
-                onSubmit={async (values, { setSubmitting }) => {
+            <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
+            <div className="mt-8 flex flex-col justify-center items-center mx-8">
 
-                    setSubmitting(false)
-                    try {
-                        setErrors([])
+                {Object.keys(errors).length > 0 && <ServerError msg={errors} title={pageText.ERROR_TITLE} />}
+                {errors.length === 0 && <h1 className="text-center mb-[56px] text-mobile-header-2-homepage">{pageText.H1}</h1>}
+                <Formik
+                    initialValues={INITIAL_DATA}
+                    validationSchema={registerSchema}
+                    onSubmit={async (values, { setSubmitting }) => {
+                        console.log('submitting')
 
-                        const res = await AuthApi.register(values.username, values.password, values.email)
-                        //call dispatch to set token in profileReducer
-                        dispatch({ type: LOGIN, token: res })
-
-                    } catch (e) {
-                        console.log(e)
-                        setErrors(e)
-                    }
+                        try {
+                            console.log(values)
+                            console.log('submitting')
+                            const res = await AuthApi.register(values.username, values.password, values.email)
+                            //call dispatch to set token in profileReducer
+                            dispatch({ type: LOGIN, token: res })
 
 
-                }}
-            >
-                <Form>
-                    <TextInput
-                        label={pageText.USERNAME}
-                        name="username"
-                        type="text"
-                        placeholder={pageText.USERNAME}
-                    />
+                        } catch (e) {
+                            if (e instanceof TypeError) {
+                                //means server is down
+                                setErrors(["UNKNOWN"])
+                            } else {
 
-                    <TextInput
-                        label={pageText.EMAIL}
-                        name="email"
-                        type="email"
-                        placeholder="" />
+                                setErrors(e)
+                            }
+                        } finally {
+                            setSubmitting(false)
+                        }
 
-                    <TextInput
-                        label={pageText.PASSWORD}
-                        name="password"
-                        type="password"
-                        placeholder=""
-                    />
 
-                    <TextInput
-                        label={pageText.PASSWORD_CHECK}
-                        name="password_check"
-                        type="password"
-                        placeholder=""
-                    />
+                    }}
+                >
+                    {formik => {
+                        return (
+                            <Form className="flex flex-col w-full">
+                                <Input
+                                    label={pageText.USERNAME}
+                                    name="username"
+                                    type="text"
+                                    placeholder={pageText.USERNAME_PLACEHOLDER}
+                                />
 
-                    <Button btnText={pageText.SUBMIT} type="submit" />
-                </Form>
-            </Formik>
+                                <Input
+                                    label={pageText.EMAIL}
+                                    name="email"
+                                    type="email"
+                                    placeholder={pageText.EMAIL_PLACEHOLDER}
+                                />
+
+                                <Input
+                                    label={pageText.PASSWORD}
+                                    name="password"
+                                    type="password"
+                                    placeholder={pageText.PASSWORD_PLACEHOLDER}
+                                />
+
+                                <Input
+                                    label={pageText.PASSWORD_CHECK}
+                                    name="password_check"
+                                    type="password"
+                                    placeholder=""
+                                />
+
+                                <Button btnText={pageText.SUBMIT} type="submit" extraClasses="mt-12" isSubmitting={formik.isSubmitting} />
+                                <p className="mt-4 text-center text-gray-text">Already have an account? <span className="text-link hover:text-primary"><Link to="/login">Login here</Link></span></p>
+                            </Form>
+                        )
+                    }}
+                </Formik>
+            </div>
         </>
     );
 };

@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react"
 import logo from "../../images/logo.png"
-import NavBarDropDown from "./NavBarDropDown"
 import { useDispatch, useSelector } from "react-redux"
 import { CHANGE_LANG, LOGOUT } from "../../reducers/actionTypes"
 import useLocalStorage from "../../hooks/useLocalStorage"
 import { Link } from "react-router-dom"
-import { actionLogout } from "../../reducers/actionCreator"
 import {
-    AwesomeBars,
     AwesomeToggleLeft,
     AwesomeToggleRight,
     Hamburger,
@@ -35,32 +32,75 @@ const NavBar = () => {
         setNavText(text[lang])
     }, [lang])
 
-
-
-    const logout = () => {
-        dispatch(actionLogout())
-    }
-
     const handleHamburger = () => {
         dropdown ? setDropdown(false) : setDropdown(true)
     }
 
+    const dropdownItems = [
+        { text: navText.SIGN_UP, link: `/register` },
+        { text: navText.LOGIN, link: `/login` },
+        { text: navText.ABOUT, link: '/about' },
+        { text: navText.STUDY_SUPPORT, link: null },
+        { text: navText.COMMUNITY, link: null }]
 
-    const dropdownItems = [navText.SIGN_UP, navText.LOGIN, navText.ABOUT, navText.STUDY_SUPPORT, navText.COMMUNITY]
-    console.log(navText)
     //keys refer to the position of the array in the dropdownItems array
     const dropdownSubItems =
     {
-        1: { items: [navText.WHAT_WE_SUPPORT, navText.PRICING] },
-        2: { items: [navText.ENGLISH_COMMUNITY, navText.REGIONAL_COMMUNITY, navText.STUDY_BUDDY, navText.MARKETPLACE] }
+        3: {
+            items: [
+                { text: navText.WHAT_WE_SUPPORT, link: null },
+                { text: navText.PRICING, link: null }
+            ]
+        },
+        4: {
+            items: [
+                { text: navText.ENGLISH_COMMUNITY, link: null },
+                { text: navText.REGIONAL_COMMUNITY, link: null },
+                { text: navText.STUDY_BUDDY, link: null },
+                { text: navText.MARKETPLACE, link: null }
+            ]
+        }
     }
 
-    const dropdownItemsLoggedIn = ["Hi, " + user.profile.username, navText.ABOUT, navText.STUDY_SUPPORT, navText.COMMUNITY]
+    console.log('username is', user.profile && user.profile.username)
+
+    const dropdownItemsLoggedIn =
+        [
+            { text: `Hi, ${user.profile && user.profile.username}`, link: null },
+            { text: navText.ABOUT, link: null },
+            { text: navText.STUDY_SUPPORT, link: null },
+            { text: navText.COMMUNITY, link: null }
+        ]
+    console.log(dropdownItemsLoggedIn)
     const dropdownSubItemsLoggedIn =
     {
-        0: { items: [navText.DASHBOARD, navText.PROFILE, navText.MESSAGES, navText.SAVED, navText.SETTINGS, navText.LOGOUT] },
-        2: { items: [navText.WHAT_WE_SUPPORT, navText.PRICING] },
-        3: { items: [navText.ENGLISH_COMMUNITY, navText.REGIONAL_COMMUNITY, navText.STUDY_BUDDY, navText.MARKETPLACE] }
+        0: {
+            items:
+                [
+                    { text: navText.DASHBOARD, link: null },
+                    { text: navText.PROFILE, link: '/users/profile' },
+                    { text: navText.MESSAGES, link: '/messages' },
+                    { text: navText.SAVED, link: null },
+                    { text: navText.SETTINGS, link: null },
+                    { text: navText.LOGOUT, link: '/logout' }
+                ]
+        },
+        2: {
+            items:
+                [
+                    { text: navText.WHAT_WE_SUPPORT, link: null },
+                    { text: navText.PRICING, link: null }
+                ]
+        },
+        3: {
+            items:
+                [
+                    { text: navText.ENGLISH_COMMUNITY, link: null },
+                    { text: navText.REGIONAL_COMMUNITY, link: null },
+                    { text: navText.STUDY_BUDDY, link: null },
+                    { text: navText.MARKETPLACE, link: null }
+                ]
+        }
     }
 
 
@@ -80,17 +120,8 @@ const NavBar = () => {
             <div className="flex flex-nowrap items-center gap-5">
                 <div className="flex  items-center px-4 flex-nowrap">
                     <div className="flex gap-3 items-center">
-                        {lang == "EN" ?
-                            <>
-                                <span className="text-primary-dark text-mobile-card-header font-PoppinsMedium">ENG </span>
-                                <AwesomeToggleLeft onClick={() => setLang("JA")} />
-                                <span className="text-gray text-mobile-card-header font-PoppinsMedium">JPN</span>
-                            </>
-                            : <>
-                                <span className="text-gray text-mobile-card-header font-PoppinsMedium">ENG </span>
-                                <AwesomeToggleRight onClick={() => setLang("EN")} />
-                                <span className="text-primary-dark text-mobile-card-header font-PoppinsMedium">JPN</span>
-                            </>}
+                        <span className={`cursor-pointer text-primary-dark text-mobile-card-header font-PoppinsMedium ${lang === "EN" ? 'border-b-2' : ''}`} onClick={() => setLang("EN")}>EN </span>
+                        <span className={`cursor-pointer text-primary-dark text-mobile-card-header font-PoppinsMedium ${lang === "JA" ? 'border-b-2' : ''}`} onClick={() => setLang("JA")}>JA</span>
                     </div>
                 </div>
                 <Link to="/messages"><Mail /></Link>
@@ -98,9 +129,10 @@ const NavBar = () => {
                     <Hamburger className="ml-5 " />
                     {dropdown && <Dropdown items={user.token ? dropdownItemsLoggedIn : dropdownItems}
                         subitems={user.token ? dropdownSubItemsLoggedIn : dropdownSubItems}
-                        css="right-0 top-8 shadow-dropdown text-primary font-mobile-body-2"
+                        css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
                         pr="pr-8"
                         width='w-[300px]'
+                        lang={lang}
                     />}</span>
 
             </div>

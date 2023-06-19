@@ -1,16 +1,26 @@
 {
     "EN":{
-        "H1":"Login",
+        "CTA":"Practice and learn Japanese",
+        "CTA_BTN":"Study buddies",
+        "CTA_LINK":"/study-buddies",
+        "ERROR_TITLE":"Error logging in",
+        "H1":"Welcome back",
         "USERNAME":"Username or email",
         "PASSWORD":"Password",
         "FORGOT_PASSWORD":"Forgot password",
-        "SUBMIT":"Login"
+        "SUBMIT":"Login",
+        "CREATE_ACCT":"Register free account"
     },
     "JA":{
-        "H1":"ログイン",
+        "CTA":"英語をレベルアップしよう。",
+        "CTA_BTN":"学習サポートへ",        
+        "CTA_LINK":"/supports",
+        "ERROR_TITLE":"ログインできません",
+        "H1":"お帰りなさい",
         "USERNAME":"ユーザー名・メールアドレス",
         "PASSWORD":"パスワード",
         "FORGOT_PASSWORD":"パスワードを忘れた場合",
-        "SUBMIT":"ログイン"
+        "SUBMIT":"ログイン",
+        "CREATE_ACCT":"無料登録"
     }
 }

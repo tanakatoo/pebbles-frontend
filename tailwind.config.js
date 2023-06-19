@@ -72,10 +72,20 @@ module.exports = {
         'mobile-section-header': ['18px', '32px'],
         'mobile-page-header': ['24px', '32px'],
         'mobile-header-1': ['32px', '48px'],
+        'mobile-header-1-homepage': ['32px', '48px'],
         'mobile-header-2': ['32px', '48px'],
+        'mobile-header-2-homepage': ['24px', '32px']
+
       },
       boxShadow: {
         'dropdown': '0px 4px 8px rgba(0, 0, 0, 0.25)'
+      },
+      borderRadius: {
+        'ml': '10px'
+      },
+      backgroundImage: {
+        'homeHero': "url('./images/homeHeroFriends-mobile.jpg ')",
+        'homeHelp': "url('./images/home-help-mobile.jpg ')"
       }
 
     },

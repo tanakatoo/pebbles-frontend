@@ -16,6 +16,8 @@ const useSetToken = () => {
         if (token) {
             setToken(token)
             PebblesApi.token = token
+        } else {
+            PebblesApi.token = null
         }
     }
     return [token]

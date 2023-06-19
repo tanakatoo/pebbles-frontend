@@ -1,17 +1,31 @@
 {
     "EN":{
-        "H1":"Register",
+        "CTA":"Practice and learn Japanese",
+        "CTA_BTN":"Study buddies",
+        "CTA_LINK":"/study-buddies",
+        "ERROR_TITLE":"Error registering",
+        "H1":"Welcome to Pebbles Community",
         "USERNAME":"Username",
+        "USERNAME_PLACEHOLDER":"pebblescommunity",
         "EMAIL":"Email",
+        "EMAIL_PLACEHOLDER":"abc@pebbles.com",
         "PASSWORD":"Password",
+        "PASSWORD_PLACEHOLDER":"8 or more characters",
         "PASSWORD_CHECK":"Re-enter password",
         "SUBMIT":"Register"
     },
     "JA":{
-        "H1":"ユーザー登録",
+        "CTA":"毎日少しの時間で英語をレベルアップしよう",
+        "CTA_BTN":"無料体験",
+        "CTA_LINK":"/supports",
+        "ERROR_TITLE":"Error registering",
+        "H1":"Pebbles Community にいらっしゃい",
         "USERNAME":"ユーザー名",
+        "USERNAME_PLACEHOLDER":"pebblescommunity",
         "EMAIL":"メールアドレス",
+        "EMAIL_PLACEHOLDER":"abc@pebbles.com",
         "PASSWORD":"パスワード",
+        "PASSWORD_PLACEHOLDER":"8桁以上のパスワード",
         "PASSWORD_CHECK":"パスワードを再記入",
         "SUBMIT":"無料登録"
     }

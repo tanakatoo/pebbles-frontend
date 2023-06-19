@@ -9,7 +9,7 @@
         },
         "INVALID_CREDENTIALS":{
             "EN":"Invalid username or password",
-            "JA":"Jap Invalid username or password"
+            "JA":"ユーザー名、またはパスワードが正しくありません"
         },
         "NOT_FOUND":{
             "EN":"Not found",

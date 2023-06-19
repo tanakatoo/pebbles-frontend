@@ -1,73 +1,105 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import usePageText from "../hooks/usePageText";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ServerError from "../components/form/ServerError";
 import loginSchema from "../components/form/validation/loginSchema";
 import { actionLogin } from "../reducers/actionCreator";
-import { TextInput } from "../components/form/Fields";
+// import { TextInput } from "../components/form/Fields";
+import Input from "../components/form/Input";
 import { Formik, Form } from "formik"
 import { Button } from "../components/button/Button";
 import AuthApi from "../api/auth";
 import { useNavigate } from "react-router-dom";
 import PebblesApi from "../api/base";
-
+import { actionSetMsg } from "../reducers/actionCreator";
+import FlashMessageContext from "../contexts/FlashMessageContext";
+import CTA from "../components/common/CTA";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
     const navigate = useNavigate()
     const pageText = usePageText("login")
+    const setFlashMessage = useContext(FlashMessageContext)
+    const token = useSelector(state => state.profile.token)
+
     const INITIAL_DATA = {
         username: '',
         password: ''
     }
-    if (PebblesApi.token) {
+
+    console.log('pebbles api token is', PebblesApi.token)
+    if (token) {
         //should go to their dashboard
         navigate('/')
     }
-
+    console.log(errors)
     return (
         <>
-            <h1>{pageText.H1}</h1>
-            {Object.keys(errors).length > 0 && <ServerError msg={errors} />}
-            <Formik
-                initialValues={INITIAL_DATA}
-                validationSchema={loginSchema}
-                onSubmit={async (values, { setSubmitting }) => {
-                    setSubmitting(false)
-                    setErrors([])
-                    try {
-                        const res = await AuthApi.login(values.username, values.password)
-                        //call dispatch to set token in profileReducer
-                        dispatch(actionLogin(res)) //save token and then profile
-                        navigate('/')
-                    } catch (e) {
-                        console.log(e)
-                        setErrors(e)
-                    }
+            <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
+            <div className="mt-8 flex flex-col justify-center items-center mx-8">
+                {Object.keys(errors).length > 0 && <ServerError msg={errors} title={pageText.ERROR_TITLE} />}
+                {errors.length === 0 && <h1 className="text-center mb-[56px] text-mobile-header-2-homepage">{pageText.H1}</h1>}
+                <Formik
+                    initialValues={INITIAL_DATA}
+                    validationSchema={loginSchema}
+                    onSubmit={async (values, { setSubmitting }) => {
+
+                        setErrors([])
+                        try {
+                            const res = await AuthApi.login(values.username, values.password)
+                            //call dispatch to set token in profileReducer
+                            dispatch(actionLogin(res)) //save token and then profile
+                            setFlashMessage('LOGIN')
+                            navigate('/')
+                        } catch (e) {
+                            if (e instanceof TypeError) {
+                                //means server is down
+                                setErrors(["UNKNOWN"])
+                            } else {
+
+                                setErrors(e)
+                            }
+                        } finally {
+                            setSubmitting(false)
+                        }
 
 
+                    }}
+
+                >{formik => {
+                    return (
+                        <Form className="flex flex-col w-full">
+
+                            <Input
+                                label={pageText.USERNAME}
+                                name="username"
+                                type="text"
+                            />
+
+                            <Input
+                                label={pageText.PASSWORD}
+                                name="password"
+                                type="password"
+                                placeholder=""
+                            />
+                            <Button btnText={pageText.SUBMIT}
+                                type="submit"
+                                extraClasses="mt-12"
+                                isSubmitting={formik.isSubmitting} />
+                            <Button bkColor="bg-white"
+                                textColor="text-primary"
+                                btnText={pageText.CREATE_ACCT}
+                                type="button"
+                                extraClasses="mt-8 border mb-[76px]"
+                                isSubmitting={formik.isSubmitting}
+                                link="/register" />
+                        </Form>
+                    )
                 }}
-            >
-                <Form>
-                    <TextInput
-                        label={pageText.USERNAME}
-                        name="username"
-                        type="text"
-                        placeholder={pageText.USERNAME}
-                    />
-
-                    <TextInput
-                        label={pageText.PASSWORD}
-                        name="password"
-                        type="password"
-                        placeholder=""
-                    />
-                    <Button btnText={pageText.SUBMIT} type="submit" />
-                </Form>
-
-            </Formik>
-
+                </Formik>
+            </div>
         </>
     );
 
