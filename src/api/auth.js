@@ -5,7 +5,7 @@ class AuthApi extends PebblesApi {
     /* Register new user */
     static async register(username, password, email) {
         let res = await this.request(`auth/register`, { username, password, email }, "POST")
-        console.log('res from api', res)
+
         this.token = res
         return res
     }

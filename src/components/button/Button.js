@@ -6,14 +6,13 @@ export const Button = ({
     btnText,
     clickMethod = null,
     type,
-    bkColor = 'bg-primary border',
+    bkColor = 'bg-primary border-primary',
     textColor = "text-white",
     py = "py-3",
     isSubmitting = false,
     extraClasses = '',
     link = null }) => {
 
-    console.log('issubmittin gi', isSubmitting)
     return (
         <>
             <button onClick={clickMethod}

@@ -1,14 +1,14 @@
 {
     "JA":{
-        "ABOUT": "Pebblesとは",
+        "ABOUT": "Pebbles概要",
         "STUDY_SUPPORT":"学習サポート",
-        "WHAT_WE_SUPPORT":"サポートいろいろ",
+        "WHAT_WE_SUPPORT":"学習サポートとは",
         "PRICING":"価格",
         "COMMUNITY":"コミュニティ",
-        "ENGLISH_COMMUNITY":"英語コミュニティ",
-        "REGIONAL_COMMUNITY":"地域コミュニティ",
+        "ENGLISH_COMMUNITY":"英語街",
+        "REGIONAL_COMMUNITY":"地域情報センター",
         "MARKETPLACE":"マーケット",
-        "STUDY_BUDDY":"スタディーバディー",
+        "STUDY_BUDDY":"スタディーバディー掲示板",
         "LOGIN":"ログイン",
         "SIGN_UP":"無料登録",
         "DASHBOARD":"マイホーム",
@@ -16,7 +16,13 @@
         "MESSAGES":"メッセージ",
         "SAVED":"お気に入り",
         "SETTINGS":"設定",
-        "LOGOUT":"ログアウト"
+        "LOGOUT":"ログアウト",
+        "SLOGAN":"Connecting and supporting Japanese around the world.",
+        "COMPANY":"Pebbles Community について",
+        "CONTACT_US":"連絡先",
+        "PRIVACY":"個人情報保護方針",
+        "TERMS":"Terms",
+        "COPYRIGHT":"All rights reserved."
     },
     "EN":{
         "ABOUT": "About",
@@ -24,10 +30,10 @@
         "WHAT_WE_SUPPORT":"What we support",
         "PRICING":"Pricing",
         "COMMUNITY":"Community",
-        "ENGLISH_COMMUNITY":"English community",
-        "REGIONAL_COMMUNITY":"Regional community",
+        "ENGLISH_COMMUNITY":"Japanese town",
+        "REGIONAL_COMMUNITY":"Regional information center",
         "MARKETPLACE":"Marketplace",
-        "STUDY_BUDDY":"Study buddy",
+        "STUDY_BUDDY":"Study buddy board",
         "LOGIN":"Login",
         "SIGN_UP":"Sign up",
         "DASHBOARD":"Dashboard",
@@ -35,6 +41,12 @@
         "MESSAGES":"Messages",
         "SAVED":"Favorites",
         "SETTINGS":"Settings",
-        "LOGOUT":"Logout"
+        "LOGOUT":"Logout",
+        "SLOGAN":"Connecting and supporting Japanese learners and English speakers in Japan.",
+        "COMPANY":"Company",
+        "CONTACT_US":"Contact us",
+        "PRIVACY":"Privacy",
+        "TERMS":"Terms",
+        "COPYRIGHT":"Copyright 2023 All rights reserved."
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Mission({ icon, text }) {
-  console.log(icon)
+
   return (
     <>
       <div className="mx-auto">{icon}</div>

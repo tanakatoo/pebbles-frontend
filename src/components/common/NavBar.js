@@ -62,7 +62,6 @@ const NavBar = () => {
         }
     }
 
-    console.log('username is', user.profile && user.profile.username)
 
     const dropdownItemsLoggedIn =
         [
@@ -71,7 +70,7 @@ const NavBar = () => {
             { text: navText.STUDY_SUPPORT, link: null },
             { text: navText.COMMUNITY, link: null }
         ]
-    console.log(dropdownItemsLoggedIn)
+
     const dropdownSubItemsLoggedIn =
     {
         0: {

@@ -1,9 +1,9 @@
 {
   "EN":{
-      "PLACEHOLDER":"Search users"
+      "PLACEHOLDER":"Search"
   },
   "JA":{
-      "PLACEHOLDER":"ユーザーを検索"
+      "PLACEHOLDER":"検索"
   }
 
 }

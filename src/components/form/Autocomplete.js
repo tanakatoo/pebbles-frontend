@@ -17,15 +17,13 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
             //generate a new token to use now 
             const newSessionToken = uuid()
             setSessionToken(newSessionToken)
-            console.log('new token', newSessionToken)
             res = await ExternalApi.autocompleteLocation(q, "EN", newSessionToken)
 
         } else {
             //use the current sessionToken
-            console.log('token is before calling, this was set before', sessionToken)
             res = await ExternalApi.autocompleteLocation(q, "EN", sessionToken)
         }
-        console.log(res)
+
         return res
     }
 
@@ -48,7 +46,6 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
         } else if (q.length === 0) {
             //user cleared locations so clear location
             setListOfLocations([])
-            console.log('user cleared locations so empty locations')
         }
 
     }
@@ -67,7 +64,6 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
         setFieldValue(name, val)
         //now need to get the long namesof the selected place using the same sessiontoken 
 
-        console.log("to send", val.place_id, sessionToken)
         const res = await ExternalApi.autocompleteSelectLocation(val.place_id, sessionToken)
 
 
@@ -91,7 +87,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
 
                         const { setFieldValue } = form
                         const { value } = field
-                        console.log('values of the form are', form.values)
+
                         return (
                             <div>
                                 < Combobox value={value.description} as='div' {...field} onChange={val => handleSelection(val, setFieldValue)} >

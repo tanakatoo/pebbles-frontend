@@ -11,6 +11,7 @@ import travel from "../images/icons/travel.svg"
 import language from "../images/icons/language.png"
 
 
+
 // export const AwesomeBars = () => { return (<FontAwesomeIcon icon={faBars} />) }
 export const AwesomeToggleLeft = ({ onClick }) => { return (<FontAwesomeIcon icon={faToggleOff} onClick={onClick} size="2xl" />) }
 export const AwesomeToggleRight = ({ onClick }) => { return (<FontAwesomeIcon icon={faToggleOff} rotation={180} onClick={onClick} size="2xl" />) }

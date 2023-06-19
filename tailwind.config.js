@@ -12,6 +12,8 @@ module.exports = {
       'kids-support-accent': '#00B500',
       'digital-library-accent': '#089BA5',
       'study-buddy-accent': '#BADDFF',
+      'community-accent': '#008222',
+      'regional-accent': "#554200",
       'primary': '#2F73A7',
       'primary-light-1': '#ADD2EB',
       'primary-light-2': '#CEE4F3',
@@ -51,7 +53,9 @@ module.exports = {
       'DigitalLibraryEN': ['DigitalLibraryEN', 'sans-serif'],
       'DigitalLibraryJA': ['DigitalLibraryJA', 'sans-serif'],
       'StudyBuddyEN': ['StudyBuddyEN', 'sans-serif'],
-      'StudyBuddyJA': ['"Zen Old Mincho"', 'sans-serif']
+      'StudyBuddyJA': ['"Zen Old Mincho"', 'sans-serif'],
+      'Community': ['"Kiwi Maru"', 'sans-serif'],
+      'Regional': ['"Roboto Slab"', 'sans-serif']
     },
     container: {
       padding: {
@@ -85,7 +89,14 @@ module.exports = {
       },
       backgroundImage: {
         'homeHero': "url('./images/homeHeroFriends-mobile.jpg ')",
-        'homeHelp': "url('./images/home-help-mobile.jpg ')"
+        'homeHeroTablet': "url('./images/homeHeroFriends-tablet.jpg ')",
+        'homeHeroDesktop': "url('./images/homeHeroFriends-desktop.jpg ')",
+        'homeHelp': "url('./images/home-help-mobile.jpg ')",
+        'homeHelpTablet': "url('./images/home-help-tablet.jpg ')",
+        'homeHelpDesktop': "url('./images/home-help.jpg ')",
+        'homeStartMobile': "url('./images/homeStart-700.jpg ')",
+        'homeStartTablet': "url('./images/homeStart-1400.jpg ')",
+        'homeStartDesktop': "url('./images/homeStart-2400.jpg ')",
       }
 
     },

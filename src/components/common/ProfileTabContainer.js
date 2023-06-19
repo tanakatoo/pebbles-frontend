@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 
 function ProfileTabContainer({ pageText, currentProfile, lang }) {
 
-    console.log('profiletabcontainer', pageText)
     return (
         <></>
     )
