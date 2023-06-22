@@ -10,7 +10,7 @@ const ServerError = ({ msg, title }) => {
     const lang = useSelector(state => state.langFont.lang)
 
     return (
-        <div className="text-error border rounded-ml p-4 mb-8">
+        <div className="text-error border rounded-ml p-4 mb-8 max-w-[400px]">
             <div className="flex mb-2 justify-center">
                 <Exclamation />
                 <span className={`ms-5 text-mobile-section-header ${lang === "EN" ? 'font-PoppinsMedium' : "font-NotoSansJPMedium"}`}>{title}</span>

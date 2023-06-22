@@ -17,6 +17,10 @@ import Pricing from "./views/Pricing"
 import RegionalCommunity from "./views/RegionalCommunity"
 import EnglishCommunity from "./views/EnglishCommunity"
 import JapaneseCommunity from "./views/JapaneseCommunity"
+import Dashboard from "./views/Dashboard"
+import Message from "./views/Message"
+import BlockUser from "./views/BlockUser"
+import UnblockUser from "./views/UnblockUser"
 
 const MyRoutes = () => {
     return (
@@ -36,10 +40,18 @@ const MyRoutes = () => {
                 <Route path="japanese" element={<JapaneseCommunity />} />
                 <Route path="english" element={<EnglishCommunity />} />
             </Route>
-            <Route path="/messages" element={<MessageMain />} />
+
+            <Route path="/messages">
+                <Route path='' element={<MessageMain />} />
+                <Route path=':username' element={<Message />} />
+            </Route>
+
             <Route path="/users">
                 <Route path="profile" element={<ProfileOwn />} />
                 <Route path="profile/edit" element={<ProfileEdit />} />
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="block" element={<BlockUser />} />
+                <Route path="unblock" element={<UnblockUser />} />
                 <Route path=":username" element={<Profile />} />
             </Route>
             <Route path="/change-password" element={<ChangePassword />} />

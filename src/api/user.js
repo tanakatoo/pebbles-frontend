@@ -8,6 +8,30 @@ class UserApi extends PebblesApi {
         return res
     }
 
+    /* Get contact list without blocked users */
+    static async getContacts() {
+        let res = await this.request(`users/contacts`)
+        return res
+    }
+
+    /* Block user */
+    static async blockUser(username) {
+        let res = await this.request(`users/block/${username}`, {}, 'POST')
+        return res
+    }
+
+    /* Get list of blocked users */
+    static async getBlocked() {
+        let res = await this.request(`users/blocked`)
+        return res
+    }
+
+    /* Unblock a user*/
+    static async unblockUser(username) {
+        let res = await this.request(`users/unblock/${username}`, {}, 'DELETE')
+        return res
+    }
+
     /* Update user info */
     static async updateUserInfo(userData) {
         const { username, firstName, lastName, email } = userData
@@ -20,7 +44,7 @@ class UserApi extends PebblesApi {
         let res = await this.request(`users/${username}/jobs/${jobid}`, {}, "POST")
         return res
     }
-    // obviously, you'll add a lot here ...
+
 }
 
 export default UserApi

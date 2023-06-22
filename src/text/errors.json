@@ -7,7 +7,8 @@
         "PASSWORD_MIN":"8桁以上のパスワードをご記入ください",
         "EMAIL_FORMAT":"正しいメールアドレスをご記入ください",
         "PASSWORD_CHECK_NOT_SAME":"パスワードが一致ではない",
-        "PASSWORD_CHECK_REQUIRED":"もう一度パスワードをご記入ください"
+        "PASSWORD_CHECK_REQUIRED":"もう一度パスワードをご記入ください",
+        "SELECT_USER":"ユーザーを選択してください"
     },
     "EN":{
         "USERNAME_REQUIRED": "Username required",
@@ -17,6 +18,7 @@
         "EMAIL_REQUIRED":"Email required",
         "EMAIL_FORMAT":"Email format is incorrect",
         "PASSWORD_CHECK_NOT_SAME":"Passwords must match",
-        "PASSWORD_CHECK_REQUIRED":"Please reenter password"
+        "PASSWORD_CHECK_REQUIRED":"Please reenter password",
+        "SELECT_USER":"Please select a user"
     }
 }

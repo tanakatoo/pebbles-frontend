@@ -9,6 +9,9 @@ import SearchBar from '../components/common/SearchBar'
 import Dropdown from '../components/common/Dropdown'
 import useClickOutside from '../hooks/useClickOutside'
 import usePageText from "../hooks/usePageText"
+import Protected from '../components/common/Protected'
+import NoData from '../components/common/NoData'
+import { Link } from 'react-router-dom'
 
 function MessageMain() {
     const [data, setData] = useState(null)
@@ -24,9 +27,11 @@ function MessageMain() {
                 setData(res)
             } catch (e) {
                 if (e instanceof TypeError) {
+
                     //means server is down
                     setErrors(["UNKNOWN"])
                 } else {
+
                     setErrors(e)
                 }
             }
@@ -50,33 +55,45 @@ function MessageMain() {
 
     const dropdownItems =
         [
-            { text: pageText.BLOCK_CONTACTS, link: null },
-            { text: pageText.UNBLOCK_CONTACTS, link: null }
+            { text: pageText.BLOCK_CONTACTS, link: '/users/block' },
+            { text: pageText.UNBLOCK_CONTACTS, link: '/users/unblock' }
         ]
 
-    return (<div>
+    return (
+        <Protected>
+            <div className=' my-16 flex justify-center'>
 
-        {errors.length > 0 && <ServerError msg={errors} />}
-        {!data && errors.length == 0 ?
-            <Spinner />
-            : errors.length == 0 ?
-                <div className='container grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12'>
-                    {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
-                    <div className="flex col-span-full justify-end relative">
-                        <span className='cursor-pointer' ref={ref} onClick={handleDropdown}>{pageText.EDIT}</span>
-                        {dropdown && <Dropdown items={dropdownItems}
-                            divide={true}
-                            css="rounded shadow-dropdown top-8" />}
-                    </div>
-                    <div className='col-span-full'>
-                        {data.map(d => <Card data={d} key={uuid()} />)}
+                {errors.length > 0 && <ServerError msg={errors} />}
+                {!data && errors.length === 0 ?
+                    <Spinner />
+                    : data.length === 0 ?
+                        <div className='flex flex-col items-center'>
+                            <NoData msg='No messages available' link="/users/dashboard" linkText='Back to dashboard' />
+                            <div className='text-link'><Link to="/users/unblock">Unblock contacts</Link></div>
+                        </div>
+                        :
+                        errors.length === 0 ?
+                            <div className='container grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12  lg:mx-24 xl:mx-48'>
+                                {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
+                                <div className="flex col-span-full justify-end relative">
+                                    <span className='cursor-pointer' ref={ref} onClick={handleDropdown}>
+                                        {pageText.EDIT}
+                                    </span>
+                                    {dropdown && <Dropdown items={dropdownItems}
+                                        divide={true}
+                                        css="rounded shadow-dropdown top-8" />}
+                                </div>
+                                <div className='col-span-full'>
+                                    {data.map(d => <Card data={d} key={uuid()} screen='main' />)}
 
-                    </div>
-                </div>
-                : ''
-        }
+                                </div>
+                            </div>
+                            : ''
+                }
 
-    </div>)
+            </div>
+        </Protected>
+    )
 }
 
 export default MessageMain

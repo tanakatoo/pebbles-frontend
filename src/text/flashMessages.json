@@ -1,11 +1,13 @@
 {
     "JA":{
         "LOGOUT":"ログアウトしました",
-        "LOGIN":"LOGGED IN JAP"
+        "LOGIN":"LOGGED IN JAP",
+        "UNAUTHORIZED":"Jap You cannot view content"
     },
     "EN":{
         "LOGOUT": "Logged out",
-        "LOGIN":"LOGGED IN"
+        "LOGIN":"LOGGED IN",
+        "UNAUTHORIZED":"Please login first to view content."
        
     }
 }

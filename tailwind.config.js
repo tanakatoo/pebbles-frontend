@@ -33,6 +33,7 @@ module.exports = {
       'accent-light': '#DBFDC0',
       'accent-very-light': '#EBFFDB',
       'error': '#DE1010',
+      'error-light': '#FFC7C7',
       'success': '#276A4A',
       'information': '#2E71D7',
       'link': '#2004CE'
@@ -69,7 +70,7 @@ module.exports = {
         'mobile-card-header': ['14px', '24px'],
         'mobile-card-body': ['14px', '24px'],
         'mobile-label-1': ['12px', '16px'],
-        'mobile-label-2': ['12px', '16px'],
+        'mobile-label-2': ['14px', '16px'],
         'mobile-body-1': ['16px', '24px'],
         'mobile-body-2': ['16px', '24px'],
         'mobile-body-3': ['16px', '24px'],
@@ -97,7 +98,17 @@ module.exports = {
         'homeStartMobile': "url('./images/homeStart-700.jpg ')",
         'homeStartTablet': "url('./images/homeStart-1400.jpg ')",
         'homeStartDesktop': "url('./images/homeStart-2400.jpg ')",
+      },
+
+      width: {
+        '112': '112px',
+        '50': '50px'
+      },
+      height: {
+        '50': '50px',
+        '112': '112px'
       }
+
 
     },
   },

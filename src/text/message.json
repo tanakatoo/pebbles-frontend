@@ -2,11 +2,13 @@
     "EN":{
         "BLOCK_CONTACTS":"Block contacts",
         "UNBLOCK_CONTACTS":"Unblock contacts",
-        "EDIT":"Edit"
+        "EDIT":"Edit",
+        "LAST_SENT":"Last sent at"
     },
     "JA":{
         "BLOCK_CONTACTS":"ブロックユーザー",
         "UNBLOCK_CONTACTS":"ブロック解除",
-        "EDIT":"編集"
+        "EDIT":"編集",
+        "LAST_SENT":""
     }
 }

@@ -8,6 +8,21 @@ class MessageApi extends PebblesApi {
         return res
     }
 
+    /** Get all messages for 1 conversation 
+     * In the future maybe limit to return 50 messages
+    */
+    static async getConversation(username) {
+        let res = await this.request(`messages/${username}`)
+        return res
+    }
+
+    /** Send a message  
+         * In the future maybe limit to return 50 messages
+        */
+    static async sendMsg(username, msg) {
+        let res = await this.request(`messages/${username}/send`, { msg }, "POST")
+        return res
+    }
 
 }
 

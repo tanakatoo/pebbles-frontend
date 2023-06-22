@@ -12,18 +12,19 @@ function App() {
   //get the font from the store
   const font = useSelector(state => state.langFont.font)
   const [message, setMessage] = useState(null)
+  const [typeOfMsg, setTypeOfMsg] = useState(null)
 
   //we have to hardcode the string of the font because tailwind doesn't know what to use at build
   return (
-    <FlashMessageContext.Provider value={setMessage}>
+    <FlashMessageContext.Provider value={[setMessage, setTypeOfMsg]}>
       <div className={`App ${font == 'font-poppins' ? 'font-poppins' : 'font-NotoSansJPRegular'}`}>
-        {console.log('rendering app, message is', message)}
-        <FlashMsg msg={message} />
+        <FlashMsg msg={message} incomingType={typeOfMsg} />
         <NavBar />
         <MyRoutes />
         <Footer />
-      </div >
-    </FlashMessageContext.Provider>
+      </div>
+
+    </FlashMessageContext.Provider >
   );
 }
 

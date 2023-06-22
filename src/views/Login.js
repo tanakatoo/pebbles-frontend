@@ -32,7 +32,7 @@ const Login = () => {
     console.log('pebbles api token is', PebblesApi.token)
     if (token) {
         //should go to their dashboard
-        navigate('/')
+        navigate('/users/dashboard')
     }
     console.log(errors)
     return (
@@ -52,7 +52,7 @@ const Login = () => {
                             //call dispatch to set token in profileReducer
                             dispatch(actionLogin(res)) //save token and then profile
                             setFlashMessage('LOGIN')
-                            navigate('/')
+                            navigate('/users/dashboard')
                         } catch (e) {
                             if (e instanceof TypeError) {
                                 //means server is down

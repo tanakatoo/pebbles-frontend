@@ -95,11 +95,13 @@ const Home = () => {
             </section>
             <section className="py-12">
                 <p className="py-8 px-4 text-mobile-page-header text-center text-primary-dark">{pageText.HERO3_TOP}</p>
-                <div className="flex relative bg-homeStartMobile md:bg-homeStartTablet lg:bg-homeStartDesktop h-[216px] md:h-[300px] lg:h-[350px] bg-cover bg-center">
+                {/* <div className="flex relative bg-homeStartMobile md:bg-homeStartTablet lg:bg-homeStartDesktop h-[216px] md:h-[300px] lg:h-[350px] bg-cover bg-center">
                     <div className="bg-gradient-to-b absolute w-full h-[216px] z-10 from-white"></div>
+                </div> */}
+                <p className="px-4 text-mobile-page-header text-center text-primary-dark">{pageText.HERO3_BOTTOM}</p>
+                <div className="flex justify-center">
+                    <Button btnText="More about us" extraClasses="mt-12 w-[200px]"></Button>
                 </div>
-                <p className="py-8 px-4 text-mobile-page-header text-center text-primary-dark">{pageText.HERO3_BOTTOM}</p>
-
             </section>
         </div >
     )

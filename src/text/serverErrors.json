@@ -12,8 +12,8 @@
             "JA":"ユーザー名、またはパスワードが正しくありません"
         },
         "NOT_FOUND":{
-            "EN":"Not found",
-            "JA":"JapNot found"
+            "EN":"Requested data cannot be found",
+            "JA":"Jap Requested data cannot be found"
         },
         "UNAUTHORIZED":{
             "EN":"No permissions to view content",

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Tab from '../tab/Tab'
-import TabPane from '../tab/TabPane'
+import Tab from '../tab not used/Tab'
+import TabPane from '../tab not used/TabPane'
 
 function ProfileTabx(props) {
 

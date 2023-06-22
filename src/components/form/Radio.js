@@ -11,6 +11,7 @@ import TextError from "./errorComponents/TextError"
 //type="email" or text or password
 
 const Radio = ({ label, name, options, ...rest }) => {
+
     return (
         <div className='form-control'>
             <label htmlFor={name}>{label}</label>

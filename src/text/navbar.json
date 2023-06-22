@@ -18,7 +18,7 @@
         "SETTINGS":"設定",
         "LOGOUT":"ログアウト",
         "SLOGAN":"Connecting and supporting Japanese around the world.",
-        "COMPANY":"Pebbles Community について",
+        "COMPANY":"Pebbles Community概要",
         "CONTACT_US":"連絡先",
         "PRIVACY":"個人情報保護方針",
         "TERMS":"Terms",
@@ -47,6 +47,6 @@
         "CONTACT_US":"Contact us",
         "PRIVACY":"Privacy",
         "TERMS":"Terms",
-        "COPYRIGHT":"Copyright 2023 All rights reserved."
+        "COPYRIGHT":"All rights reserved."
     }
 }

@@ -7,7 +7,7 @@ import FlashMessageContext from '../contexts/FlashMessageContext'
 
 function Logout() {
     const dispatch = useDispatch()
-    const setFlashMessage = useContext(FlashMessageContext)
+    const [setFlashMessage, setTypeOfMsg] = useContext(FlashMessageContext)
     dispatch(actionLogout())
     const navigate = useNavigate()
 
