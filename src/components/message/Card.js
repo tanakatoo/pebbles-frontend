@@ -33,14 +33,14 @@ function Card({ data, screen = null, latest = false }) {
       <div className='flex flex-col flex-grow px-4'>
         {screen ?
           <Link to={`/messages/${username === data.from ? data.to : data.from}`}>
-            <p className={`text-mobile-body-2 font-PoppinsMedium ${data.read && screen ? "" : "text-link"}`} >
+            <p className={`text-mobile-body-2  ${data.read && screen ? "" : "text-link"}`} >
               {username === data.from ? data.to : data.from}
             </p>
             <p className={data.read && screen ? "" : "text-link"} >{message}</p>
           </Link >
           :
           <>
-            <p className={`rounded-ml p-3 text-mobile-body-2 font-PoppinsMedium shadow-sm  
+            <p className={`rounded-ml p-3 text-mobile-body-2 shadow-sm  break-all
             ${username === data.from ? 'self-end ms-12 bg-accent-very-light' : 'me-12 bg-white '}`}>
               {message}</p>
           </>

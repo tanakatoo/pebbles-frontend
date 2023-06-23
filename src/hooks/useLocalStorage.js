@@ -11,7 +11,7 @@ const useLocalStorage = (key, defaultValue = "") => {
 
     //set value to initial value
     const [state, setState] = useState(() => {
-        console.log(window.localStorage.getItem(key), typeof (window.localStorage.getItem(key)))
+
         let value = JSON.parse(window.localStorage.getItem(key)) || defaultValue
         return value
     })

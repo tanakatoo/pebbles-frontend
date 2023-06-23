@@ -98,7 +98,7 @@ function Message() {
                                     return (
                                         <Form className='w-full'>
                                             <div className='flex items-center'>
-                                                <Input label="" name="msg" type="text" placeholder="Type message here..." extraClasses="border-none mx-2" />
+                                                <Input label="" name="msg" type="text" placeholder={pageText.TYPE_MSG} extraClasses="border-none mx-2" />
                                                 <div className='text-primary flex me-2 cursor-pointer'><AwesomeSend size="xl" onClick={formik.submitForm} /></div>
                                             </div>
                                         </Form>

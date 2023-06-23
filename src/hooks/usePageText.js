@@ -12,6 +12,7 @@ const usePageText = (page) => {
     }, [langFont.lang])
 
     const pageText = useSelector(state => state.pageText.pageText)
+
     return pageText
 }
 

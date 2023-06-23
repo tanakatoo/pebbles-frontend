@@ -25,12 +25,10 @@ function BlockUser() {
     const [doneGettingData, setDoneGettingData] = useState(false)
     const pageText = usePageText("messages")
 
-
     const getData = async () => {
         try {
             setDoneGettingData(false)
             const res = await UserApi.getContacts()
-            console.log('list of contacts', res)
             setData(res)
             setDoneGettingData(true)
         } catch (e) {
@@ -74,7 +72,7 @@ function BlockUser() {
                 {data.length === 0 && errors.length === 0 && doneGettingData === false ?
                     <Spinner />
                     : doneGettingData === true && data.length === 0 ?
-                        <NoData msg='No contacts available to block' link='/messages' linkText='Back to contact list' />
+                        <NoData msg={pageText.NO_CONTACTS_BLOCK} link='/messages' linkText={pageText.BACK_TO_CONTACT_LINK} />
                         :
                         errors.length === 0 ?
                             <div className='w-full grid grid-cols-4 gap-x-4 pb-6 md:grid-cols-8 lg:grid-cols-12  
@@ -108,7 +106,7 @@ function BlockUser() {
                                                 <ErrorMessage name='username' component={TextError} exclamation={true} />
                                             </div>
                                             <div className='col-span-full sticky top-0 mb-4'>
-                                                <StickyBar action="Block" onClickX={handleCancel} onClick={formik.submitForm} />
+                                                <StickyBar backText={pageText.BACK} action={pageText.BLOCK} onClickX={handleCancel} onClick={formik.submitForm} />
                                             </div>
 
                                             <div className='col-span-full '>

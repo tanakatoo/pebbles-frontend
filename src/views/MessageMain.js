@@ -68,8 +68,8 @@ function MessageMain() {
                     <Spinner />
                     : data.length === 0 ?
                         <div className='flex flex-col items-center'>
-                            <NoData msg='No messages available' link="/users/dashboard" linkText='Back to dashboard' />
-                            <div className='text-link'><Link to="/users/unblock">Unblock contacts</Link></div>
+                            <NoData msg={pageText.NO_MSG} link="/users/dashboard" linkText={pageText.BACK_TO_DASHBOARD} />
+                            <div className='text-link'><Link to="/users/unblock">{pageText.UNBLOCK_CONTACTS}</Link></div>
                         </div>
                         :
                         errors.length === 0 ?

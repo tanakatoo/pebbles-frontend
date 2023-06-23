@@ -1,15 +1,15 @@
 {
     "genders":{
         "male":{
-            "EN":"male",
+            "EN":"Male",
             "JA":"男性"
         },
         "female":{
-            "EN":"female",
+            "EN":"Female",
             "JA":"女性"
         },
         "other":{
-            "EN":"other",
+            "EN":"Other",
             "JA":"その他"
         }
     },
@@ -119,7 +119,7 @@
             "JA":"ありません"
         }
     },
-    "study_time":{
+    "study_times":{
         "everyday":{
             "EN":"Everyday",
             "JA":"毎日"

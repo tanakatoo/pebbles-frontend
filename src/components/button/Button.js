@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom"
 
 export const Button = ({
+    icon = null,
     btnText,
     clickMethod = null,
-    type,
+    type = 'button',
     bkColor = 'bg-primary border-primary',
     textColor = "text-white",
     py = "py-3",
+    px = "px-4",
     isSubmitting = false,
     extraClasses = '',
     link = null }) => {
@@ -14,9 +16,11 @@ export const Button = ({
     return (
         <>
             <button onClick={clickMethod}
-                className={`block ${bkColor} ${textColor} ${py} px-4 rounded-xl disabled:opacity-50 ${extraClasses}`}
+                className={`inline-flex items-center justify-center gap-2 ${bkColor} ${textColor} ${py} ${px} rounded-xl disabled:opacity-50 ${extraClasses}`}
                 type={type} disabled={isSubmitting}>
-                {link ? <Link to={link}>{btnText}</Link> : btnText}
+                {link ?
+                    <Link to={link}>{btnText}</Link> :
+                    icon} {btnText}
 
             </button >
         </>

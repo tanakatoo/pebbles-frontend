@@ -3,12 +3,31 @@
         "BLOCK_CONTACTS":"Block contacts",
         "UNBLOCK_CONTACTS":"Unblock contacts",
         "EDIT":"Edit",
-        "LAST_SENT":"Last sent at"
+        "BLOCK":"Block",
+        "UNBLOCK":"Unblock",
+        "BACK":"Back",
+        "BACK_TO_CONTACT_LINK":"Back to contact list",
+        "BACK_TO_DASHBOARD":"Back to dashboard",
+        "NO_CONTACTS_BLOCK":"No contacts available to block",
+        "NO_CONTACTS_UNBLOCK":"No contacts available to unblock",
+        "NO_MSG":"No messages available",
+        "LAST_SENT":"Last sent at",
+        "TYPE_MSG":"Type message here..."
     },
     "JA":{
         "BLOCK_CONTACTS":"ブロックユーザー",
         "UNBLOCK_CONTACTS":"ブロック解除",
-        "EDIT":"編集",
-        "LAST_SENT":""
+         "EDIT":"編集",
+         "BLOCK":"ブロック",
+        "UNBLOCK":"ブロック解除",
+        "BACK":"戻る",
+        "BACK_TO_CONTACT_LINK":"メッセージ一覧に戻る",
+        "BACK_TO_DASHBOARD":"マイホームに戻る",
+        "NO_CONTACTS_BLOCK":"ブロックできるユーザーがありません",
+        "NO_CONTACTS_UNBLOCK":"ブロックしているユーザーがありません",
+        "NO_MSG":"メッセージがありません",
+        "LAST_SENT":"",
+        "TYPE_MSG":"メッセージをここで入力してください"
+
     }
 }

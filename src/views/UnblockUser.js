@@ -29,7 +29,6 @@ function UnblockUser() {
         try {
             setDoneGettingData(false)
             const res = await UserApi.getBlocked()
-            console.log('list of blocked', res)
             setData(res)
             setDoneGettingData(true)
         } catch (e) {
@@ -73,7 +72,7 @@ function UnblockUser() {
                 {data.length === 0 && errors.length === 0 && doneGettingData === false ?
                     <Spinner />
                     : doneGettingData === true && data.length === 0 ?
-                        <NoData msg='No contacts to unblock' link='/messages' linkText='Back to contact list' />
+                        <NoData msg={pageText.NO_CONTACTS_UNBLOCK} link='/messages' linkText={pageText.BACK_TO_CONTACT_LINK} />
 
                         :
                         errors.length === 0 ?
@@ -110,7 +109,7 @@ function UnblockUser() {
                                                 <ErrorMessage name='username' component={TextError} exclamation={true} />
                                             </div>
                                             <div className='col-span-full sticky top-0 mb-4'>
-                                                <StickyBar action="Unblock" onClickX={handleCancel} onClick={formik.submitForm} />
+                                                <StickyBar action={pageText.UNBLOCK} backText={pageText.BACK} onClickX={handleCancel} onClick={formik.submitForm} />
                                             </div>
                                             <div className='col-span-full '>
                                                 <Form className='w-full justify-end'>

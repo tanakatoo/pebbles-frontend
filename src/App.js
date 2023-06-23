@@ -9,15 +9,15 @@ import FlashMessageContext from "./contexts/FlashMessageContext"
 import Footer from "./components/common/Footer";
 
 function App() {
-  //get the font from the store
-  const font = useSelector(state => state.langFont.font)
+  //get lang and set font
+  const lang = useSelector(state => state.langFont.lang)
   const [message, setMessage] = useState(null)
   const [typeOfMsg, setTypeOfMsg] = useState(null)
 
   //we have to hardcode the string of the font because tailwind doesn't know what to use at build
   return (
     <FlashMessageContext.Provider value={[setMessage, setTypeOfMsg]}>
-      <div className={`App ${font == 'font-poppins' ? 'font-poppins' : 'font-NotoSansJPRegular'}`}>
+      <div className={`App ${lang === "EN" ? 'font-poppins' : 'font-NotoSansJPRegular'}`}>
         <FlashMsg msg={message} incomingType={typeOfMsg} />
         <NavBar />
         <MyRoutes />
