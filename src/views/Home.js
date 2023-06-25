@@ -42,11 +42,11 @@ const Home = () => {
             <section className="pt-[84px]">
                 <div className=" flex relative bg-homeHelp md:bg-homeHelpTablet lg:bg-homeHelpDesktop h-[216px] md:h-[300px] lg:h-[350px] bg-cover bg-center">
                     <div className="bg-gradient-to-b from-white absolute w-full h-[216px] z-10 "></div>
-                    <div className="w-[80%] md:w-[60%] lg:w-[50%] top-[180px] md:top-[280px] lg:top-[330px] left-1/2  -translate-x-1/2 text-center py-6 px-8 absolute bg-secondary text-white rounded-ml"><p>{pageText.HERO2}</p></div>
+                    <div className="h-[120px] md:h-[100px] lg:h-[80px] w-[80%] md:w-[60%] lg:w-[50%] top-[180px] md:top-[280px] lg:top-[330px] left-1/2  -translate-x-1/2 text-center py-6 px-8 absolute bg-secondary text-white rounded-ml inline-flex items-center justify-center"><p>{pageText.HERO2}</p></div>
                 </div>
             </section>
-            <section className="pt-[120px]">
-                <h2 className="text-mobile-header-2-homepage text-center text-primary-dark">{pageText.HOW_TO_HELP}</h2>
+            <section className="pt-[180px] md:pt-[150px] lg:pt-[120px]">
+                <h2 className=" px-4 text-mobile-header-2-homepage text-center text-primary-dark">{pageText.HOW_TO_HELP}</h2>
                 <div className="mt-16">
                     {lang === "JA" ?
                         <Supports

@@ -21,6 +21,9 @@ import Dashboard from "./views/Dashboard"
 import Message from "./views/Message"
 import BlockUser from "./views/BlockUser"
 import UnblockUser from "./views/UnblockUser"
+import ProfileEditMain from "./views/ProfileEditMain"
+import ProfileEditMyWay from "./views/ProfileEditMyWay"
+import ProfileEditStudyBuddy from "./views/ProfileEditStudyBuddy"
 
 const MyRoutes = () => {
     return (
@@ -48,7 +51,10 @@ const MyRoutes = () => {
 
             <Route path="/users">
                 {/* <Route path="profile" element={<ProfileOwn />} /> */}
-                <Route path="profile/edit" element={<ProfileEdit />} />
+                <Route path="profile/edit" element={<ProfileEditMain />} />
+                <Route path="profile/edit/profile" element={<ProfileEdit />} />
+                <Route path="profile/edit/myway" element={<ProfileEditMyWay />} />
+                <Route path="profile/edit/study-buddy" element={<ProfileEditStudyBuddy />} />
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="block" element={<BlockUser />} />
                 <Route path="unblock" element={<UnblockUser />} />

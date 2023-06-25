@@ -26,17 +26,17 @@ function Card({ data, screen = null, latest = false }) {
         //   </Link >
         // </div>
         <Avatar link={`/messages/${username === data.from ? data.to : data.from}`}
-          src={`./avatars/${username === data.from ? data.toavatar : data.fromavatar}`} />
+          src={username === data.from ? data.toavatar : data.fromavatar} />
         : ""
       }
 
       <div className='flex flex-col flex-grow px-4'>
         {screen ?
           <Link to={`/messages/${username === data.from ? data.to : data.from}`}>
-            <p className={`text-mobile-body-2  ${data.read && screen ? "" : "text-link"}`} >
+            <p className={`text-mobile-body-2  ${(!data.read && username === data.to) && screen ? "text-link" : ""}`} >
               {username === data.from ? data.to : data.from}
             </p>
-            <p className={data.read && screen ? "" : "text-link"} >{message}</p>
+            <p className={`${(!data.read && username === data.to) && screen ? "text-link" : ""}`} >{message}</p>
           </Link >
           :
           <>

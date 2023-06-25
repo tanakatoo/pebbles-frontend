@@ -1,5 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faToggleOff, faChevronDown, faChevronLeft, faHeart } from '@fortawesome/free-solid-svg-icons'
+import {
+    faBars,
+    faToggleOff,
+    faChevronDown,
+    faChevronLeft,
+    faHeart,
+    faChevronRight
+} from '@fortawesome/free-solid-svg-icons'
 import exclamation from "../images/icons/exclamation.svg"
 import hamburger from "../images/icons/hamburger.svg"
 import mail from "../images/icons/mail.svg"
@@ -11,6 +18,7 @@ import english from "../images/icons/english.png"
 import travel from "../images/icons/travel.svg"
 import language from "../images/icons/language.png"
 import { faPaperPlane, faHeart as faHeartEmpty } from '@fortawesome/free-regular-svg-icons'
+import camera from "../images/icons/camera.png"
 
 
 
@@ -19,10 +27,12 @@ export const AwesomeToggleLeft = ({ onClick }) => { return (<FontAwesomeIcon ico
 export const AwesomeToggleRight = ({ onClick }) => { return (<FontAwesomeIcon icon={faToggleOff} rotation={180} onClick={onClick} size="2xl" />) }
 export const AwesomeChevronDown = ({ onClick }) => { return (<FontAwesomeIcon icon={faChevronDown} onClick={onClick} />) }
 export const AwesomeChevronLeft = ({ onClick }) => { return (<FontAwesomeIcon icon={faChevronLeft} onClick={onClick} />) }
+export const AwesomeChevronRight = () => { return (<FontAwesomeIcon icon={faChevronRight} />) }
 export const AwesomeSend = ({ onClick, size }) => { return (<FontAwesomeIcon icon={faPaperPlane} onClick={onClick} size={size} />) }
 export const AwesomeEmptyHeart = ({ onClick, size }) => { return (<FontAwesomeIcon icon={faHeartEmpty} onClick={onClick} size={size} />) }
 export const AwesomeSolidHeart = ({ onClick, size }) => { return (<FontAwesomeIcon icon={faHeart} onClick={onClick} size={size} />) }
 export const Hamburger = () => { return (<img src={hamburger}></img>) }
+export const Camera = () => { return (<img src={camera}></img>) }
 export const Exclamation = () => { return (<img src={exclamation}></img>) }
 export const Mail = () => { return (<img src={mail}></img>) }
 export const MailWhite = () => { return (<img src={mailWhite}></img>) }

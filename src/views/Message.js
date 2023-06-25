@@ -56,8 +56,9 @@ function Message() {
         conversationWithUsername = user === data[0].from ? data[0].to : data[0].from
         conversationWithAvatar = user === data[0].from ? data[0].toavatar : data[0].fromavatar
         lastSent = moment.utc(data[0].sent_at, 'YYYY-MM-DD HH:mm:ss').tz(Intl.DateTimeFormat().resolvedOptions().timeZone).format('LLL')
-
     }
+
+
     const INITIAL_DATA = {
         msg: ''
     }

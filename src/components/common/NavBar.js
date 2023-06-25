@@ -77,7 +77,7 @@ const NavBar = () => {
             items:
                 [
                     { text: navText.DASHBOARD, link: null },
-                    { text: navText.PROFILE, link: '/users/profile' },
+                    { text: navText.PROFILE, link: `/users/${user.profile && user.profile.username}` },
                     { text: navText.MESSAGES, link: '/messages' },
                     { text: navText.SAVED, link: null },
                     { text: navText.SETTINGS, link: null },

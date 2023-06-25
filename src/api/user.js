@@ -34,16 +34,11 @@ class UserApi extends PebblesApi {
 
     /* Update user info */
     static async updateUserInfo(userData) {
-        const { username, firstName, lastName, email } = userData
-        let res = await this.request(`users/${username}`, { firstName, lastName, email }, "PATCH")
+        console.log('frontened api data', userData)
+        let res = await this.request(`users/${userData.username}`, { ...userData }, "PATCH")
         return res
     }
 
-    /* Apply for job */
-    static async apply(username, jobid) {
-        let res = await this.request(`users/${username}/jobs/${jobid}`, {}, "POST")
-        return res
-    }
 
 }
 

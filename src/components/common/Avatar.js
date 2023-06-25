@@ -11,11 +11,11 @@ function Avatar({ link = null, src, size = 'sm' }) {
             {link ?
                 <Link to={link}>
                     <img className=' rounded-full h-full mx-auto'
-                        src={src} />
+                        src={`../../avatars/${src}`} />
                 </Link >
                 :
                 <img className='rounded-full h-full mx-auto'
-                    src={src} />
+                    src={`../../avatars/${src}`} />
             }
         </div>
 

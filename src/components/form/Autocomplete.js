@@ -4,8 +4,10 @@ import ExternalApi from '../../api/external';
 import { Field } from 'formik';
 import ServerError from './ServerError';
 import { v4 as uuid } from "uuid"
+import { useSelector } from 'react-redux'
 
 const Autocomplete = ({ name, onSelect, ...props }) => {
+    const lang = useSelector(state => state.langFont.lang)
     const [query, setQuery] = useState('')
     const [listOfLocations, setListOfLocations] = useState([])
     const [errors, setErrors] = useState([])
@@ -79,8 +81,8 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
     }
 
     return (
-        <div className='form-control'>
-            <label htmlFor={name}>Location</label>
+        <div className=' flex flex-col w-full'>
+            <label className={`mb-2  text-mobile-section-header ${lang === "EN" ? 'font-PoppinsMedium' : 'font-NotoSansJPMedium'}`} htmlFor={name}>Location</label>
             <Field name={name} {...props}>
                 {
                     ({ field, form }) => {
@@ -89,28 +91,38 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
                         const { value } = field
 
                         return (
-                            <div>
-                                < Combobox value={value.description} as='div' {...field} onChange={val => handleSelection(val, setFieldValue)} >
-                                    <Combobox.Input displayValue={(val) => val.description} onChange={(event) => handleChange(event.target.value)} onKeyDown={handleKeyDown} />
-                                    <Combobox.Options>
-                                        {listOfLocations.length === 0 && (query && query.length > 3) ? (
-                                            <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
-                                                Nothing found.
-                                            </div>)
-                                            : listOfLocations.length > 0 ?
-                                                (
-                                                    listOfLocations.map((l) => (
-                                                        <Combobox.Option key={l.place_id} value={l} id={l.place_id}>
-                                                            {l.description}
-                                                        </Combobox.Option>
-                                                    ))
-                                                )
-                                                : null
-                                        }
-                                    </Combobox.Options>
-                                </Combobox>
 
-                            </div>
+                            < Combobox value={value.description}
+                                as='div' {...field}
+                                onChange={val => handleSelection(val, setFieldValue)}
+                                className='flex flex-col'
+                            >
+                                <Combobox.Input
+                                    displayValue={(val) => val.description}
+                                    onChange={(event) => handleChange(event.target.value)}
+                                    onKeyDown={handleKeyDown}
+                                    className={`grow rounded-ml py-3 px-4 text-black placeholder-gray `} />
+                                <Combobox.Options className=" w-max cursor-pointer">
+                                    {listOfLocations.length === 0 && (query && query.length > 3) ? (
+                                        <div className="cursor-default select-none py-2 px-4 text-gray-700">
+                                            Nothing found.
+                                        </div>)
+                                        : listOfLocations.length > 0 ?
+                                            (<div >
+                                                {listOfLocations.map((l) => (
+                                                    <Combobox.Option key={l.place_id} value={l} id={l.place_id}
+                                                        className='py-1 px-4 ui-active:bg-accent-very-light rounded-ml'>
+                                                        {l.description}
+                                                    </Combobox.Option>
+                                                ))}
+                                            </div>
+                                            )
+                                            : null
+                                    }
+                                </Combobox.Options>
+                            </Combobox>
+
+
                         )
                     }
                 }

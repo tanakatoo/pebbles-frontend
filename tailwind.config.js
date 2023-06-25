@@ -25,6 +25,7 @@ module.exports = {
       'gray-stroke': '#C6C6C6',
       'gray': '#C6C6C6',
       'gray-text': '#61646B',
+      'gray-background': '#DCD9D9',
       'black': '#212427',
       'secondary': '#FF8C42',
       'secondary-light': '#FAE1D1',

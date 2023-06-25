@@ -85,19 +85,19 @@
             "JA":"語彙"
         },
         "Pronunciation":{
-            "EN":"Vocabulary",
+            "EN":"Pronunciation",
             "JA":"発音"
         },
         "Listening":{
-            "EN":"Vocabulary",
+            "EN":"Listening",
             "JA":"リスニング"
         },
         "Writing":{
-            "EN":"Vocabulary",
+            "EN":"Writing",
             "JA":"書く"
         },
         "Speaking":{
-            "EN":"Vocabulary",
+            "EN":"Speaking",
             "JA":"スピーキング"
         }
     },
@@ -179,7 +179,7 @@
             "JA":"上級者"
         }   
     },
-    "age_range":{
+    "age_ranges":{
         "18-25":{
             "EN":"18 - 25",
             "JA":"18 - 25"
