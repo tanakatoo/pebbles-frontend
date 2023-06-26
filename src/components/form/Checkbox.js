@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, ErrorMessage } from 'formik'
 import TextError from "./errorComponents/TextError"
+import { useSelector } from 'react-redux'
 
 //each component needs a label, <Field>, and <ErrorMessage>
 
@@ -10,37 +11,51 @@ import TextError from "./errorComponents/TextError"
 //name="email"
 //type="email" or text or password
 
-const Checkbox = ({ label, name, options, ...rest }) => {
+const Checkbox = ({ extraClasses = '', label, name, options, ...rest }) => {
+    const lang = useSelector(state => state.langFont.lang)
     return (
-        <div className='form-control'>
-            <label htmlFor={name}>{label}</label>
-            <Field name={name} {...rest} >
-                {/* use render field props */}
-                {
-                    ({ field }) => {
-                        // field gives us 4 things: the onBlur, onChange, value, name
-                        //field props has a value property - this is the value of the entire form field, not the individual radio buttons
-                        //we specify the individual radio button values in the input below
-                        //so we check if the field is the same as this option value then check it
+        <div className='flex flex-col w-full'>
 
-                        return (
+            <label className={`mb-2 
+            text-mobile-section-header
+            ${lang === "EN" ?
+                    'font-PoppinsMedium' :
+                    'font-NotoSansJPMedium'}`} htmlFor={name}>{label}</label>
+            <div>
+                <Field name={name} {...rest} >
+                    {/* use render field props */}
+                    {
+                        ({ field }) => {
+                            // field gives us 4 things: the onBlur, onChange, value, name
+                            //field props has a value property - this is the value of the entire form field, not the individual radio buttons
+                            //we specify the individual radio button values in the input below
+                            //so we check if the field is the same as this option value then check it
+                            console.log(field)
+                            return (
+                                options.map(o => {
+                                    return (
+                                        <div className='flex items-center mb-1' key={o.key}>
 
-                            options.map(o => {
-                                return (
-                                    <React.Fragment key={o.key}>
-                                        <input type="checkbox" id={o.value}
-                                            {...field}
-                                            value={o.value}
-                                            checked={field.value.includes(o.value)}
-                                        /><label htmlFor={o.value}>{o.key}</label>
-                                    </React.Fragment>
-                                )
-                            })
-                        )
+                                            <input type="checkbox" id={o.value}
+                                                {...field}
+                                                value={o.value}
+                                                checked={field.value.includes(o.value)}
+                                                className={` me-2 
+                                                        rounded-sm 
+                                                        ${extraClasses}`}
+                                            /><label
+                                                htmlFor={o.value}>{o.key}</label>
+
+                                        </div>
+                                    )
+                                })
+
+                            )
+                        }
                     }
-                }
-            </Field>
-            <ErrorMessage name={name} component={TextError} />
+                </Field>
+                <ErrorMessage name={name} component={TextError} />
+            </div>
         </div>
     )
 }

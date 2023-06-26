@@ -46,7 +46,7 @@ const Profile = () => {
                 setDoneGettingData(false);
                 res = await UserApi.getUserInfo(username);
                 setCurrrentProfile(res);
-                console.log(res)
+                console.log('got profile in viewing profile', res)
                 setDoneGettingData(true);
                 setLocation(determineLocation(res, lang));
                 if (res.myProfile) {
@@ -72,7 +72,7 @@ const Profile = () => {
         setLocation(determineLocation(currentProfile, lang))
         if (currentProfile) {
 
-            setTabs(currentProfile.myProfile ? [pageText.PROFILE, pageText.MYWAY, pageText.STUDY_BUDDY] : [pageText.PROFILE, pageText.STUDY_BUDDY])
+            setTabs(currentProfile.myProfile && lang === "JA" ? [pageText.PROFILE, pageText.MYWAY, pageText.STUDY_BUDDY] : [pageText.PROFILE, pageText.STUDY_BUDDY])
         }
     }, [pageText, currentProfile])
 
@@ -171,7 +171,7 @@ const Profile = () => {
                                         ui-selected:font-bold
                                         ui-selected:outline-none">
                                             {tabs[0]}</Tab>
-                                        {currentProfile.myProfile &&
+                                        {currentProfile.myProfile && lang === "JA" &&
                                             <Tab className={`w-full pb-3 border-b-2 
                                             ui-not-selected:border-b-gray-stroke
                                             text-gray-text 
@@ -186,7 +186,7 @@ const Profile = () => {
                                         ui-selected:font-bold
                                         ui-selected:text-primary-dark
                                         ui-selected:outline-none">
-                                            {currentProfile.myProfile ? tabs[2] : tabs[1]}</Tab>
+                                            {currentProfile.myProfile && lang === "JA" ? tabs[2] : tabs[1]}</Tab>
                                     </Tab.List>
                                     <div className='my-6'>
                                         <Tab.Panels>
@@ -197,13 +197,14 @@ const Profile = () => {
                                                     <DisplayInfo label={pageText.EMAIL} lang={lang} data={currentProfile.email} checkExists={false} />}
 
                                             </Tab.Panel>
-                                            {currentProfile.myProfile &&
+                                            {currentProfile.myProfile && lang === "JA" &&
 
                                                 <Tab.Panel>
                                                     <p>{pageText.PRIVACY}</p>
                                                     {lang === "JA" ? <>
                                                         <DisplayInfo label={pageText.ADVICE} lang={lang} data={currentProfile.myway_advice} checkExists={false} />
                                                         <DisplayInfo label={pageText.READING_LEVEL} lang={lang} data={currentProfile.raz_reading_level} checkExists={false} />
+                                                        <DisplayInfo label={pageText.MYWAY_LANGUAGE_LEVEL} lang={lang} data={currentProfile.my_way_language_level} jsonName='language_levels' />
                                                         <DisplayInfo label={pageText.HABITS} lang={lang} data={currentProfile.myway_habits} checkExists={false} />
                                                         <DisplayInfo label={pageText.GOALS} lang={lang} data={
                                                             currentProfile.goals.map(

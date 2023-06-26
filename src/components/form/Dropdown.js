@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, ErrorMessage } from 'formik'
 import TextError from "./errorComponents/TextError"
+import { useSelector } from 'react-redux'
 
 //each component needs a label, <Field>, and <ErrorMessage>
 
@@ -10,11 +11,13 @@ import TextError from "./errorComponents/TextError"
 //name="email"
 //type="email" or text or password
 
-const Dropdown = ({ label, name, options, ...rest }) => {
+const Dropdown = ({ label, extraClasses, name, options, ...rest }) => {
+    const lang = useSelector(state => state.langFont.lang)
     return (
-        <div className='form-control'>
-            <label htmlFor={name}>{label}</label>
-            <Field as="select" id={name} name={name} {...rest} >
+        <div className='flex flex-col w-max '>
+            <label className={`mb-2 text-mobile-section-header ${lang === "EN" ? 'font-PoppinsMedium' : 'font-NotoSansJPMedium'}`} htmlFor={name}>{label}</label>
+            <Field as="select" id={name} name={name} {...rest}
+                className={`mb-2 rounded-ml py-3 px-4 text-black placeholder-gray ${extraClasses}`}>
                 {options.map(o => (
                     <option key={o.value} value={o.value}>{o.key}</option>))
                 }

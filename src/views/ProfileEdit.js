@@ -10,7 +10,6 @@ const ProfileEdit = () => {
     return (
         <div>
             <EditTitle title={pageText.EDIT_PROFILE} backLink={`/users/profile/edit`} />
-            <h1>{pageText.H1}</h1>
             <FormikContainerProfile pageText={pageText} />
 
         </div>

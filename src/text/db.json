@@ -103,42 +103,42 @@
     },
     "motivation_levels":{
         "Very":{
-            "EN":"Very",
-            "JA":"いっぱい"
+            "EN":"Very motivated",
+            "JA":"モチベーション盛り沢山！"
         },
         "Average":{
             "EN":"Average",
-            "JA":"まま"
+            "JA":"ままモチベーションがあります"
         },
         "Low":{
             "EN":"Low",
-            "JA":"ちょっと"
+            "JA":"ちょっとしか勉強したいと思いません"
         },
         "None":{
             "EN":"None",
-            "JA":"ありません"
+            "JA":"まったく勉強したいと思いません"
         }
     },
     "study_times":{
         "everyday":{
             "EN":"Everyday",
-            "JA":"毎日"
+            "JA":"毎日学習ができます"
         },
         "three":{
             "EN":"3 times a week",
-            "JA":"週３"
+            "JA":"週３ぐらい学習ができます"
         },
         "once":{
             "EN":"Once a week",
-            "JA":"週1"
+            "JA":"週1ぐらい学習ができます"
         },
         "notFrequent":{
             "EN":"Not frequent",
-            "JA":"あまり"
+            "JA":"あまり学習ができません"
         },
         "never":{
             "EN":"Never",
-            "JA":"しません"
+            "JA":"まったく学習ができません"
         }
     },
     "study_buddy_types":{

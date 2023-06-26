@@ -17,8 +17,16 @@ const Input = ({ extraClasses, disabled = false, label, name, ...rest }) => {
 
     return (
         <div className='flex flex-col w-full'>
-            <label className={`mb-2 text-mobile-section-header ${lang === "EN" ? 'font-PoppinsMedium' : 'font-NotoSansJPMedium'}`} htmlFor={name}>{label}</label>
-            <Field className={`mb-2 rounded-ml py-3 px-4 text-black placeholder-gray ${extraClasses}`}
+            <label className={`mb-2 
+            text-mobile-section-header
+            ${lang === "EN" ?
+                    'font-PoppinsMedium' :
+                    'font-NotoSansJPMedium'}`}
+                htmlFor={name}>{label}</label>
+            <Field className={`mb-2 
+            rounded-ml py-3 px-4 text-black
+             placeholder-gray
+             ${extraClasses}`}
                 id={name}
                 name={name}
                 {...rest}

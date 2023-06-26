@@ -9,12 +9,12 @@ import EditSection from '../components/profile/EditSection'
 import { Link } from 'react-router-dom'
 
 function ProfileEditMain() {
-
+    const lang = useSelector(state => state.langFont.lang)
     const user = useSelector(state => state.profile.profile)
     const pageText = usePageText('profile')
 
     return (
-        <div className='h-screen'>
+        <div className='mb-24'>
             <EditTitle title={pageText.EDIT_ACCT} backLink={`/users/${user.username}`} />
             <div className='w-full py-2 inline-flex justify-center mb-6'>
                 <div className='relative'>
@@ -25,13 +25,15 @@ function ProfileEditMain() {
                 </div>
             </div>
             <div className='border-gray border-t-2'>
-                <Link to="/users/profile/edit/profile"><EditSection title='Profile' /></Link>
+                <Link to="/users/profile/edit/profile"><EditSection title={pageText.PROFILE} lang={lang} /></Link>
             </div>
-            <div className='border-gray border-t-2'>
-                <Link to="/users/profile/edit/myway"><EditSection title='MyWay' /></Link>
-            </div>
+            {lang === "JA" ?
+                <div className='border-gray border-t-2'>
+                    <Link to="/users/profile/edit/myway"><EditSection title={pageText.MYWAY} lang={lang} /></Link>
+                </div>
+                : ''}
             <div className='border-gray border-t-2 border-b-2'>
-                <Link to="/users/profile/edit/study-buddy"><EditSection title='Study buddy' /></Link>
+                <Link to="/users/profile/edit/study-buddy"><EditSection title={pageText.STUDY_BUDDY} lang={lang} /></Link>
             </div>
         </div>
     )
