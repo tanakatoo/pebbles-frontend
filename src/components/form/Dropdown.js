@@ -14,10 +14,10 @@ import { useSelector } from 'react-redux'
 const Dropdown = ({ label, extraClasses, name, options, ...rest }) => {
     const lang = useSelector(state => state.langFont.lang)
     return (
-        <div className='flex flex-col w-max '>
+        <div className='flex flex-col w-full '>
             <label className={`mb-2 text-mobile-section-header ${lang === "EN" ? 'font-PoppinsMedium' : 'font-NotoSansJPMedium'}`} htmlFor={name}>{label}</label>
             <Field as="select" id={name} name={name} {...rest}
-                className={`mb-2 rounded-ml py-3 px-4 text-black placeholder-gray ${extraClasses}`}>
+                className={`w-max mb-2 rounded-ml py-3 ps-4 pe-12 text-black placeholder-gray ${extraClasses}`}>
                 {options.map(o => (
                     <option key={o.value} value={o.value}>{o.key}</option>))
                 }

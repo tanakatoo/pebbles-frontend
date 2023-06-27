@@ -9,18 +9,18 @@ import { useParams } from 'react-router-dom'
 import ServerError from '../components/form/ServerError'
 import Spinner
     from '../components/common/Spinner'
+import jaLocale from "moment/locale/ja";
 import moment from 'moment-timezone'
+import momentM from "moment"
 import ConversationTitle from '../components/message/ConversationTitle'
+import Input from '../components/form/Input'
+import { Formik, Form } from 'formik'
 import { AwesomeSend } from '../styles/Icons'
 import { useSelector } from 'react-redux'
-import useFormData from '../hooks/useFormData'
+import Textarea from '../components/form/Textarea'
+
 
 function Message() {
-
-    const INITIAL_DATA = {
-        msg: ''
-    }
-    const [msg, setMsg, handleChange, resetMsg] = useFormData(INITIAL_DATA)
     const msgRef = useRef(null)
     const [data, setData] = useState([])
     const [errors, setErrors] = useState([])
@@ -30,7 +30,7 @@ function Message() {
     const { username } = useParams()
     const user = useSelector(state => state.profile.profile.username)
 
-    moment.updateLocale(lang.toLowerCase())
+    moment.locale(lang.toLowerCase())
 
     const getData = async () => {
         try {
@@ -41,10 +41,8 @@ function Message() {
         } catch (e) {
             if (e instanceof TypeError) {
                 //means server is down
-                console.error('Type error in getting data', e)
                 setErrors(["UNKNOWN"])
             } else {
-                console.error('Error getting data', e)
                 setErrors(e)
             }
         }
@@ -55,13 +53,12 @@ function Message() {
 
     useEffect(() => {
         if (msgRef.current) {
-            msgRef.current.style.height = '0px';
+            console.log('this is msgref', msgRef.current)
             const scrollHeight = msgRef.current.scrollHeight;
-            console.log('scrollheight is', scrollHeight)
-            msgRef.current.style.height = `${scrollHeight}px`;
+            msgRef.current.extraClasses = `h-[${scrollHeight}px]`;
         }
 
-    }, [msgRef.current, msg])
+    }, [msgRef.current, data])
 
     let lastSent
     let conversationWithUsername
@@ -72,28 +69,10 @@ function Message() {
         lastSent = moment.utc(data[0].sent_at, 'YYYY-MM-DD HH:mm:ss').tz(Intl.DateTimeFormat().resolvedOptions().timeZone).format('LLL')
     }
 
-    const handleSubmit = async () => {
-        setErrors([])
-        try {
-            console.log('data to send', msg.msg)
-            const res = await MessageApi.sendMsg(username, msg.msg)
-            getData()
 
-        } catch (e) {
-            if (e instanceof TypeError) {
-                //means server is down
-                console.log('Type error in submit', e)
-                setErrors(["UNKNOWN"])
-            } else {
-                console.log('Error in submit', e)
-                setErrors(e)
-            }
-        } finally {
-            resetMsg()
-
-        }
+    const INITIAL_DATA = {
+        msg: ''
     }
-
 
     return (
         <Protected>
@@ -102,37 +81,61 @@ function Message() {
                 {errors.length > 0 && <ServerError msg={errors} />}
                 {data.length === 0 && errors.length === 0 ?
                     <Spinner />
-                    : errors.length === 0 && data.length > 1 ?
+                    : errors.length === 0 ?
                         <>
                             <ConversationTitle link={`/users/${conversationWithUsername}`}
                                 src={`../avatars/${conversationWithAvatar}`}
                                 username={`${conversationWithUsername}`} />
                             <div className='bg-background shadow-sm pb-12'>
-
-                                <form className='w-full flex items-center px-2 my-2'>
-                                    <div className='flex flex-col w-full m'>
-                                        <textarea ref={msgRef} id='msg' name='msg' value={msg.msg} onChange={handleChange} rows="1"
-                                            className={`overflow-hidden mb-2 rounded-ml py-3 px-4 text-black placeholder-gray`} />
-                                    </div>
-                                    <div className='text-primary flex mx-2 cursor-pointer'><AwesomeSend size="xl" onClick={handleSubmit} /></div>
-
-                                </form>
-
+                                <Formik
+                                    innerRef={(f) => (msgRef.current = f)}
+                                    initialValues={INITIAL_DATA}
+                                    onSubmit={async (values, onSubmitProps) => {
+                                        setErrors([])
+                                        try {
+                                            const res = await MessageApi.sendMsg(username, values.msg)
+                                            getData()
+                                        } catch (e) {
+                                            if (e instanceof TypeError) {
+                                                //means server is down
+                                                setErrors(["UNKNOWN"])
+                                            } else {
+                                                setErrors(e)
+                                            }
+                                        } finally {
+                                            onSubmitProps.setSubmitting(false)
+                                            onSubmitProps.resetForm()
+                                        }
+                                    }}
+                                >{formik => {
+                                    return (
+                                        <Form className='w-full'>
+                                            <div className='flex items-center'>
+                                                <Textarea label="" rows='1' name="msg" type="text" placeholder={pageText.TYPE_MSG} extraClasses="border-none mx-2" />
+                                                <div className='text-primary flex me-2 cursor-pointer'><AwesomeSend size="xl" onClick={formik.submitForm} /></div>
+                                            </div>
+                                        </Form>
+                                    )
+                                }
+                                    }
+                                </Formik>
                                 <div className='w-full grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12  
                                                 lg:max-w-[900px] content-center '>
                                     {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
                                     <div className='col-span-full'>
                                         {data.map((d, idx) => (
-                                            <React.Fragment key={uuid()}>
-                                                <Card data={d} latest={idx === 0 ? true : false} />
+                                            <>
+                                                <Card data={d} key={uuid()} latest={idx === 0 ? true : false} />
+                                                {console.log('from', data[0].from, 'username is', user)}
                                                 {idx === 0 ? <>
-                                                    <div className={`flex ${user === data[0].from ? 'justify-end' : 'justify-start'} mx-4 mb-3`}>
+                                                    {console.log(user === data[0].from)}
+                                                    <div className={`flex ${user === data[0].from ? 'justify-end' : 'justify-start'} mx-4`}>
                                                         <p className='text-gray text-mobile-label-2'>{pageText.LAST_SENT} {lastSent}</p>
                                                     </div>
                                                 </>
                                                     : ''
                                                 }
-                                            </React.Fragment>)
+                                            </>)
 
 
                                         )}

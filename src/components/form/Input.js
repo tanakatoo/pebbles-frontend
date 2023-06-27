@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux'
 //name="email"
 //type="email" or text or password
 
+
 const Input = ({ extraClasses, disabled = false, label, name, ...rest }) => {
     const lang = useSelector(state => state.langFont.lang)
 

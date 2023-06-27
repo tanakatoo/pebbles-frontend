@@ -1,19 +1,18 @@
 import React from 'react'
-import FormikContainerProfile from '../components/form/FormikContainerProfile'
+import FormikContainerStudyBuddy from '../components/form/FormikContainerStudyBuddy'
 import { useSelector } from "react-redux"
 import usePageText from '../hooks/usePageText'
+import EditTitle from '../components/profile/EditTitle'
 
-
-const ProfileEditStudyBuddy = () => {
+const ProfileEditMyWay = () => {
     const lang = useSelector(state => state.langFont.lang)
     const pageText = usePageText("profile")
     return (
         <div>
-            <h1>study buddy</h1>
-            <FormikContainerProfile pageText={pageText} />
-
+            <EditTitle title={pageText.EDIT_STUDY_BUDDY} backLink={`/users/profile/edit`} />
+            <FormikContainerStudyBuddy pageText={pageText} />
         </div>
     )
 }
 
-export default ProfileEditStudyBuddy
+export default ProfileEditMyWay

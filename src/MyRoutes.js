@@ -24,6 +24,7 @@ import UnblockUser from "./views/UnblockUser"
 import ProfileEditMain from "./views/ProfileEditMain"
 import ProfileEditMyWay from "./views/ProfileEditMyWay"
 import ProfileEditStudyBuddy from "./views/ProfileEditStudyBuddy"
+import NotFound404 from "./views/NotFound404"
 
 const MyRoutes = () => {
     return (
@@ -62,7 +63,7 @@ const MyRoutes = () => {
             </Route>
             <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/reset-password" element={<SetPassword />} />
-            <Route path="*" element={<Home />} />
+            <Route path="*" element={<NotFound404 />} />
         </Routes>
     )
 }

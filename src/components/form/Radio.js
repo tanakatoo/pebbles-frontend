@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, ErrorMessage } from 'formik'
 import TextError from "./errorComponents/TextError"
+import { useSelector } from 'react-redux'
 
 //each component needs a label, <Field>, and <ErrorMessage>
 
@@ -10,11 +11,17 @@ import TextError from "./errorComponents/TextError"
 //name="email"
 //type="email" or text or password
 
-const Radio = ({ label, name, options, ...rest }) => {
-
+const Radio = ({ extraClasses, label, name, options, ...rest }) => {
+    const lang = useSelector(state => state.langFont.lang)
     return (
-        <div className='form-control'>
-            <label htmlFor={name}>{label}</label>
+        <div >
+            <label
+                className={`mb-2 
+            text-mobile-section-header
+            ${lang === "EN" ?
+                        'font-PoppinsMedium' :
+                        'font-NotoSansJPMedium'}`}
+                htmlFor={name}>{label}</label>
             <Field name={name} {...rest} >
                 {/* use render field props */}
                 {
@@ -26,13 +33,17 @@ const Radio = ({ label, name, options, ...rest }) => {
                         return (
                             options.map(o => {
                                 return (
-                                    <React.Fragment key={o.key}>
+                                    <div className='flex items-center mb-1' key={o.key}>
+
                                         <input type="radio" id={o.value}
                                             {...field}
                                             value={o.value}
                                             checked={field.value === o.value}
+                                            className={` me-2 
+                                            rounded-full 
+                                            ${extraClasses}`}
                                         /><label htmlFor={o.value}>{o.key}</label>
-                                    </React.Fragment>
+                                    </div>
                                 )
                             })
                         )

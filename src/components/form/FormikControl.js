@@ -7,6 +7,7 @@ import Checkbox from "./Checkbox";
 import DatePicker from "./DatePicker";
 import Autocomplete from "./Autocomplete"
 import Hidden from "./Hidden";
+import Toggle from "./Toggle";
 
 // decide which of the different form fields should be rendered
 
@@ -27,6 +28,8 @@ const FormikControl = ({ control, ...rest }) => {
             return <DatePicker {...rest} />
         case 'autocompleteApi':
             return <Autocomplete {...rest} />
+        case 'toggle':
+            return <Toggle {...rest} />
         case 'hidden':
             return <Hidden {...rest} />
         default:

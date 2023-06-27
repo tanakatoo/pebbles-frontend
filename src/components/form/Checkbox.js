@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, ErrorMessage } from 'formik'
 import TextError from "./errorComponents/TextError"
+
 import { useSelector } from 'react-redux'
 
 //each component needs a label, <Field>, and <ErrorMessage>
@@ -30,26 +31,24 @@ const Checkbox = ({ extraClasses = '', label, name, options, ...rest }) => {
                             //field props has a value property - this is the value of the entire form field, not the individual radio buttons
                             //we specify the individual radio button values in the input below
                             //so we check if the field is the same as this option value then check it
-                            console.log(field)
+
                             return (
                                 options.map(o => {
                                     return (
                                         <div className='flex items-center mb-1' key={o.key}>
-
-                                            <input type="checkbox" id={o.value}
+                                            <input type="checkbox" id={(o.value === true || o.value === false) ? o.key : o.value}
                                                 {...field}
                                                 value={o.value}
-                                                checked={field.value.includes(o.value)}
+                                                checked={Array.isArray(field.value) ? field.value.includes(o.value) : field.value === o.value}
                                                 className={` me-2 
                                                         rounded-sm 
                                                         ${extraClasses}`}
                                             /><label
-                                                htmlFor={o.value}>{o.key}</label>
+                                                htmlFor={(o.value === true || o.value === false) ? o.key : o.value}>{o.key}</label>
 
                                         </div>
                                     )
                                 })
-
                             )
                         }
                     }

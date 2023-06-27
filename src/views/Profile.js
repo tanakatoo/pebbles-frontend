@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import ServerError from '../components/form/ServerError'
 import { useDispatch, useSelector } from 'react-redux'
 import determineLocation from '../helpers/determineLocation'
-import { Tab } from '@headlessui/react'
+import { Switch, Tab } from '@headlessui/react'
 import usePageText from '../hooks/usePageText'
 import ProfileTabProfile from '../components/common/ProfileTabProfile not used'
 import dbText from "../text/db.json"
@@ -18,6 +18,7 @@ import { AwesomeEmptyHeart, AwesomeSolidHeart, MailWhite } from '../styles/Icons
 import DisplayInfo from '../components/profile/DisplayInfo'
 import { actionSaveProfile } from '../reducers/actionCreator'
 import { Link } from 'react-router-dom'
+import Toggle from '../components/form/Toggle'
 
 /**this is used to display profiles of other users not the logged in user, 
  * so we do not need to set a token for this route
@@ -35,6 +36,7 @@ const Profile = () => {
     const [tabs, setTabs] = useState([pageText.PROFILE, pageText.STUDY_BUDDY])
     const [location, setLocation] = useState('')
     const dispatch = useDispatch()
+    const [enabled, setEnabled] = useState(false)
 
 
     //get the user public profile
@@ -49,6 +51,7 @@ const Profile = () => {
                 console.log('got profile in viewing profile', res)
                 setDoneGettingData(true);
                 setLocation(determineLocation(res, lang));
+                setEnabled(res.study_buddy_active)
                 if (res.myProfile) {
                     //if it is their own profile, save the profile in the state for easy access
                     dispatch(actionSaveProfile(res))
@@ -204,7 +207,7 @@ const Profile = () => {
                                                     {lang === "JA" ? <>
                                                         <DisplayInfo label={pageText.ADVICE} lang={lang} data={currentProfile.myway_advice} checkExists={false} />
                                                         <DisplayInfo label={pageText.READING_LEVEL} lang={lang} data={currentProfile.raz_reading_level} checkExists={false} />
-                                                        <DisplayInfo label={pageText.MYWAY_LANGUAGE_LEVEL} lang={lang} data={currentProfile.my_way_language_level} jsonName='language_levels' />
+                                                        <DisplayInfo label={pageText.MYWAY_LANGUAGE_LEVEL} lang={lang} data={currentProfile.myway_language_level} jsonName='language_levels' />
                                                         <DisplayInfo label={pageText.HABITS} lang={lang} data={currentProfile.myway_habits} checkExists={false} />
                                                         <DisplayInfo label={pageText.GOALS} lang={lang} data={
                                                             currentProfile.goals.map(
@@ -220,19 +223,44 @@ const Profile = () => {
 
                                             }
                                             <Tab.Panel>
-                                                <DisplayInfo label={pageText.PURPOSE} lang={lang} data={currentProfile.study_buddy_purpose} checkExists={false} />
-                                                <DisplayInfo label={pageText.STUDY_WAY} lang={lang} data={currentProfile.study_buddy_bio} checkExists={false} />
-                                                <DisplayInfo label={pageText.BUDDY_TYPE} lang={lang} data={currentProfile.study_buddy_types.map(
-                                                    (t, idx) => idx === currentProfile.study_buddy_types.length - 1 ?
-                                                        dbText.study_buddy_types[t][lang] : dbText.study_buddy_types[t][lang] + ', '
-                                                )} jsonName='study_buddy_types' checkExists={false} />
-                                                <DisplayInfo label={pageText.NATIVE_LANG} lang={lang} jsonName='languages' data={currentProfile.native_language} />
-                                                <DisplayInfo label={pageText.LEARNING_LANG} lang={lang} jsonName='languages' data={currentProfile.learning_language} />
-                                                <DisplayInfo label={pageText.LANGUAGE_LEVEL} lang={lang} jsonName='language_levels' data={currentProfile.language_level} />
-                                                <DisplayInfo label={pageText.TIME_ZONE} lang={lang} jsonName='timezones' data={currentProfile.time_zone} />
-                                                <DisplayInfo label={pageText.AGE_RANGE} lang={lang} jsonName='age_ranges' data={currentProfile.age_range} />
-                                                <DisplayInfo label={pageText.GENDER} lang={lang} jsonName='genders' data={currentProfile.gender} />
-
+                                                {currentProfile.myProfile ?
+                                                    <Switch.Group>
+                                                        <div className="flex items-center">
+                                                            <Switch.Label className="mr-4">{pageText.STUDY_BUDDY_JOIN_LABEL}</Switch.Label>
+                                                            <Switch
+                                                                checked={enabled}
+                                                                onChange={setEnabled}
+                                                                disabled={true}
+                                                                className={`${enabled ? 'bg-primary-light-1' : 'bg-gray'
+                                                                    } relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}
+                                                            >
+                                                                <span
+                                                                    className={`${enabled ? 'translate-x-6' : 'translate-x-1'
+                                                                        } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
+                                                                />
+                                                            </Switch>
+                                                        </div>
+                                                    </Switch.Group>
+                                                    : ''}
+                                                {currentProfile.study_buddy_active || currentProfile.myProfile ?
+                                                    <>
+                                                        <DisplayInfo label={pageText.PURPOSE} lang={lang} data={currentProfile.study_buddy_purpose} checkExists={false} />
+                                                        <DisplayInfo label={pageText.STUDY_WAY} lang={lang} data={currentProfile.study_buddy_bio} checkExists={false} />
+                                                        <DisplayInfo label={pageText.BUDDY_TYPE} lang={lang} data={currentProfile.study_buddy_types.map(
+                                                            (t, idx) => idx === currentProfile.study_buddy_types.length - 1 ?
+                                                                dbText.study_buddy_types[t][lang] : dbText.study_buddy_types[t][lang] + ', '
+                                                        )} jsonName='study_buddy_types' checkExists={false} />
+                                                        <DisplayInfo label={pageText.NATIVE_LANG} lang={lang} jsonName='languages' data={currentProfile.native_language} />
+                                                        <DisplayInfo label={pageText.LEARNING_LANG} lang={lang} jsonName='languages' data={currentProfile.learning_language} />
+                                                        <DisplayInfo label={pageText.LANGUAGE_LEVEL} lang={lang} jsonName='language_levels' data={currentProfile.language_level} />
+                                                        <DisplayInfo label={pageText.TIME_ZONE} lang={lang} jsonName='timezones' data={currentProfile.time_zone} />
+                                                        <DisplayInfo label={pageText.AGE_RANGE} lang={lang} jsonName='age_ranges' data={currentProfile.age_range} />
+                                                        <DisplayInfo label={pageText.GENDER} lang={lang} jsonName='genders' data={currentProfile.gender} />
+                                                    </>
+                                                    :
+                                                    <div className='my-12'>
+                                                        <p className='text-center'>{currentProfile.username} is not currently participating in study buddy.</p>
+                                                    </div>}
                                             </Tab.Panel>
                                         </Tab.Panels>
                                     </div>

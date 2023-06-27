@@ -16,15 +16,9 @@ function Card({ data, screen = null, latest = false }) {
 
 
   return (
-    <div className={`${latest ? 'pb-1 pt-4' : 'py-4'} col-span-full flex items-center`}>
+    <div className={`${latest ? 'pb-2 pt-2' : 'pb-2'} col-span-full flex items-center`}>
       {screen ?
-        // <div className='shrink-0 pt-1 w-[50px] h-[50px] rounded-full border text-gray-stroke'>
 
-        //   <Link to={`/messages/${username === data.from ? data.to : data.from}`}>
-        //     <img className=' rounded-full h-full mx-auto'
-        //       src={`./avatars/${username === data.from ? data.toavatar : data.fromavatar}`} />
-        //   </Link >
-        // </div>
         <Avatar link={`/messages/${username === data.from ? data.to : data.from}`}
           src={username === data.from ? data.toavatar : data.fromavatar} />
         : ""
@@ -33,14 +27,14 @@ function Card({ data, screen = null, latest = false }) {
       <div className='flex flex-col flex-grow px-4'>
         {screen ?
           <Link to={`/messages/${username === data.from ? data.to : data.from}`}>
-            <p className={`text-mobile-body-2  ${(!data.read && username === data.to) && screen ? "text-link" : ""}`} >
+            <p className={`whitespace-pre-wrap text-mobile-body-2  ${(!data.read && username === data.to) && screen ? "text-link" : ""}`} >
               {username === data.from ? data.to : data.from}
             </p>
             <p className={`${(!data.read && username === data.to) && screen ? "text-link" : ""}`} >{message}</p>
           </Link >
           :
           <>
-            <p className={`rounded-ml p-3 text-mobile-body-2 shadow-sm  break-all
+            <p className={`whitespace-pre-wrap rounded-ml p-3 text-mobile-body-2 shadow-sm  break-all
             ${username === data.from ? 'self-end ms-12 bg-accent-very-light' : 'me-12 bg-white '}`}>
               {message}</p>
           </>

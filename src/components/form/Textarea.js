@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Field, ErrorMessage } from 'formik'
 import TextError from "./errorComponents/TextError"
 import { useSelector } from 'react-redux'

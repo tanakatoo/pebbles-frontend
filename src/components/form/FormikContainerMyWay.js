@@ -43,7 +43,7 @@ const FormikContainerMyWay = ({ pageText }) => {
         myway_habits: "",
         goals: [],
         motivational_level: "",
-        my_way_language_level: "",
+        myway_language_level: "",
         study_time: ""
     }
 
@@ -86,7 +86,7 @@ const FormikContainerMyWay = ({ pageText }) => {
     ]
 
     const studyTimeDropdown = [
-        { key: pageText.SELECT_MOTIVATION_LEVEL, value: '' },
+        { key: pageText.SELECT_STUDY_TIME, value: '' },
         { key: dbText.study_times.everyday[lang], value: 'everyday' },
         { key: dbText.study_times.three[lang], value: 'three' },
         { key: dbText.study_times.once[lang], value: 'once' },
@@ -145,7 +145,7 @@ const FormikContainerMyWay = ({ pageText }) => {
                             {profile.role === "admin" ?
                                 <>
                                     <div className="mb-4">
-                                        <FormikControl control='input'
+                                        <FormikControl control='textarea'
                                             type='textarea'
                                             label={pageText.ADVICE}
                                             name='myway_advice'
@@ -173,7 +173,7 @@ const FormikContainerMyWay = ({ pageText }) => {
                                 <FormikControl
                                     control='dropdown'
                                     label={pageText.MYWAY_LANGUAGE_LEVEL}
-                                    name='my_way_language_level'
+                                    name='myway_language_level'
                                     options={englishLevelDropdown} />
                             </div>
                             <div className="mb-4">
