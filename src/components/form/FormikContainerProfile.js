@@ -14,8 +14,10 @@ import { useDispatch } from "react-redux"
 import { actionSaveProfile } from "../../reducers/actionCreator"
 import useSetToken from "../../hooks/useSetToken"
 import ServerError from "./ServerError"
+import { useNavigate } from "react-router-dom"
 
 const FormikContainerProfile = ({ pageText }) => {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
     const [savedValues, setSavedValues] = useState(null)
@@ -74,6 +76,7 @@ const FormikContainerProfile = ({ pageText }) => {
             }
         } finally {
             setSubmitting(false)
+            navigate(`/users/${profile.username}`)
         }
 
 

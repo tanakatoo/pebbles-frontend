@@ -19,7 +19,9 @@
         "HELP5_DESC":"Learn pronunciation, listening, speaking, and vocabulary by just reading! We show, and support how to supplement and fast-forward your English learning for both kids and adults. Free trial available.",
         "HELP_BTN":"Learn more",
         "HERO3_TOP":"Whether you're a traveller, a student, an expat, immigrant or citizen,",
-        "HERO3_BOTTOM":"we are here to support you."
+        "HERO3_BOTTOM":"we are here to support you.",
+        "OOPS":"なんてこった！ページが見つかりません。",
+        "OOPS_GO_HOME":"ホームに戻ります"
     },
     "EN":{
         "H1": "Community for learning Japanese and living in Japan",
@@ -41,6 +43,8 @@
         "HELP5_DESC":"Learn pronunciation, listening, speaking, and vocabulary by just reading! We show, and support how to supplement and fast-forward your English learning for both kids and adults.",
         "HELP_BTN":"Learn more",
         "HERO3_TOP":"Whether you're a traveller, a student, an expat, immigrant or citizen,",
-        "HERO3_BOTTOM":"we are here to support you."
+        "HERO3_BOTTOM":"we are here to support you.",
+        "OOPS":"Oops! We can't find the page you requested.",
+        "OOPS_GO_HOME":"Go home"
     }
 }

@@ -39,6 +39,24 @@ class UserApi extends PebblesApi {
         return res
     }
 
+    /* Save user */
+    static async saveUser(username) {
+        let res = await this.request(`users/save/${username}`, {}, 'POST')
+        return res
+    }
+
+    /* Unsave user */
+    static async unsaveUser(username) {
+        let res = await this.request(`users/unsave/${username}`, {}, 'DELETE')
+        return res
+    }
+
+    /* get all saved users */
+    static async getSavedUsers() {
+        let res = await this.request(`users/saved-users`)
+        return res
+    }
+
 
 }
 

@@ -12,7 +12,9 @@
         "PASSWORD":"Password",
         "PASSWORD_PLACEHOLDER":"8 or more characters",
         "PASSWORD_CHECK":"Re-enter password",
-        "SUBMIT":"Register"
+        "SUBMIT":"Register",
+        "ALREADY_ACCT":"Already have an account?",
+        "LOGIN_HERE":"Login here"
     },
     "JA":{
         "CTA":"毎日少しの時間で英語をレベルアップしよう",
@@ -27,6 +29,8 @@
         "PASSWORD":"パスワード",
         "PASSWORD_PLACEHOLDER":"8桁以上のパスワード",
         "PASSWORD_CHECK":"パスワードを再記入",
-        "SUBMIT":"無料登録"
+        "SUBMIT":"無料登録",
+        "ALREADY_ACCT":"登録済みですか？",
+        "LOGIN_HERE":"ここからログインしてください"
     }
 }

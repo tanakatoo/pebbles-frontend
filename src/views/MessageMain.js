@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Card from "../components/message/Card"
+import CardMain from "../components/message/CardMain"
 import MessageApi from '../api/message'
 import ServerError from '../components/form/ServerError'
 import Spinner from '../components/common/Spinner'
@@ -75,7 +75,7 @@ function MessageMain() {
                         errors.length === 0 ?
                             <div className='container grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12  lg:mx-24 xl:mx-48'>
                                 {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
-                                <div className="flex col-span-full justify-end relative">
+                                <div className="flex col-span-full justify-end relative mb-6">
                                     <span className='cursor-pointer' ref={ref} onClick={handleDropdown}>
                                         {pageText.EDIT}
                                     </span>
@@ -84,7 +84,9 @@ function MessageMain() {
                                         css="rounded shadow-dropdown top-8" />}
                                 </div>
                                 <div className='col-span-full'>
-                                    {data.map(d => <Card data={d} key={uuid()} screen='main' />)}
+
+                                    {data.map(d => <CardMain data={d} key={uuid()} />)
+                                    }
 
                                 </div>
                             </div>

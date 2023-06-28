@@ -1,0 +1,18 @@
+{
+    "EN":{
+        "TITLE":"Saved items",
+        "USERS":"Users",
+        "REGIONAL_RESOURCES":"Regional info center resources",
+        "REGIONAL_GROUP":"Regional info center groups",
+        "MARKETPLACE":"Marketplace items",
+        "TOWN_RESOURCES":"Japanese town resources",
+        "TOWN_GROUPS":"Japanese town groups",
+        "SAVED_USERS":"Saved users",
+        "NO_USERS_MSG":"No saved users",
+        "NO_USERS_LINK_TXT":"Back to saved items"
+
+    },
+    "JA":{
+        "TITLE":"Saved items"
+    }
+}

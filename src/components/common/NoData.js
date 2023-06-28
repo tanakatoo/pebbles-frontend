@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import CustomLink from '../button/CustomLink'
 
 function NoData({ msg, link, linkText }) {
     return (
@@ -7,7 +8,7 @@ function NoData({ msg, link, linkText }) {
             <span>
                 {msg}
             </span>
-            <p className='text-link'><Link to={link}>{linkText}</Link></p>
+            <p className='text-link'><CustomLink path={link} text={linkText} /></p>
         </div>
     )
 }

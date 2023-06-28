@@ -11,13 +11,15 @@ export const Button = ({
     px = "px-4",
     isSubmitting = false,
     extraClasses = '',
-    link = null }) => {
+    link = null,
+    disabled = false }
+) => {
 
     return (
         <>
             <button onClick={clickMethod}
                 className={`inline-flex items-center justify-center gap-2 ${bkColor} ${textColor} ${py} ${px} rounded-xl disabled:opacity-50 ${extraClasses}`}
-                type={type} disabled={isSubmitting}>
+                type={type} disabled={isSubmitting || disabled}>
                 {link ?
                     <Link to={link}>{btnText}</Link> :
                     icon} {btnText}

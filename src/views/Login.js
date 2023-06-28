@@ -70,7 +70,7 @@ const Login = () => {
 
                 >{formik => {
                     return (
-                        <Form className="flex flex-col w-full">
+                        <Form className="flex flex-col max-w-[500px]">
 
                             <Input
                                 label={pageText.USERNAME}

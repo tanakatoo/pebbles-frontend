@@ -30,6 +30,10 @@
         "UNKNOWN":{
             "EN":"Server error. Please contact us to solve.",
             "JA":"Jap server error. Contact us to solve"
+        },
+        "BLOCKED":{
+            "EN":"You blocked this user. Unblock to send a message.",
+            "JA":"ユーザーをブロックしています。メッセージするにはユーザーをブロック解除してください。"
         }
 
     }

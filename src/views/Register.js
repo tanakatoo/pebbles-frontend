@@ -24,10 +24,8 @@ const Register = () => {
         password_check: '',
         email: ''
     }
-    console.log(errors)
-
     return (
-        <>
+        <div className="mb-24">
             <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
             <div className="mt-8 flex flex-col justify-center items-center mx-8">
 
@@ -64,7 +62,7 @@ const Register = () => {
                 >
                     {formik => {
                         return (
-                            <Form className="flex flex-col w-full">
+                            <Form className="flex flex-col w-full md:max-w-[500px]">
                                 <Input
                                     label={pageText.USERNAME}
                                     name="username"
@@ -94,13 +92,13 @@ const Register = () => {
                                 />
 
                                 <Button btnText={pageText.SUBMIT} type="submit" extraClasses="mt-12" isSubmitting={formik.isSubmitting} />
-                                <p className="mt-4 text-center text-gray-text">Already have an account? <span className="text-link hover:text-primary"><Link to="/login">Login here</Link></span></p>
+                                <p className="mt-4 text-center text-gray-text">{pageText.ALREADY_ACCT} <span className="text-link hover:text-primary"><Link to="/login">{pageText.LOGIN_HERE}</Link></span></p>
                             </Form>
                         )
                     }}
                 </Formik>
             </div>
-        </>
+        </div>
     );
 };
 

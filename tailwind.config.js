@@ -37,7 +37,8 @@ module.exports = {
       'error-light': '#FFC7C7',
       'success': '#276A4A',
       'information': '#2E71D7',
-      'link': '#2004CE'
+      'link': '#2004CE',
+      'link-hover': '#624fdc'
     },
     fontFamily: {
       sans: ['PoppinsRegular', ...defaultTheme.fontFamily.sans],
@@ -99,15 +100,29 @@ module.exports = {
         'homeStartMobile': "url('./images/homeStart-700.jpg ')",
         'homeStartTablet': "url('./images/homeStart-1400.jpg ')",
         'homeStartDesktop': "url('./images/homeStart-2400.jpg ')",
+        'oopsDesktop': "url('./images/oops-desktop.jpg')",
+        'oopsTablet': "url('./images/oops-tablet.jpg')",
+        'oopsMobile': "url('./images/oops-mobile.jpg')",
+        'usersSquare': "url('./images/users-square.jpg')",
+        'markeplaceSquare': "url('./images/marketplace-square.jpg')",
+        'communitySquare': "url('./images/community-square.jpg')",
+        'regionalSquare': "url('./images/regional-square.jpg')",
+        'regionalParisSquare': "url('./images/regionalParis-square.jpg')",
+        'learningSquare': "url('./images/town-square.jpg')",
+        'learningGlobeSquare': "url('./images/townGlobe-square.jpg')"
       },
 
       width: {
         '112': '112px',
-        '50': '50px'
+        '50': '50px',
+        '80': '80px',
+        'usercard': '358px'
       },
       height: {
         '50': '50px',
-        '112': '112px'
+        '112': '112px',
+        '80': '80px',
+        'usercard': '358px'
       }
 
 

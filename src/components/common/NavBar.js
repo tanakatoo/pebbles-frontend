@@ -79,8 +79,8 @@ const NavBar = () => {
                     { text: navText.DASHBOARD, link: null },
                     { text: navText.PROFILE, link: `/users/${user.profile && user.profile.username}` },
                     { text: navText.MESSAGES, link: '/messages' },
-                    { text: navText.SAVED, link: null },
-                    { text: navText.SETTINGS, link: null },
+                    { text: navText.SAVED, link: '/users/saved' },
+                    // { text: navText.SETTINGS, link: null },
                     { text: navText.LOGOUT, link: '/logout' }
                 ]
         },
@@ -123,7 +123,9 @@ const NavBar = () => {
                         <span className={`cursor-pointer text-primary-dark text-mobile-card-header font-PoppinsMedium ${lang === "JA" ? 'border-b-2' : ''}`} onClick={() => setLang("JA")}>JA</span>
                     </div>
                 </div>
-                <Link to="/messages"><Mail /></Link>
+                {user.token ?
+                    <Link to="/messages"><Mail /></Link>
+                    : ""}
                 <span className="cursor-pointer relative" ref={ref} onClick={handleHamburger} >
                     <Hamburger className="ml-5 " />
                     {dropdown && <Dropdown items={user.token ? dropdownItemsLoggedIn : dropdownItems}

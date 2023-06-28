@@ -1,17 +1,26 @@
-import React, { useEffect } from "react"
+import React, { useContext, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { CHANGE_PAGE } from "../reducers/actionTypes"
 import usePageText from "../hooks/usePageText"
+import { useNavigate, useLocation } from "react-router-dom"
+
+
 
 const StudyBuddies = () => {
     const langFont = useSelector(state => state.langFont)
     const pageText = usePageText("studyBuddy")
 
-    useEffect(() => {
-        const x = async () => {
+    const navigate = useNavigate()
+    const location = useLocation()
 
-        }
-        x()
+
+    useEffect(() => {
+
+        navigate('/users/ktoo', {
+            state: {
+                fromLocation: location.pathname
+            }
+        })
     }, [])
 
     return (

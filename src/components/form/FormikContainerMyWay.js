@@ -15,8 +15,10 @@ import { actionSaveProfile } from "../../reducers/actionCreator"
 import useSetToken from "../../hooks/useSetToken"
 import ServerError from "./ServerError"
 import dbText from "../../text/db.json"
+import { useNavigate } from "react-router-dom"
 
 const FormikContainerMyWay = ({ pageText }) => {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
     const [savedValues, setSavedValues] = useState(null)
@@ -65,6 +67,7 @@ const FormikContainerMyWay = ({ pageText }) => {
             }
         } finally {
             setSubmitting(false)
+            navigate(`/users/${profile.username}`)
         }
 
 
@@ -101,24 +104,7 @@ const FormikContainerMyWay = ({ pageText }) => {
         { key: dbText.goals.Writing[lang], value: 'Writing' },
         { key: dbText.goals.Speaking[lang], value: 'Speaking' }
     ]
-    const timezoneDropdown = [
-        { key: "Select a timezone", value: '' },
-        { key: "timezone1 name", value: '1' },
-        { key: "timezone2 name", value: '2' },
-        { key: "timezone3 name", value: '3' }
-    ]
 
-    const genderRadio = [
-        { key: "Not specified", value: '' },
-        { key: "male", value: '1' },
-        { key: "female", value: '2' }
-    ]
-
-    const studyBuddyType = [
-        { key: "Study buddy", value: '1' },
-        { key: "Language exchange", value: '2' },
-        { key: "Volunteer", value: '3' }
-    ]
 
     if (lang === "EN") {
         return (

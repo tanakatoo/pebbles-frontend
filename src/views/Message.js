@@ -14,6 +14,7 @@ import ConversationTitle from '../components/message/ConversationTitle'
 import { AwesomeSend } from '../styles/Icons'
 import { useSelector } from 'react-redux'
 import useFormData from '../hooks/useFormData'
+import { Link } from 'react-router-dom'
 
 function Message() {
 
@@ -21,6 +22,7 @@ function Message() {
         msg: ''
     }
     const [msg, setMsg, handleChange, resetMsg] = useFormData(INITIAL_DATA)
+    const [doneGettingData, setDoneGettingData] = useState(false)
     const msgRef = useRef(null)
     const [data, setData] = useState([])
     const [errors, setErrors] = useState([])
@@ -34,18 +36,27 @@ function Message() {
 
     const getData = async () => {
         try {
+            setDoneGettingData(false)
             //makes data all be read when getting data
             const res = await MessageApi.getConversation(username)
             console.log(res)
             setData(res)
+            setDoneGettingData(true)
         } catch (e) {
             if (e instanceof TypeError) {
                 //means server is down
                 console.error('Type error in getting data', e)
                 setErrors(["UNKNOWN"])
             } else {
-                console.error('Error getting data', e)
-                setErrors(e)
+                console.log(e[0] == 'blocked')
+                if (e[0] == 'blocked') {
+                    console.log('in setting errors blocked')
+                    setErrors(["BLOCKED"])
+                } else {
+                    console.error('Error getting data', e)
+                    setErrors(e)
+                }
+
             }
         }
     }
@@ -98,11 +109,16 @@ function Message() {
     return (
         <Protected>
             <div className=' flex flex-col justify-center items-center'>
+                {errors.length > 0 &&
+                    <div>
+                        <ServerError msg={errors} />
+                        {errors == "BLOCKED" ?
+                            <p className='text-center mb-12'><Link className='underline' to="/users/unblock">{pageText.UNBLOCK_CONTACTS}</Link></p> : ''}
 
-                {errors.length > 0 && <ServerError msg={errors} />}
-                {data.length === 0 && errors.length === 0 ?
+                    </div>}
+                {data.length === 0 && errors.length === 0 && doneGettingData === false ?
                     <Spinner />
-                    : errors.length === 0 && data.length > 1 ?
+                    : errors.length === 0 && data.length > 1 || doneGettingData === true ?
                         <>
                             <ConversationTitle link={`/users/${conversationWithUsername}`}
                                 src={`../avatars/${conversationWithAvatar}`}
@@ -122,20 +138,23 @@ function Message() {
                                                 lg:max-w-[900px] content-center '>
                                     {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
                                     <div className='col-span-full'>
-                                        {data.map((d, idx) => (
-                                            <React.Fragment key={uuid()}>
-                                                <Card data={d} latest={idx === 0 ? true : false} />
-                                                {idx === 0 ? <>
-                                                    <div className={`flex ${user === data[0].from ? 'justify-end' : 'justify-start'} mx-4 mb-3`}>
-                                                        <p className='text-gray text-mobile-label-2'>{pageText.LAST_SENT} {lastSent}</p>
-                                                    </div>
-                                                </>
-                                                    : ''
-                                                }
-                                            </React.Fragment>)
+                                        {data[0].fromavatar !== '' ?
+                                            data.map((d, idx) => (
+                                                <React.Fragment key={uuid()}>
+                                                    <Card data={d} latest={idx === 0 ? true : false} />
+                                                    {idx === 0 ? <>
+                                                        <div className={`flex ${user === data[0].from ? 'justify-end' : 'justify-start'} mx-4 mb-3`}>
+                                                            <p className='text-gray text-mobile-label-2'>{pageText.LAST_SENT} {lastSent}</p>
+                                                        </div>
+                                                    </>
+                                                        : ''
+                                                    }
+                                                </React.Fragment>)
 
 
-                                        )}
+                                            )
+
+                                            : ''}
 
                                     </div>
                                 </div>

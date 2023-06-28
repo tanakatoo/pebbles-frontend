@@ -25,6 +25,8 @@ import ProfileEditMain from "./views/ProfileEditMain"
 import ProfileEditMyWay from "./views/ProfileEditMyWay"
 import ProfileEditStudyBuddy from "./views/ProfileEditStudyBuddy"
 import NotFound404 from "./views/NotFound404"
+import SavedMain from "./views/SavedMain"
+import SavedUsers from "./views/SavedUsers"
 
 const MyRoutes = () => {
     return (
@@ -59,6 +61,10 @@ const MyRoutes = () => {
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="block" element={<BlockUser />} />
                 <Route path="unblock" element={<UnblockUser />} />
+                <Route path="saved">
+                    <Route path='' element={<SavedMain />} />
+                    <Route path="users" element={<SavedUsers />} />
+                </Route>
                 <Route path=":username" element={<Profile />} />
             </Route>
             <Route path="/change-password" element={<ChangePassword />} />
