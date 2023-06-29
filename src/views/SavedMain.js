@@ -10,7 +10,7 @@ function SavedMain() {
     return (
         <div className='px-2 border-t border-t-gray-stroke'>
             <div className='flex flex-col justify-center mb-12'>
-                <PageTitle text={pageText.TITLE} />
+                <PageTitle text={pageText.TITLE} extraClasses='my-3' />
                 <div className='shrink-0 flex flex-wrap gap-8 mx-8 justify-center
             '>
 

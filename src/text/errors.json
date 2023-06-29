@@ -10,8 +10,11 @@
         "PASSWORD_CHECK_REQUIRED":"もう一度パスワードをご記入ください",
         "SELECT_USER":"ユーザーを選択してください",
         "STUDY_BUDDY_TYPE":"スタディーバディータイプを選択してください",
-        "STUDY_BUDDY_BIO":"japPlease indicate why you want to use study buddy.",
-        "STUDY_BUDDY_PURPOSE":"japPlease indicate how you want to study with your buddy"
+        "STUDY_BUDDY_BIO":"どうしてスタディーバディーを使用したいですか？",
+        "STUDY_BUDDY_PURPOSE":"どうやってバディーと勉強をしたいですか？",
+        "NATIVE_LANG":"母国語を選択してください",
+        "LEARNING_LANG":"学習している言語を選択してください",
+        "TIME_ZONE":"タイムゾーンを選択してください"
     },
     "EN":{
         "USERNAME_REQUIRED": "Username required",
@@ -25,6 +28,9 @@
         "SELECT_USER":"Please select a user",
         "STUDY_BUDDY_TYPE":"Please select at least one buddy type",
         "STUDY_BUDDY_BIO":"Please indicate why you want to use study buddy.",
-        "STUDY_BUDDY_PURPOSE":"Please indicate how you want to study with your buddy"
+        "STUDY_BUDDY_PURPOSE":"Please indicate how you want to study with your buddy",
+        "NATIVE_LANG":"Please select your native language",
+        "LEARNING_LANG":"Please select the language you are learning",
+        "TIME_ZONE":"Please select a time zone"
     }
 }

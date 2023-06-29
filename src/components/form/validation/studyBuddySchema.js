@@ -22,7 +22,28 @@ const studyBuddySchema = Yup.object().shape({
             is: (val) => val === true,
             then: (schema) => schema.required("STUDY_BUDDY_BIO"),
             otherwise: (schema) => schema
-        })
+        }),
+    native_language: Yup
+        .string()
+        .when("study_buddy_active", {
+            is: (val) => val === true,
+            then: (schema) => schema.required("NATIVE_LANG"),
+            otherwise: (schema) => schema
+        }),
+    learning_language: Yup
+        .string()
+        .when("study_buddy_active", {
+            is: (val) => val === true,
+            then: (schema) => schema.required("LEARNING_LANG"),
+            otherwise: (schema) => schema
+        }),
+    time_zone: Yup
+        .string()
+        .when("study_buddy_active", {
+            is: (val) => val === true,
+            then: (schema) => schema.required("TIME_ZONE"),
+            otherwise: (schema) => schema
+        }),
 })
 
 

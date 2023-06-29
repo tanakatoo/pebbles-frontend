@@ -123,6 +123,9 @@ module.exports = {
         '112': '112px',
         '80': '80px',
         'usercard': '358px'
+      },
+      "screens": {
+        'xs': '450px'
       }
 
 

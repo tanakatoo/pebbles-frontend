@@ -16,9 +16,14 @@ import support from "../images/icons/support.png"
 import connect from "../images/icons/connect.svg"
 import english from "../images/icons/english.png"
 import travel from "../images/icons/travel.svg"
+import timezone from "../images/icons/timezone.svg"
 import language from "../images/icons/language.png"
 import { faPaperPlane, faHeart as faHeartEmpty } from '@fortawesome/free-regular-svg-icons'
 import camera from "../images/icons/camera.png"
+import japanFlag from "../images/icons/japanFlag.png"
+import americanFlag from "../images/icons/americanFlag.png"
+import learn from "../images/icons/learn.png"
+import speak from "../images/icons/speaks.png"
 
 
 
@@ -36,9 +41,14 @@ export const Camera = () => { return (<img src={camera}></img>) }
 export const Exclamation = () => { return (<img src={exclamation}></img>) }
 export const Mail = () => { return (<img src={mail}></img>) }
 export const MailWhite = () => { return (<img src={mailWhite}></img>) }
-export const X = ({ onClick }) => { return (<img src={x} onClick={onClick}></img>) }
+export const X = ({ classes, onClick }) => { return (<img className={classes} src={x} onClick={onClick}></img>) }
 export const Connect = () => { return (<img src={connect}></img>) }
 export const Support = () => { return (<img src={support}></img>) }
 export const English = () => { return (<img src={english}></img>) }
 export const Travel = () => { return (<img src={travel}></img>) }
+export const Learn = () => { return (<img src={learn}></img>) }
+export const Speak = () => { return (<img src={speak}></img>) }
+export const JapanFlag = () => { return (<img src={japanFlag}></img>) }
+export const AmericanFlag = () => { return (<img src={americanFlag}></img>) }
+export const Timezone = () => { return (<img className='w-4 h-4' src={timezone}></img>) }
 export const Language = () => { return (<img className='w-[60px] h-[60px]' src={language}></img>) }

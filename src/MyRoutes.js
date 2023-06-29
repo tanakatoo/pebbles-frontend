@@ -61,10 +61,8 @@ const MyRoutes = () => {
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="block" element={<BlockUser />} />
                 <Route path="unblock" element={<UnblockUser />} />
-                <Route path="saved">
-                    <Route path='' element={<SavedMain />} />
-                    <Route path="users" element={<SavedUsers />} />
-                </Route>
+                <Route path="saved" element={<SavedMain />} />
+                <Route path="saved/users" element={<SavedUsers />} />
                 <Route path=":username" element={<Profile />} />
             </Route>
             <Route path="/change-password" element={<ChangePassword />} />

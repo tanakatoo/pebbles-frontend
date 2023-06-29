@@ -1,7 +1,7 @@
 import React from 'react'
-import CustomLink from '../button/CustomLink';
 
-function Avatar({ link = null, src, size = 'sm' }) {
+
+function Avatar({ link = null, src, size = 'sm', onClick, username }) {
     console.log(link)
     let width
     switch (size) {
@@ -33,8 +33,8 @@ function Avatar({ link = null, src, size = 'sm' }) {
 
         <div className={`bg-white shrink-0 pt-1 ${width} ${height} rounded-full border text-gray-stroke`}>
             {link ?
-                <CustomLink path={link} text={<img className='rounded-full h-full mx-auto'
-                    src={`../../avatars/${src}`} />} />
+                <img className='rounded-full h-full mx-auto cursor-pointer' onClick={() => onClick(username)}
+                    src={`../../avatars/${src}`} />
                 :
                 <img className='  rounded-full h-full mx-auto'
                     src={`../../avatars/${src}`} />

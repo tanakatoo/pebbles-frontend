@@ -9,10 +9,10 @@ function DisplayInfo({ label, lang, data, checkExists = true, jsonName }) {
             </p>
             {checkExists ?
                 data ?
-                    <p className='mt-2'>{dbText[jsonName][data][lang]}</p>
+                    <p className={`mt-2 ${data ? 'bg-background rounded-ml p-2' : ''}`}>{dbText[jsonName][data][lang]}</p>
                     : ''
                 :
-                <p className='mt-2'>{data}</p>}
+                <p className={`mt-2 ${data ? 'bg-background rounded-ml p-2' : ''}`}>{data}</p>}
         </>
     )
 }

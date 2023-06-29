@@ -1,8 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import searchText from "../../text/searchBar.json"
+import { Button } from '../button/Button'
 
-function SearchBar({ handleSearch }) {
+function SearchBar({ handleSearch, btn = false }) {
     const lang = useSelector(state => state.langFont.lang)
 
     const handleKeyDown = (e) => {
@@ -13,8 +14,12 @@ function SearchBar({ handleSearch }) {
     }
 
     return (
-        <div>
-            <input className='rounded-ml w-full placeholder-gray' type="text" onKeyDown={handleKeyDown} placeholder={searchText[lang].PLACEHOLDER} />
+        <div className='w-full flex gap-3'>
+            {btn ? btn : null}
+            <input className={`rounded-ml grow placeholder-gray`}
+                type="text"
+                onKeyDown={handleKeyDown}
+                placeholder={searchText[lang].PLACEHOLDER} />
         </div>
     )
 }

@@ -4,15 +4,13 @@ import { useSelector } from 'react-redux'
 import moment from 'moment/moment'
 import { Link } from 'react-router-dom'
 import Avatar from '../common/Avatar'
+import truncateText from '../../helpers/truncateText'
 
 function CardMain({ data }) {
   //get own username
   const username = useSelector(state => state.profile.profile.username)
   moment.locale();
-  let message = data.msg
-  if (data.msg.length > 30) {
-    message = data.msg.slice(0, 30) + "..."
-  }
+  const message = truncateText(data.msg, 30)
 
 
   return (

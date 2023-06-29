@@ -13,6 +13,15 @@
 
     },
     "JA":{
-        "TITLE":"Saved items"
+        "TITLE":"お気に入りメニュー",
+        "USERS":"ユーザー",
+        "REGIONAL_RESOURCES":"地域案内センターの情報",
+        "REGIONAL_GROUP":"地域案内センターのグループ",
+        "MARKETPLACE":"マーケットのアイテム",
+        "TOWN_RESOURCES":"英語街の情報",
+        "TOWN_GROUPS":"英語街のグループ",
+        "SAVED_USERS":"お気に入りユーザー",
+        "NO_USERS_MSG":"お気に入りユーザーがありません",
+        "NO_USERS_LINK_TXT":"お気に入りメニューに戻る"
     }
 }

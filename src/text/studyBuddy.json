@@ -1,10 +1,26 @@
 {
     "EN":{
-        "H1":"title of study buddy",
-        "BODY":"bod of study buddy check if font is setting correctly"
+        "TITLE":"Study Buddy Board",
+       "TIME_ZONE":"Time zone",
+       "SPEAKS":"Native",
+       "LEARNS":"Learning",
+       "FILTER_LANG_LEVEL":"Language level",
+       "FILTER_TYPE":"Study buddy type",
+        "FILTER_GENDER":"Gender",
+        "FILTER_AGE_RANGE":"Age range",
+        "FILTER_NATIVE_LANG":"Native language",
+        "FILTER_LEARN_LANG":"Learning language"
     },
     "JA":{
-        "H1":"あろあろあろ hello to check ",
-        "BODY":"これはボディーです。これは漢字です。check if font is setting corretly"
+        "TITLE":"スタディーバディー掲示板",
+        "TIME_ZONE":"タイムゾーン",
+        "SPEAKS":"母国語",
+       "LEARNS":"学習中",
+       "FILTER_LANG_LEVEL":"学習している言語レベル",
+       "FILTER_TYPE":"スタディーバディータイプ",
+        "FILTER_GENDER":"性別",
+        "FILTER_AGE_RANGE":"年齢層",
+        "FILTER_NATIVE_LANG":"母国語",
+        "FILTER_LEARN_LANG":"学習している言語"
     }
 }

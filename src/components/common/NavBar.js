@@ -56,7 +56,7 @@ const NavBar = () => {
             items: [
                 { text: navText.ENGLISH_COMMUNITY, link: null },
                 { text: navText.REGIONAL_COMMUNITY, link: null },
-                { text: navText.STUDY_BUDDY, link: null },
+                { text: navText.STUDY_BUDDY, link: '/study-buddies' },
                 { text: navText.MARKETPLACE, link: null }
             ]
         }
@@ -96,7 +96,7 @@ const NavBar = () => {
                 [
                     { text: navText.ENGLISH_COMMUNITY, link: null },
                     { text: navText.REGIONAL_COMMUNITY, link: null },
-                    { text: navText.STUDY_BUDDY, link: null },
+                    { text: navText.STUDY_BUDDY, link: '/study-buddies' },
                     { text: navText.MARKETPLACE, link: null }
                 ]
         }
@@ -132,7 +132,7 @@ const NavBar = () => {
                         subitems={user.token ? dropdownSubItemsLoggedIn : dropdownSubItems}
                         css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
                         pr="pr-8"
-                        width='w-[300px]'
+                        width='w-[250px]'
                         lang={lang}
                     />}</span>
 

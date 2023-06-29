@@ -10,6 +10,9 @@ import ServerError from '../components/form/ServerError'
 import Spinner from '../components/common/Spinner'
 import NoData from '../components/common/NoData'
 import { v4 as uuid } from "uuid"
+import Save from '../components/common/Save'
+import UserCardBody from '../components/saved/UserCardBody'
+import useNavigateToProfile from '../hooks/useNavigateToProfile'
 
 function SavedUsers() {
     const pageText = usePageText('saved')
@@ -17,8 +20,8 @@ function SavedUsers() {
     const [doneGettingData, setDoneGettingData] = useState(false)
     const [data, setData] = useState(null)
     const [errors, setErrors] = useState([])
-
     const [token = null] = useSetToken()
+    const goToProFile = useNavigateToProfile()
 
     const getSavedUsers = async () => {
         try {
@@ -55,7 +58,7 @@ function SavedUsers() {
 
     return (
         <div className={`px-2 border-t border-t-gray-stroke `}>
-            <PageTitle text={pageText.SAVED_USERS} />
+            <PageTitle text={pageText.SAVED_USERS} extraClasses='my-3' />
             {errors.length > 0 && <ServerError msg={errors} />}
             {!data && errors.length === 0 && doneGettingData === false ?
                 <div className=' my-24'>
@@ -68,7 +71,14 @@ function SavedUsers() {
                     :
                     <>
                         <div className='flex flex-wrap justify-center mb-12 gap-4'>
-                            {data.map(d => <Card data={d} key={uuid()} lang={lang} handleClick={handleClick} />)}
+                            {data.map(d =>
+                                <Card data={d}
+                                    key={uuid()}
+                                    goToProfileOnClick={goToProFile}
+                                    lang={lang}
+                                    topRight={<Save handleClick={handleClick} parameter={d.username} />}
+                                    main={<UserCardBody data={d} />}
+                                />)}
 
                         </div>
                     </>

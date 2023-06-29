@@ -1,36 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Avatar from './Avatar'
 
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import Avatar from '../common/Avatar'
-import { Mail, AwesomeSolidHeart } from '../../styles/Icons'
-import determineLocation from '../../helpers/determineLocation'
 
-function Card({ data, lang, handleClick }) {
-  //location data
-  const location = determineLocation(data, lang)
+function Card({ data, goToProfileOnClick, topRight, underAvatar, main, buddy = false }) {
 
-  let about = ''
-  if (data.about && data.about.length > 50) {
-    about = data.about.slice(0, 50) + "..."
-  }
   return (
-    <div className={`w-usercard  flex p-4 bg-primary-very-light rounded-ml `}>
-      <div className='pe-4'>
-        <Avatar link={`/users/${data.username}`}
+    <div className={`${buddy ? 'w-full md:w-[70%] lg:w-[45%]' : 'w-usercard'}  flex p-4 bg-primary-very-light rounded-ml `}>
+      <div className='pe-4 flex flex-col'>
+
+        <Avatar onClick={goToProfileOnClick} username={data.username} link={`/users/${data.username}`}
           src={data.avatar}
           size='user' />
+        {underAvatar}
       </div>
       <div className='flex flex-col flex-grow '>
-        <div className='flex '>
-          <p className={`grow font-bold text-primary-dark`}><Link to={`/users/${data.username}`}>{data.username}</Link></p>
-          <p className='shrink-0 cursor-pointer' onClick={() => handleClick(data.username)}><AwesomeSolidHeart size='lg' /></p>
+        <div className='flex flex-col
+        md:flex-row'>
+          <p className={`grow font-bold text-primary-dark mb-1 cursor-pointer
+          md:mb-0`} onClick={() => goToProfileOnClick(data.username)}>
+            {data.username}
+          </p>
+          {topRight}
         </div>
-        <p className='mt-1'>{about}This would be the about section</p>
-
+        {main}
       </div>
-
-
     </div >
   )
 }

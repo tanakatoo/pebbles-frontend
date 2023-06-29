@@ -16,7 +16,17 @@ import useSetToken from "../../hooks/useSetToken"
 import ServerError from "./ServerError"
 import dbText from "../../text/db.json"
 import studyBuddySchema from "./validation/studyBuddySchema"
-
+import { useNavigate, useLocation } from "react-router-dom"
+import {
+    useEnglishLevelDropdown,
+    useAgeRangeDropdown,
+    useGenderDropdown,
+    useLanguageDropdown,
+    useTimezoneDropdown,
+    useLanguageRadios,
+    useStudybuddyActive,
+    useStudyBuddyCheckboxes
+} from "../../helpers/studyBuddyDropdowns"
 
 const FormikContainerStudyBuddy = ({ pageText }) => {
     const dispatch = useDispatch()
@@ -25,6 +35,16 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
     const profile = useSelector(state => state.profile.profile)
     const lang = useSelector(state => state.langFont.lang)
     const [token = null] = useSetToken()
+    const navigate = useNavigate()
+    const location = useLocation()
+    const englishLevelDropdowns = useEnglishLevelDropdown()
+    const genderOptions = useGenderDropdown()
+    const timezoneOptions = useTimezoneDropdown()
+    const ageOptions = useAgeRangeDropdown()
+    const languageOptions = useLanguageDropdown()
+    const languageRadios = useLanguageRadios()
+    const studyBuddyActiveCheckbox = useStudybuddyActive()
+    const studyBuddyTypeOptions = useStudyBuddyCheckboxes()
 
     useEffect(() => {
         //we have to add the location to the autocomplete text box separately
@@ -40,8 +60,8 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
     const initialValues = {
         study_buddy_active: false,
         study_buddy_types: [],
-        native_language: lang === "EN" ? 'English' : 'Japanese',
-        learning_language: lang === "EN" ? 'Japanese' : 'English',
+        native_language: '',
+        learning_language: '',
         language_level: '',
         study_buddy_purpose: "",
         study_buddy_bio: "",
@@ -52,7 +72,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
 
     const onSubmit = async (values, { setSubmitting }) => {
         try {
-            console.log('submitting', values)
+
             const res = await UserApi.updateUserInfo(values)
             //call dispatch to set token in profileReducer
             dispatch(actionSaveProfile(values))
@@ -68,67 +88,14 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
             }
         } finally {
             setSubmitting(false)
+
+            navigate(`/users/${profile.username}`, {
+                state: {
+                    fromLocation: location.pathname
+                }
+            })
         }
     }
-
-    const studybuddyActive = [
-        { key: pageText.STUDY_BUDDY_ACTIVE, value: true }
-    ]
-
-    const englishLevelDropdown = [
-        { key: pageText.SELECT_LANG_LEVEL, value: '' },
-        { key: dbText.language_levels.Beginner[lang], value: 'Beginner' },
-        { key: dbText.language_levels.Intermediate[lang], value: 'Intermediate' },
-        { key: dbText.language_levels.Advanced[lang], value: 'Advanced' }
-    ]
-
-    const timezoneDropdown = [
-        { key: pageText.SELECT_TIME_ZONE, value: '' },
-        { key: dbText.timezones.LosAngeles[lang], value: 'LosAngeles' },
-        { key: dbText.timezones.Chicago[lang], value: 'Chicago' },
-        { key: dbText.timezones.NewYork[lang], value: 'NewYork' },
-        { key: dbText.timezones.Toronto[lang], value: 'Toronto' },
-        { key: dbText.timezones.SaoPaulo[lang], value: 'SaoPaulo' },
-        { key: dbText.timezones.London[lang], value: 'London' },
-        { key: dbText.timezones.Paris[lang], value: 'Paris' },
-        { key: dbText.timezones.Zurich[lang], value: 'Zurich' },
-        { key: dbText.timezones.Cairo[lang], value: 'Cairo' },
-        { key: dbText.timezones.Moscow[lang], value: 'Moscow' },
-        { key: dbText.timezones.Dubai[lang], value: 'Dubai' },
-        { key: dbText.timezones.HongKong[lang], value: 'HongKong' },
-        { key: dbText.timezones.Shanghai[lang], value: 'Shanghai' },
-        { key: dbText.timezones.Singapore[lang], value: 'Singapore' },
-        { key: dbText.timezones.Tokyo[lang], value: 'Tokyo' },
-        { key: dbText.timezones.Sydney[lang], value: 'Sydney' }
-    ]
-
-    const studyBuddyCheckboxs = [
-        { key: dbText.study_buddy_types.StudyBuddy[lang], value: 'StudyBuddy' },
-        { key: dbText.study_buddy_types.LanguageExchange[lang], value: 'LanguageExchange' },
-        { key: dbText.study_buddy_types.Volunteer[lang], value: 'Volunteer' }
-    ]
-
-    const languageRadios = [
-        { key: dbText.languages.English[lang], value: 'English' },
-        { key: dbText.languages.Japanese[lang], value: 'Japanese' }
-    ]
-
-    const genderDropdown = [
-        { key: pageText.SELECT_GENDER, value: '' },
-        { key: dbText.genders.male[lang], value: 'male' },
-        { key: dbText.genders.female[lang], value: 'female' },
-        { key: dbText.genders.other[lang], value: 'other' }
-    ]
-
-    const ageRangeDropdown = [
-        { key: pageText.SELECT_AGE_RANGE, value: '1' },
-        { key: dbText.age_ranges['18-25'][lang], value: '18-25' },
-        { key: dbText.age_ranges['26-35'][lang], value: '26-35' },
-        { key: dbText.age_ranges['36-45'][lang], value: '36-45' },
-        { key: dbText.age_ranges['46-59'][lang], value: '46-59' },
-        { key: dbText.age_ranges['60+'][lang], value: '60+' }
-    ]
-
 
     return (
         <Formik
@@ -150,7 +117,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
                                 <FormikControl control='toggle'
                                     label={pageText.STUDY_BUDDY_JOIN_LABEL}
                                     name='study_buddy_active'
-                                    options={studybuddyActive} />
+                                    options={studyBuddyActiveCheckbox} />
 
                             </div>
 
@@ -158,7 +125,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
                                 <FormikControl control='checkbox'
                                     label={pageText.BUDDY_TYPE}
                                     name='study_buddy_types'
-                                    options={studyBuddyCheckboxs}
+                                    options={studyBuddyTypeOptions}
                                 />
                             </div>
 
@@ -169,17 +136,18 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
                                     options={languageRadios} />
                             </div>
                             <div className="mb-4">
-                                <FormikControl control='radio'
+                                <FormikControl
+                                    control='dropdown'
                                     label={pageText.LEARNING_LANG}
                                     name='learning_language'
-                                    options={languageRadios} />
+                                    options={languageOptions} />
                             </div>
                             <div className="mb-4">
                                 <FormikControl
                                     control='dropdown'
                                     label={pageText.LANGUAGE_LEVEL}
                                     name='language_level'
-                                    options={englishLevelDropdown} />
+                                    options={englishLevelDropdowns} />
                             </div>
                             <div className="mb-4">
                                 <FormikControl control='textarea'
@@ -203,21 +171,21 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
                                     control='dropdown'
                                     label={pageText.TIME_ZONE}
                                     name='time_zone'
-                                    options={timezoneDropdown} />
+                                    options={timezoneOptions} />
                             </div>
                             <div className="mb-4">
                                 <FormikControl
                                     control='dropdown'
                                     label={pageText.AGE_RANGE}
                                     name='age_range'
-                                    options={ageRangeDropdown} />
+                                    options={ageOptions} />
                             </div>
                             <div className="mb-4">
                                 <FormikControl
                                     control='dropdown'
                                     label={pageText.GENDER}
                                     name='gender'
-                                    options={genderDropdown} />
+                                    options={genderOptions} />
                             </div>
                             <div className="mb-24 mt-12 flex">
                                 <Button type="submit" btnText='Save' extraClasses="grow" />

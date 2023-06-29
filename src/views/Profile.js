@@ -18,7 +18,8 @@ import { AwesomeEmptyHeart, AwesomeSolidHeart, MailWhite } from '../styles/Icons
 import DisplayInfo from '../components/profile/DisplayInfo'
 import { actionSaveProfile } from '../reducers/actionCreator'
 import { Link } from 'react-router-dom'
-
+import Save from '../components/common/Save'
+import { useNavigate } from 'react-router-dom'
 
 
 const Profile = () => {
@@ -36,6 +37,7 @@ const Profile = () => {
     const [enabled, setEnabled] = useState(false)
     const [selectedTabIndex, setSelectedTabIndex] = useState(0)
     const [saved, setSaved] = useState(false)
+    const navigate = useNavigate()
 
 
     //get the user public profile
@@ -56,11 +58,15 @@ const Profile = () => {
                 }
 
                 //get saved users, did the login user save this user?
-                const savedUsers = await UserApi.getSavedUsers()
-                const savedUsersUsernames = savedUsers.map(u => u.username)
-                if (savedUsersUsernames.includes(res.username)) {
-                    //logged in user saved this user
-                    setSaved(true)
+                if (token) {
+
+
+                    const savedUsers = await UserApi.getSavedUsers()
+                    const savedUsersUsernames = savedUsers.map(u => u.username)
+                    if (savedUsersUsernames.includes(res.username)) {
+                        //logged in user saved this user
+                        setSaved(true)
+                    }
                 }
             } catch (e) {
                 if (e instanceof TypeError) {
@@ -72,8 +78,11 @@ const Profile = () => {
                     setErrors(e)
                 }
             } finally {
-                //if we came from study buddies then go to that tab
-                if (locationRouter.state && locationRouter.state.fromLocation === '/study-buddies') {
+                //if we came from study buddies or editing study buddy then go to that tab
+                console.log(locationRouter)
+                if (locationRouter.state &&
+                    (locationRouter.state.fromLocation === '/study-buddies' ||
+                        locationRouter.state.fromLocation === '/users/profile/edit/study-buddy')) {
                     setSelectedTabIndex(lang === "JA" ? 2 : 1)
                 }
             }
@@ -90,6 +99,13 @@ const Profile = () => {
         }
     }, [pageText, currentProfile])
 
+    useEffect(() => {
+        //if user switches from study buddy in JA to EN, there is no 3rd tab in EN so we have to 
+        //set it ourselves
+        if (selectedTabIndex === 2) {
+            setSelectedTabIndex(1)
+        }
+    }, [lang])
 
     const saveUser = async () => {
         try {
@@ -109,8 +125,11 @@ const Profile = () => {
                 console.error(e)
                 setErrors(e)
             }
-
         }
+    }
+
+    const navigateToCTA = (link) => {
+        navigate(link)
     }
 
     return (
@@ -132,7 +151,10 @@ const Profile = () => {
                                     <Avatar src={currentProfile.avatar} size='profile' />
 
                                     <p>{currentProfile.username}</p>
-                                    {currentProfile.myProfile && <p className='text-link text-mobile-label-2'><Link to="/users/profile/edit">{pageText.EDIT}</Link></p>}
+                                    {currentProfile.myProfile &&
+                                        <p className='text-link text-mobile-label-2'>
+                                            <Link to="/users/profile/edit">{pageText.EDIT}</Link>
+                                        </p>}
 
                                 </div>
                             </div>
@@ -147,7 +169,7 @@ const Profile = () => {
                                                     btnText={pageText.CTA_BTN}
                                                     extraClasses='border-primary border-2 text-mobile-body-2'
                                                 />
-                                                <p className='text-center'>{pageText.CTA_TXT}</p>
+                                                <p className='text-center text-mobile-label-2'>{pageText.CTA_TXT}</p>
                                             </>
                                             :
                                             currentProfile.free_trial_start_date ?
@@ -157,7 +179,7 @@ const Profile = () => {
                                                         btnText={pageText.PREMIUM_BTN}
                                                         extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
                                                     />
-                                                    <p className='text-center'>{pageText.PREMIUM_TXT}</p>
+                                                    <p className='text-center  text-mobile-label-2'>{pageText.PREMIUM_TXT}</p>
 
                                                 </>
                                                 :
@@ -167,7 +189,7 @@ const Profile = () => {
                                                         btnText={pageText.FREE_TRIAL_BTN}
                                                         extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
                                                     />
-                                                    <p className='text-center'>{pageText.FREE_TRIAL_TXT}</p>
+                                                    <p className='text-center  text-mobile-label-2'>{pageText.FREE_TRIAL_TXT}</p>
 
                                                 </>
                                         :
@@ -175,9 +197,10 @@ const Profile = () => {
                                             <Button px="px-8"
                                                 py="py-1"
                                                 btnText={pageText.CTA_BTN}
+                                                clickMethod={() => navigateToCTA(pageText.CTA_LINK)}
                                                 extraClasses='border-primary border-2 text-mobile-body-2'
                                             />
-                                            <p className='text-center'>{pageText.CTA_TXT}</p>
+                                            <p className='text-center  text-mobile-label-2'>{pageText.CTA_TXT}</p>
                                         </>
                                     }
 
