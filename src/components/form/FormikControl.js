@@ -8,6 +8,7 @@ import DatePicker from "./DatePicker";
 import Autocomplete from "./Autocomplete"
 import Hidden from "./Hidden";
 import Toggle from "./Toggle";
+import DropdownMultiple from "./DropdownMultiple";
 
 // decide which of the different form fields should be rendered
 
@@ -32,6 +33,8 @@ const FormikControl = ({ control, ...rest }) => {
             return <Toggle {...rest} />
         case 'hidden':
             return <Hidden {...rest} />
+        case 'listbox':
+            return <DropdownMultiple {...rest} />
         default:
             return null
     }

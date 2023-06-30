@@ -2,7 +2,7 @@ import React from 'react'
 
 
 function Avatar({ link = null, src, size = 'sm', onClick, username }) {
-    console.log(link)
+
     let width
     switch (size) {
         case 'sm':

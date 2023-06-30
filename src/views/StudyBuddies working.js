@@ -42,14 +42,13 @@ const StudyBuddies = () => {
     const [data, setData] = useState(null)
     const [errors, setErrors] = useState([])
     const goToProFile = useNavigateToProfile()
-    const [isDialogOpen, setIsDialogOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
     const englishLevelOptions = useEnglishLevelDropdown()
     const genderOptions = useGenderDropdown()
     const timezoneOptions = useTimezoneDropdown()
     const ageOptions = useAgeRangeDropdown()
     const languageOptions = useLanguageDropdown()
     const studyBuddyTypeOptions = useStudyBuddyCheckboxes()
-    const [isOpen, setIsOpen] = useState(false)
 
 
     const getStudyBuddies = async () => {
@@ -128,136 +127,30 @@ const StudyBuddies = () => {
     //     setIsListBoxOpen(true);
     // }
     const people = [
-        { key: 'Durward Reynolds', value: 'beg1' },
-        { key: 'Kenton Towne', value: 'beg2' },
-        { key: 'Therese Wunsch', value: 'beg3' },
-        { key: 'Benedict Kessler', value: 'beg4' },
-        { key: 'Katelyn Rohan', value: 'beg5' },
+        { id: 1, name: 'Durward Reynolds' },
+        { id: 2, name: 'Kenton Towne' },
+        { id: 3, name: 'Therese Wunsch' },
+        { id: 4, name: 'Benedict Kessler' },
+        { id: 5, name: 'Katelyn Rohan' },
     ]
-    const [selectedPeople, setSelectedPeople] = useState([])
-
+    const [selectedPeople, setSelectedPeople] = useState([people[0], people[1]])
 
     const handleSelectedLevel = (setFieldValue, val) => {
-
         console.log('to push', val)
-        const [addDelete, newVal] = isSelected(val)
+        setSelectedPeople(val)
+        setFieldValue('language_level', val)
 
-        if (addDelete === 'add') {
-            //just add it to the list
-            console.log('setting this', val)
-            setSelectedPeople(val)
-            setFieldValue('language_level', val)
-        } else {
-            handleDeselect(newVal, setFieldValue)
-        }
-        setIsOpen(true)
     }
-
-    function handleDeselect(newVal, setFieldValue) {
-        //x is the key to delete
-        console.log('newval', newVal)
-        // const newVal = val.filter(v => v.value !== valToAddDelete)
-
-        // console.log('is now', newVal)
-        setSelectedPeople(newVal);
-        setFieldValue('language_level', newVal)
-        setIsOpen(true);
-    }
-
-    function isSelected(val) {
-        //for each object in array, compare the "values"
-        //get "values" for the arrays
-
-        const keysVal = val.map(v => Object.values(v)[1])
-        const keysSelected = selectedPeople.map(v => Object.values(v)[1])
-        const noDups = [...new Set(keysVal.concat(keysSelected))]
-
-        if (keysVal.length === noDups.length) {
-            const addDelete = 'add'
-            return [addDelete, val]
-        } else {
-            const addDelete = 'delete'
-            //there is one duplicated in the val, find the duplicated value
-            let indexToDelete
-            let valToDelete
-            console.log('we are using val', val)
-            for (let i = 0; i < val.length - 1; i++) {
-                for (let j = i + 1; j < val.length; j++) {
-                    console.log(val[i].value, val[j].value)
-
-                    if (val[i].value == val[j].value) {
-                        console.log('found it')
-                        indexToDelete = i
-                        valToDelete = val[i].value
-                        console.log(indexToDelete)
-                        break
-                    }
-                }
-                console.log('break from this too?')
-            }
-            const newVal = val.toSpliced(indexToDelete, 1)
-            const returnValue = newVal.filter(v => v.value !== valToDelete)
-            console.log('todelte', returnValue)
-            return [addDelete, returnValue]
-            // console.log('new array is', x)
-            // return [addDelete, val]
-        }
-
-
-
-        //add the 2 arrays and find 
-        // console.log(keysVal, keysSelected)
-        // let returnValue = 'false'
-        // //am I adding one or deselecting one?
-        // if (keysVal > keysSelected) {
-        //     //i am adding one
-
-        // }
-        // for (let i = 0; i < keysVal.length; i++) {
-        //     console.log('v is', keysVal[i])
-        //     console.log('index of keyselected and val', keysSelected.indexOf(keysVal[i]))
-        //     if (keysSelected.indexOf(keysVal[i]) !== -1) {
-        //         //-1 means we found the same key in the already selected list
-        //         console.log('foudn it!')
-        //         console.log('returning the key', keysVal[i])
-        //         //return the key to delete
-        //         returnValue = keysVal[i]
-        //         break
-
-        //     }
-
-        // }
-        // keysVal.forEach(v => {
-        //     console.log('v is', v)
-        //     console.log('index of keyselected and val', keysSelected.indexOf(v !== -1))
-        //     if (keysSelected.indexOf(v) !== -1) {
-        //         //-1 means we found the same key in the already selected list
-        //         console.log('foudn it!')
-        //         console.log('returning the key', v)
-        //         //return the key to delete
-        //         returnValue = v
-
-        //     }
-        //     if (returnValue !== 'false') {
-
-        //     }
-
-        // })
-
-        //returns false if we didn't find anything and need to add it to the selected list
-        // return returnValue
-    }
-    console.log('is open is', isOpen)
     return (
         <>
-            <Dialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)} className="relative z-50">
+            <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
                 <div className="fixed inset-0 bg-white/75" aria-hidden="true" />
                 <div className="fixed inset-0 overflow-y-auto">
                     <div className="flex min-h-full max-w-full p-4 justify-center">
                         <Dialog.Panel className="grow max-w-[500px] h-full rounded shadow-xl bg-background p-4">
                             <div className="flex justify-end p-4">
                                 <X classes='cursor-pointer'
-                                    onClick={() => setIsDialogOpen(false)} />
+                                    onClick={() => setIsOpen(false)} />
                             </div>
                             <Dialog.Title className='font-bold text-center text-mobile-page-header pt-4 mb-5'>
                                 Filter study buddies
@@ -268,46 +161,12 @@ const StudyBuddies = () => {
                             >
                                 {formik => {
                                     console.log('this is formik', formik)
-
                                     return (
                                         <Form className="flex flex-col">
-
-                                            <Field name="language_level" component={({ form }) =>
-                                                < Listbox as='div'
-                                                    value={selectedPeople}
-                                                    onChange={(val) => handleSelectedLevel(form.setFieldValue, val)}
-                                                    multiple
-                                                // open={isOpen}
-                                                >
-                                                    {/* {() => ( */}
-                                                    <>
-                                                        <Listbox.Label className=''>Select language level</Listbox.Label>
-
-                                                        <Listbox.Button
-                                                            // onClick={() => setIsOpen(!isOpen)}
-                                                            // open={isOpen}
-                                                            className=''
-                                                        >
-                                                            {selectedPeople.length < 1 ? "Select person" :
-                                                                `Selected (${selectedPeople.length})`}
-                                                        </Listbox.Button>
-                                                        <Listbox.Options
-                                                            className=''>
-                                                            {people.map((person) => (
-                                                                <Listbox.Option key={person.value}
-                                                                    value={person}
-                                                                    className={`ui-active: bg-primary ui-active:text-white ui-selected:bg-marketplace-accent ui-not-active:bg-white ui-not-active:text-black`}>
-
-                                                                    {person.key}
-                                                                </Listbox.Option>
-                                                            ))}
-                                                        </Listbox.Options>
-                                                    </>
-                                                    {/* )} */}
-                                                </Listbox>
-                                            } />
-                                            {/* fieldarrayprops gives us push, pop, remove, unshift, form (with eveything) */}
-                                            {/* {fieldarrayprops => {
+                                            <label>Select language level</label>
+                                            <FieldArray name="language_level">
+                                                {/* fieldarrayprops gives us push, pop, remove, unshift, form (with eveything) */}
+                                                {fieldarrayprops => {
                                                     const { push, remove, form } = fieldarrayprops
                                                     const { values } = form
                                                     const { language_level } = values
@@ -328,7 +187,7 @@ const StudyBuddies = () => {
                                                     )
                                                 }}
 
-                                            </FieldArray> */}
+                                            </FieldArray>
 
                                             {/* <FormikControl control='listbox'
                                                 label={pageText.FILTER_LANG_LEVEL}
@@ -479,7 +338,7 @@ const StudyBuddies = () => {
                                         bkColor='bg-study-buddy-accent'
                                         textColor='text-primary-dark'
                                         px='px-8'
-                                        clickMethod={() => setIsDialogOpen(true)} />
+                                        clickMethod={() => setIsOpen(true)} />
 
                                 } />
                             </div>

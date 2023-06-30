@@ -12,7 +12,7 @@ export const useStudybuddyActive = () => {
 export const useEnglishLevelDropdown = () => {
     const lang = useSelector(state => state.langFont.lang)
     return ([
-        { key: pageText.SELECT_LANG_LEVEL, value: '' },
+        // { key: pageText.SELECT_LANG_LEVEL, value: '' },
         { key: dbText.language_levels.Beginner[lang], value: 'Beginner' },
         { key: dbText.language_levels.Intermediate[lang], value: 'Intermediate' },
         { key: dbText.language_levels.Advanced[lang], value: 'Advanced' }
