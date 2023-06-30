@@ -22,6 +22,7 @@ import {
     Formik, Form, FieldArray, Field
 } from "formik"
 import { Listbox, Transition } from "@headlessui/react";
+import { AwesomeCheck } from "../styles/Icons"
 
 
 import {
@@ -139,23 +140,24 @@ const StudyBuddies = () => {
 
     const handleSelectedLevel = (setFieldValue, val) => {
 
-        console.log('to push', val)
-        const [addDelete, newVal] = isSelected(val)
+        console.log('to push', val);
+        console.log('right now it is', selectedPeople)
+        const [addDelete, newVal] = getValToSet(val);
 
         if (addDelete === 'add') {
             //just add it to the list
-            console.log('setting this', val)
-            setSelectedPeople(val)
-            setFieldValue('language_level', val)
+            console.log('setting this', val);
+            setSelectedPeople(val);
+            setFieldValue('language_level', val);
         } else {
-            handleDeselect(newVal, setFieldValue)
+            handleDeselect(newVal, setFieldValue);
         }
-        setIsOpen(true)
+        setIsOpen(true);
     }
 
     function handleDeselect(newVal, setFieldValue) {
         //x is the key to delete
-        console.log('newval', newVal)
+        console.log('newval', newVal);
         // const newVal = val.filter(v => v.value !== valToAddDelete)
 
         // console.log('is now', newVal)
@@ -164,7 +166,7 @@ const StudyBuddies = () => {
         setIsOpen(true);
     }
 
-    function isSelected(val) {
+    function getValToSet(val) {
         //for each object in array, compare the "values"
         //get "values" for the arrays
 
@@ -177,30 +179,41 @@ const StudyBuddies = () => {
             return [addDelete, val]
         } else {
             const addDelete = 'delete'
+            return [addDelete, val]
             //there is one duplicated in the val, find the duplicated value
-            let indexToDelete
-            let valToDelete
-            console.log('we are using val', val)
-            for (let i = 0; i < val.length - 1; i++) {
-                for (let j = i + 1; j < val.length; j++) {
-                    console.log(val[i].value, val[j].value)
+            // let indexToDelete
+            // let valToDelete
+            // console.log('we are using val', val)
+            // for (let i = 0; i < val.length - 1; i++) {
+            //     for (let j = i + 1; j < val.length; j++) {
+            //         console.log(val[i].value, val[j].value)
 
-                    if (val[i].value == val[j].value) {
-                        console.log('found it')
-                        indexToDelete = i
-                        valToDelete = val[i].value
-                        console.log(indexToDelete)
-                        break
-                    }
-                }
-                console.log('break from this too?')
-            }
-            const newVal = val.toSpliced(indexToDelete, 1)
-            const returnValue = newVal.filter(v => v.value !== valToDelete)
-            console.log('todelte', returnValue)
-            return [addDelete, returnValue]
+            //         if (val[i].value == val[j].value) {
+            //             console.log('found it')
+            //             indexToDelete = i
+            //             valToDelete = val[i].value
+            //             console.log(indexToDelete)
+            //             break
+            //         }
+            //     }
+            //     console.log('break from this too?')
+            // }
+            // const newVal = val.toSpliced(indexToDelete, 1)
+            // const returnValue = newVal.filter(v => v.value !== valToDelete)
+            // console.log('todelte', returnValue)
+            // return [addDelete, returnValue]
             // console.log('new array is', x)
             // return [addDelete, val]
+        }
+
+        function isSelected(val) {
+            for (let i = 0; i < selectedPeople.length - 1; i++) {
+                if (val[i].value == selectedPeople[i].value) {
+                    console.log('found it')
+                    return true
+                }
+            }
+            return false
         }
 
 
@@ -274,36 +287,78 @@ const StudyBuddies = () => {
 
                                             <Field name="language_level" component={({ form }) =>
                                                 < Listbox as='div'
+                                                    by='value'
                                                     value={selectedPeople}
                                                     onChange={(val) => handleSelectedLevel(form.setFieldValue, val)}
                                                     multiple
                                                 // open={isOpen}
                                                 >
-                                                    {/* {() => ( */}
-                                                    <>
-                                                        <Listbox.Label className=''>Select language level</Listbox.Label>
+                                                    {() => (
 
-                                                        <Listbox.Button
-                                                            // onClick={() => setIsOpen(!isOpen)}
-                                                            // open={isOpen}
-                                                            className=''
-                                                        >
-                                                            {selectedPeople.length < 1 ? "Select person" :
-                                                                `Selected (${selectedPeople.length})`}
-                                                        </Listbox.Button>
-                                                        <Listbox.Options
-                                                            className=''>
-                                                            {people.map((person) => (
-                                                                <Listbox.Option key={person.value}
-                                                                    value={person}
-                                                                    className={`ui-active: bg-primary ui-active:text-white ui-selected:bg-marketplace-accent ui-not-active:bg-white ui-not-active:text-black`}>
+                                                        <>
 
-                                                                    {person.key}
-                                                                </Listbox.Option>
-                                                            ))}
-                                                        </Listbox.Options>
-                                                    </>
-                                                    {/* )} */}
+                                                            <Listbox.Label className=''>Select language level</Listbox.Label>
+                                                            <div className="relative">
+                                                                <Listbox.Button
+                                                                    onClick={() => setIsOpen(!isOpen)}
+                                                                    // open={isOpen}
+                                                                    className=''
+                                                                >
+                                                                    {selectedPeople.length < 1 ? "Select person" :
+                                                                        `Selected (${selectedPeople.length})`}
+                                                                </Listbox.Button>
+                                                                <div className="">
+                                                                    <Transition
+                                                                        show={isOpen}
+                                                                        as={React.Fragment}
+                                                                        leave="transition ease-in duration-100"
+                                                                        leaveFrom="opacity-100"
+                                                                        leaveTo="opacity-0"
+                                                                        // enter="transition duration-100 ease-out"
+                                                                        // enterFrom="transform scale-95 opacity-0"
+                                                                        // enterTo="transform scale-100 opacity-50"
+
+                                                                        className="absolute mt-1 w-full p-2 pe-4 rounded-md"
+                                                                    >
+                                                                        <Listbox.Options
+                                                                            static
+                                                                            className='className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'>
+                                                                            {people.map((person) => (
+                                                                                <Listbox.Option key={person.value}
+                                                                                    value={person}
+                                                                                    className={({ active }) =>
+                                                                                        `relative cursor-default select-none cursor-pointer ps-4`
+                                                                                    }
+                                                                                >
+                                                                                    {({ selected }) => (
+
+                                                                                        <>
+                                                                                            <span
+                                                                                                className={`block truncate ${selected ? 'font-medium' : 'font-normal'
+                                                                                                    }`}
+                                                                                            >
+
+                                                                                                {person.key}
+                                                                                            </span>
+                                                                                            {selected ? (
+                                                                                                <span className="absolute inset-y-0 left-0 flex items-center  text-amber-600">
+                                                                                                    <AwesomeCheck />
+                                                                                                </span>
+                                                                                            ) : null}
+
+                                                                                        </>
+                                                                                    )
+
+                                                                                    }
+
+                                                                                </Listbox.Option>
+                                                                            ))}
+                                                                        </Listbox.Options>
+                                                                    </Transition>
+                                                                </div>
+                                                            </div>
+                                                        </>
+                                                    )}
                                                 </Listbox>
                                             } />
                                             {/* fieldarrayprops gives us push, pop, remove, unshift, form (with eveything) */}
