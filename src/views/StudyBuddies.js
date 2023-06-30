@@ -327,7 +327,7 @@ const StudyBuddies = () => {
                                                                                 <Listbox.Option key={person.value}
                                                                                     value={person}
                                                                                     className={({ active }) =>
-                                                                                        `relative cursor-default select-none cursor-pointer ps-4`
+                                                                                        `relative select-none cursor-pointer ps-4`
                                                                                     }
                                                                                 >
                                                                                     {({ selected }) => (
