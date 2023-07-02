@@ -4,23 +4,32 @@
        "TIME_ZONE":"Time zone",
        "SPEAKS":"Native",
        "LEARNS":"Learning",
+       "SELECT":"Select",
+       "FILTER":"Search filter",
+       "FILTER_SB":"Filter study buddies",
        "FILTER_LANG_LEVEL":"Language level",
        "FILTER_TYPE":"Study buddy type",
         "FILTER_GENDER":"Gender",
         "FILTER_AGE_RANGE":"Age range",
         "FILTER_NATIVE_LANG":"Native language",
-        "FILTER_LEARN_LANG":"Learning language"
+        "FILTER_LEARN_LANG":"Learning language",
+        "APPLY_FILTERS":"Apply filters"
+        
     },
     "JA":{
         "TITLE":"スタディーバディー掲示板",
         "TIME_ZONE":"タイムゾーン",
         "SPEAKS":"母国語",
        "LEARNS":"学習中",
+       "SELECT":"選択",
+       "FILTER":"検索フィルター",
+       "FILTER_SB":"検索フィルター",
        "FILTER_LANG_LEVEL":"学習している言語レベル",
        "FILTER_TYPE":"スタディーバディータイプ",
         "FILTER_GENDER":"性別",
         "FILTER_AGE_RANGE":"年齢層",
         "FILTER_NATIVE_LANG":"母国語",
-        "FILTER_LEARN_LANG":"学習している言語"
+        "FILTER_LEARN_LANG":"学習している言語",
+        "APPLY_FILTERS":"フィルターを適用"
     }
 }

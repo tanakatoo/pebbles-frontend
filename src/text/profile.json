@@ -43,6 +43,7 @@
         "VOLUNTEER_DESC":"母国語を教えたり、文化交流するため。",
         "NATIVE_LANG":"母国語",
         "LEARNING_LANG":"勉強している言語",
+        "SELECT_LANG":"",
         "LANGUAGE_LEVEL":"勉強している言語レベル",
         "SELECT_TIME_ZONE":"",
         "TIME_ZONE":"タイムゾーン",

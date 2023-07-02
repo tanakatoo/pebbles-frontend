@@ -25,12 +25,12 @@ import { Listbox, Transition } from "@headlessui/react";
 
 
 import {
-    useEnglishLevelDropdown,
-    useAgeRangeDropdown,
-    useGenderDropdown,
-    useLanguageDropdown,
-    useTimezoneDropdown,
-    useStudyBuddyCheckboxes
+    useEnglishLevelOptions,
+    useAgeRangeOptions,
+    useGenderOptions,
+    useLanguageOptions,
+    useTimezoneOptions,
+    useStudyBuddyTypeOptions
 } from "../helpers/studyBuddyDropdowns"
 import DropdownMultiple from "../components/form/DropdownMultiple"
 

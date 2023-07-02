@@ -8,6 +8,13 @@ class StudyBuddyApi extends PebblesApi {
         return res
     }
 
+    /* Filter study buddies */
+    static async getFilteredStudyBuddies(criteria) {
+        console.log(criteria)
+        let res = await this.request(`study-buddies/search`, criteria)
+        return res
+    }
+
 
 
 }

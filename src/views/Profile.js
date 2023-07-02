@@ -58,9 +58,7 @@ const Profile = () => {
                 }
 
                 //get saved users, did the login user save this user?
-                if (token) {
-
-
+                if (token && !res.myProfile) {
                     const savedUsers = await UserApi.getSavedUsers()
                     const savedUsersUsernames = savedUsers.map(u => u.username)
                     if (savedUsersUsernames.includes(res.username)) {

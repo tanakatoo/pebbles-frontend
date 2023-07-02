@@ -2,10 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import searchText from "../../text/searchBar.json"
 import { Button } from '../button/Button'
+import { Field, ErrorMessage } from 'formik'
+import TextError from "../form/errorComponents/TextError"
 
-
-function SearchBar({ name, searchWord, onSubmit, handleChange, btn = false }) {
-    //better to use formik for this?
+function SearchBar({ name, btn = false, onSubmit }) {
     const lang = useSelector(state => state.langFont.lang)
 
     const handleKeyDown = (e) => {
@@ -14,17 +14,16 @@ function SearchBar({ name, searchWord, onSubmit, handleChange, btn = false }) {
             onSubmit()
         }
     }
-    console.log(searchWord)
+
     return (
         <div className={`w-full flex  ${btn ? 'flex-col-reverse md:flex-row' : null} gap-3`}>
             {btn ? btn : null}
-            <input className={`rounded-ml grow placeholder-gray`}
-                type="text"
-                name={name}
-                value={searchWord}
-                onChange={handleChange}
-                onKeyDown={handleKeyDown}
-                placeholder={searchText[lang].PLACEHOLDER} />
+            <Field className={`rounded-ml border-gray px-2 border-2 grow placeholder-gray`}
+                id={name} name={name} placeholder="Search" >
+
+            </Field>
+            <ErrorMessage name={name} component={TextError} />
+
         </div>
     )
 }

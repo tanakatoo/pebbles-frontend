@@ -268,7 +268,7 @@ const StudyBuddies = () => {
                                 onSubmit={onSubmit}
                             >
                                 {formik => {
-                                    console.log('this is formik', formik)
+
 
                                     return (
                                         <Form className="flex flex-col">

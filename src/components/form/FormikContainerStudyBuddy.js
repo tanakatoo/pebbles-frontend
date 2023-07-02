@@ -17,15 +17,15 @@ import ServerError from "./ServerError"
 import dbText from "../../text/db.json"
 import studyBuddySchema from "./validation/studyBuddySchema"
 import { useNavigate, useLocation } from "react-router-dom"
+
 import {
-    useEnglishLevelDropdown,
-    useAgeRangeDropdown,
-    useGenderDropdown,
-    useLanguageDropdown,
-    useTimezoneDropdown,
-    useLanguageRadios,
-    useStudybuddyActive,
-    useStudyBuddyCheckboxes
+    useEnglishLevelOptions,
+    useAgeRangeOptions,
+    useGenderOptions,
+    useLanguageOptions,
+    useTimezoneOptions,
+    useStudyBuddyTypeOptions,
+    useStudybuddyActive
 } from "../../helpers/studyBuddyDropdowns"
 
 const FormikContainerStudyBuddy = ({ pageText }) => {
@@ -37,14 +37,14 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
     const [token = null] = useSetToken()
     const navigate = useNavigate()
     const location = useLocation()
-    const englishLevelDropdowns = useEnglishLevelDropdown()
-    const genderOptions = useGenderDropdown()
-    const timezoneOptions = useTimezoneDropdown()
-    const ageOptions = useAgeRangeDropdown()
-    const languageOptions = useLanguageDropdown()
-    const languageRadios = useLanguageRadios()
-    const studyBuddyActiveCheckbox = useStudybuddyActive()
-    const studyBuddyTypeOptions = useStudyBuddyCheckboxes()
+    const englishLevelOptions = useEnglishLevelOptions(true)
+    const genderOptions = useGenderOptions(true)
+    const timezoneOptions = useTimezoneOptions(true)
+    const ageOptions = useAgeRangeOptions(true)
+    const languageOptionsDropdown = useLanguageOptions(true)
+    const languageOptionsRadio = useLanguageOptions()
+    const studyBuddyActiveOptions = useStudybuddyActive()
+    const studyBuddyTypeOptions = useStudyBuddyTypeOptions()
 
     useEffect(() => {
         //we have to add the location to the autocomplete text box separately
@@ -72,7 +72,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
 
     const onSubmit = async (values, { setSubmitting }) => {
         try {
-
+            console.log('edit submit values', values)
             const res = await UserApi.updateUserInfo(values)
             //call dispatch to set token in profileReducer
             dispatch(actionSaveProfile(values))
@@ -117,7 +117,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
                                 <FormikControl control='toggle'
                                     label={pageText.STUDY_BUDDY_JOIN_LABEL}
                                     name='study_buddy_active'
-                                    options={studyBuddyActiveCheckbox} />
+                                    options={studyBuddyActiveOptions} />
 
                             </div>
 
@@ -133,21 +133,21 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
                                 <FormikControl control='radio'
                                     label={pageText.NATIVE_LANG}
                                     name='native_language'
-                                    options={languageRadios} />
+                                    options={languageOptionsRadio} />
                             </div>
                             <div className="mb-4">
                                 <FormikControl
                                     control='dropdown'
                                     label={pageText.LEARNING_LANG}
                                     name='learning_language'
-                                    options={languageOptions} />
+                                    options={languageOptionsDropdown} />
                             </div>
                             <div className="mb-4">
                                 <FormikControl
                                     control='dropdown'
                                     label={pageText.LANGUAGE_LEVEL}
                                     name='language_level'
-                                    options={englishLevelDropdowns} />
+                                    options={englishLevelOptions} />
                             </div>
                             <div className="mb-4">
                                 <FormikControl control='textarea'
