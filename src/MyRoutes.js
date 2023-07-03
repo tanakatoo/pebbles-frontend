@@ -27,6 +27,7 @@ import ProfileEditStudyBuddy from "./views/ProfileEditStudyBuddy"
 import NotFound404 from "./views/NotFound404"
 import SavedMain from "./views/SavedMain"
 import SavedUsers from "./views/SavedUsers"
+import ChangeAvatar from "./views/ChangeAvatar"
 
 const MyRoutes = () => {
     return (
@@ -55,6 +56,7 @@ const MyRoutes = () => {
             <Route path="/users">
                 {/* <Route path="profile" element={<ProfileOwn />} /> */}
                 <Route path="profile/edit" element={<ProfileEditMain />} />
+                <Route path="profile/edit/avatar" element={<ChangeAvatar />} />
                 <Route path="profile/edit/profile" element={<ProfileEdit />} />
                 <Route path="profile/edit/myway" element={<ProfileEditMyWay />} />
                 <Route path="profile/edit/study-buddy" element={<ProfileEditStudyBuddy />} />

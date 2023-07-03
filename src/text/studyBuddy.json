@@ -13,7 +13,9 @@
         "FILTER_AGE_RANGE":"Age range",
         "FILTER_NATIVE_LANG":"Native language",
         "FILTER_LEARN_LANG":"Learning language",
-        "APPLY_FILTERS":"Apply filters"
+        "APPLY_FILTERS":"Apply filters",
+        "NO_USERS_MSG":"No users found. Please widen your search.",
+        "NO_USERS_LINK_TXT":""
         
     },
     "JA":{
@@ -30,6 +32,8 @@
         "FILTER_AGE_RANGE":"年齢層",
         "FILTER_NATIVE_LANG":"母国語",
         "FILTER_LEARN_LANG":"学習している言語",
-        "APPLY_FILTERS":"フィルターを適用"
+        "APPLY_FILTERS":"フィルターを適用",
+        "NO_USERS_MSG":"ユーザーが見つかりません。",
+        "NO_USERS_LINK_TXT":""
     }
 }

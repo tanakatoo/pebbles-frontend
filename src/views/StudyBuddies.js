@@ -52,6 +52,7 @@ const StudyBuddies = () => {
 
     const getStudyBuddies = async () => {
         try {
+            setErrors([])
             setDoneGettingData(false);
             const res = await StudyBuddyApi.getStudyBuddies();
             console.log(res)
@@ -89,7 +90,8 @@ const StudyBuddies = () => {
     const onSubmit = async (values, { setSubmitting }) => {
         try {
             console.log('sub this values: ', values)
-
+            setIsDialogOpen(false)
+            setErrors([])
             //get only values
             const criteria = {
                 age: values.age_range.map(a => a.value),
@@ -104,8 +106,12 @@ const StudyBuddies = () => {
 
             }
             console.log('submittting')
+            setDoneGettingData(false);
             const res = await StudyBuddyApi.getFilteredStudyBuddies(criteria)
-            console.log(res)
+            console.log('this is res', res)
+            setData(res);
+            setDoneGettingData(true);
+
 
         } catch (e) {
             if (e instanceof TypeError) {
@@ -233,38 +239,39 @@ const StudyBuddies = () => {
                                     <div className=' my-24'>
                                         <Spinner />
                                     </div>
-                                    : doneGettingData === true && data.length === 0 ?
-                                        <div className='my-12'>
-                                            < NoData msg={pageText.NO_USERS_MSG} link='/users/saved' linkText={pageText.NO_USERS_LINK_TXT} />
+                                    :
+                                    <>
+                                        <div className="w-full px-4 mb-3">
+                                            <SearchBar btn={
+                                                <Button btnText={pageText.FILTER}
+                                                    bkColor='bg-study-buddy-accent'
+                                                    textColor='text-primary-dark'
+                                                    px='px-8'
+                                                    clickMethod={() => setIsDialogOpen(true)} />
+
+                                            }
+                                                name='searchWord'
+                                                onSubmit={onSubmit}
+                                            />
                                         </div>
-                                        :
-                                        <>
-                                            <div className="w-full px-4 mb-3">
-                                                <SearchBar btn={
-                                                    <Button btnText={pageText.FILTER}
-                                                        bkColor='bg-study-buddy-accent'
-                                                        textColor='text-primary-dark'
-                                                        px='px-8'
-                                                        clickMethod={() => setIsDialogOpen(true)} />
-
-                                                }
-                                                    name='searchWord'
-                                                    onSubmit={onSubmit}
-                                                />
+                                        {doneGettingData === true && data.length === 0 ?
+                                            <div className='my-12'>
+                                                < NoData msg={pageText.NO_USERS_MSG} />
                                             </div>
-                                            <div className='mt-4 flex flex-wrap justify-center mb-12 gap-4 px-2'>
-                                                {data.map(d =>
-                                                    <Card data={d}
-                                                        goToProfileOnClick={goToProFile}
-                                                        key={uuid()}
-                                                        buddy={true}
-                                                        topRight={<StudyBuddyCardTopRight timeZone={d.time_zone} lang={lang} />}
-                                                        underUsername={<StudyBuddyCardUnderUsername data={d} lang={lang} pageText={pageText} />}
-                                                        bottom={<StudyBuddyCardBottom data={d} lang={lang} />}
-                                                    />)}
+                                            : ""}
+                                        <div className='mt-4 flex flex-wrap justify-center mb-12 gap-4 px-2'>
+                                            {data.map(d =>
+                                                <Card data={d}
+                                                    goToProfileOnClick={goToProFile}
+                                                    key={uuid()}
+                                                    buddy={true}
+                                                    topRight={<StudyBuddyCardTopRight timeZone={d.time_zone} lang={lang} />}
+                                                    underUsername={<StudyBuddyCardUnderUsername data={d} lang={lang} pageText={pageText} />}
+                                                    bottom={<StudyBuddyCardBottom data={d} lang={lang} />}
+                                                />)}
 
-                                            </div>
-                                        </>
+                                        </div>
+                                    </>
                                 }
                             </div >
                         </Form>

@@ -17,12 +17,13 @@ function ProfileEditMain() {
         <div className='mb-24'>
             <EditTitle title={pageText.EDIT_ACCT} backLink={`/users/${user.username}`} />
             <div className='w-full py-2 inline-flex justify-center mb-6'>
-                <div className='relative'>
+                <Link to="/users/profile/edit/avatar"><div className='relative' >
                     <Avatar src={user.avatar} size='profile' />
                     <div className='absolute bottom-0 right-0 p-1.5 bg-gray-background rounded-full'>
                         <Camera />
                     </div>
                 </div>
+                </Link>
             </div>
             <div className='border-gray border-t-2'>
                 <Link to="/users/profile/edit/profile"><EditSection title={pageText.PROFILE} lang={lang} /></Link>
