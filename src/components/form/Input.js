@@ -20,9 +20,7 @@ const Input = ({ extraClasses, disabled = false, label, name, ...rest }) => {
         <div className='flex flex-col w-full'>
             <label className={`mb-2 
             text-mobile-section-header
-            ${lang === "EN" ?
-                    'font-PoppinsMedium' :
-                    'font-NotoSansJPMedium'}`}
+            font-medium`}
                 htmlFor={name}>{label}</label>
             <Field className={`mb-2 
             rounded-ml py-3 px-4 text-black

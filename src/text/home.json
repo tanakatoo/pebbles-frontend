@@ -21,7 +21,8 @@
         "HERO3_TOP":"Whether you're a traveller, a student, an expat, immigrant or citizen,",
         "HERO3_BOTTOM":"we are here to support you.",
         "OOPS":"なんてこった！ページが見つかりません。",
-        "OOPS_GO_HOME":"ホームに戻ります"
+        "OOPS_GO_HOME":"ホームに戻ります",
+        "UNAUTHORIZED":"Jap you are not logged in or do not have authorization"
     },
     "EN":{
         "H1": "Community for learning Japanese and living in Japan",
@@ -45,6 +46,7 @@
         "HERO3_TOP":"Whether you're a traveller, a student, an expat, immigrant or citizen,",
         "HERO3_BOTTOM":"we are here to support you.",
         "OOPS":"Oops! We can't find the page you requested.",
-        "OOPS_GO_HOME":"Go home"
+        "OOPS_GO_HOME":"Go home",
+        "UNAUTHORIZED":"You are not logged in or do not have authorization to view this page"
     }
 }

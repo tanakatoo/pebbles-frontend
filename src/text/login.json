@@ -9,7 +9,9 @@
         "PASSWORD":"Password",
         "FORGOT_PASSWORD":"Forgot password",
         "SUBMIT":"Login",
-        "CREATE_ACCT":"Register free account"
+        "CREATE_ACCT":"Register free account",
+        "LOGOUT":"You are logged out.",
+        "LOGOUT_LINK":"Log back in"
     },
     "JA":{
         "CTA":"英語をレベルアップしよう。",
@@ -21,6 +23,8 @@
         "PASSWORD":"パスワード",
         "FORGOT_PASSWORD":"パスワードを忘れた場合",
         "SUBMIT":"ログイン",
-        "CREATE_ACCT":"無料登録"
+        "CREATE_ACCT":"無料登録",
+        "LOGOUT":"ログアウトされました。",
+        "LOGOUT_LINK":"ログイン"
     }
 }

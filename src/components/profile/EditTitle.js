@@ -11,7 +11,7 @@ function EditTitle({ title, backLink }) {
                 <Link to={backLink}><AwesomeChevronLeft /></Link>
             </div>
             <div className='grow inline-flex justify-center'>
-                <p className={`text-mobile-section-header ${lang === "EN" ? 'font-PoppinsMedium' : 'font-NotoSansJPMedium'}`}>{title}</p>
+                <p className={`text-mobile-section-header font-medium`}>{title}</p>
             </div>
         </div>
     )

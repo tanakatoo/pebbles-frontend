@@ -15,8 +15,7 @@ import UserCardBody from '../components/saved/UserCardBody'
 import useNavigateToProfile from '../hooks/useNavigateToProfile'
 
 function SavedUsers() {
-    const pageText = usePageText('saved')
-    const lang = useSelector(state => state.langFont.lang)
+    const [pageText, lang] = usePageText('saved')
     const [doneGettingData, setDoneGettingData] = useState(false)
     const [data, setData] = useState(null)
     const [errors, setErrors] = useState([])

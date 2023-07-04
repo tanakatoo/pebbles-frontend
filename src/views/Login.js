@@ -12,7 +12,7 @@ import AuthApi from "../api/auth";
 import { useNavigate } from "react-router-dom";
 import PebblesApi from "../api/base";
 import { actionSetMsg } from "../reducers/actionCreator";
-import FlashMessageContext from "../contexts/FlashMessageContext";
+// import FlashMessageContext from "../contexts/FlashMessageContext";
 import CTA from "../components/common/CTA";
 import { Link } from "react-router-dom";
 
@@ -20,8 +20,8 @@ const Login = () => {
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
     const navigate = useNavigate()
-    const pageText = usePageText("login")
-    const setFlashMessage = useContext(FlashMessageContext)
+    const [pageText, lang] = usePageText("login")
+    // const setFlashMessage = useContext(FlashMessageContext)
     const token = useSelector(state => state.profile.token)
 
     const INITIAL_DATA = {
@@ -40,7 +40,7 @@ const Login = () => {
             <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
             <div className="mt-8 flex flex-col justify-center items-center mx-8">
                 {Object.keys(errors).length > 0 && <ServerError msg={errors} title={pageText.ERROR_TITLE} />}
-                {errors.length === 0 && <h1 className="text-center mb-[56px] text-mobile-header-2-homepage">{pageText.H1}</h1>}
+                {errors.length === 0 && <h1 className="text-center mb-[56px] text-mobile-header-2">{pageText.H1}</h1>}
                 <Formik
                     initialValues={INITIAL_DATA}
                     validationSchema={loginSchema}
@@ -51,7 +51,7 @@ const Login = () => {
                             const res = await AuthApi.login(values.username, values.password)
                             //call dispatch to set token in profileReducer
                             dispatch(actionLogin(res)) //save token and then profile
-                            setFlashMessage('LOGIN')
+                            // setFlashMessage('LOGIN')
                             navigate('/users/dashboard')
                         } catch (e) {
                             if (e instanceof TypeError) {
@@ -87,11 +87,13 @@ const Login = () => {
                             <Button btnText={pageText.SUBMIT}
                                 type="submit"
                                 extraClasses="mt-12"
+                                lang={lang}
                                 isSubmitting={formik.isSubmitting} />
                             <Button bkColor="bg-white"
                                 textColor="text-primary"
                                 btnText={pageText.CREATE_ACCT}
                                 type="button"
+                                lang={lang}
                                 extraClasses="mt-8 border mb-[76px]"
                                 isSubmitting={formik.isSubmitting}
                                 link="/register" />

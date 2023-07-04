@@ -16,7 +16,8 @@ function CTA({ msg, msgBtn, btnLink }) {
                     bkColor="bg-white"
                     textColor='text-primary-dark'
                     py={'py-2'}
-                    extraClasses={`text-mobile-card-header ${lang === "EN" ? 'font-PoppinsMedium' : 'NotoSansJPMedium'}`} />
+                    lang={lang}
+                    extraClasses={`text-mobile-card-header font-medium}`} />
             </Link>
         </div>
     )

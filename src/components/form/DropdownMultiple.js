@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 import { Listbox, Transition } from '@headlessui/react'
 import { AwesomeCheck } from '../../styles/Icons'
 import { Field } from 'formik'
-import usePageText from '../../hooks/usePageText'
 
 //each component needs a label, <Field>, and <ErrorMessage>
 
@@ -18,18 +17,24 @@ import usePageText from '../../hooks/usePageText'
 const DropdownMultiple = ({ name, label, options, data, select }) => {
     const lang = useSelector(state => state.langFont.lang)
     const [isOpen, setIsOpen] = useState(false)
-    console.log('data to set is', data)
+    console.log('data to set is', name, data)
     const [selectedItem, setSelectedItem] = useState(data)
-
+    console.log('selected item length is', name, selectedItem.length, selectedItem)
     const handleSelectedLevel = (setFieldValue, val) => {
-
+        console.log('not in here')
         setSelectedItem(val);
         setFieldValue(name, val)
         setIsOpen(true);
     }
+    useEffect(() => {
+        if (data.length === 0) {
+            setSelectedItem([])
+        }
+    }, [])
+
 
     return (
-        <Field name={name} component={({ form }) =>
+        <Field name={name} component={({ field, form }) =>
 
             < Listbox as='div'
                 by='value'
@@ -40,7 +45,8 @@ const DropdownMultiple = ({ name, label, options, data, select }) => {
             >
                 {() => (
                     <>
-                        <Listbox.Label className={`${lang === 'EN' ? 'font-PoppinsMedium' : 'font-NotoSansJPMedium'}`}>{label}</Listbox.Label>
+                        {console.log('field value is', field.value)}
+                        <Listbox.Label className={`font-medium`}>{label}</Listbox.Label>
                         <div className="relative mt-2">
                             <Listbox.Button
                                 onClick={() => setIsOpen(!isOpen)}

@@ -5,8 +5,8 @@ import PageTitle from '../components/common/PageTitle'
 import { useSelector } from 'react-redux'
 
 function SavedMain() {
-    const pageText = usePageText('saved')
-    const lang = useSelector(state => state.langFont.lang)
+    const [pageText, lang] = usePageText('saved')
+
     return (
         <div className='px-2 border-t border-t-gray-stroke'>
             <div className='flex flex-col justify-center mb-12'>
@@ -21,27 +21,27 @@ function SavedMain() {
                         />
                     </div>
                     <div className='flex justify-center'>
-                        <MainCard img='bg-markeplaceSquare'
+                        <MainCard img='bg-markeplaceSquare opacity-50 cursor-default'
                             text={pageText.MARKETPLACE}
                         />
                     </div>
                     <div className='flex justify-center'>
-                        <MainCard img='bg-regionalSquare'
+                        <MainCard img='bg-regionalSquare opacity-50 cursor-default'
                             text={pageText.REGIONAL_RESOURCES}
                         />
                     </div>
                     <div className='flex justify-center'>
-                        <MainCard img='bg-regionalParisSquare'
+                        <MainCard img='bg-regionalParisSquare opacity-50 cursor-default'
                             text={pageText.REGIONAL_GROUP}
                         />
                     </div>
                     <div className='flex justify-center'>
-                        <MainCard img='bg-learningSquare'
+                        <MainCard img='bg-learningSquare opacity-50 cursor-default'
                             text={pageText.TOWN_RESOURCES}
                         />
                     </div>
                     <div className='flex justify-center'>
-                        <MainCard img='bg-learningGlobeSquare'
+                        <MainCard img='bg-learningGlobeSquare opacity-50 cursor-default'
                             text={pageText.TOWN_GROUPS}
                         />
                     </div>

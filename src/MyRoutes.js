@@ -28,11 +28,14 @@ import NotFound404 from "./views/NotFound404"
 import SavedMain from "./views/SavedMain"
 import SavedUsers from "./views/SavedUsers"
 import ChangeAvatar from "./views/ChangeAvatar"
+import About from "./views/About"
+import Unauthorized from "./views/Unauthorized"
 
 const MyRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
@@ -69,6 +72,7 @@ const MyRoutes = () => {
             </Route>
             <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/reset-password" element={<SetPassword />} />
+            <Route path="/system-message" element={<Unauthorized />} />
             <Route path="*" element={<NotFound404 />} />
         </Routes>
     )

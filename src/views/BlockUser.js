@@ -4,10 +4,8 @@ import ServerError from '../components/form/ServerError'
 import Spinner from '../components/common/Spinner'
 import { v4 as uuid } from "uuid"
 import useSetToken from '../hooks/useSetToken'
-import SearchBar from '../components/common/SearchBar'
 import usePageText from "../hooks/usePageText"
 import Protected from '../components/common/Protected'
-import { useSelector } from 'react-redux'
 import AvatarWithName from '../components/common/AvatarWithName'
 import StickyBar from '../components/common/StickyBar'
 import { useNavigate } from 'react-router-dom'
@@ -15,7 +13,6 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import NoData from '../components/common/NoData'
 import TextError from '../components/form/errorComponents/TextError'
 import blockUnblockSchema from '../components/form/validation/blockUnblock'
-import { Exclamation } from '../styles/Icons'
 
 function BlockUser() {
     const navigate = useNavigate()
@@ -23,7 +20,7 @@ function BlockUser() {
     const [errors, setErrors] = useState([])
     const [token = null] = useSetToken()
     const [doneGettingData, setDoneGettingData] = useState(false)
-    const pageText = usePageText("messages")
+    const [pageText, lang] = usePageText("messages")
 
     const getData = async () => {
         try {

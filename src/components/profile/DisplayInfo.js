@@ -5,7 +5,7 @@ function DisplayInfo({ label, lang, data, checkExists = true, jsonName }) {
     console.log('data to display', data)
     return (
         <>
-            <p className={`mt-6 text-mobile-section-header  ${lang === "EN" ? 'font-PoppinsMedium' : 'font-NotoSansJPMedium'}`}>
+            <p className={`mt-6 text-mobile-section-header font-medium`}>
                 {label}
             </p>
             {checkExists ?

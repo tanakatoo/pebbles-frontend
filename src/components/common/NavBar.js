@@ -36,6 +36,13 @@ const NavBar = () => {
         dropdown ? setDropdown(false) : setDropdown(true)
     }
 
+    const dropdownItemsEN = [
+        { text: navText.SIGN_UP, link: `/register` },
+        { text: navText.LOGIN, link: `/login` },
+        { text: navText.ABOUT, link: '/about' },
+        { text: navText.COMMUNITY, link: null }]
+
+
     const dropdownItems = [
         { text: navText.SIGN_UP, link: `/register` },
         { text: navText.LOGIN, link: `/login` },
@@ -44,6 +51,18 @@ const NavBar = () => {
         { text: navText.COMMUNITY, link: null }]
 
     //keys refer to the position of the array in the dropdownItems array
+    const dropdownSubItemsEN =
+    {
+        3: {
+            items: [
+                { text: navText.ENGLISH_COMMUNITY, link: null },
+                { text: navText.REGIONAL_COMMUNITY, link: null },
+                { text: navText.STUDY_BUDDY, link: '/study-buddies' },
+                { text: navText.MARKETPLACE, link: null }
+            ]
+        }
+    }
+
     const dropdownSubItems =
     {
         3: {
@@ -63,20 +82,53 @@ const NavBar = () => {
     }
 
 
+    const dropdownItemsLoggedInEN =
+        [
+            { text: `Hi, ${user.profile && user.profile.username}`, link: null },
+            { text: navText.ABOUT, link: '/about' },
+            { text: navText.COMMUNITY, link: null }
+        ]
+
     const dropdownItemsLoggedIn =
         [
             { text: `Hi, ${user.profile && user.profile.username}`, link: null },
-            { text: navText.ABOUT, link: null },
+            { text: navText.ABOUT, link: '/about' },
             { text: navText.STUDY_SUPPORT, link: null },
             { text: navText.COMMUNITY, link: null }
         ]
+
+    const dropdownSubItemsLoggedInEN =
+    {
+        0: {
+            items:
+                [
+                    { text: navText.DASHBOARD, link: '/users/dashboard' },
+                    { text: navText.PROFILE, link: `/users/${user.profile && user.profile.username}` },
+                    { text: navText.MESSAGES, link: '/messages' },
+                    { text: navText.SAVED, link: '/users/saved' },
+                    // { text: navText.SETTINGS, link: null },
+                    { text: navText.LOGOUT, link: '/logout' }
+                ]
+        },
+
+        2: {
+            items:
+                [
+                    { text: navText.ENGLISH_COMMUNITY, link: null },
+                    { text: navText.REGIONAL_COMMUNITY, link: null },
+                    { text: navText.STUDY_BUDDY, link: '/study-buddies' },
+                    { text: navText.MARKETPLACE, link: null }
+                ]
+        }
+    }
+
 
     const dropdownSubItemsLoggedIn =
     {
         0: {
             items:
                 [
-                    { text: navText.DASHBOARD, link: null },
+                    { text: navText.DASHBOARD, link: '/users/dashboard' },
                     { text: navText.PROFILE, link: `/users/${user.profile && user.profile.username}` },
                     { text: navText.MESSAGES, link: '/messages' },
                     { text: navText.SAVED, link: '/users/saved' },
@@ -119,8 +171,8 @@ const NavBar = () => {
             <div className="flex flex-nowrap items-center gap-5">
                 <div className="flex  items-center px-4 flex-nowrap">
                     <div className="flex gap-3 items-center">
-                        <span className={`cursor-pointer text-primary-dark text-mobile-card-header font-PoppinsMedium ${lang === "EN" ? 'border-b-2' : ''}`} onClick={() => setLang("EN")}>EN </span>
-                        <span className={`cursor-pointer text-primary-dark text-mobile-card-header font-PoppinsMedium ${lang === "JA" ? 'border-b-2' : ''}`} onClick={() => setLang("JA")}>JA</span>
+                        <span className={`cursor-pointer text-primary-dark text-mobile-card-header font-poppins font-medium ${lang === "EN" ? 'border-b-2' : ''}`} onClick={() => setLang("EN")}>EN </span>
+                        <span className={`cursor-pointer text-primary-dark text-mobile-card-header font-poppins font-medium ${lang === "JA" ? 'border-b-2' : ''}`} onClick={() => setLang("JA")}>JA</span>
                     </div>
                 </div>
                 {user.token ?
@@ -128,13 +180,22 @@ const NavBar = () => {
                     : ""}
                 <span className="cursor-pointer relative" ref={ref} onClick={handleHamburger} >
                     <Hamburger className="ml-5 " />
-                    {dropdown && <Dropdown items={user.token ? dropdownItemsLoggedIn : dropdownItems}
-                        subitems={user.token ? dropdownSubItemsLoggedIn : dropdownSubItems}
-                        css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
-                        pr="pr-8"
-                        width='w-[250px]'
-                        lang={lang}
-                    />}</span>
+                    {lang === "JA" ?
+                        dropdown && <Dropdown items={user.token ? dropdownItemsLoggedIn : dropdownItems}
+                            subitems={user.token ? dropdownSubItemsLoggedIn : dropdownSubItems}
+                            css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
+                            pr="pr-8"
+                            width='w-[250px]'
+                            lang={lang}
+                        /> :
+                        dropdown && <Dropdown items={user.token ? dropdownItemsLoggedInEN : dropdownItemsEN}
+                            subitems={user.token ? dropdownSubItemsLoggedInEN : dropdownSubItemsEN}
+                            css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
+                            pr="pr-8"
+                            width='w-[250px]'
+                            lang={lang}
+                        />
+                    }</span>
 
             </div>
         </nav >

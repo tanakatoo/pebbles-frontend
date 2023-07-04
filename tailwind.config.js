@@ -30,6 +30,7 @@ module.exports = {
       'secondary': '#FF8C42',
       'secondary-light': '#FAE1D1',
       'secondary-dark': '#FF751F',
+      'secondary-background': '#FFEFE4',
       'accent': '#A3E470',
       'accent-light': '#DBFDC0',
       'accent-very-light': '#EBFFDB',
@@ -38,16 +39,17 @@ module.exports = {
       'success': '#276A4A',
       'information': '#2E71D7',
       'link': '#2004CE',
-      'link-hover': '#624fdc'
+      'link-hover': '#624fdc',
+      'gold-1': "#ECC440",
+      'gold-2': "#FFFA8A",
+      'gold-3': "#DDAC17",
+      'gold-4': "#FFFF95"
+
     },
     fontFamily: {
-      sans: ['PoppinsRegular', ...defaultTheme.fontFamily.sans],
-      'poppins': ['PoppinsRegular', ...defaultTheme.fontFamily.sans],
-      'PoppinsMedium': ['PoppinsMedium', ...defaultTheme.fontFamily.sans],
-      'PoppinsBold': ['PoppinsBold', ...defaultTheme.fontFamily.sans],
-      'NotoSansJPRegular': ['NotoSansJPRegular', ...defaultTheme.fontFamily.sans],
-      'NotoSansJPMedium': ['NotoSansJPMedium', ...defaultTheme.fontFamily.sans],
-      'NotoSansJPBold': ['NotoSansJPBold', ...defaultTheme.fontFamily.sans],
+      sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+      'poppins': ['Poppins', ...defaultTheme.fontFamily.sans],
+      'NotoSansJP': ['NotoSansJP', ...defaultTheme.fontFamily.sans],
       'EnglishMarketJA': ['EnglishMarketJA', 'sans-serif'],
       'EnglishMarketEN': ['EnglishMarketEN', 'sans-serif'],
       'EnglishStudyEN': ['EnglishStudyEN', 'sans-serif'],
@@ -79,10 +81,7 @@ module.exports = {
         'mobile-section-header': ['18px', '32px'],
         'mobile-page-header': ['24px', '32px'],
         'mobile-header-1': ['32px', '48px'],
-        'mobile-header-1-homepage': ['32px', '48px'],
-        'mobile-header-2': ['32px', '48px'],
-        'mobile-header-2-homepage': ['24px', '32px']
-
+        'mobile-header-2': ['32px', '48px']
       },
       boxShadow: {
         'dropdown': '0px 4px 8px rgba(0, 0, 0, 0.25)'
@@ -116,7 +115,8 @@ module.exports = {
         '112': '112px',
         '50': '50px',
         '80': '80px',
-        'usercard': '358px'
+        'usercard': '358px',
+        'messages': '500px'
       },
       height: {
         '50': '50px',
@@ -124,9 +124,7 @@ module.exports = {
         '80': '80px',
         'usercard': '358px'
       },
-      "screens": {
-        'xs': '230px'
-      }
+
 
 
     },

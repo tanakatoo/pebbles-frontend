@@ -6,7 +6,7 @@ function FilterSelect({ lang, options, label, name }) {
     return (
         <div className='flex flex-col w-full px-2'>
             <label className={`mb-1 text-mobile-section-header 
-            ${lang === "EN" ? 'font-PoppinsMedium' : 'font-NotoSansJPMedium'}`}
+            font-medium`}
                 htmlFor={name}>
                 {label}
             </label>

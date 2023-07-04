@@ -13,42 +13,42 @@
 
 
   @font-face { 
-    font-family: 'PoppinsRegular'; 
+    font-family: 'Poppins'; 
     font-style:regular;
     font-weight:400;
     src: url('/public/fonts/Poppins-Regular.ttf'); 
     }
 
   @font-face { 
-    font-family: 'PoppinsBold'; 
+    font-family: 'Poppins'; 
     font-style:bold;
     font-weight:700;
     src: url('/public/fonts/Poppins-Bold.ttf'); 
     }
 
   @font-face { 
-    font-family: 'PoppinsMedium'; 
+    font-family: 'Poppins'; 
     font-style:medium;
     font-weight:500;
     src: url('/public/fonts/Poppins-Medium.ttf'); 
     }
 
     @font-face { 
-      font-family: 'NotoSansJPRegular'; 
+      font-family: 'NotoSansJP'; 
       font-style:regular;
       font-weight:400;
       src: url('/public/fonts/NotoSansJP-Regular.ttf'); 
       }
   
     @font-face { 
-      font-family: 'NotoSansJPBold'; 
+      font-family: 'NotoSansJP'; 
       font-style:bold;
       font-weight:700;
       src: url('/public/fonts/NotoSansJP-Bold.ttf'); 
       }
   
     @font-face { 
-      font-family: 'NotoSansJPMedium'; 
+      font-family: 'NotoSansJP'; 
       font-style:medium;
       font-weight:500;
       src: url('/public/fonts/NotoSansJP-Medium.ttf'); 

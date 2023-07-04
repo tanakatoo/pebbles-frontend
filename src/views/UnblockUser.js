@@ -22,7 +22,7 @@ function UnblockUser() {
     const [errors, setErrors] = useState([])
     const [token = null] = useSetToken()
     const [doneGettingData, setDoneGettingData] = useState(false)
-    const pageText = usePageText("messages")
+    const [pageText, lang] = usePageText("messages")
 
 
     const getData = async () => {

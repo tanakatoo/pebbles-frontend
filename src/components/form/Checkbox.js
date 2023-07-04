@@ -19,9 +19,7 @@ const Checkbox = ({ extraClasses = '', label, name, options, ...rest }) => {
 
             <label className={`mb-2 
             text-mobile-section-header
-            ${lang === "EN" ?
-                    'font-PoppinsMedium' :
-                    'font-NotoSansJPMedium'}`} htmlFor={name}>{label}</label>
+            font-medium`} htmlFor={name}>{label}</label>
             <div>
                 <Field name={name} {...rest} >
                     {/* use render field props */}
@@ -42,7 +40,7 @@ const Checkbox = ({ extraClasses = '', label, name, options, ...rest }) => {
                                                 checked={Array.isArray(field.value) ? field.value.includes(o.value) : field.value === o.value}
                                                 className={` me-2 
                                                         rounded-sm 
-                                                        ${extraClasses}`}
+                                                        ${extraClasses} checked:bg-primary`}
                                             /><label
                                                 htmlFor={(o.value === true || o.value === false) ? o.key : o.value}>{o.key}</label>
 

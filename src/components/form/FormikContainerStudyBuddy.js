@@ -105,7 +105,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
             enableReinitialize
         >
             {formik => {
-                console.log(formik)
+                console.log(!formik.values.study_buddy_types.includes("Volunteer"))
                 return (
                     <div className="container flex flex-col mt-4 mx-auto">
                         {Object.keys(errors).length > 0 &&
@@ -188,7 +188,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
                                     options={genderOptions} />
                             </div>
                             <div className="mb-24 mt-12 flex">
-                                <Button type="submit" btnText='Save' extraClasses="grow" />
+                                <Button lang={lang} type="submit" btnText={pageText.SAVE_BTN} extraClasses="grow" />
                             </div>
                         </Form>
                     </div>

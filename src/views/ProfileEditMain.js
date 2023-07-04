@@ -9,9 +9,9 @@ import EditSection from '../components/profile/EditSection'
 import { Link } from 'react-router-dom'
 
 function ProfileEditMain() {
-    const lang = useSelector(state => state.langFont.lang)
+
     const user = useSelector(state => state.profile.profile)
-    const pageText = usePageText('profile')
+    const [pageText, lang] = usePageText('profile')
 
     return (
         <div className='mb-24'>

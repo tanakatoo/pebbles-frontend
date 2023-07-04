@@ -13,7 +13,7 @@ const usePageText = (page) => {
 
     const pageText = useSelector(state => state.pageText.pageText)
 
-    return pageText
+    return [pageText, langFont.lang]
 }
 
 export default usePageText

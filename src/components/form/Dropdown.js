@@ -15,7 +15,7 @@ const Dropdown = ({ label, extraClasses, name, options, ...rest }) => {
     const lang = useSelector(state => state.langFont.lang)
     return (
         <div className='flex flex-col w-full '>
-            <label className={`mb-2 text-mobile-section-header ${lang === "EN" ? 'font-PoppinsMedium' : 'font-NotoSansJPMedium'}`} htmlFor={name}>{label}</label>
+            <label className={`mb-2 text-mobile-section-header font-medium`} htmlFor={name}>{label}</label>
             <Field as="select" id={name} name={name} {...rest}
                 className={`w-full mb-2 rounded-ml py-3 ps-4 pe-12 text-black placeholder-gray ${extraClasses}`}>
                 {options.map(o => (

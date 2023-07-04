@@ -13,8 +13,7 @@ import { useSelector } from "react-redux"
 import { Button } from "../components/button/Button"
 
 const Home = () => {
-    const pageText = usePageText("home")
-    const lang = useSelector(state => state.langFont.lang)
+    const [pageText, lang] = usePageText("home")
 
     return (
         <div>
@@ -23,10 +22,10 @@ const Home = () => {
             </div>
             <div className='flex justify-center bg-primary-super-light bg-homeHero md:bg-homeHeroTablet lg:bg-homeHeroDesktop bg-cover bg-center bg-no-repeat relative min-h-screen' >
                 <div className="bg-gradient-to-b absolute from-primary-super-light from-0% via-transparent via-1% to-transparent to-100% w-full h-screen"></div>
-                <h1 className="text-primary-dark mx-4 text-center pt-10 md:pt-16 text-mobile-header-1-homepage absolute">{pageText.H1}</h1>
+                <h1 className="text-primary-dark font-bold mx-4 text-center pt-10 md:pt-16 text-mobile-header-1 absolute">{pageText.H1}</h1>
             </div>
             <section className="pt-12 md:pt-24  mx-auto">
-                <h2 className="text-center text-mobile-header-2-homepage text-primary-dark">{pageText.H2}</h2>
+                <h2 className="text-center text-mobile-header-2 text-primary-dark font-medium">{pageText.H2}</h2>
                 <div className="mt-8 md:mt-12 lg:ps-8 lg:pe-8 flex flex-col justify-center items-center gap-8 lg:flex-row lg:w-full lg:space-around">
                     <div className="mb-5 flex flex-col lg:w-full">
                         <Mission icon={<Connect />} text={pageText.MISSION1} />
@@ -46,7 +45,7 @@ const Home = () => {
                 </div>
             </section>
             <section className="pt-[180px] md:pt-[150px] lg:pt-[120px]">
-                <h2 className=" px-4 text-mobile-header-2-homepage text-center text-primary-dark">{pageText.HOW_TO_HELP}</h2>
+                <h2 className=" px-4 text-mobile-header-2 font-medium text-center text-primary-dark">{pageText.HOW_TO_HELP}</h2>
                 <div className="mt-16">
                     {lang === "JA" ?
                         <Supports
@@ -72,7 +71,7 @@ const Home = () => {
                         titleColor="text-white"
                         descColor='text-white'
                         button=
-                        {<Button btnText="Tell me more" textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
+                        {<Button lang={lang} btnText="Tell me more" textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
                     <Supports
                         font={`font-Regional`}
                         img={regionalsquare}
@@ -82,7 +81,7 @@ const Home = () => {
                         titleColor="text-white"
                         descColor='text-white'
                         button=
-                        {<Button btnText="Tell me more" textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
+                        {<Button lang={lang} btnText="Tell me more" textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
                     <Supports
                         font={`${lang === "EN" ? 'font-EnglishMarketEN' : 'font-EnglishMarketJA'}`}
                         bgColor='bg-marketplace-accent'
@@ -100,7 +99,7 @@ const Home = () => {
                 </div> */}
                 <p className="px-4 text-mobile-page-header text-center text-primary-dark">{pageText.HERO3_BOTTOM}</p>
                 <div className="flex justify-center">
-                    <Button btnText="More about us" extraClasses="mt-12 w-[200px]"></Button>
+                    <Button lang={lang} btnText="More about us" extraClasses="mt-12 w-[200px]"></Button>
                 </div>
             </section>
         </div >

@@ -10,7 +10,7 @@ function StudyBuddyCardTopRight({ timeZone, lang }) {
                 timeZone ?
                     <div className='flex text-mobile-label-1 gap-1'>
                         <Timezone />
-                        <p className={`${lang === "EN" ? 'font-PoppinsMedium' : 'font-NotoSansJPMedium'}`}>
+                        <p className={`font-medium`}>
                             {dbText.timezones[timeZone][lang]}</p>
                     </div >
                     : <></>

@@ -40,9 +40,7 @@ const Toggle = ({ extraClasses = '', label, name, options, ...rest }) => {
                                             <div className="flex items-center">
                                                 <Switch.Label className={` 
                                                             text-mobile-section-header
-                                                            ${lang === "EN" ?
-                                                        'font-PoppinsMedium' :
-                                                        'font-NotoSansJPMedium'} mr-4`}>{label}</Switch.Label>
+                                                            font-medium'} mr-4`}>{label}</Switch.Label>
                                                 <Switch
                                                     checked={field.value}
                                                     onChange={() => handleChange(form.setFieldValue, field.value)}

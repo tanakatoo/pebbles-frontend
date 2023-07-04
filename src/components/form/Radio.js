@@ -18,9 +18,7 @@ const Radio = ({ extraClasses, label, name, options, ...rest }) => {
             <label
                 className={`mb-2 
             text-mobile-section-header
-            ${lang === "EN" ?
-                        'font-PoppinsMedium' :
-                        'font-NotoSansJPMedium'}`}
+            font-medium'}`}
                 htmlFor={name}>{label}</label>
             <Field name={name} {...rest} >
                 {/* use render field props */}
@@ -41,7 +39,7 @@ const Radio = ({ extraClasses, label, name, options, ...rest }) => {
                                             checked={field.value === o.value}
                                             className={` me-2 
                                             rounded-full 
-                                            ${extraClasses}`}
+                                            ${extraClasses} checked:bg-primary`}
                                         /><label htmlFor={o.value}>{o.key}</label>
                                     </div>
                                 )

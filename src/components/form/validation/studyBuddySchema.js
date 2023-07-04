@@ -32,8 +32,8 @@ const studyBuddySchema = Yup.object().shape({
         }),
     learning_language: Yup
         .string()
-        .when("study_buddy_active", {
-            is: (val) => val === true,
+        .when(["study_buddy_active", "study_buddy_types"], {
+            is: (active, type) => active === true && (type.includes("LanguageExchange") || type.includes("StudyBuddy")),
             then: (schema) => schema.required("LEARNING_LANG"),
             otherwise: (schema) => schema
         }),

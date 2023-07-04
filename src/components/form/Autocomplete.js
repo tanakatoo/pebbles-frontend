@@ -19,11 +19,12 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
             //generate a new token to use now 
             const newSessionToken = uuid()
             setSessionToken(newSessionToken)
-            res = await ExternalApi.autocompleteLocation(q, "EN", newSessionToken)
+
+            res = await ExternalApi.autocompleteLocation(q, lang, newSessionToken)
 
         } else {
             //use the current sessionToken
-            res = await ExternalApi.autocompleteLocation(q, "EN", sessionToken)
+            res = await ExternalApi.autocompleteLocation(q, lang, sessionToken)
         }
 
         return res
@@ -40,6 +41,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
             try {
 
                 const res = await getLocationsFromAPI(q)
+
                 setListOfLocations(res)
             } catch (e) {
                 setErrors(e)
@@ -82,7 +84,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
 
     return (
         <div className=' flex flex-col w-full'>
-            <label className={`mb-2  text-mobile-section-header ${lang === "EN" ? 'font-PoppinsMedium' : 'font-NotoSansJPMedium'}`} htmlFor={name}>Location</label>
+            <label className={`mb-2  text-mobile-section-header font-medium`} htmlFor={name}>Location</label>
             <Field name={name} {...props}>
                 {
                     ({ field, form }) => {

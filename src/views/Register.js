@@ -15,9 +15,8 @@ import { Link } from "react-router-dom";
 const Register = () => {
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
-    const lang = useSelector(state => state.langFont.lang)
 
-    const pageText = usePageText("register")
+    const [pageText, lang] = usePageText("register")
     const INITIAL_DATA = {
         username: '',
         password: '',
@@ -30,7 +29,7 @@ const Register = () => {
             <div className="mt-8 flex flex-col justify-center items-center mx-8">
 
                 {Object.keys(errors).length > 0 && <ServerError msg={errors} title={pageText.ERROR_TITLE} />}
-                {errors.length === 0 && <h1 className="text-center mb-[56px] text-mobile-header-2-homepage">{pageText.H1}</h1>}
+                {errors.length === 0 && <h1 className="text-center mb-[56px] text-mobile-header-2">{pageText.H1}</h1>}
                 <Formik
                     initialValues={INITIAL_DATA}
                     validationSchema={registerSchema}
@@ -91,7 +90,7 @@ const Register = () => {
                                     placeholder=""
                                 />
 
-                                <Button btnText={pageText.SUBMIT} type="submit" extraClasses="mt-12" isSubmitting={formik.isSubmitting} />
+                                <Button lang={lang} btnText={pageText.SUBMIT} type="submit" extraClasses="mt-12" isSubmitting={formik.isSubmitting} />
                                 <p className="mt-4 text-center text-gray-text">{pageText.ALREADY_ACCT} <span className="text-link hover:text-primary"><Link to="/login">{pageText.LOGIN_HERE}</Link></span></p>
                             </Form>
                         )

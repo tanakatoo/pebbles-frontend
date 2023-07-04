@@ -11,9 +11,8 @@ import passwordSchema from "../components/form/validation/changePassword"
 
 const ChangePassword = () => {
     const dispatch = useDispatch()
-    const pageText = usePageText("password")
+    const [pageText, lang] = usePageText("password")
     const [errors, setErrors] = useState([])
-    const lang = useSelector(state => state.langFont.lang)
 
     return (
         <>
@@ -42,7 +41,7 @@ const ChangePassword = () => {
                         placeholder={pageText.USERNAME}
                     />
 
-                    <Button btnText={pageText.SUBMIT} type="submit" />
+                    <Button lang={lang} btnText={pageText.SUBMIT} type="submit" />
                 </Form>
 
             </Formik>

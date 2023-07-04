@@ -4,8 +4,8 @@ import NavBar from "./components/common/NavBar"
 import "./styles/app.css"
 import { useSelector } from 'react-redux';
 import MyRoutes from "./MyRoutes"
-import FlashMsg from "./components/common/FlashMsg";
-import FlashMessageContext from "./contexts/FlashMessageContext"
+// import FlashMsg from "./components/common/FlashMsg";
+// import FlashMessageContext from "./contexts/FlashMessageContext"
 import Footer from "./components/common/Footer";
 
 function App() {
@@ -16,15 +16,15 @@ function App() {
 
   //we have to hardcode the string of the font because tailwind doesn't know what to use at build
   return (
-    <FlashMessageContext.Provider value={[setMessage, setTypeOfMsg]}>
-      <div className={`App ${lang === "EN" ? 'font-poppins' : 'font-NotoSansJPRegular'}`}>
-        <FlashMsg msg={message} incomingType={typeOfMsg} />
-        <NavBar />
-        <MyRoutes />
-        <Footer />
-      </div>
+    // <FlashMessageContext.Provider value={[setMessage, setTypeOfMsg]}>
+    <div className={`App ${lang === "EN" ? 'font-poppins' : 'font-NotoSansJP'}`}>
+      {/* <FlashMsg msg={message} incomingType={typeOfMsg} /> */}
+      <NavBar />
+      <MyRoutes />
+      <Footer />
+    </div>
 
-    </FlashMessageContext.Provider >
+    // </FlashMessageContext.Provider >
   );
 }
 

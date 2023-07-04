@@ -25,8 +25,7 @@ function Message() {
     const [data, setData] = useState([])
     const [errors, setErrors] = useState([])
     const [token = null] = useSetToken()
-    const pageText = usePageText("messages")
-    const lang = useSelector(state => state.langFont.lang)
+    const [pageText, lang] = usePageText("messages")
     const { username } = useParams()
     const user = useSelector(state => state.profile.profile.username)
 

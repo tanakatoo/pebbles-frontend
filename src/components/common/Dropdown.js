@@ -36,12 +36,14 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
             <ul className={divide ? 'divide-gray divide-y' : ''}>
                 {items.map((i, idx) => {
                     return (
-                        <div key={uuid()} className={`${lang === "JA" ? "font-NotoSansJPRegular" : ''} `} >
-                            <li className='py-3 px-4' >
+                        <div key={uuid()} className={`text-primary-dark  `} >
+                            <li className={`py-3 px-4 ${lang === "JA" ? ' font-NotoSansJPMedium ' : 'font-medium'}`} >
+                                {console.log('link is', i.text, i.link)}
                                 {i.link ?
-                                    <NavLink to={`${i.link}`} style={({ isActive }) => ({ color: isActive ? "text-secondary-dark" : "" })}>
-                                        <div className='flex ' >
-                                            <span className={`grow ${width ? width : ''} ${pr ? pr : ''}`}>
+                                    <NavLink to={`${i.link}`} className={({ isActive }) => isActive ? "text-secondary-dark" : " hover:underline hover:underline-offset-4"}>
+
+                                        <div className={`flex `} >
+                                            <span className={`grow ${width ? width : ''} ${pr ? pr : ''} `}>
                                                 {i.text}
                                             </span>
                                             {pr && subitems[idx] &&
@@ -50,7 +52,7 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
                                         </div>
                                     </NavLink>
                                     : <div className='flex ' id={idx} onClick={handleDropdown}>
-                                        <span className={`grow ${width ? width : ''} ${pr ? pr : ''}`}>
+                                        <span className={`grow ${width ? width : ''} ${pr ? pr : ''}  hover:underline hover:underline-offset-4`}>
                                             {i.text}
                                         </span>
                                         {pr && subitems[idx] &&
@@ -67,13 +69,13 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
                                             <li key={uuid()} className='py-3 px-4 text-gray-text'>
                                                 {j.link
                                                     ?
-                                                    <NavLink to={`${j.link}`} style={({ isActive }) => ({ color: isActive ? "text-secondary-dark" : "" })} >
-                                                        <div className='flex'>
-                                                            {j.text}
-                                                        </div>
+                                                    <NavLink to={`${j.link}`} className={({ isActive }) => isActive ? 'text-secondary-dark font-bold flex' : "hover:underline hover:underline-offset-4 flex"}  >
+                                                        {j.text}
                                                     </NavLink>
                                                     :
-                                                    j.text}
+                                                    <span className=' text-gray'>
+                                                        {j.text}
+                                                    </span>}
                                             </li>
                                         )
                                     })

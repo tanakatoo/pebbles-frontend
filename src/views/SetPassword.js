@@ -19,9 +19,8 @@ const SetPassword = () => {
 
 
     const [errors, setErrors] = useState([])
-    const lang = useSelector(state => state.langFont.lang)
 
-    const pageText = usePageText("setPassword")
+    const [pageText, lang] = usePageText("setPassword")
     const INITIAL_DATA = {
         password: '',
         password_check: ''
@@ -69,7 +68,7 @@ const SetPassword = () => {
                         placeholder=""
                     />
 
-                    <Button btnText={pageText.SUBMIT} type="submit" />
+                    <Button lang={lang} btnText={pageText.SUBMIT} type="submit" />
                 </Form>
             </Formik>
         </>

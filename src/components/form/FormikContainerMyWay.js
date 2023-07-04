@@ -26,7 +26,7 @@ const FormikContainerMyWay = ({ pageText }) => {
     const lang = useSelector(state => state.langFont.lang)
     const [token = null] = useSetToken()
 
-    console.log('profile is now', profile)
+
     useEffect(() => {
         //we have to add the location to the autocomplete text box separately
         setSavedValues({
@@ -38,7 +38,7 @@ const FormikContainerMyWay = ({ pageText }) => {
         })
     }, [])
 
-    console.log(profile)
+
     const initialValues = {
         myway_advice: "",
         raz_reading_level: "",
@@ -51,7 +51,7 @@ const FormikContainerMyWay = ({ pageText }) => {
 
     const onSubmit = async (values, { setSubmitting }) => {
         try {
-            console.log('submitting', values)
+
             const res = await UserApi.updateUserInfo(values)
             //call dispatch to set token in profileReducer
             dispatch(actionSaveProfile(values))
@@ -186,7 +186,7 @@ const FormikContainerMyWay = ({ pageText }) => {
 
 
                             <div className="mb-24 mt-12 flex">
-                                <Button type="submit" btnText='Save' extraClasses="grow" />
+                                <Button lang={lang} type="submit" btnText={pageText.SAVE_BTN} extraClasses="grow" />
                             </div>
                         </Form>
                     </div>

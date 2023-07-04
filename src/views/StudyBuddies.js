@@ -16,12 +16,10 @@ import StudyBuddyCardBottom from "../components/studyBuddy/StudyBuddyCardBottom"
 import { Dialog } from '@headlessui/react'
 import { Button } from "../components/button/Button"
 import SearchBar from "../components/form/SearchBar"
-import { X } from "../styles/Icons"
+import { X, AwesomeFilterX } from "../styles/Icons"
 import FormikControl from "../components/form/FormikControl"
-import {
-    Formik, Form
-} from "formik"
-
+import { Formik, Form } from "formik"
+import { Filter } from "../styles/Icons"
 import {
     useEnglishLevelOptions,
     useAgeRangeOptions,
@@ -30,13 +28,9 @@ import {
     useTimezoneOptions,
     useStudyBuddyTypeOptions
 } from "../helpers/studyBuddyDropdowns"
-import useFormData from "../hooks/useFormData"
-
 
 const StudyBuddies = () => {
-
-    const lang = useSelector(state => state.langFont.lang)
-    const pageText = usePageText("studyBuddy")
+    const [pageText, lang] = usePageText("studyBuddy")
     const [doneGettingData, setDoneGettingData] = useState(false)
     const [data, setData] = useState(null)
     const [errors, setErrors] = useState([])
@@ -48,7 +42,7 @@ const StudyBuddies = () => {
     const ageOptions = useAgeRangeOptions()
     const languageOptions = useLanguageOptions()
     const studyBuddyTypeOptions = useStudyBuddyTypeOptions()
-
+    const [numFilters, setNumFilters] = useState(false)
 
     const getStudyBuddies = async () => {
         try {
@@ -105,7 +99,17 @@ const StudyBuddies = () => {
                 word: values.searchWord
 
             }
-            console.log('submittting')
+            //count how many filters are on
+            let numFilters = 0
+            numFilters += criteria.age.length > 0 ? 1 : 0
+            numFilters += criteria.type.length > 0 ? 1 : 0
+            numFilters += criteria.timezone.length > 0 ? 1 : 0
+            numFilters += criteria.native_lang.length > 0 ? 1 : 0
+            numFilters += criteria.learning_lang.length > 0 ? 1 : 0
+            numFilters += criteria.gender.length > 0 ? 1 : 0
+            numFilters += criteria.language_level.length > 0 ? 1 : 0
+
+            setNumFilters(numFilters)
             setDoneGettingData(false);
             const res = await StudyBuddyApi.getFilteredStudyBuddies(criteria)
             console.log('this is res', res)
@@ -125,6 +129,11 @@ const StudyBuddies = () => {
         } finally {
             setSubmitting(false)
         }
+    }
+
+    const removeFilters = (formik) => {
+        formik.resetForm()
+        console.log('formik is now', formik.values)
     }
 
 
@@ -148,10 +157,14 @@ const StudyBuddies = () => {
                                                 <X classes='cursor-pointer'
                                                     onClick={() => setIsDialogOpen(false)} />
                                             </div>
-                                            <Dialog.Title className='font-bold text-center text-mobile-page-header pt-4 mb-5'>
+                                            <Dialog.Title className='font-medium text-center text-mobile-page-header pt-4 mb-5'>
                                                 {pageText.FILTER_SB}
                                             </Dialog.Title>
-
+                                            <div className="flex justify-end mb-6 md:mb-4 items-center hover:text-link-hover "
+                                                onClick={() => removeFilters(formik)}>
+                                                <span ><AwesomeFilterX /></span>
+                                                <span className="ps-2 cursor-pointer underline underline-offset-2">Remove filters</span>
+                                            </div>
                                             <div className="flex flex-col">
                                                 <div className="mb-4">
                                                     <FormikControl
@@ -220,7 +233,7 @@ const StudyBuddies = () => {
                                                 </div>
 
                                                 <div className="mb-24 mt-12 flex">
-                                                    <Button type="button" btnText={pageText.APPLY_FILTERS} extraClasses="grow" clickMethod={formik.submitForm} />
+                                                    <Button lang={lang} type="button" btnText={pageText.APPLY_FILTERS} extraClasses="grow bg-study-buddy-accent " textColor="text-primary-dark" clickMethod={formik.submitForm} />
                                                 </div>
                                             </div>
 
@@ -242,14 +255,19 @@ const StudyBuddies = () => {
                                     :
                                     <>
                                         <div className="w-full px-4 mb-3">
-                                            <SearchBar btn={
-                                                <Button btnText={pageText.FILTER}
-                                                    bkColor='bg-study-buddy-accent'
-                                                    textColor='text-primary-dark'
-                                                    px='px-8'
-                                                    clickMethod={() => setIsDialogOpen(true)} />
+                                            <SearchBar
+                                                placeholder={pageText.SEARCH_PLACEHOLDER}
+                                                btn={
+                                                    <Button btnText={numFilters > 0 ? `${numFilters} ${pageText.HAS_FILTER}` : pageText.FILTER}
+                                                        icon={numFilters > 0 ? <Filter /> : ""}
+                                                        bkColor='bg-study-buddy-accent'
+                                                        textColor='text-primary-dark'
+                                                        px='px-8'
+                                                        lang={lang}
 
-                                            }
+                                                        clickMethod={() => setIsDialogOpen(true)} />
+
+                                                }
                                                 name='searchWord'
                                                 onSubmit={onSubmit}
                                             />

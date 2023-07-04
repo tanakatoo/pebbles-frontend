@@ -8,6 +8,7 @@ import password from "../text/changePassword.json"
 import setPassword from "../text/password.json"
 import profile from "../text/profile.json"
 import saved from "../text/savedItems.json"
+import dashboard from "../text/dashboard.json"
 
 const text = {
     home: home,
@@ -18,7 +19,8 @@ const text = {
     password: password,
     setPassword: setPassword,
     profile: profile,
-    saved: saved
+    saved: saved,
+    dashboard: dashboard
 }
 
 const INITIAL_STATE = { pageText: '' }

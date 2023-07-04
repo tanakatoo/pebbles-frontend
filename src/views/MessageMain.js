@@ -18,7 +18,7 @@ function MessageMain() {
     const [errors, setErrors] = useState([])
     const [token = null] = useSetToken()
     const [dropdown, setDropdown] = useState(false)
-    const pageText = usePageText("messages")
+    const [pageText, lang] = usePageText("messages")
 
     useEffect(() => {
         const getData = async () => {

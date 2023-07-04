@@ -82,26 +82,6 @@ const FormikContainerProfile = ({ pageText }) => {
 
     }
 
-    const timezoneDropdown = [
-        { key: "Select a timezone", value: '' },
-        { key: "timezone1 name", value: '1' },
-        { key: "timezone2 name", value: '2' },
-        { key: "timezone3 name", value: '3' }
-    ]
-
-    const genderRadio = [
-        { key: "Not specified", value: '' },
-        { key: "male", value: '1' },
-        { key: "female", value: '2' }
-    ]
-
-    const studyBuddyType = [
-        { key: "Study buddy", value: '1' },
-        { key: "Language exchange", value: '2' },
-        { key: "Volunteer", value: '3' }
-    ]
-
-
     return (
         <Formik
             initialValues={savedValues || initialValues}
@@ -143,7 +123,7 @@ const FormikContainerProfile = ({ pageText }) => {
                                 <FormikControl control='autocompleteApi' label="Location" name='location' />
                             </div>
                             <div className="mb-24 mt-12 flex">
-                                <Button type="submit" btnText='Save' extraClasses="grow" />
+                                <Button lang={lang} type="submit" btnText={pageText.SAVE_BTN} extraClasses="grow" />
                             </div>
                         </Form>
                     </div>
