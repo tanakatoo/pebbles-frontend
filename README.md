@@ -3,6 +3,9 @@ This app connects Japanese learners and people living in Japan to each other to 
   
 Currently users are able to create an account, set up their profile and access the Study Buddy Board to message or save users.
 
+## About the app
+
+This is a react app that uses Tailwind CSS, Formik, moment, headless UI to create a site that can be used by both Japanese users and English speaking users with an custom translation component.
 
 ## APIs
 
