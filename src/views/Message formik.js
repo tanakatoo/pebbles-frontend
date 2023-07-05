@@ -74,80 +74,80 @@ function Message() {
     }
 
     return (
-        <Protected>
-            <div className=' flex flex-col justify-center items-center'>
+        // <Protected>
+        <div className=' flex flex-col justify-center items-center'>
 
-                {errors.length > 0 && <ServerError msg={errors} />}
-                {data.length === 0 && errors.length === 0 ?
-                    <Spinner />
-                    : errors.length === 0 ?
-                        <>
-                            <ConversationTitle link={`/users/${conversationWithUsername}`}
-                                src={`../avatars/${conversationWithAvatar}`}
-                                username={`${conversationWithUsername}`} />
-                            <div className='bg-background shadow-sm pb-12'>
-                                <Formik
-                                    innerRef={(f) => (msgRef.current = f)}
-                                    initialValues={INITIAL_DATA}
-                                    onSubmit={async (values, onSubmitProps) => {
-                                        setErrors([])
-                                        try {
-                                            const res = await MessageApi.sendMsg(username, values.msg)
-                                            getData()
-                                        } catch (e) {
-                                            if (e instanceof TypeError) {
-                                                //means server is down
-                                                setErrors(["UNKNOWN"])
-                                            } else {
-                                                setErrors(e)
-                                            }
-                                        } finally {
-                                            onSubmitProps.setSubmitting(false)
-                                            onSubmitProps.resetForm()
+            {errors.length > 0 && <ServerError msg={errors} />}
+            {data.length === 0 && errors.length === 0 ?
+                <Spinner />
+                : errors.length === 0 ?
+                    <>
+                        <ConversationTitle link={`/users/${conversationWithUsername}`}
+                            src={`../avatars/${conversationWithAvatar}`}
+                            username={`${conversationWithUsername}`} />
+                        <div className='bg-background shadow-sm pb-12'>
+                            <Formik
+                                innerRef={(f) => (msgRef.current = f)}
+                                initialValues={INITIAL_DATA}
+                                onSubmit={async (values, onSubmitProps) => {
+                                    setErrors([])
+                                    try {
+                                        const res = await MessageApi.sendMsg(username, values.msg)
+                                        getData()
+                                    } catch (e) {
+                                        if (e instanceof TypeError) {
+                                            //means server is down
+                                            setErrors(["UNKNOWN"])
+                                        } else {
+                                            setErrors(e)
                                         }
-                                    }}
-                                >{formik => {
-                                    return (
-                                        <Form className='w-full'>
-                                            <div className='flex items-center'>
-                                                <Textarea label="" rows='1' name="msg" type="text" placeholder={pageText.TYPE_MSG} extraClasses="border-none mx-2" />
-                                                <div className='text-primary flex me-2 cursor-pointer'><AwesomeSend size="xl" onClick={formik.submitForm} /></div>
-                                            </div>
-                                        </Form>
-                                    )
-                                }
+                                    } finally {
+                                        onSubmitProps.setSubmitting(false)
+                                        onSubmitProps.resetForm()
                                     }
-                                </Formik>
-                                <div className='w-full grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12  
+                                }}
+                            >{formik => {
+                                return (
+                                    <Form className='w-full'>
+                                        <div className='flex items-center'>
+                                            <Textarea label="" rows='1' name="msg" type="text" placeholder={pageText.TYPE_MSG} extraClasses="border-none mx-2" />
+                                            <div className='text-primary flex me-2 cursor-pointer'><AwesomeSend size="xl" onClick={formik.submitForm} /></div>
+                                        </div>
+                                    </Form>
+                                )
+                            }
+                                }
+                            </Formik>
+                            <div className='w-full grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12  
                                                 lg:max-w-[900px] content-center '>
-                                    {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
-                                    <div className='col-span-full'>
-                                        {data.map((d, idx) => (
-                                            <>
-                                                <Card data={d} key={uuid()} latest={idx === 0 ? true : false} />
-                                                {console.log('from', data[0].from, 'username is', user)}
-                                                {idx === 0 ? <>
-                                                    {console.log(user === data[0].from)}
-                                                    <div className={`flex ${user === data[0].from ? 'justify-end' : 'justify-start'} mx-4`}>
-                                                        <p className='text-gray text-mobile-label-2'>{pageText.LAST_SENT} {lastSent}</p>
-                                                    </div>
-                                                </>
-                                                    : ''
-                                                }
-                                            </>)
+                                {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
+                                <div className='col-span-full'>
+                                    {data.map((d, idx) => (
+                                        <>
+                                            <Card data={d} key={uuid()} latest={idx === 0 ? true : false} />
+                                            {console.log('from', data[0].from, 'username is', user)}
+                                            {idx === 0 ? <>
+                                                {console.log(user === data[0].from)}
+                                                <div className={`flex ${user === data[0].from ? 'justify-end' : 'justify-start'} mx-4`}>
+                                                    <p className='text-gray text-mobile-label-2'>{pageText.LAST_SENT} {lastSent}</p>
+                                                </div>
+                                            </>
+                                                : ''
+                                            }
+                                        </>)
 
 
-                                        )}
+                                    )}
 
-                                    </div>
                                 </div>
                             </div>
-                        </>
-                        : ''
-                }
+                        </div>
+                    </>
+                    : ''
+            }
 
-            </div >
-        </Protected >
+        </div >
+        // </Protected >
     )
 }
 

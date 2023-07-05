@@ -9,7 +9,7 @@ function Card({ data, goToProfileOnClick, topRight, bottom, underUsername, buddy
       <div className='flex flex-col grow gap-2'>
         <div className='flex gap-4 items-center'>
 
-          <Avatar onClick={goToProfileOnClick} username={data.username} link={`/users/${data.username}`}
+          <Avatar username={data.username} link={`/users/${data.username}`}
             src={data.avatar}
             size={'user'} />
 

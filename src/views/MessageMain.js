@@ -12,6 +12,7 @@ import usePageText from "../hooks/usePageText"
 import Protected from '../components/common/Protected'
 import NoData from '../components/common/NoData'
 import { Link } from 'react-router-dom'
+import CustomLink from '../components/button/CustomLink'
 
 function MessageMain() {
     const [data, setData] = useState(null)
@@ -60,41 +61,41 @@ function MessageMain() {
         ]
 
     return (
-        <Protected>
-            <div className=' my-16 flex justify-center'>
+        // <Protected>
+        <div className=' my-16 flex justify-center'>
 
-                {errors.length > 0 && <ServerError msg={errors} />}
-                {!data && errors.length === 0 ?
-                    <Spinner />
-                    : data.length === 0 ?
-                        <div className='flex flex-col items-center'>
-                            <NoData msg={pageText.NO_MSG} link="/users/dashboard" linkText={pageText.BACK_TO_DASHBOARD} />
-                            <div className='text-link'><Link to="/users/unblock">{pageText.UNBLOCK_CONTACTS}</Link></div>
-                        </div>
-                        :
-                        errors.length === 0 ?
-                            <div className='container grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12  lg:mx-24 xl:mx-48'>
-                                {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
-                                <div className="flex col-span-full justify-end relative mb-6">
-                                    <span className='cursor-pointer' ref={ref} onClick={handleDropdown}>
-                                        {pageText.EDIT}
-                                    </span>
-                                    {dropdown && <Dropdown items={dropdownItems}
-                                        divide={true}
-                                        css="rounded shadow-dropdown top-8" />}
-                                </div>
-                                <div className='col-span-full'>
-
-                                    {data.map(d => <CardMain data={d} key={uuid()} />)
-                                    }
-
-                                </div>
+            {errors.length > 0 && <ServerError msg={errors} />}
+            {!data && errors.length === 0 ?
+                <Spinner />
+                : data.length === 0 ?
+                    <div className='flex flex-col items-center'>
+                        <NoData msg={pageText.NO_MSG} link="/users/dashboard" linkText={pageText.BACK_TO_DASHBOARD} />
+                        <div ><CustomLink text={pageText.UNBLOCK_CONTACTS} path={"/users/unblock"} /> </div>
+                    </div>
+                    :
+                    errors.length === 0 ?
+                        <div className='container grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12  lg:mx-24 xl:mx-48'>
+                            {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
+                            <div className="flex col-span-full justify-end relative mb-6">
+                                <span className='cursor-pointer hover:underline hover:underline-offset-4 hover:text-gray-text' ref={ref} onClick={handleDropdown}>
+                                    {pageText.EDIT}
+                                </span>
+                                {dropdown && <Dropdown items={dropdownItems}
+                                    divide={true}
+                                    css="rounded shadow-dropdown top-8" />}
                             </div>
-                            : ''
-                }
+                            <div className='col-span-full'>
 
-            </div>
-        </Protected>
+                                {data.map(d => <CardMain data={d} key={uuid()} />)
+                                }
+
+                            </div>
+                        </div>
+                        : ''
+            }
+
+        </div >
+        // </Protected>
     )
 }
 

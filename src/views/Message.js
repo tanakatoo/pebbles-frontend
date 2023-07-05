@@ -10,6 +10,7 @@ import ServerError from '../components/form/ServerError'
 import Spinner
     from '../components/common/Spinner'
 import moment from 'moment-timezone'
+import 'moment/locale/ja'
 import ConversationTitle from '../components/message/ConversationTitle'
 import { AwesomeSend } from '../styles/Icons'
 import { useSelector } from 'react-redux'
@@ -30,8 +31,6 @@ function Message() {
     const [pageText, lang] = usePageText("messages")
     const { username } = useParams()
     const user = useSelector(state => state.profile.profile.username)
-
-    moment.updateLocale(lang.toLowerCase())
 
     const getData = async () => {
         try {
@@ -79,7 +78,8 @@ function Message() {
     if (data.length > 0) {
         conversationWithUsername = user === data[0].from ? data[0].to : data[0].from
         conversationWithAvatar = user === data[0].from ? data[0].toavatar : data[0].fromavatar
-        lastSent = moment.utc(data[0].sent_at, 'YYYY-MM-DD HH:mm:ss').tz(Intl.DateTimeFormat().resolvedOptions().timeZone).format('LLL')
+        lastSent = moment.utc(data[0].sent_at, 'YYYY-MM-DD HH:mm:ss').tz(Intl.DateTimeFormat().resolvedOptions().timeZone).locale(lang.toLowerCase()).format('LLL')
+
     }
 
     const handleSubmit = async () => {
@@ -106,64 +106,64 @@ function Message() {
 
 
     return (
-        <Protected>
-            <div className=' flex flex-col justify-center items-center'>
-                {errors.length > 0 &&
-                    <div>
-                        <ServerError msg={errors} />
-                        {errors == "BLOCKED" ?
-                            <p className='text-center mb-12'><Link className='underline' to="/users/unblock">{pageText.UNBLOCK_CONTACTS}</Link></p> : ''}
+        // <Protected>
+        <div className=' flex flex-col justify-center items-center'>
+            {errors.length > 0 &&
+                <div>
+                    <ServerError msg={errors} />
+                    {errors == "BLOCKED" ?
+                        <p className='text-center mb-12'><Link className='underline' to="/users/unblock">{pageText.UNBLOCK_CONTACTS}</Link></p> : ''}
 
-                    </div>}
-                {data.length === 0 && errors.length === 0 && doneGettingData === false ?
-                    <Spinner />
-                    : errors.length === 0 && data.length > 1 || doneGettingData === true ?
-                        <>
-                            <ConversationTitle link={`/users/${conversationWithUsername}`}
-                                src={`../avatars/${conversationWithAvatar}`}
-                                username={`${conversationWithUsername}`} />
-                            <div className='bg-background shadow-sm pb-12'>
+                </div>}
+            {data.length === 0 && errors.length === 0 && doneGettingData === false ?
+                <Spinner />
+                : errors.length === 0 && data.length > 1 || doneGettingData === true ?
+                    <>
+                        <ConversationTitle link={`/users/${conversationWithUsername}`}
+                            src={`../avatars/${conversationWithAvatar}`}
+                            username={`${conversationWithUsername}`} />
+                        <div className='w-full max-w-[500px] bg-background shadow-sm pb-12'>
 
-                                <form className='w-full flex items-center px-2 my-2'>
-                                    <div className='flex flex-col w-full m'>
-                                        <textarea ref={msgRef} id='msg' name='msg' value={msg.msg} onChange={handleChange} rows="1"
-                                            className={`overflow-hidden mb-2 rounded-ml py-3 px-4 text-black placeholder-gray`} />
-                                    </div>
-                                    <div className='text-primary flex mx-2 cursor-pointer'><AwesomeSend size="xl" onClick={handleSubmit} /></div>
+                            <form className='w-full flex items-center px-2 my-2'>
+                                <div className='flex flex-col w-full m'>
+                                    <textarea ref={msgRef} id='msg' name='msg' value={msg.msg} onChange={handleChange} rows="1"
+                                        className={`overflow-hidden mb-2 rounded-ml py-3 px-4 text-black placeholder-gray`} />
+                                </div>
+                                <div className='text-primary flex mx-2 cursor-pointer'><AwesomeSend size="xl" onClick={handleSubmit} /></div>
 
-                                </form>
+                            </form>
 
-                                <div className='w-full grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12  
+                            <div className='w-full grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12  
                                                 lg:max-w-[900px] content-center '>
-                                    {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
-                                    <div className='col-span-full'>
-                                        {data[0].fromavatar !== '' ?
-                                            data.map((d, idx) => (
-                                                <React.Fragment key={uuid()}>
-                                                    <Card data={d} latest={idx === 0 ? true : false} />
-                                                    {idx === 0 ? <>
-                                                        <div className={`flex ${user === data[0].from ? 'justify-end' : 'justify-start'} mx-4 mb-3`}>
-                                                            <p className='text-gray text-mobile-label-2'>{pageText.LAST_SENT} {lastSent}</p>
-                                                        </div>
-                                                    </>
-                                                        : ''
-                                                    }
-                                                </React.Fragment>)
+                                {/* <div className='col-span-full mb-4 mt-2'><SearchBar handleSearch={handleSearch} /></div> */}
+                                <div className='col-span-full'>
+                                    {data[0].fromavatar !== '' ?
+                                        data.map((d, idx) => (
+                                            <React.Fragment key={uuid()}>
+                                                <Card data={d} latest={idx === 0 ? true : false} />
+                                                {idx === 0 ? <>
+                                                    <div className={`flex ${user === data[0].from ? 'justify-end' : 'justify-start'} mx-4 mb-3`}>
+                                                        <p className='text-gray text-mobile-label-2'>{pageText.LAST_SENT} {lastSent}</p>
+                                                    </div>
+                                                </>
+                                                    : ''
+                                                }
+                                            </React.Fragment>)
 
 
-                                            )
+                                        )
 
-                                            : ''}
+                                        : ''}
 
-                                    </div>
                                 </div>
                             </div>
-                        </>
-                        : ''
-                }
+                        </div>
+                    </>
+                    : ''
+            }
 
-            </div >
-        </Protected >
+        </div >
+        // </Protected >
     )
 }
 

@@ -8,7 +8,7 @@ function NoData({ msg, link, linkText }) {
             <span>
                 {msg}
             </span>
-            <p className='text-link'><CustomLink path={link} text={linkText} /></p>
+            <p ><CustomLink path={link} text={linkText} /></p>
         </div>
     )
 }

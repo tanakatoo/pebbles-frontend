@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function CustomLink({ text, path }) {
+function CustomLink({ text, path, hoverColor = 'hover:text-gray-text' }) {
     return (
-        <Link className="hover:text-link-hover hover:underline hover:underline-offset-4" to={path}>{text}</Link>
+        <Link className={`${hoverColor} hover:underline hover:underline-offset-4`} to={path}>{text}</Link>
     )
 }
 

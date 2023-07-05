@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import usePageText from "../hooks/usePageText";
 import { useDispatch, useSelector } from "react-redux";
 import ServerError from "../components/form/ServerError";
@@ -29,12 +29,13 @@ const Login = () => {
         password: ''
     }
 
-    console.log('pebbles api token is', PebblesApi.token)
-    if (token) {
-        //should go to their dashboard
-        navigate('/users/dashboard')
-    }
-    console.log(errors)
+    useEffect(() => {
+        if (token) {
+            //should go to their dashboard
+            navigate('/users/dashboard')
+        }
+    }, [token])
+
     return (
         <>
             <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
@@ -52,32 +53,29 @@ const Login = () => {
                             //call dispatch to set token in profileReducer
                             dispatch(actionLogin(res)) //save token and then profile
                             // setFlashMessage('LOGIN')
-                            navigate('/users/dashboard')
+                            // navigate('/users/dashboard')
                         } catch (e) {
                             if (e instanceof TypeError) {
                                 //means server is down
+                                console.error('TypeError at login', e)
                                 setErrors(["UNKNOWN"])
                             } else {
-
+                                console.error('Error at login', e)
                                 setErrors(e)
                             }
                         } finally {
                             setSubmitting(false)
                         }
-
-
                     }}
 
                 >{formik => {
                     return (
-                        <Form className="flex flex-col max-w-[500px]">
-
+                        <Form className="flex flex-col w-full max-w-[500px]">
                             <Input
                                 label={pageText.USERNAME}
                                 name="username"
                                 type="text"
                             />
-
                             <Input
                                 label={pageText.PASSWORD}
                                 name="password"

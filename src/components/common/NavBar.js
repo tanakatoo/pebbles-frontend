@@ -162,7 +162,7 @@ const NavBar = () => {
 
     return (
 
-        <nav className="my-4 mx-2 flex justify-between flex-no-wrap">
+        <nav className="my-4 mx-2 flex justify-between flex-no-wrap z-50">
             <Link to='/'>
                 <button className="flex items-center">
                     <img src={logo} className="h-12" alt="Pebbles logo" />

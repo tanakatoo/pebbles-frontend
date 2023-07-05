@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { actionLogout } from '../reducers/actionCreator'
 import { useNavigate, redirect, Navigate } from 'react-router-dom'
@@ -9,9 +9,13 @@ import usePageText from '../hooks/usePageText'
 
 function Logout() {
     const dispatch = useDispatch()
-    // const [setFlashMessage, setTypeOfMsg] = useContext(FlashMessageContext)
-    dispatch(actionLogout())
     const [pageText, lang] = usePageText('login')
+    // const [setFlashMessage, setTypeOfMsg] = useContext(FlashMessageContext)
+    useEffect(() => {
+        dispatch(actionLogout())
+    }, [])
+
+
 
     return (
         <>

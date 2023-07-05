@@ -12,7 +12,6 @@ export const Button = ({
     isSubmitting = false,
     extraClasses = '',
     link = null,
-    lang = "EN",
     disabled = false }
 ) => {
 

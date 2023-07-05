@@ -32,12 +32,12 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
     }
 
     return (
-        <div onClick={handleClickingItself} className={`z-10 whitespace-nowrap absolute bg-white ${css}`}>
+        <div onClick={handleClickingItself} className={`z-50 whitespace-nowrap absolute bg-white ${css}`}>
             <ul className={divide ? 'divide-gray divide-y' : ''}>
                 {items.map((i, idx) => {
                     return (
                         <div key={uuid()} className={`text-primary-dark  `} >
-                            <li className={`py-3 px-4 ${lang === "JA" ? ' font-NotoSansJPMedium ' : 'font-medium'}`} >
+                            <li className={`py-3 px-4 font-medium`} >
                                 {console.log('link is', i.text, i.link)}
                                 {i.link ?
                                     <NavLink to={`${i.link}`} className={({ isActive }) => isActive ? "text-secondary-dark" : " hover:underline hover:underline-offset-4"}>

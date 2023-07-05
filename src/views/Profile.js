@@ -1,24 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import UserApi from '../api/user'
 import { useLocation, useParams } from 'react-router-dom'
 import ServerError from '../components/form/ServerError'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import determineLocation from '../helpers/determineLocation'
 import { Switch, Tab } from '@headlessui/react'
 import usePageText from '../hooks/usePageText'
-import ProfileTabProfile from '../components/common/ProfileTabProfile not used'
 import dbText from "../text/db.json"
 import Spinner from '../components/common/Spinner'
 import NoData from '../components/common/NoData'
 import useSetToken from '../hooks/useSetToken'
 import Avatar from '../components/common/Avatar'
 import { Button } from "../components/button/Button"
-import { current } from '@reduxjs/toolkit'
 import { AwesomeEmptyHeart, AwesomeSolidHeart, MailWhite } from '../styles/Icons'
 import DisplayInfo from '../components/profile/DisplayInfo'
 import { actionSaveProfile } from '../reducers/actionCreator'
 import { Link } from 'react-router-dom'
-import Save from '../components/common/Save'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -152,7 +149,7 @@ const Profile = () => {
                             <div className='grid grid-cols-4 grid-row-1 my-2'>
                                 <div className='col-span-2 flex'>
                                     <div className='flex flex-col items-center gap-2'>
-                                        <Avatar src={currentProfile.avatar} size='profile' />
+                                        <Avatar src={currentProfile.avatar} size='profile' link={true} username={currentProfile.username} />
 
                                         <p>{currentProfile.username}</p>
                                         {currentProfile.myProfile &&
@@ -218,7 +215,7 @@ const Profile = () => {
                                             <Button px="px-8"
                                                 py="py-1"
                                                 bkColor="bg-white"
-                                                extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
+                                                extraClasses=' w-[180px] text-mobile-body-2 '
                                                 textColor="text-primary-dark"
                                                 btnText={pageText.SAVE_BTN}
                                                 clickMethod={saveUser}

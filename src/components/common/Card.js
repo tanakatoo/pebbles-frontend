@@ -8,7 +8,7 @@ function Card({ data, goToProfileOnClick, topRight, underAvatar, main, buddy = f
     <div className={`${buddy ? 'w-full md:w-[70%] lg:w-[45%]' : 'w-usercard'}  flex p-4 bg-primary-very-light rounded-ml `}>
       <div className='pe-4 flex flex-col'>
 
-        <Avatar onClick={goToProfileOnClick} username={data.username} link={`/users/${data.username}`}
+        <Avatar username={data.username} link={`/users/${data.username}`}
           src={data.avatar}
           size='user' />
         {underAvatar}

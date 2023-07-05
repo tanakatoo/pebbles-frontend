@@ -4,12 +4,16 @@ import usePageText from "../hooks/usePageText"
 import { useSelector } from 'react-redux'
 import StatisticsCard from '../components/dashboard/StatisticsCard'
 import { AwesomeSquareCheck, AwesomeCheck } from '../styles/Icons'
+import { Button } from '../components/button/Button'
+import ExploreCommunity from '../components/dashboard/ExploreCommunity'
+import Protected from "../components/common/Protected"
 
 function Dashboard() {
     const [pageText, lang] = usePageText('dashboard')
     const profile = useSelector(state => state.profile.profile)
-
+    console.log('in dashboa')
     return (
+        // <Protected>
         <div>
             {lang === "JA" || lang === "EN"
                 ?
@@ -46,6 +50,7 @@ function Dashboard() {
                                         <h2 className="bg-secondary py-2 text-white font-medium text-mobile-page-header text-center">{pageText.PREMIUM_BENEFITS}</h2>
                                         <div className='bg-secondary-background p-4 flex flex-col items-center'>
                                             <p className='mb-2'>{pageText.PREMIUM_BLURB}</p>
+
                                             <ol>
                                                 <li className='py-2 md:py-1'><span className='text-success me-2'><AwesomeCheck /></span> <span className=''>{pageText.CHECK1}</span></li>
                                                 <li className='py-2 md:py-1'><span className='text-success me-2'><AwesomeCheck /></span> <span className=''>{pageText.CHECK2}</span></li>
@@ -53,12 +58,13 @@ function Dashboard() {
                                                 <li className='py-2 md:py-1'><span className='text-success me-2'><AwesomeCheck /></span> <span className=''>{pageText.CHECK4}</span></li>
                                             </ol>
                                         </div>
+                                        <Button btnText={pageText.PREMIUM_BTN} />
                                     </div >
                                     :
-                                    <div className='flex flex-col '>
+                                    <div className='flex flex-col bg-secondary-background pb-8 md:pb-12'>
                                         <h2 className="bg-secondary py-2 text-white font-medium text-mobile-page-header px-4 md:text-center">{pageText.TRIAL_BENEFITS}</h2>
-                                        <div className='bg-secondary-background p-4 flex flex-col items-center justify-center'>
-                                            <p className='mb-2'>{pageText.TRIAL_BLURB}</p>
+                                        <div className='p-4  flex flex-col items-center justify-center'>
+                                            <p className='mb-4'>{pageText.TRIAL_BLURB}</p>
                                             <ol>
                                                 <li className='py-2 md:py-1'><span className='text-success me-2'><AwesomeCheck /></span> <span className=''>{pageText.TRIAL_CHECK1}</span></li>
                                                 <li className='py-2 md:py-1'><span className='text-success me-2'><AwesomeCheck /></span> <span className=''>{pageText.TRIAL_CHECK2}</span></li>
@@ -67,7 +73,11 @@ function Dashboard() {
                                                 <li className='py-2 md:py-1'><span className='text-success me-2'><AwesomeCheck /></span> <span className=''>{pageText.TRIAL_CHECK5}</span></li>
                                             </ol>
                                         </div>
+                                        <div className='flex justify-center mt-6'>
+                                            <Button btnText={pageText.TRIAL_BTN} />
+                                        </div>
                                     </div >
+
                             }
                         </>
                 :
@@ -76,7 +86,19 @@ function Dashboard() {
                 </>
 
             }
+
+            <h2 className="py-2 my-8 text-primary-dark font-medium text-mobile-page-header px-4 text-center">{pageText.EXPLORE_COMMUNITY}</h2>
+            <div className='flex px-4 flex-col py-8 bg-primary-super-light'>
+
+                <div className='flex items-center justify-center flex-1'>
+                    <ExploreCommunity />
+
+                </div>
+
+            </div >
+
         </div >
+        // </Protected>
     )
 }
 

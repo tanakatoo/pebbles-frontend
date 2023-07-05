@@ -7,7 +7,8 @@ import {
     faHeart,
     faChevronRight,
     faCheck,
-    faFilterCircleXmark
+    faFilterCircleXmark,
+    faCaretRight
 
 } from '@fortawesome/free-solid-svg-icons'
 import exclamation from "../images/icons/exclamation.svg"
@@ -43,6 +44,7 @@ export const AwesomeSquareCheck = () => { return (<FontAwesomeIcon icon={faSquar
 export const AwesomeSend = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faPaperPlane} onClick={onClick} size={size} />) }
 export const AwesomeEmptyHeart = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faHeartEmpty} onClick={onClick} size={size} />) }
 export const AwesomeSolidHeart = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faHeart} onClick={onClick} size={size} />) }
+export const AwesomeCaretRight = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faCaretRight} onClick={onClick} size={size} />) }
 export const AwesomeCheck = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faCheck} onClick={onClick} size={size} />) }
 export const Hamburger = () => { return (<img src={hamburger}></img>) }
 export const Camera = () => { return (<img src={camera}></img>) }

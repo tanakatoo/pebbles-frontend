@@ -30,6 +30,7 @@ import SavedUsers from "./views/SavedUsers"
 import ChangeAvatar from "./views/ChangeAvatar"
 import About from "./views/About"
 import Unauthorized from "./views/Unauthorized"
+import Protected from "./components/common/Protected"
 
 const MyRoutes = () => {
     return (
@@ -41,40 +42,41 @@ const MyRoutes = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/study-buddies" element={<StudyBuddies />} />
             <Route path="/marketplace" element={<Marketplace />} />
-            <Route path="/supports" >
-                <Route path="" element={<Supports />} />
+            <Route path="/supports" element={<Supports />}>
                 <Route path="pricing" element={<Pricing />} />
             </Route>
-            <Route path="/community">
-                <Route path="regional" element={<RegionalCommunity />} />
-                <Route path="japanese" element={<JapaneseCommunity />} />
-                <Route path="english" element={<EnglishCommunity />} />
+
+            <Route path="/regional-community" element={<RegionalCommunity />} />
+            <Route path="/japanese-community" element={<JapaneseCommunity />} />
+            <Route path="/english-community" element={<EnglishCommunity />} />
+
+            <Route path='/messages' element={<Protected />}>
+                <Route path="/messages">
+                    <Route path='' element={<MessageMain />} />
+                    <Route path=':username' element={<Message />} />
+                </Route>
             </Route>
 
-            <Route path="/messages">
-                <Route path='' element={<MessageMain />} />
-                <Route path=':username' element={<Message />} />
-            </Route>
+            <Route path='' element={<Protected />}>
+                <Route path="/users/profile/edit" element={<ProfileEditMain />} />
+                <Route path="/users/profile/edit/avatar" element={<ChangeAvatar />} />
+                <Route path="/users/profile/edit/profile" element={<ProfileEdit />} />
+                <Route path="/users/profile/edit/myway" element={<ProfileEditMyWay />} />
+                <Route path="/users/profile/edit/study-buddy" element={<ProfileEditStudyBuddy />} />
+                <Route path="/users/dashboard" element={<Dashboard />} />
+                <Route path="/users/block" element={<BlockUser />} />
+                <Route path="/users/unblock" element={<UnblockUser />} />
+                <Route path="/users/saved" element={<SavedMain />} />
+                <Route path="/users/saved/users" element={<SavedUsers />} />
 
-            <Route path="/users">
-                {/* <Route path="profile" element={<ProfileOwn />} /> */}
-                <Route path="profile/edit" element={<ProfileEditMain />} />
-                <Route path="profile/edit/avatar" element={<ChangeAvatar />} />
-                <Route path="profile/edit/profile" element={<ProfileEdit />} />
-                <Route path="profile/edit/myway" element={<ProfileEditMyWay />} />
-                <Route path="profile/edit/study-buddy" element={<ProfileEditStudyBuddy />} />
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="block" element={<BlockUser />} />
-                <Route path="unblock" element={<UnblockUser />} />
-                <Route path="saved" element={<SavedMain />} />
-                <Route path="saved/users" element={<SavedUsers />} />
-                <Route path=":username" element={<Profile />} />
             </Route>
+            <Route path="/users/:username" element={<Profile />} />
+
             <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/reset-password" element={<SetPassword />} />
-            <Route path="/system-message" element={<Unauthorized />} />
+            <Route path="/unauthorized" element={<Unauthorized />} />
             <Route path="*" element={<NotFound404 />} />
-        </Routes>
+        </Routes >
     )
 }
 export default MyRoutes

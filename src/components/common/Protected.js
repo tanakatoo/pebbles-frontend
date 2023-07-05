@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import { useSelector } from "react-redux"
 import { Navigate, useLocation } from "react-router-dom"
 import { useContext } from 'react';
+import { Outlet } from 'react-router-dom';
 // import FlashMessageContext from "../../contexts/FlashMessageContext"
 
-const Protected = ({ children }) => {
-    const user = useSelector((state) => state.profile.token);
+const Protected = ({ children, redirectPath = "/unauthorized", roleIs = null }) => {
+    console.log('in hee')
+    const user = useSelector((state) => state.profile);
     let location = useLocation();
     // const [setFlashMessage, setTypeOfMessage] = useContext(FlashMessageContext)
 
@@ -18,10 +20,16 @@ const Protected = ({ children }) => {
     // }, [])
 
 
-    if (!user) {
-        return <Navigate to="/system-message" state={{ from: location.pathname }} replace />
+    if (!user.token) {
+        return <Navigate to={redirectPath} state={{ from: location.pathname }} replace />
     }
-    return children
+
+    if (roleIs) {
+        if ((user.profile && user.profile.role) !== roleIs) {
+            return <Navigate to={redirectPath} state={{ from: location.pathname }} replace />
+        }
+    }
+    return children ? children : <Outlet />
 
 };
 
