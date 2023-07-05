@@ -108,7 +108,13 @@ module.exports = {
         'regionalSquare': "url('./images/regional-square.jpg')",
         'regionalParisSquare': "url('./images/regionalParis-square.jpg')",
         'learningSquare': "url('./images/town-square.jpg')",
-        'learningGlobeSquare': "url('./images/townGlobe-square.jpg')"
+        'learningGlobeSquare': "url('./images/townGlobe-square.jpg')",
+        'aboutHeroDesktop': "url('./images/aboutHero-desktop.jpg ')",
+        'aboutHeroTablet': "url('./images/aboutHero-tablet.jpg ')",
+        'aboutHeroMobile': "url('./images/aboutHero-mobile.jpg ')",
+        'marketplaceLongMobile': "url('./images/marketplace-long-700.jpg ')",
+        'marketplaceLongTablet': "url('./images/marketplace-long-1400.jpg ')",
+        'marketplaceLongDesktop': "url('./images/marketplace-long-2400.jpg ')",
       },
 
       width: {

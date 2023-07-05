@@ -8,8 +8,9 @@ import {
     faChevronRight,
     faCheck,
     faFilterCircleXmark,
-    faCaretRight
-
+    faCaretRight,
+    faArrowRightLong,
+    faUserLarge
 } from '@fortawesome/free-solid-svg-icons'
 import exclamation from "../images/icons/exclamation.svg"
 import hamburger from "../images/icons/hamburger.svg"
@@ -40,11 +41,13 @@ export const AwesomeChevronDown = ({ onClick }) => { return (<FontAwesomeIcon ic
 export const AwesomeChevronLeft = ({ onClick }) => { return (<FontAwesomeIcon icon={faChevronLeft} onClick={onClick} />) }
 export const AwesomeChevronRight = () => { return (<FontAwesomeIcon icon={faChevronRight} />) }
 export const AwesomeFilterX = () => { return (<FontAwesomeIcon icon={faFilterCircleXmark} />) }
+export const AwesomeUser = () => { return (<FontAwesomeIcon icon={faUserLarge} />) }
 export const AwesomeSquareCheck = () => { return (<FontAwesomeIcon icon={faSquareCheck} />) }
 export const AwesomeSend = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faPaperPlane} onClick={onClick} size={size} />) }
 export const AwesomeEmptyHeart = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faHeartEmpty} onClick={onClick} size={size} />) }
 export const AwesomeSolidHeart = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faHeart} onClick={onClick} size={size} />) }
 export const AwesomeCaretRight = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faCaretRight} onClick={onClick} size={size} />) }
+export const AwesomeArrowRightLong = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faArrowRightLong} onClick={onClick} size={size} />) }
 export const AwesomeCheck = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faCheck} onClick={onClick} size={size} />) }
 export const Hamburger = () => { return (<img src={hamburger}></img>) }
 export const Camera = () => { return (<img src={camera}></img>) }

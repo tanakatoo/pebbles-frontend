@@ -40,16 +40,18 @@ const Home = () => {
             </section >
             <section className="pt-[84px]">
                 <div className=" flex relative bg-homeHelp md:bg-homeHelpTablet lg:bg-homeHelpDesktop h-[216px] md:h-[300px] lg:h-[350px] bg-cover bg-center">
-                    <div className="bg-gradient-to-b from-white absolute w-full h-[216px] z-10 "></div>
-                    <div className="h-[120px] md:h-[100px] lg:h-[80px] w-[80%] md:w-[60%] lg:w-[50%] top-[180px] md:top-[280px] lg:top-[330px] left-1/2  -translate-x-1/2 text-center py-6 px-8 absolute bg-secondary text-white rounded-ml inline-flex items-center justify-center"><p>{pageText.HERO2}</p></div>
+                    {/* <div className="bg-gradient-to-b from-white absolute w-full h-[216px] z-10 "></div> */}
+                    <div className="h-[120px] md:h-[100px] lg:h-[80px] w-[80%] md:w-[60%] lg:w-[50%] top-[180px] md:top-[280px] lg:top-[330px] left-1/2  -translate-x-1/2 text-center py-6 px-8 absolute bg-secondary text-white rounded-ml inline-flex items-center justify-center">
+                        <p>{pageText.HERO2}</p>
+                    </div>
                 </div>
-            </section>
+            </section >
             <section className="pt-[180px] md:pt-[150px] lg:pt-[120px]">
                 <h2 className=" px-4 text-mobile-header-2 font-medium text-center text-primary-dark">{pageText.HOW_TO_HELP}</h2>
                 <div className="mt-16">
                     {lang === "JA" ?
                         <Supports
-                            font={`NotoSansJPMedium`}
+                            font={`NotoSansJP font-medium`}
                             bgColor='bg-background'
                             img={studysupportsquare}
                             title={pageText.HELP5_TITLE}
@@ -57,13 +59,13 @@ const Home = () => {
                         : ''
                     }
                     <Supports
-                        font={`${lang === "EN" ? 'font-StudyBuddyEN' : 'font-StudyBuddyJA'}`}
+                        font={`${lang === "EN" ? 'font-StudyBuddyEN' : 'font-StudyBuddyJA'} font-bold`}
                         bgColor='bg-study-buddy-accent'
                         img={studybuddysquare}
                         title={pageText.HELP3_TITLE}
                         desc={pageText.HELP3_DESC} />
                     <Supports
-                        font={`font-Community`}
+                        font={`font-Community font-medium text-gold-4`}
                         img={communitysquare}
                         title={pageText.HELP1_TITLE}
                         desc={pageText.HELP1_DESC}
@@ -73,7 +75,7 @@ const Home = () => {
                         button=
                         {<Button lang={lang} btnText="Tell me more" textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
                     <Supports
-                        font={`font-Regional`}
+                        font={`font-Regional text-gold-4`}
                         img={regionalsquare}
                         title={pageText.HELP2_TITLE}
                         desc={pageText.HELP2_DESC}
@@ -83,7 +85,7 @@ const Home = () => {
                         button=
                         {<Button lang={lang} btnText="Tell me more" textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
                     <Supports
-                        font={`${lang === "EN" ? 'font-EnglishMarketEN' : 'font-EnglishMarketJA'}`}
+                        font={`${lang === "EN" ? 'font-EnglishMarketEN' : 'font-EnglishMarketJA'} font-bold`}
                         bgColor='bg-marketplace-accent'
                         img={marketplacesquare}
                         title={pageText.HELP4_TITLE}
