@@ -15,7 +15,7 @@ SECRET_KEY =yoursecretkey
 NODE_ENV= dev  
 DATABASE_URL= pebbles  
 DOMAIN_URL=localhost:3000  
-GOOGLE_API_KEY= yourapikey
+GOOGLE_API_KEY= yourapikey  
 ZEPTO_MAIL_API_KEY=yourapikey
 
 ## Setting up the App
