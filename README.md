@@ -29,4 +29,4 @@ Tests to be completed soon...
 
 ## Deployment
 
-The site is deployed at pebblescommunity.com
+The site is deployed at pebblescommunity.com (currently with some issues).
