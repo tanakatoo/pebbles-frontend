@@ -55,10 +55,10 @@ const NavBar = () => {
     {
         3: {
             items: [
-                { text: navText.ENGLISH_COMMUNITY, link: null },
-                { text: navText.REGIONAL_COMMUNITY, link: null },
+                { text: navText.LANGUAGE_TOWN, link: '/language-town' },
+                { text: navText.INFO_CENTER, link: '/info-center' },
                 { text: navText.STUDY_BUDDY, link: '/study-buddies' },
-                { text: navText.MARKETPLACE, link: null }
+                { text: navText.MARKETPLACE, link: '/marketplace' }
             ]
         }
     }
@@ -73,10 +73,10 @@ const NavBar = () => {
         },
         4: {
             items: [
-                { text: navText.ENGLISH_COMMUNITY, link: null },
-                { text: navText.REGIONAL_COMMUNITY, link: null },
+                { text: navText.LANGUAGE_TOWN, link: '/language-town' },
+                { text: navText.INFO_CENTER, link: '/info-center' },
                 { text: navText.STUDY_BUDDY, link: '/study-buddies' },
-                { text: navText.MARKETPLACE, link: null }
+                { text: navText.MARKETPLACE, link: '/marketplace' }
             ]
         }
     }
@@ -114,8 +114,8 @@ const NavBar = () => {
         2: {
             items:
                 [
-                    { text: navText.ENGLISH_COMMUNITY, link: null },
-                    { text: navText.REGIONAL_COMMUNITY, link: null },
+                    { text: navText.LANGUAGE_TOWN, link: null },
+                    { text: navText.INFO_CENTER, link: null },
                     { text: navText.STUDY_BUDDY, link: '/study-buddies' },
                     { text: navText.MARKETPLACE, link: null }
                 ]
@@ -146,8 +146,8 @@ const NavBar = () => {
         3: {
             items:
                 [
-                    { text: navText.ENGLISH_COMMUNITY, link: null },
-                    { text: navText.REGIONAL_COMMUNITY, link: null },
+                    { text: navText.LANGUAGE_TOWN, link: null },
+                    { text: navText.INFO_CENTER, link: null },
                     { text: navText.STUDY_BUDDY, link: '/study-buddies' },
                     { text: navText.MARKETPLACE, link: null }
                 ]

@@ -14,9 +14,9 @@ import ProfileEdit from "./views/ProfileEdit"
 import Marketplace from "./views/Marketplace"
 import Supports from "./views/StudySupport"
 import Pricing from "./views/Pricing"
-import RegionalCommunity from "./views/RegionalCommunity"
-import EnglishCommunity from "./views/EnglishCommunity"
-import JapaneseCommunity from "./views/JapaneseCommunity"
+import InfoCenter from "./views/InfoCenter"
+import LanguageTown from "./views/LanguageTown"
+
 import Dashboard from "./views/Dashboard"
 import Message from "./views/Message"
 import BlockUser from "./views/BlockUser"
@@ -46,9 +46,8 @@ const MyRoutes = () => {
                 <Route path="pricing" element={<Pricing />} />
             </Route>
 
-            <Route path="/regional-community" element={<RegionalCommunity />} />
-            <Route path="/japanese-community" element={<JapaneseCommunity />} />
-            <Route path="/english-community" element={<EnglishCommunity />} />
+            <Route path="/info-center" element={<InfoCenter />} />
+            <Route path="/language-town" element={<LanguageTown />} />
 
             <Route path='/messages' element={<Protected />}>
                 <Route path="/messages">

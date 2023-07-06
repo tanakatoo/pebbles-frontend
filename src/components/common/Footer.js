@@ -33,9 +33,9 @@ function Footer() {
                 </div>
                 <div className='flex flex-col text-center justify-center items-center lg:items-start lg:ms-8'>
                     <p className='font-medium'>{text.COMMUNITY}</p>
-                    <p className='text-gray'>{text.ENGLISH_COMMUNITY}</p>
-                    <p className='text-gray'>{text.REGIONAL_COMMUNITY}</p>
-                    <p className='text-background'><CustomLink text={text.STUDY_BUDDY} link="/study-buddies" /></p>
+                    <p className='text-gray'>{text.LANGUAGE_TOWN}</p>
+                    <p className='text-gray'>{text.INFO_CENTER}</p>
+                    <p className='text-background'><Link to="/study-buddies" className='hover:underline hover: underline-offset-4 hover:text-white'>{text.STUDY_BUDDY}</Link></p>
                     <p className='pb-4 text-gray'>{text.MARKETPLACE}</p>
                 </div>
 

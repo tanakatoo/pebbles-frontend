@@ -115,6 +115,18 @@ module.exports = {
         'marketplaceLongMobile': "url('./images/marketplace-long-700.jpg ')",
         'marketplaceLongTablet': "url('./images/marketplace-long-1400.jpg ')",
         'marketplaceLongDesktop': "url('./images/marketplace-long-2400.jpg ')",
+        'studyBuddyLongMobile': "url('./images/studyBuddy-long-mobile.jpg ')",
+        'studyBuddyLongTablet': "url('./images/studyBuddy-long-tablet.jpg ')",
+        'studyBuddyLongDesktop': "url('./images/studyBuddy-long-desktop.jpg ')",
+        'supportLongMobile': "url('./images/studysupport-long-700.jpg ')",
+        'supportLongTablet': "url('./images/studysupport-long-1400.jpg ')",
+        'supportLongDesktop': "url('./images/studysupport-long-2400.jpg ')",
+        'infoLongMobile': "url('./images/regional-long-700.jpg ')",
+        'infoLongTablet': "url('./images/regional-long-1400.jpg ')",
+        'infoLongDesktop': "url('./images/regional-long-2400.jpg ')",
+        'townLongMobile': "url('./images/community-long-700.jpg ')",
+        'townLongTablet': "url('./images/community-long-1400.jpg ')",
+        'townLongDesktop': "url('./images/community-long-2400.jpg ')",
       },
 
       width: {
@@ -130,9 +142,16 @@ module.exports = {
         '80': '80px',
         'usercard': '358px'
       },
+      translate: ['group-hover', 'hover']
 
 
-
+    },
+    variants: {
+      extend: {
+        translate: ['group-hover', 'hover'],
+        transform: ['group-hover', 'hover'],
+        transitionProperty: ['group-hover', 'hover'],
+      }
     },
   },
   plugins: [require('@tailwindcss/forms'),

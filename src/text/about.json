@@ -9,8 +9,8 @@
         "BEGINNINGS5":"Help make connections with others in the same area",
         "BEGINNINGS6":"Help share knowledge",
         "BEGINNINGS7":"So here it is, my effort to gather all personal experiences living overseas and teaching English, failures and successes, to make a community that can show you new ways to improve your English and help you feel at home overseas.",
-        "COMMUNITIES":"Pebbles Community",
-        "EXPLORE":"Learn about our 4 areas of support within the community below:",
+        "COMMUNITIES":"Your Community",
+        "EXPLORE":"Learn about the 4 areas of support within your community below:",
         "STUDY_BUDDY_TITLE":"Study Buddy Board",
         "STUDY_BUDDY_TEXT":"Like a bulletin board, this is a list of users who want to make friends, learn, practice, and keep their motivation. You can register to be 1 or all 3 types of study buddies:",
         "STUDY_BUDDY_TYPE1_TITLE":"Study buddy",
@@ -19,10 +19,15 @@
         "STUDY_BUDDY_TYPE2":"Find an English speaker and get help with your English while helping them with Japanese.",
         "STUDY_BUDDY_TYPE3_TITLE":"Volunteer",
         "STUDY_BUDDY_TYPE3":"Help an English speaker learn Japanese while immersing yourself in a new culture.",
-        "STUDY_BUDDY_BTN":"Study Buddy Board",
-        "TOWN":"Japanese Town",
-        "INFO_CENTER":"Regional Info Center",
-        "MARKETPLACE":"Marketplace"
+        "STUDY_BUDDY_BTN":"View the Study Buddy Board",
+        "TOP":"Top",
+        "TOWN_TITLE":"Japanese Town",
+        "TOWN_TEXT1":"Have you ever studied by yourself and needed an answer to a question but have no where to ask? Do you feel like you are not making any improvement in English and need some motivation?",
+        "TOWN_TEXT2":"This part of the community, the Japanese Town, is a place where you can join and create groups related learning Japanese - grammar groups, vocabulary groups, how to study for the Japanese Proficiency Test groups for example. Post your questions and get answers. Test out your knowledge and answer questions to strengthen your understanding of the language.",
+        "TOWN_BTN":"Take me to Town",
+        "INFO_CENTER_TITLE":"Regional Info Center",
+        "MARKETPLACE_TITLE":"Marketplace",
+        "STUDY_SUPPORT_TITLE":"Study Support"
 
 
 

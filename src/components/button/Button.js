@@ -18,7 +18,7 @@ export const Button = ({
     return (
         <>
             <button onClick={clickMethod}
-                className={`inline-flex items-center justify-center gap-2 ${bkColor} ${textColor} ${py} ${px} rounded-xl disabled:opacity-50 ${extraClasses}`}
+                className={`drop-shadow inline-flex items-center justify-center gap-2 ${bkColor} ${textColor} ${py} ${px} rounded-xl disabled:opacity-50 ${extraClasses}`}
                 type={type} disabled={isSubmitting || disabled}>
                 {link ?
                     icon ? <>

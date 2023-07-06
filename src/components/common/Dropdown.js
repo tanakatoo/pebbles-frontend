@@ -73,7 +73,7 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
                                                         {j.text}
                                                     </NavLink>
                                                     :
-                                                    <span className=' text-gray'>
+                                                    <span className=' text-gray cursor-default'>
                                                         {j.text}
                                                     </span>}
                                             </li>

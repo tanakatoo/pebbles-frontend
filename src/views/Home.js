@@ -38,12 +38,12 @@ const Home = () => {
                     </div>
                 </div>
             </section >
-            <section className="pt-[84px]">
-                <div className=" flex relative bg-homeHelp md:bg-homeHelpTablet lg:bg-homeHelpDesktop h-[216px] md:h-[300px] lg:h-[350px] bg-cover bg-center">
+            <section className="pt-[84px] flex flex-col items-center">
+                <div className="w-full bg-homeHelp md:bg-homeHelpTablet lg:bg-homeHelpDesktop h-[160px] md:h-[200px] lg:h-[250px] bg-cover bg-center">
                     {/* <div className="bg-gradient-to-b from-white absolute w-full h-[216px] z-10 "></div> */}
-                    <div className="h-[120px] md:h-[100px] lg:h-[80px] w-[80%] md:w-[60%] lg:w-[50%] top-[180px] md:top-[280px] lg:top-[330px] left-1/2  -translate-x-1/2 text-center py-6 px-8 absolute bg-secondary text-white rounded-ml inline-flex items-center justify-center">
-                        <p>{pageText.HERO2}</p>
-                    </div>
+                </div>
+                <div className="w-full text-center py-4 px-4 bg-primary text-white font-medium inline-flex items-center justify-center">
+                    <p>{pageText.HERO2}</p>
                 </div>
             </section >
             <section className="pt-[180px] md:pt-[150px] lg:pt-[120px]">

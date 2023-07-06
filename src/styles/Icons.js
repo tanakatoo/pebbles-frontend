@@ -10,7 +10,8 @@ import {
     faFilterCircleXmark,
     faCaretRight,
     faArrowRightLong,
-    faUserLarge
+    faUserLarge,
+    faArrowUpLong
 } from '@fortawesome/free-solid-svg-icons'
 import exclamation from "../images/icons/exclamation.svg"
 import hamburger from "../images/icons/hamburger.svg"
@@ -38,6 +39,7 @@ import arc from "../images/icons/arc.svg"
 export const AwesomeToggleLeft = ({ onClick }) => { return (<FontAwesomeIcon icon={faToggleOff} onClick={onClick} size="2xl" />) }
 export const AwesomeToggleRight = ({ onClick }) => { return (<FontAwesomeIcon icon={faToggleOff} rotation={180} onClick={onClick} size="2xl" />) }
 export const AwesomeChevronDown = ({ onClick }) => { return (<FontAwesomeIcon icon={faChevronDown} onClick={onClick} />) }
+export const AwesomeArrowUpLong = ({ onClick }) => { return (<FontAwesomeIcon icon={faArrowUpLong} onClick={onClick} />) }
 export const AwesomeChevronLeft = ({ onClick }) => { return (<FontAwesomeIcon icon={faChevronLeft} onClick={onClick} />) }
 export const AwesomeChevronRight = () => { return (<FontAwesomeIcon icon={faChevronRight} />) }
 export const AwesomeFilterX = () => { return (<FontAwesomeIcon icon={faFilterCircleXmark} />) }
