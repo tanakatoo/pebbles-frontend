@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Community for learning Japanese and living in Japan
+This app connects Japanese learners and people living in Japan to each other to share resources. There are 4 areas of the community the users can access: the Study Buddy Board for users to find other users to study together or do a language exchange; the Regional Information Center to get resources and join groups for a certain region in Japan; the Japanese Town to join groups about studying the Japanese language, and for users to ask/answer questions related to the Japanese language; and the Marketplace for users to offer/buy/sell items as leaving a country creates lots of hand-me-downs that future expats can make use of.  
+  
+Currently users are able to create an account, set up their profile and access the Study Buddy Board to message or save users.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About the app
 
-## Available Scripts
+This is a react app that uses Tailwind CSS, Formik, moment, headless UI to create a site that can be used by both Japanese users and English speaking users with an custom translation component.
 
-In the project directory, you can run:
+## APIs
 
-### `npm start`
+2 external APIs are used and you will need an account for the functionality to work -The Google places API for autocompleting the location information in both English and Japanese; and Zeptomail for sending emails regarding lost passwords, and registration. Make a .env file with your credentials along with the following variables:  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+SECRET_KEY =yoursecretkey  
+NODE_ENV= dev  
+DATABASE_URL= pebbles  
+DOMAIN_URL=localhost:3000  
+GOOGLE_API_KEY= yourapikey  
+ZEPTO_MAIL_API_KEY=yourapikey
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setting up the App
 
-### `npm test`
+You will need to clone both pebbles-frontend and pebbles-backend. The system runs on Postgres. To create the database, run psql < pebbles.sql from the root directory of pebbles-backend. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Testing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tests to be completed soon...
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The site is deployed at pebblescommunity.com (currently with some issues).
