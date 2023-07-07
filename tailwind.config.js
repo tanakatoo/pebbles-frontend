@@ -43,7 +43,9 @@ module.exports = {
       'gold-1': "#ECC440",
       'gold-2': "#FFFA8A",
       'gold-3': "#DDAC17",
-      'gold-4': "#FFFF95"
+      'gold-4': "#FFFF95",
+      'green': 'green',
+      'star': '#ffdf1d'
 
     },
     fontFamily: {
