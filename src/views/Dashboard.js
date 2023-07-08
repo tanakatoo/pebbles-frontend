@@ -15,7 +15,7 @@ function Dashboard() {
     return (
         // <Protected>
         <div>
-            {lang === "JA" || lang === "EN"
+            {lang === "JA"
                 ?
                 profile.premium_join_date && !profile.premium_end_date ?
                     <>
@@ -39,7 +39,7 @@ function Dashboard() {
                                     <div className='flex flex-row flex-wrap items-center my-4 gap-4 justify-around grow container w-full'>
                                         <StatisticsCard numUsers={pageText.STAT_NUM_LEVEL_UP} text={pageText.STAT_LEVEL_UP} viaPercent='via-30%' />
                                         <StatisticsCard numUsers={pageText.STAT_NUM_UPGRADED} text={pageText.STAT_UPGRADED} viaPercent={'via-60%'} />
-                                        <StatisticsCard numUsers={pageText.STAT_NUM_STARTED} text={pageText.STAT_STARTED} viaPercent={'via-85%'} />
+                                        <StatisticsCard numUsers={pageText.STAT_NUM_STARTED} text={pageText.STAT_STARTED} viaPercent={'via-20%'} />
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@ function Dashboard() {
                                     <div className='flex flex-col '>
                                         <h2 className="bg-secondary py-2 text-white font-medium text-mobile-page-header text-center">{pageText.PREMIUM_BENEFITS}</h2>
                                         <div className='bg-secondary-background p-4 flex flex-col items-center'>
-                                            <p className='mb-2'>{pageText.PREMIUM_BLURB}</p>
+                                            <p className='mb-2 md:max-w-[500px]'>{pageText.PREMIUM_BLURB}</p>
 
                                             <ol>
                                                 <li className='py-2 md:py-1'><span className='text-success me-2'><AwesomeCheck /></span> <span className=''>{pageText.CHECK1}</span></li>
@@ -64,8 +64,8 @@ function Dashboard() {
                                     <div className='flex flex-col bg-secondary-background pb-8 md:pb-12'>
                                         <h2 className="bg-secondary py-2 text-white font-medium text-mobile-page-header px-4 md:text-center">{pageText.TRIAL_BENEFITS}</h2>
                                         <div className='p-4  flex flex-col items-center justify-center'>
-                                            <p className='mb-4'>{pageText.TRIAL_BLURB}</p>
-                                            <ol>
+                                            <p className='mb-4 md:max-w-[800px]'>{pageText.TRIAL_BLURB}</p>
+                                            <ol className=''>
                                                 <li className='py-2 md:py-1'><span className='text-success me-2'><AwesomeCheck /></span> <span className=''>{pageText.TRIAL_CHECK1}</span></li>
                                                 <li className='py-2 md:py-1'><span className='text-success me-2'><AwesomeCheck /></span> <span className=''>{pageText.TRIAL_CHECK2}</span></li>
                                                 <li className='py-2 md:py-1'><span className='text-success me-2'><AwesomeCheck /></span> <span className=''>{pageText.TRIAL_CHECK3}</span></li>
@@ -87,16 +87,28 @@ function Dashboard() {
 
             }
 
-            <h2 className="py-2 my-8 text-primary-dark font-medium text-mobile-page-header px-4 text-center">{pageText.EXPLORE_COMMUNITY}</h2>
-            <div className='flex px-4 flex-col py-8 bg-primary-super-light'>
-
+            <h2 className="py-2 my-8 text-primary-dark font-medium text-mobile-page-header px-4 text-center ">{pageText.EXPLORE_COMMUNITY}</h2>
+            <div className='flex flex-col pt-2 pb-12 bg-primary-super-light'>
                 <div className='flex items-center justify-center flex-1'>
-                    <ExploreCommunity />
-
+                    <ExploreCommunity type="studyBuddy" />
                 </div>
-
             </div >
 
+            <div className='flex flex-col pt-2 pb-12 bg-regional-background'>
+                <div className='flex items-center justify-center flex-1'>
+                    <ExploreCommunity type="infoCenter" />
+                </div>
+            </div >
+            <div className='flex flex-col pt-2 pb-12 bg-accent-very-light'>
+                <div className='flex items-center justify-center flex-1'>
+                    <ExploreCommunity type="languageTown" />
+                </div>
+            </div >
+            <div className='flex flex-col pt-2 pb-12 bg-marketplace-background'>
+                <div className='flex items-center justify-center flex-1'>
+                    <ExploreCommunity type="marketplace" />
+                </div>
+            </div >
         </div >
         // </Protected>
     )

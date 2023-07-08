@@ -33,6 +33,7 @@ function Message() {
 
     const getData = async () => {
         try {
+            setErrors([])
             //makes data all be read when getting data
             const res = await MessageApi.getConversation(username)
             console.log(res)
@@ -52,7 +53,7 @@ function Message() {
 
     useEffect(() => {
         if (msgRef.current) {
-            console.log('this is msgref', msgRef.current)
+
             const scrollHeight = msgRef.current.scrollHeight;
             msgRef.current.extraClasses = `h-[${scrollHeight}px]`;
         }

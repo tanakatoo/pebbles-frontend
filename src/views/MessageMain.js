@@ -24,6 +24,7 @@ function MessageMain() {
     useEffect(() => {
         const getData = async () => {
             try {
+                setErrors([])
                 const res = await MessageApi.getAllUsersLatestMsg()
                 setData(res)
             } catch (e) {

@@ -5,7 +5,7 @@ import useNavigateToProfile from '../../hooks/useNavigateToProfile';
 
 function Avatar({ link = null, src, size = 'sm', username }) {
     const goToProfile = useNavigateToProfile(username)
-    console.log('this is ', goToProfile)
+
     let width
     switch (size) {
         case 'sm':

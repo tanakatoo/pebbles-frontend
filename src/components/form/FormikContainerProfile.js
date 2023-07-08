@@ -60,6 +60,7 @@ const FormikContainerProfile = ({ pageText }) => {
 
 
         try {
+            setErrors([])
             console.log('submitting')
             const res = await UserApi.updateUserInfo(values)
             //call dispatch to set token in profileReducer

@@ -9,7 +9,7 @@ function CTA({ msg, msgBtn, btnLink }) {
 
     return (
         <div className='flex w-full bg-primary text-white px-4 py-3 mb-8 justify-center items-center'>
-            <p className='mr-8'>{msg}</p>
+            <p className='mr-8 font-medium'>{msg}</p>
             <Link to={btnLink}>
                 <Button btnText={msgBtn}
                     type="button"

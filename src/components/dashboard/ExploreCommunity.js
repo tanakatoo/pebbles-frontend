@@ -10,7 +10,7 @@ import CustomLink from '../button/CustomLink'
 import { v4 as uuid } from 'uuid'
 
 
-function ExploreCommunity() {
+function ExploreCommunity({ type }) {
     const [pageText, lang] = usePageText('dashboard')
     const [doneGettingData, setDoneGettingData] = useState(false)
     const [data, setData] = useState(null)
@@ -37,57 +37,43 @@ function ExploreCommunity() {
         }
     }
 
+    const getNothing = () => {
+
+        setDoneGettingData(true);
+        setData([])
+    }
+
     useEffect(() => {
-        getStudyBuddies()
+        let func
+        switch (type) {
+            case "studyBuddy":
+                func = getStudyBuddies
+                break;
+            case "marketplace":
+                func = getNothing;
+                break;
+            case "infoCenter":
+                func = getNothing;
+                break;
+            case "languageTown":
+                func = getNothing;
+                break;
+            default:
+                func = getNothing;
+                break;
+        }
+        func()
     }, [])
-    // const maxScrollWidth = useRef(0);
-    // const [currentIndex, setCurrentIndex] = useState(0);
-    // const carousel = useRef(null);
 
-    // const movePrev = () => {
-    //     if (currentIndex > 0) {
-    //         setCurrentIndex((prevState) => prevState - 1);
-    //     }
-    // };
-
-    // const moveNext = () => {
-    //     if (
-    //         carousel.current !== null &&
-    //         carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current
-    //     ) {
-    //         setCurrentIndex((prevState) => prevState + 1);
-    //     }
-    // };
-
-    // const isDisabled = (direction) => {
-    //     if (direction === 'prev') {
-    //         return currentIndex <= 0;
-    //     }
-
-    //     if (direction === 'next' && carousel.current !== null) {
-    //         return (
-    //             carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
-    //         );
-    //     }
-
-    //     return false;
-    // };
-
-    // useEffect(() => {
-    //     maxScrollWidth.current = carousel.current
-    //         ? carousel.current.scrollWidth - carousel.current.offsetWidth
-    //         : 0;
-    // }, []);
-
-    // useEffect(() => {
-    //     if (carousel !== null && carousel.current !== null) {
-    //         carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;
-    //     }
-    // }, [currentIndex]);
+    console.log(doneGettingData, data)
 
     return (
-        <div className='w-full flex flex-col'>
-            <h3 className='grow text-mobile-section-header font-medium'>{pageText.STUDY_BUDDY}</h3>
+        <div className='w-full  flex flex-col'>
+            <h3 className={`grow px-4 py-2 text-mobile-section-header font-medium}`}>
+                {type === "studyBuddy" ? pageText.STUDY_BUDDY
+                    : type === "marketplace" ? pageText.MARKETPLACE :
+                        type === "infoCenter" ? pageText.INFO_CENTER :
+                            type === "languageTown" ? pageText.LANGUAGE_TOWN : ''}</h3>
             {errors.length > 0 && <ServerError msg={errors} />}
             {!data && errors.length === 0 && doneGettingData === false ?
                 <div className=' my-24'>
@@ -96,43 +82,28 @@ function ExploreCommunity() {
                 :
                 doneGettingData === true && data.length === 0 ?
                     <div className='my-12'>
-                        < NoData msg={pageText.NO_USERS_MSG} />
+                        < NoData msg={pageText.NO_DATA} />
                     </div>
                     : <>
                         <div className='grow flex justify-end mb-2'>
-                            <p className=' text-mobile-card-body'>
-                                <CustomLink text={pageText.SEE_ALL} path='/study-buddies' /> <AwesomeCaretRight /></p>
+                            <p className=' text-mobile-card-body px-2 md:px-4'>
+                                <CustomLink text={pageText.SEE_ALL} path=
+                                    {type === "studyBuddy" ? `/study-buddies` :
+                                        type === "marketplace" ? `/marketplace` :
+                                            type === "infoCenter" ? '/info-center' :
+                                                type === "languageTown" ? 'language-town' : ''}
+                                /> <AwesomeCaretRight /></p>
                         </div>
                         <div className={`flex flex-wrap gap-2 items-center `}>
-                            {data.map(d => <div key={uuid()} className='flex-1 flex-grow flex justify-center'><ExploreCommunityCard data={d} lang={lang} /></div>)}
+                            {data.length === 0 ? <p>under construciton</p>
+                                :
+                                data.map(d =>
+                                    <div key={uuid()} className='flex-1 flex-grow flex justify-center'>
+                                        <ExploreCommunityCard data={d} lang={lang} />
+                                    </div>)}
 
                         </div>
-                        {/* <div className="relative overflow-hidden">
-                <div className="flex justify-between absolute top left w-full h-full">
-                    <button
-                        onClick={movePrev}
-                        className="hover:bg-primary/75 w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
-                    // disabled={isDisabled('prev')}
-                    >
-                        <AwesomeCaretRight />
-                        <span className="sr-only">Prev</span>
-                    </button>
-                    <button
-                        onClick={moveNext}
-                        className="hover:bg-primary/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
-                    // disabled={isDisabled('next')}
-                    >
-                        <AwesomeCaretRight />
-                    </button>
-                    <div
-                        ref={carousel}
-                        className="carousel-container relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
-                    >
-                        <ExploreCommunityCard />
 
-                    </div>
-                </div>
-            </div> */}
                     </>}
         </div>
     )

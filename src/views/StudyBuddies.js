@@ -66,6 +66,8 @@ const StudyBuddies = () => {
     }
 
     useEffect(() => {
+
+        window.scrollTo(0, 0)
         getStudyBuddies()
     }, [])
 
@@ -112,7 +114,7 @@ const StudyBuddies = () => {
             setNumFilters(numFilters)
             setDoneGettingData(false);
             const res = await StudyBuddyApi.getFilteredStudyBuddies(criteria)
-            console.log('this is res', res)
+
             setData(res);
             setDoneGettingData(true);
 
@@ -132,7 +134,11 @@ const StudyBuddies = () => {
     }
 
     const removeFilters = (formik) => {
-        formik.resetForm()
+        formik.resetForm({
+            values: {
+                ...initialValues
+            }
+        })
         console.log('formik is now', formik.values)
     }
 
@@ -160,7 +166,7 @@ const StudyBuddies = () => {
                                             <Dialog.Title className='font-medium text-center text-mobile-page-header pt-4 mb-5'>
                                                 {pageText.FILTER_SB}
                                             </Dialog.Title>
-                                            <div className="flex justify-end mb-6 md:mb-4 items-center hover:text-link-hover "
+                                            <div className="flex justify-end mb-6 md:mb-4 items-center hover:text-gray-text "
                                                 onClick={() => removeFilters(formik)}>
                                                 <span ><AwesomeFilterX /></span>
                                                 <span className="ps-2 cursor-pointer underline underline-offset-2">Remove filters</span>

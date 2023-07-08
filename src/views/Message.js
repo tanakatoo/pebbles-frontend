@@ -34,6 +34,7 @@ function Message() {
 
     const getData = async () => {
         try {
+            setErrors([])
             setDoneGettingData(false)
             //makes data all be read when getting data
             const res = await MessageApi.getConversation(username)

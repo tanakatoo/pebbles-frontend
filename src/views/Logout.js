@@ -10,9 +10,11 @@ import usePageText from '../hooks/usePageText'
 function Logout() {
     const dispatch = useDispatch()
     const [pageText, lang] = usePageText('login')
+    const navigate = useNavigate()
     // const [setFlashMessage, setTypeOfMsg] = useContext(FlashMessageContext)
     useEffect(() => {
         dispatch(actionLogout())
+
     }, [])
 
 

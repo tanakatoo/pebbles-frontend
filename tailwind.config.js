@@ -9,11 +9,14 @@ module.exports = {
   theme: {
     colors: {
       'marketplace-accent': '#FFFFAF',
+      'marketplace-background': "#FFFFDC",
       'kids-support-accent': '#00B500',
       'digital-library-accent': '#089BA5',
       'study-buddy-accent': '#BADDFF',
       'community-accent': '#008222',
+      'community-background': '#F0FFF4',
       'regional-accent': "#554200",
+      'regional-background': "#F8F1D7",
       'primary': '#2F73A7',
       'primary-light-1': '#ADD2EB',
       'primary-light-2': '#CEE4F3',

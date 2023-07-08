@@ -1,8 +1,7 @@
 import React from 'react'
 import usePageText from '../hooks/usePageText'
-import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import CustomLinkUnderline from '../components/button/CustomLinkUnderline'
+
 
 function NotFound404() {
     const [pageText, lang] = usePageText("home")
@@ -15,7 +14,7 @@ function NotFound404() {
             lg:top-[150px] lg:w-1/2 lg:pt-10
               ">
                 <h1 className='pb-12'>{pageText.OOPS}</h1>
-                <CustomLinkUnderline text={pageText.OOPS_GO_HOME} path='/' />
+                <Link to="/" className='hover:underline hover:underline-offset-4 hover:text-primary'>{pageText.OOPS_GO_HOME}</Link>
                 {/* <Link to="/"><h2 className='underline'>{pageText.OOPS_GO_HOME}</h2></Link> */}
             </div>
         </div>

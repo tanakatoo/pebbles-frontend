@@ -39,16 +39,19 @@ const NavBar = () => {
     const dropdownItemsEN = [
         { text: navText.SIGN_UP, link: `/register` },
         { text: navText.LOGIN, link: `/login` },
+        { text: navText.COMMUNITY, link: null },
         { text: navText.ABOUT, link: '/about' },
-        { text: navText.COMMUNITY, link: null }]
+        { text: navText.CONTACT_US, link: '/contact' }
+    ]
 
 
     const dropdownItems = [
         { text: navText.SIGN_UP, link: `/register` },
         { text: navText.LOGIN, link: `/login` },
-        { text: navText.ABOUT, link: '/about' },
         { text: navText.STUDY_SUPPORT, link: null },
-        { text: navText.COMMUNITY, link: null }]
+        { text: navText.COMMUNITY, link: null },
+        { text: navText.ABOUT, link: '/about' },
+        { text: navText.CONTACT_US, link: '/contact' }]
 
     //keys refer to the position of the array in the dropdownItems array
     const dropdownSubItemsEN =
@@ -65,13 +68,13 @@ const NavBar = () => {
 
     const dropdownSubItems =
     {
-        3: {
+        2: {
             items: [
                 { text: navText.WHAT_WE_SUPPORT, link: null },
                 { text: navText.PRICING, link: null }
             ]
         },
-        4: {
+        3: {
             items: [
                 { text: navText.LANGUAGE_TOWN, link: '/language-town' },
                 { text: navText.INFO_CENTER, link: '/info-center' },
@@ -85,16 +88,19 @@ const NavBar = () => {
     const dropdownItemsLoggedInEN =
         [
             { text: `Hi, ${user.profile && user.profile.username}`, link: null },
+            { text: navText.COMMUNITY, link: null },
             { text: navText.ABOUT, link: '/about' },
-            { text: navText.COMMUNITY, link: null }
+            { text: navText.CONTACT_US, link: '/contact' }
         ]
 
     const dropdownItemsLoggedIn =
         [
             { text: `Hi, ${user.profile && user.profile.username}`, link: null },
-            { text: navText.ABOUT, link: '/about' },
             { text: navText.STUDY_SUPPORT, link: null },
-            { text: navText.COMMUNITY, link: null }
+            { text: navText.COMMUNITY, link: null },
+            { text: navText.ABOUT, link: '/about' },
+            { text: navText.CONTACT_US, link: '/contact' }
+
         ]
 
     const dropdownSubItemsLoggedInEN =
@@ -111,7 +117,7 @@ const NavBar = () => {
                 ]
         },
 
-        2: {
+        1: {
             items:
                 [
                     { text: navText.LANGUAGE_TOWN, link: null },
@@ -136,14 +142,14 @@ const NavBar = () => {
                     { text: navText.LOGOUT, link: '/logout' }
                 ]
         },
-        2: {
+        1: {
             items:
                 [
                     { text: navText.WHAT_WE_SUPPORT, link: null },
                     { text: navText.PRICING, link: null }
                 ]
         },
-        3: {
+        2: {
             items:
                 [
                     { text: navText.LANGUAGE_TOWN, link: null },

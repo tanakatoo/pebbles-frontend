@@ -10,11 +10,11 @@ function SearchBar({ name, searchWord, onSubmit, handleChange, btn = false }) {
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
-            console.log('go search')
+
             onSubmit()
         }
     }
-    console.log(searchWord)
+
     return (
         <div className={`w-full flex  ${btn ? 'flex-col-reverse md:flex-row' : null} gap-3`}>
             {btn ? btn : null}

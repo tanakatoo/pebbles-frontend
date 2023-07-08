@@ -10,7 +10,7 @@ function ExploreCommunityCard({ data, lang }) {
     return (
 
 
-        <div className='p-2 w-[268px] h-[109px] grid grid-cols-3 gap-2  bg-white text-mobile-label-2 rounded-ml'>
+        <div className='p-2 w-[268px] h-[109px] grid grid-cols-3 gap-2 bg-white shadow-sm drop-shadow text-mobile-label-2 leading-[18px] rounded-ml'>
             <div className='inline-flex items-center'>
 
                 <Avatar link={true}

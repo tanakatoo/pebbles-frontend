@@ -29,7 +29,11 @@
         "PREMIUM_BTN":"Go premium now",
         "EXPLORE_COMMUNITY":"Explore the community",
         "SEE_ALL":"See all",
-        "STUDY_BUDDY":"Newest Study Buddies"
+        "STUDY_BUDDY":"Newest Study Buddies",
+        "MARKETPLACE":"Marketplace",
+        "INFO_CENTER":"Regional Information Center",
+        "LANGUAGE_TOWN":"Japanese Town",
+        "NO_DATA":"Under construction. Please be patient!"
 
     },
     "JA":{
@@ -68,6 +72,10 @@
         "PREMIUM_BTN":"プレミアムへGO！",
         "EXPLORE_COMMUNITY":"コミュニティを探検しよう",
         "SEE_ALL":"全て",
-        "STUDY_BUDDY":"最新のスタディーバディー"
+        "STUDY_BUDDY":"最新のスタディーバディー",
+        "MARKETPLACE":"マーケット",
+        "INFO_CENTER":"Regional Information Center",
+        "LANGUAGE_TOWN":"Japanese Town",
+        "NO_DATA":"工事中。お待ちください！"
     }
 }

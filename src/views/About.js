@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import usePageText from '../hooks/usePageText'
 import { AwesomeCheck, AwesomeArrowRightLong, AwesomeUser, AwesomeArrowUpLong, AwesomeQuestion, AwesomeGift, AwesomeStar } from '../styles/Icons'
 import CustomLink from '../components/button/CustomLink'
@@ -8,6 +8,9 @@ import { Button } from '../components/button/Button';
 function About() {
     const [pageText, lang] = usePageText('about')
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div>
@@ -40,7 +43,7 @@ function About() {
                     <p className='my-4  max-w-prose'>{pageText.BEGINNINGS7}</p>
                 </div>
             </div >
-            <h2 className="font-medium text-mobile-page-header text-center p-2 mt-12 md:mt-24 bg-primary-dark text-white">{pageText.COMMUNITIES}</h2>
+            <h2 id="top" className="font-medium text-mobile-page-header text-center p-2 mt-12 md:mt-24 bg-primary-dark text-white">{pageText.COMMUNITIES}</h2>
             <div className='flex flex-col pt-4 md:pt-8 pb-12 md:pb-24 px-2 bg-primary-super-light '>
                 <div className='container mx-auto flex flex-col items-center'>
                     <p className='mb-2 text-center'>{pageText.EXPLORE}</p>

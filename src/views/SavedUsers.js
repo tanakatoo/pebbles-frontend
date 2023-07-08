@@ -24,6 +24,7 @@ function SavedUsers() {
 
     const getSavedUsers = async () => {
         try {
+            setErrors([])
             setDoneGettingData(false);
             const res = await UserApi.getSavedUsers();
 

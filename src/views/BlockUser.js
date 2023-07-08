@@ -24,6 +24,7 @@ function BlockUser() {
 
     const getData = async () => {
         try {
+            setErrors([])
             setDoneGettingData(false)
             const res = await UserApi.getContacts()
             setData(res)

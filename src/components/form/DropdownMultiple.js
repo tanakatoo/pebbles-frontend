@@ -17,11 +17,11 @@ import { Field } from 'formik'
 const DropdownMultiple = ({ name, label, options, data, select }) => {
     const lang = useSelector(state => state.langFont.lang)
     const [isOpen, setIsOpen] = useState(false)
-    console.log('data to set is', name, data)
+    console.log('data coming in is', name, data)
     const [selectedItem, setSelectedItem] = useState(data)
-    console.log('selected item length is', name, selectedItem.length, selectedItem)
+
     const handleSelectedLevel = (setFieldValue, val) => {
-        console.log('not in here')
+
         setSelectedItem(val);
         setFieldValue(name, val)
         setIsOpen(true);
@@ -30,7 +30,7 @@ const DropdownMultiple = ({ name, label, options, data, select }) => {
         if (data.length === 0) {
             setSelectedItem([])
         }
-    }, [])
+    }, [data])
 
 
     return (
@@ -45,7 +45,7 @@ const DropdownMultiple = ({ name, label, options, data, select }) => {
             >
                 {() => (
                     <>
-                        {console.log('field value is', field.value)}
+
                         <Listbox.Label className={`font-medium`}>{label}</Listbox.Label>
                         <div className="relative mt-2">
                             <Listbox.Button

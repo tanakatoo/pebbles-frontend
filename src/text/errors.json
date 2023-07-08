@@ -14,7 +14,9 @@
         "STUDY_BUDDY_PURPOSE":"どうやってバディーと勉強をしたいですか？",
         "NATIVE_LANG":"母国語を選択してください",
         "LEARNING_LANG":"学習している言語を選択してください",
-        "TIME_ZONE":"タイムゾーンを選択してください"
+        "TIME_ZONE":"タイムゾーンを選択してください",
+        "NAME_REQUIRED":"名前をご記入ください",
+        "MESSAGE_REQ":"メッセージをご記入ください"
     },
     "EN":{
         "USERNAME_REQUIRED": "Username required",
@@ -31,6 +33,8 @@
         "STUDY_BUDDY_PURPOSE":"Please indicate how you want to study with your buddy",
         "NATIVE_LANG":"Please select your native language",
         "LEARNING_LANG":"Please select the language you are learning",
-        "TIME_ZONE":"Please select a time zone"
+        "TIME_ZONE":"Please select a time zone",
+        "NAME_REQUIRED":"Please input your name",
+        "MESSAGE_REQ":"Please input your comments or questions"
     }
 }

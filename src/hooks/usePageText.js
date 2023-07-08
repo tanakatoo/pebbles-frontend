@@ -3,6 +3,7 @@ import { CHANGE_PAGE } from "../reducers/actionTypes"
 import { useDispatch, useSelector } from "react-redux"
 
 const usePageText = (page) => {
+
     const langFont = useSelector(state => state.langFont)
     const dispatch = useDispatch()
 
@@ -12,7 +13,6 @@ const usePageText = (page) => {
     }, [langFont.lang])
 
     const pageText = useSelector(state => state.pageText.pageText)
-
     return [pageText, langFont.lang]
 }
 

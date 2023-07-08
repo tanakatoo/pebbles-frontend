@@ -51,7 +51,7 @@ const FormikContainerMyWay = ({ pageText }) => {
 
     const onSubmit = async (values, { setSubmitting }) => {
         try {
-
+            setErrors([])
             const res = await UserApi.updateUserInfo(values)
             //call dispatch to set token in profileReducer
             dispatch(actionSaveProfile(values))

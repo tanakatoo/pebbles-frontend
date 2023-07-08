@@ -4,12 +4,13 @@ import studyBuddy from '../text/studyBuddy.json';
 import login from "../text/login.json"
 import messages from "../text/message.json"
 import register from "../text/register.json"
-import password from "../text/changePassword.json"
-import setPassword from "../text/password.json"
+import changePassword from "../text/changePassword.json"
+import password from "../text/password.json"
 import profile from "../text/profile.json"
 import saved from "../text/savedItems.json"
 import dashboard from "../text/dashboard.json"
 import about from "../text/about.json"
+import contact from "../text/contact.json"
 
 const text = {
     home: home,
@@ -17,12 +18,13 @@ const text = {
     login: login,
     messages: messages,
     register: register,
+    changePassword: changePassword,
     password: password,
-    setPassword: setPassword,
     profile: profile,
     saved: saved,
     dashboard: dashboard,
-    about: about
+    about: about,
+    contact: contact
 }
 
 const INITIAL_STATE = { pageText: '' }

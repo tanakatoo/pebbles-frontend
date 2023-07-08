@@ -53,6 +53,7 @@ const Login = () => {
                             //call dispatch to set token in profileReducer
                             dispatch(actionLogin(res)) //save token and then profile
                             // setFlashMessage('LOGIN')
+
                             // navigate('/users/dashboard')
                         } catch (e) {
                             if (e instanceof TypeError) {
@@ -87,6 +88,13 @@ const Login = () => {
                                 extraClasses="mt-12"
                                 lang={lang}
                                 isSubmitting={formik.isSubmitting} />
+                            <p className="mt-2 text-center text-gray-text">
+                                {pageText.FORGOT_PASSWORD}
+                                <span className="text-link hover:text-primary">
+                                    <Link to="/change-password"> {pageText.CLICK_HERE}
+                                    </Link>
+                                </span>
+                            </p>
                             <Button bkColor="bg-white"
                                 textColor="text-primary"
                                 btnText={pageText.CREATE_ACCT}
@@ -99,6 +107,7 @@ const Login = () => {
                     )
                 }}
                 </Formik>
+
             </div>
         </>
     );

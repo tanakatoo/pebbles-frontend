@@ -34,6 +34,14 @@
         "BLOCKED":{
             "EN":"You blocked this user. Unblock to send a message.",
             "JA":"ユーザーをブロックしています。メッセージするにはユーザーをブロック解除してください。"
+        },
+        "INVALID_LINK":{
+            "EN":"You cannot access this page directly. You must generate a valid link from the Change Password page.",
+            "JA":"直接このページをアクセスできません。正しいリックをパスワードを変更するページから作ってください。"
+        },
+        "JWT_EXPIRED":{
+            "EN":"Link has expired",
+            "JA":"パスワードリセットリックが期限切れです"
         }
 
     }

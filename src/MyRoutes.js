@@ -31,6 +31,9 @@ import ChangeAvatar from "./views/ChangeAvatar"
 import About from "./views/About"
 import Unauthorized from "./views/Unauthorized"
 import Protected from "./components/common/Protected"
+import Contact from "./views/Contact"
+import Search from "./views/Search"
+
 
 const MyRoutes = () => {
     return (
@@ -42,6 +45,7 @@ const MyRoutes = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/study-buddies" element={<StudyBuddies />} />
             <Route path="/marketplace" element={<Marketplace />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/supports" element={<Supports />}>
                 <Route path="pricing" element={<Pricing />} />
             </Route>
@@ -73,6 +77,7 @@ const MyRoutes = () => {
 
             <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/reset-password" element={<SetPassword />} />
+            <Route path="/search" element={<Search />} />
             <Route path="/unauthorized" element={<Unauthorized />} />
             <Route path="*" element={<NotFound404 />} />
         </Routes >

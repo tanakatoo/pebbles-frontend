@@ -3,8 +3,9 @@ import PebblesApi from "./base"
 class AuthApi extends PebblesApi {
 
     /* Register new user */
-    static async register(username, password, email) {
-        let res = await this.request(`auth/register`, { username, password, email }, "POST")
+    static async register(username, password, email, lang) {
+        console.log(username, password, email, lang)
+        let res = await this.request(`auth/register`, { username, password, email, lang }, "POST")
 
         this.token = res
         return res
@@ -20,15 +21,15 @@ class AuthApi extends PebblesApi {
 
     /*check if username or email is in db, if so, send email */
     static async changePassword(username, lang) {
-        let res = await this.request(`auth/password`, { username, lang }, "POST")
+        let res = await this.request(`auth/change-password`, { username, lang }, "POST")
         this.token = res
 
         return res
     }
 
     /* set new password*/
-    static async setPassword(username, password) {
-        let res = await this.request(`auth/set-password`, { username, password }, "POST")
+    static async setPassword(password, lang, token) {
+        let res = await this.request(`auth/set-password`, { password, lang, token }, "POST")
         this.token = res
 
         return res

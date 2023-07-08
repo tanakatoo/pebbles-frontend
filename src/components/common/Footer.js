@@ -28,8 +28,8 @@ function Footer() {
                     : ''}
                 <div className='flex flex-col justify-center items-center me-4 lg:items-start lg:ms-8'>
                     <p className='font-medium'>{text.COMPANY}</p>
-                    <p className='text-gray'>{text.ABOUT}</p>
-                    <p className='pb-4 text-gray'>{text.CONTACT_US}</p>
+                    <p className='text-background'><Link to="/about" className='hover:underline hover: underline-offset-4 hover:text-white'>{text.ABOUT}</Link></p>
+                    <p className='pb-4 text-background'><Link to="/contact" className='hover:underline hover: underline-offset-4 hover:text-white'>{text.CONTACT_US}</Link></p>
                 </div>
                 <div className='flex flex-col text-center justify-center items-center lg:items-start lg:ms-8'>
                     <p className='font-medium'>{text.COMMUNITY}</p>

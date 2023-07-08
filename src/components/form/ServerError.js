@@ -14,7 +14,8 @@ const ServerError = ({ msg, title }) => {
             <div className="text-error border rounded-ml p-4 mb-8 max-w-[400px]">
                 <div className="flex mb-2 justify-center">
                     <Exclamation />
-                    <span className={`ms-5 text-mobile-section-header font-medium`}>{title}</span>
+                    {title ? <span className={`ms-5 text-mobile-section-header font-medium`}>{title}</span>
+                        : ''}
                 </div>
 
                 {msg.map(m =>

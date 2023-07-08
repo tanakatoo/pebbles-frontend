@@ -113,7 +113,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
                                             (<div >
                                                 {listOfLocations.map((l) => (
                                                     <Combobox.Option key={l.place_id} value={l} id={l.place_id}
-                                                        className='py-1 px-4 ui-active:bg-accent-very-light rounded-ml'>
+                                                        className='py-1 px-4 ui-active:bg-gray rounded-ml'>
                                                         {l.description}
                                                     </Combobox.Option>
                                                 ))}

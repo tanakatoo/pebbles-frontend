@@ -9,8 +9,8 @@ function Unauthorized() {
 
 
     return (
-        <div className='flex items-center flex-col my-12'>
-            <p className='mb-6'>{pageText.UNAUTHORIZED}</p>
+        <div className='mx-2 flex items-center flex-col my-12'>
+            <p className='text-center mb-6'>{pageText.UNAUTHORIZED}</p>
             <p><CustomLink path='/' text={pageText.OOPS_GO_HOME} /></p>
         </div>
     )

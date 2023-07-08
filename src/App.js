@@ -17,7 +17,7 @@ function App() {
   //we have to hardcode the string of the font because tailwind doesn't know what to use at build
   return (
     // <FlashMessageContext.Provider value={[setMessage, setTypeOfMsg]}>
-    <div id="top" className={`App ${lang === "EN" ? 'font-poppins' : 'font-NotoSansJP'}`}>
+    <div className={`App ${lang === "EN" ? 'font-poppins' : 'font-NotoSansJP'}`}>
       {/* <FlashMsg msg={message} incomingType={typeOfMsg} /> */}
       <NavBar />
       <MyRoutes />

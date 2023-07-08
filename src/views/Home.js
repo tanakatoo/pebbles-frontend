@@ -11,14 +11,23 @@ import marketplacesquare from "../images/marketplace-square.jpg"
 import studysupportsquare from "../images/studysupport-square.jpg"
 import { useSelector } from "react-redux"
 import { Button } from "../components/button/Button"
+import useFormData from "../hooks/useFormData"
+import { useNavigate } from "react-router-dom"
 
 const Home = () => {
     const [pageText, lang] = usePageText("home")
+    const [data, setData, handleChange, resetData] = useFormData('')
+    const navigate = useNavigate()
+
+    const submitSearch = () => {
+        console.log(data.siteWideSearch)
+        navigate('/search', { state: { word: data } })
+    }
 
     return (
         <div>
             <div className="bg-primary-dark py-6 px-4">
-                <SearchBar />
+                <SearchBar name='siteWideSearch' onSubmit={submitSearch} handleChange={handleChange} />
             </div>
             <div className='flex justify-center bg-primary-super-light bg-homeHero md:bg-homeHeroTablet lg:bg-homeHeroDesktop bg-cover bg-center bg-no-repeat relative min-h-screen' >
                 <div className="bg-gradient-to-b absolute from-primary-super-light from-0% via-transparent via-1% to-transparent to-100% w-full h-screen"></div>

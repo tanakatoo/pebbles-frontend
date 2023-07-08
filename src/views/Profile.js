@@ -43,6 +43,7 @@ const Profile = () => {
 
         const getUser = async () => {
             try {
+                setErrors([])
                 console.log('setting done data to false')
                 setDoneGettingData(false);
                 res = await UserApi.getUserInfo(username);
@@ -313,8 +314,6 @@ const Profile = () => {
                                                     : ''}
                                                 {currentProfile.study_buddy_active || currentProfile.myProfile ?
                                                     <>
-                                                        <DisplayInfo label={pageText.PURPOSE} lang={lang} data={currentProfile.study_buddy_purpose} checkExists={false} />
-                                                        <DisplayInfo label={pageText.STUDY_WAY} lang={lang} data={currentProfile.study_buddy_bio} checkExists={false} />
                                                         <DisplayInfo label={pageText.BUDDY_TYPE} lang={lang} data={currentProfile.study_buddy_types.map(
                                                             (t, idx) => idx === currentProfile.study_buddy_types.length - 1 ?
                                                                 dbText.study_buddy_types[t][lang] : dbText.study_buddy_types[t][lang] + ', '
@@ -322,6 +321,8 @@ const Profile = () => {
                                                         <DisplayInfo label={pageText.NATIVE_LANG} lang={lang} jsonName='languages' data={currentProfile.native_language} />
                                                         <DisplayInfo label={pageText.LEARNING_LANG} lang={lang} jsonName='languages' data={currentProfile.learning_language} />
                                                         <DisplayInfo label={pageText.LANGUAGE_LEVEL} lang={lang} jsonName='language_levels' data={currentProfile.language_level} />
+                                                        <DisplayInfo label={pageText.PURPOSE} lang={lang} data={currentProfile.study_buddy_purpose} checkExists={false} />
+                                                        <DisplayInfo label={pageText.STUDY_WAY} lang={lang} data={currentProfile.study_buddy_bio} checkExists={false} />
                                                         <DisplayInfo label={pageText.TIME_ZONE} lang={lang} jsonName='timezones' data={currentProfile.time_zone} />
                                                         <DisplayInfo label={pageText.AGE_RANGE} lang={lang} jsonName='age_ranges' data={currentProfile.age_range} />
                                                         <DisplayInfo label={pageText.GENDER} lang={lang} jsonName='genders' data={currentProfile.gender} />
