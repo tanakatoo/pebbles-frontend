@@ -13,10 +13,13 @@ function Avatar({ link = null, src, size = 'sm', username, noDropdownShadow = fa
             break;
         case 'profile':
             width = 'w-112'
+            break;
         case 'user':
             width = 'w-80'
+            break;
         case 'navbar':
             width = 'w-45'
+            break;
         default:
             break;
     }
@@ -28,10 +31,13 @@ function Avatar({ link = null, src, size = 'sm', username, noDropdownShadow = fa
             break;
         case 'profile':
             height = 'h-112'
+            break;
         case 'user':
             height = 'h-80'
+            break;
         case 'navbar':
             width = 'h-45'
+            break;
 
         default:
             break;
