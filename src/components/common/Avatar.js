@@ -34,7 +34,7 @@ function Avatar({ link = null, src, size = 'sm', username }) {
 
     return (
 
-        <div className={`bg-white shrink-0 pt-1 ${width} ${height} rounded-full border text-gray-stroke`}>
+        <div className={`bg-white shrink-0 pt-1 ${width} ${height} rounded-full border text-gray-stroke hover:shadow-dropdown`}>
             {link ?
                 <img className='rounded-full h-full mx-auto cursor-pointer' onClick={() => goToProfile(username)}
                     src={`../../avatars/${src}`} />

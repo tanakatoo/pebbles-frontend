@@ -73,6 +73,7 @@ const SetPassword = () => {
                             console.log(res)
                             dispatch(actionLogin(res))
                             setFlash(true)
+
                             // navigate('/system-message', { state: { type: "CHANGED_PASSWORD" } })
                         } catch (e) {
                             console.log(e)

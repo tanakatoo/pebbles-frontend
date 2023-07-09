@@ -11,6 +11,11 @@ import saved from "../text/savedItems.json"
 import dashboard from "../text/dashboard.json"
 import about from "../text/about.json"
 import contact from "../text/contact.json"
+import searchBar from "../text/searchBar.json"
+import infoCenter from "../text/infoCenter.json"
+import marketplace from "../text/marketplace.json"
+import languageTown from '../text/languageTown.json'
+import studySupport from "../text/studySupport.json"
 
 const text = {
     home: home,
@@ -24,7 +29,12 @@ const text = {
     saved: saved,
     dashboard: dashboard,
     about: about,
-    contact: contact
+    contact: contact,
+    searchBar: searchBar,
+    infoCenter: infoCenter,
+    marketplace: marketplace,
+    languageTown: languageTown,
+    studySupport: studySupport
 }
 
 const INITIAL_STATE = { pageText: '' }

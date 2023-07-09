@@ -12,22 +12,39 @@ import studysupportsquare from "../images/studysupport-square.jpg"
 import { useSelector } from "react-redux"
 import { Button } from "../components/button/Button"
 import useFormData from "../hooks/useFormData"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
+import { Formik, Form } from "formik"
 
 const Home = () => {
     const [pageText, lang] = usePageText("home")
-    const [data, setData, handleChange, resetData] = useFormData('')
+    // const [data, setData, handleChange, resetData] = useFormData('')
     const navigate = useNavigate()
+    const location = useLocation()
 
-    const submitSearch = () => {
-        console.log(data.siteWideSearch)
-        navigate('/search', { state: { word: data } })
+    const submitSearch = async (values, { setSubmitting }) => {
+        console.log('this is just the word to send',)
+        navigate('/search', { state: { word: values.word, from: location.pathname } })
+        setSubmitting(false)
     }
 
     return (
         <div>
             <div className="bg-primary-dark py-6 px-4">
-                <SearchBar name='siteWideSearch' onSubmit={submitSearch} handleChange={handleChange} />
+                <Formik
+                    onSubmit={submitSearch}
+                    initialValues={{ word: '' }}
+                >
+                    {
+                        formik => {
+                            return (
+                                <Form>
+                                    <SearchBar name='word' onSubmit={submitSearch} />
+                                </Form>
+                            )
+                        }
+                    }
+                </Formik>
+
             </div>
             <div className='flex justify-center bg-primary-super-light bg-homeHero md:bg-homeHeroTablet lg:bg-homeHeroDesktop bg-cover bg-center bg-no-repeat relative min-h-screen' >
                 <div className="bg-gradient-to-b absolute from-primary-super-light from-0% via-transparent via-1% to-transparent to-100% w-full h-screen"></div>
@@ -55,13 +72,14 @@ const Home = () => {
                     <p>{pageText.HERO2}</p>
                 </div>
             </section >
-            <section className="pt-[180px] md:pt-[150px] lg:pt-[120px]">
-                <h2 className=" px-4 text-mobile-header-2 font-medium text-center text-primary-dark">{pageText.HOW_TO_HELP}</h2>
-                <div className="mt-16">
+            <section className="">
+                <h2 className=" py-16 md:py-24 px-4 text-mobile-header-2 font-medium text-center text-primary-dark">{pageText.HOW_TO_HELP}</h2>
+                <div className="">
                     {lang === "JA" ?
                         <Supports
                             font={`NotoSansJP font-medium`}
                             bgColor='bg-background'
+                            link="/study-support"
                             img={studysupportsquare}
                             title={pageText.HELP5_TITLE}
                             desc={pageText.HELP5_DESC} />
@@ -70,6 +88,7 @@ const Home = () => {
                     <Supports
                         font={`${lang === "EN" ? 'font-StudyBuddyEN' : 'font-StudyBuddyJA'} font-bold`}
                         bgColor='bg-study-buddy-accent'
+                        link="/study-buddies"
                         img={studybuddysquare}
                         title={pageText.HELP3_TITLE}
                         desc={pageText.HELP3_DESC} />

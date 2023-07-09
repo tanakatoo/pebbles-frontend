@@ -1,7 +1,7 @@
 import React from 'react'
 import Avatar from '../common/Avatar'
 import { useNavigate } from 'react-router-dom'
-import CustomLink from '../button/CustomLink'
+import CustomLinkPrimaryMedium from '../button/CustomLinkPrimaryMedium'
 import dbText from '../../text/db.json'
 import studyBuddyText from '../../text/studyBuddy.json'
 import { JapanFlag, AmericanFlag } from '../../styles/Icons'
@@ -20,7 +20,7 @@ function ExploreCommunityCard({ data, lang }) {
                 />
             </div>
             <div className='col-span-2 flex flex-col gap-1'>
-                <span className='font-medium mb-1'><CustomLink text={data.username} path={`/users/${data.username}`} /></span>
+                <span className='font-medium mb-1'><CustomLinkPrimaryMedium text={data.username} path={`/users/${data.username}`} /></span>
                 <span className='truncate '>{data.study_buddy_types.map((s, idx) =>
                     idx === data.study_buddy_types.length - 1 ?
                         dbText.study_buddy_types[s][lang]

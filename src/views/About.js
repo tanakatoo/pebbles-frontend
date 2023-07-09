@@ -26,10 +26,12 @@ function About() {
                     <p className='max-w-prose'>{pageText.BEGINNINGS}</p>
                     <p className='my-4 max-w-prose'>{pageText.BEGINNINGS2}</p>
                     <div>
-                        <div className='text-success my-2'>
-                            <span className='text-green'><AwesomeCheck /> </span>
-                            {pageText.BEGINNINGS3}
-                        </div>
+                        {lang === "JA" ?
+                            <div className='text-success my-2'>
+                                <span className='text-green'><AwesomeCheck /> </span>
+                                {pageText.BEGINNINGS3}
+                            </div>
+                            : ''}
                         <div className='text-success my-2'>
                             <span className='text-green'><AwesomeCheck /> </span>
                             {pageText.BEGINNINGS4}</div>
@@ -103,40 +105,45 @@ function About() {
 
                 </div>
             </div >
-            <div id="link-support" className='flex justify-center bg-primary-super-light bg-supportLongMobile md:bg-supportLongTablet lg:bg-supportLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
-            </div>
-            <h2 className="font-medium text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-background text-primary-dark">{pageText.STUDY_SUPPORT_TITLE}</h2>
-            <div className='container flex flex-col items-center mx-auto my-8 md:my-12'>
-                <p className='max-w-prose'>{pageText.SUPPORT1}</p>
-                <div className='flex flex-col my-4 max-w-prose'>
-                    <div className='text-primary-dark  mb-2 mt-4'>
-                        <span className='text-star'><AwesomeStar /> </span>
-                        {pageText.IMPROVE1_TITLE}</div>
-                    <p>{pageText.IMPROVE1}</p>
-                    <div className='text-primary-dark  mb-2 mt-4'>
-                        <span className='text-star'><AwesomeStar /> </span>
-                        {pageText.IMPROVE2_TITLE}</div>
-                    <p>{pageText.IMPROVE2}</p>
-                    <div className='text-primary-dark  mb-2 mt-4'>
-                        <span className='text-star'><AwesomeStar /> </span>
-                        {pageText.IMPROVE3_TITLE}</div>
-                    <p>{pageText.IMPROVE3}</p>
-                    <div className='text-primary-dark mb-2 mt-4'>
-                        <span className='text-star'><AwesomeStar /> </span>
-                        {pageText.IMPROVE4_TITLE}</div>
-                    <p>{pageText.IMPROVE4}</p>
-                    <div className='text-primary-dark  mb-2 mt-4'>
-                        <span className='text-star'><AwesomeStar /> </span>
-                        {pageText.IMPROVE5_TITLE}</div>
-                    <p>{pageText.IMPROVE5}</p>
+            {lang === "JA" ?
+                <>
+                    <div id="link-support" className='flex justify-center bg-primary-super-light bg-supportLongMobile md:bg-supportLongTablet lg:bg-supportLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
+                    </div>
+                    <h2 className="font-medium text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-background text-primary-dark">{pageText.STUDY_SUPPORT_TITLE}</h2>
+                    <div className='container flex flex-col items-center mx-auto my-8 md:my-12'>
+                        <p className='max-w-prose'>{pageText.SUPPORT1}</p>
+                        <div className='flex flex-col my-4 max-w-prose'>
+                            <div className='text-primary-dark  mb-2 mt-4'>
+                                <span className='text-star'><AwesomeStar /> </span>
+                                {pageText.IMPROVE1_TITLE}</div>
+                            <p>{pageText.IMPROVE1}</p>
+                            <div className='text-primary-dark  mb-2 mt-4'>
+                                <span className='text-star'><AwesomeStar /> </span>
+                                {pageText.IMPROVE2_TITLE}</div>
+                            <p>{pageText.IMPROVE2}</p>
+                            <div className='text-primary-dark  mb-2 mt-4'>
+                                <span className='text-star'><AwesomeStar /> </span>
+                                {pageText.IMPROVE3_TITLE}</div>
+                            <p>{pageText.IMPROVE3}</p>
+                            <div className='text-primary-dark mb-2 mt-4'>
+                                <span className='text-star'><AwesomeStar /> </span>
+                                {pageText.IMPROVE4_TITLE}</div>
+                            <p>{pageText.IMPROVE4}</p>
+                            <div className='text-primary-dark  mb-2 mt-4'>
+                                <span className='text-star'><AwesomeStar /> </span>
+                                {pageText.IMPROVE5_TITLE}</div>
+                            <p>{pageText.IMPROVE5}</p>
 
-                </div>
-                <p className='max-w-prose mt-4'>{pageText.SUPPORT_ENDING}</p>
-                <div className='my-4 flex w-full max-w-prose justify-end' ><HashLink to="#top"><AwesomeArrowUpLong /><span className='text-mobile-label-1 ms-1'>{pageText.TOP}</span></HashLink></div>
-                <div className='mb-12 md:mb-24 mt-4'>
-                    <Button btnText={pageText.SUPPORT_BTN} link={'/study-buddies'} bkColor='bg-background' textColor='text-primary-dark' />
-                </div>
-            </div>
+                        </div>
+                        <p className='max-w-prose mt-4'>{pageText.SUPPORT_ENDING}</p>
+                        <div className='my-4 flex w-full max-w-prose justify-end' ><HashLink to="#top"><AwesomeArrowUpLong /><span className='text-mobile-label-1 ms-1'>{pageText.TOP}</span></HashLink></div>
+                        <div className='mb-12 md:mb-24 mt-4'>
+                            <Button btnText={pageText.SUPPORT_BTN} link={'/study-support'} bkColor='bg-background' textColor='text-primary-dark' />
+                        </div>
+                    </div>
+                </>
+                : ''
+            }
             <div id="link-studyBuddy" className='flex justify-center bg-primary-super-light bg-studyBuddyLongMobile md:bg-studyBuddyLongTablet lg:bg-studyBuddyLongDesktop bg-cover bg-bottom bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
             </div>
             <h2 className={`font-bold text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-study-buddy-accent text-primary-dark
@@ -165,7 +172,7 @@ function About() {
                 <p className='mb-2 mt-4 max-w-prose'>{pageText.TOWN_TEXT2}</p>
                 <div className='my-4 flex w-full max-w-prose justify-end' ><HashLink to="#top"><AwesomeArrowUpLong /><span className='text-mobile-label-1 ms-1'>{pageText.TOP}</span></HashLink></div>
                 <div className='mb-12 md:mb-24 mt-4'>
-                    <Button btnText={pageText.TOWN_BTN} link={'/study-buddies'} bkColor='bg-community-accent' textColor='text-white' />
+                    <Button btnText={pageText.TOWN_BTN} link={'/language-town'} bkColor='bg-community-accent' textColor='text-white' />
                 </div>
             </div>
 
@@ -196,7 +203,7 @@ function About() {
                 <p className='max-w-prose'>{pageText.INFO3}</p>
                 <div className='my-4 flex w-full max-w-prose justify-end' ><HashLink to="#top"><AwesomeArrowUpLong /><span className='text-mobile-label-1 ms-1'>{pageText.TOP}</span></HashLink></div>
                 <div className='mb-12 md:mb-24 mt-4'>
-                    <Button btnText={pageText.INFO_BTN} link={'/study-buddies'} bkColor='bg-regional-accent' textColor='text-white' />
+                    <Button btnText={pageText.INFO_BTN} link={'/info-center'} bkColor='bg-regional-accent' textColor='text-white' />
                 </div>
             </div>
 
@@ -238,7 +245,7 @@ function About() {
                 </div>
                 <div className='mb-4 flex w-full max-w-prose justify-end' ><HashLink to="#top"><AwesomeArrowUpLong /><span className='text-mobile-label-1 ms-1'>{pageText.TOP}</span></HashLink></div>
                 <div className='mb-12 mt-4'>
-                    <Button btnText={pageText.MARKET_BTN} link={'/study-buddies'} bkColor='bg-marketplace-accent' textColor='text-primary-dark' />
+                    <Button btnText={pageText.MARKET_BTN} link={'/marketplace'} bkColor='bg-marketplace-accent' textColor='text-primary-dark' />
                 </div>
             </div>
 

@@ -3,10 +3,10 @@ import CTA from '../components/common/CTA'
 import usePageText from "../hooks/usePageText"
 import { useSelector } from 'react-redux'
 import StatisticsCard from '../components/dashboard/StatisticsCard'
-import { AwesomeSquareCheck, AwesomeCheck } from '../styles/Icons'
+import { AwesomeCheck } from '../styles/Icons'
 import { Button } from '../components/button/Button'
 import ExploreCommunity from '../components/dashboard/ExploreCommunity'
-import Protected from "../components/common/Protected"
+
 
 function Dashboard() {
     const [pageText, lang] = usePageText('dashboard')
@@ -34,7 +34,7 @@ function Dashboard() {
 
 
                             <div className='mx-4'>
-                                <div className='flex flex-col items-center justify-center mb-8 gap-2'>
+                                <div className='flex flex-col items-center justify-center mb-8 md:mb-12 gap-2'>
                                     <h2 className="text-primary-dark font-medium text-mobile-page-header text-center">{pageText.STAT}</h2>
                                     <div className='flex flex-row flex-wrap items-center my-4 gap-4 justify-around grow container w-full'>
                                         <StatisticsCard numUsers={pageText.STAT_NUM_LEVEL_UP} text={pageText.STAT_LEVEL_UP} viaPercent='via-30%' />

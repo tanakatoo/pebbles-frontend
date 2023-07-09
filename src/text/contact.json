@@ -5,6 +5,7 @@
         "CTA_LINK":"/study-buddies",
         "ERROR_TITLE":"Error sending your message",
         "H1":"Contact Us",
+        "INFO":"Feel free to email us at info@pebblescommunity.com or fill out the form below. We will reply within 2-3 business days.",
         "NAME":"Your name",
         "NAME_PLACEHOLDER":"",
         "SUBJECT":"Subject",
@@ -15,14 +16,15 @@
         "SUBMIT":"Send",
         "REGISTER_TEXT":"Ready to register?",
         "REGISTER_HERE":"Sign up here",
-        "FLASH_MSG":"Thanks for your comments or questions. We will get back to you within 2-3 business days."
+        "FLASH_MSG":"Thank you for your comments or questions. We will get back to you within 2-3 business days."
     },
     "JA":{
         "CTA":"毎日少しの時間で英語をレベルアップしよう",
         "CTA_BTN":"無料体験",
         "CTA_LINK":"/supports",
-        "ERROR_TITLE":"Error sending your message",
-        "H1":"コンタクト",
+        "ERROR_TITLE":"Jap Error sending your message",
+        "H1":"お問い合わせ",
+        "INFO":"Jap Feel free to email us at info@pebblescommunity.com or fill out the form below. We will reply within 2-3 business days.",
         "NAME":"名前",
         "NAME_PLACEHOLDER":"",
         "SUBJECT":"サブジェクト",

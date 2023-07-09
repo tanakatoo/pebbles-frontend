@@ -35,6 +35,7 @@ import learn from "../images/icons/learn.png"
 import speak from "../images/icons/speaks.png"
 import filter from "../images/icons/filter.svg"
 import arc from "../images/icons/arc.svg"
+import premium from "../images/icons/premium.png"
 
 
 
@@ -71,6 +72,7 @@ export const Travel = () => { return (<img src={travel}></img>) }
 export const Arc = () => { return (<img src={arc}></img>) }
 export const Learn = () => { return (<img src={learn}></img>) }
 export const Speak = () => { return (<img src={speak}></img>) }
+export const Premium = () => { return (<img src={premium}></img>) }
 export const JapanFlag = () => { return (<img src={japanFlag}></img>) }
 export const AmericanFlag = () => { return (<img src={americanFlag}></img>) }
 export const Timezone = () => { return (<img className='w-4 h-4' src={timezone}></img>) }

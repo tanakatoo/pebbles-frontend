@@ -12,7 +12,6 @@ import ChangePassword from "./views/ChangePassword"
 import SetPassword from "./views/SetPassword"
 import ProfileEdit from "./views/ProfileEdit"
 import Marketplace from "./views/Marketplace"
-import Supports from "./views/StudySupport"
 import Pricing from "./views/Pricing"
 import InfoCenter from "./views/InfoCenter"
 import LanguageTown from "./views/LanguageTown"
@@ -33,6 +32,7 @@ import Unauthorized from "./views/Unauthorized"
 import Protected from "./components/common/Protected"
 import Contact from "./views/Contact"
 import Search from "./views/Search"
+import StudySupport from "./views/StudySupport"
 
 
 const MyRoutes = () => {
@@ -46,20 +46,16 @@ const MyRoutes = () => {
             <Route path="/study-buddies" element={<StudyBuddies />} />
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/supports" element={<Supports />}>
-                <Route path="pricing" element={<Pricing />} />
-            </Route>
-
+            <Route path="/study-support" element={<StudySupport />} />
+            <Route path="/study-support/pricing" element={<Pricing />} />
             <Route path="/info-center" element={<InfoCenter />} />
             <Route path="/language-town" element={<LanguageTown />} />
-
             <Route path='/messages' element={<Protected />}>
                 <Route path="/messages">
                     <Route path='' element={<MessageMain />} />
                     <Route path=':username' element={<Message />} />
                 </Route>
             </Route>
-
             <Route path='' element={<Protected />}>
                 <Route path="/users/profile/edit" element={<ProfileEditMain />} />
                 <Route path="/users/profile/edit/avatar" element={<ChangeAvatar />} />
@@ -71,10 +67,8 @@ const MyRoutes = () => {
                 <Route path="/users/unblock" element={<UnblockUser />} />
                 <Route path="/users/saved" element={<SavedMain />} />
                 <Route path="/users/saved/users" element={<SavedUsers />} />
-
             </Route>
             <Route path="/users/:username" element={<Profile />} />
-
             <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/reset-password" element={<SetPassword />} />
             <Route path="/search" element={<Search />} />

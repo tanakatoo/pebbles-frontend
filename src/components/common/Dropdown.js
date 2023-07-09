@@ -66,7 +66,7 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
                                 subitems[idx] && dropdown.display && dropdown.id == idx ?
                                     subitems[idx].items.map(j => {
                                         return (
-                                            <li key={uuid()} className='py-3 px-4 text-gray-text'>
+                                            <li key={uuid()} className='ms-4 py-3 px-4 text-gray-text'>
                                                 {j.link
                                                     ?
                                                     <NavLink to={`${j.link}`} className={({ isActive }) => isActive ? 'text-secondary-dark font-bold flex' : "hover:underline hover:underline-offset-4 flex"}  >

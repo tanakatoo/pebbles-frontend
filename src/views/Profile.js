@@ -44,7 +44,7 @@ const Profile = () => {
         const getUser = async () => {
             try {
                 setErrors([])
-                console.log('setting done data to false')
+
                 setDoneGettingData(false);
                 res = await UserApi.getUserInfo(username);
                 setCurrrentProfile(res);
@@ -65,7 +65,7 @@ const Profile = () => {
                         setSaved(true)
                     }
                 }
-                console.log('setting done data to true')
+
                 setDoneGettingData(true);
             } catch (e) {
                 if (e instanceof TypeError) {
@@ -73,13 +73,13 @@ const Profile = () => {
                     console.error(e)
                     setErrors(["UNKNOWN"])
                 } else {
-                    console.log('error here')
+
                     console.error(e)
                     setErrors(e)
                 }
             } finally {
                 //if we came from study buddies or editing study buddy then go to that tab
-                console.log(locationRouter)
+
                 if (locationRouter.state &&
                     (locationRouter.state.fromLocation === '/study-buddies' ||
                         locationRouter.state.fromLocation === '/users/profile/edit/study-buddy')) {
@@ -131,8 +131,7 @@ const Profile = () => {
     const navigateToCTA = (link) => {
         navigate(link)
     }
-    console.log(!currentProfile, doneGettingData === true)
-    console.log('profile is now ', currentProfile)
+
     return (
 
         <div className={`container mx-auto mt-2 ${lang === "EN" ? 'font-poppins' : 'font-NotoSansJPRegular'}`}>
@@ -221,15 +220,17 @@ const Profile = () => {
                                                 btnText={pageText.SAVE_BTN}
                                                 clickMethod={saveUser}
                                                 lang={lang}
+                                                noShadow={true}
                                                 disabled={token ? false : true}
                                                 icon={saved ? <AwesomeSolidHeart /> : <AwesomeEmptyHeart />} />
-                                            <Link to={`/messages/${currentProfile.username}`}><Button px="px-8"
+                                            <Button px="px-8"
                                                 py="py-1"
+                                                link={`/messages/${currentProfile.username}`}
                                                 lang={lang}
                                                 btnText={pageText.MESSAGE_BTN}
                                                 extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
                                                 disabled={token ? false : true}
-                                                icon={<MailWhite />} /></Link>
+                                                icon={<MailWhite />} />
                                         </>}
                                 </div>
                             </div>

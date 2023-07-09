@@ -270,9 +270,7 @@ const StudyBuddies = () => {
                                                         textColor='text-primary-dark'
                                                         px='px-8'
                                                         lang={lang}
-
                                                         clickMethod={() => setIsDialogOpen(true)} />
-
                                                 }
                                                 name='searchWord'
                                                 onSubmit={onSubmit}

@@ -5,6 +5,7 @@ import { CHANGE_LANG, LOGOUT } from "../../reducers/actionTypes"
 import useLocalStorage from "../../hooks/useLocalStorage"
 import { Link } from "react-router-dom"
 import {
+    AwesomeChevronDown,
     AwesomeToggleLeft,
     AwesomeToggleRight,
     Hamburger,
@@ -13,6 +14,8 @@ import {
 import Dropdown from "./Dropdown"
 import useClickOutside from "../../hooks/useClickOutside"
 import text from "../../text/navbar.json"
+import CustomLinkPrimaryMedium from "../button/CustomLinkPrimaryMedium"
+import DropdownOnce from "./DropdownOnce"
 
 //text used to translate navbar has to be separate from the page so we can't use
 //text from the useState
@@ -23,6 +26,8 @@ const NavBar = () => {
     const [navText, setNavText] = useState(text[currentLangFont.lang])
     const [dropdown, setDropdown] = useState(false)
     const user = useSelector(state => state.profile)
+    const [communityDropdown, setCommunityDropdown] = useState(false)
+    const [studySupportDropdown, setStudySupportDropdown] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -34,6 +39,14 @@ const NavBar = () => {
 
     const handleHamburger = () => {
         dropdown ? setDropdown(false) : setDropdown(true)
+    }
+
+    const handleCommunityDropdown = () => {
+        communityDropdown ? setCommunityDropdown(false) : setCommunityDropdown(true)
+    }
+
+    const handleStudySupportDropdown = () => {
+        studySupportDropdown ? setStudySupportDropdown(false) : setStudySupportDropdown(true)
     }
 
     const dropdownItemsEN = [
@@ -56,7 +69,7 @@ const NavBar = () => {
     //keys refer to the position of the array in the dropdownItems array
     const dropdownSubItemsEN =
     {
-        3: {
+        2: {
             items: [
                 { text: navText.LANGUAGE_TOWN, link: '/language-town' },
                 { text: navText.INFO_CENTER, link: '/info-center' },
@@ -70,8 +83,8 @@ const NavBar = () => {
     {
         2: {
             items: [
-                { text: navText.WHAT_WE_SUPPORT, link: null },
-                { text: navText.PRICING, link: null }
+                { text: navText.WHAT_WE_SUPPORT, link: '/study-support' },
+                { text: navText.PRICING, link: '/study-support/pricing' }
             ]
         },
         3: {
@@ -120,10 +133,10 @@ const NavBar = () => {
         1: {
             items:
                 [
-                    { text: navText.LANGUAGE_TOWN, link: null },
-                    { text: navText.INFO_CENTER, link: null },
+                    { text: navText.LANGUAGE_TOWN, link: '/language-town' },
+                    { text: navText.INFO_CENTER, link: '/info-center' },
                     { text: navText.STUDY_BUDDY, link: '/study-buddies' },
-                    { text: navText.MARKETPLACE, link: null }
+                    { text: navText.MARKETPLACE, link: '/marketplace' }
                 ]
         }
     }
@@ -145,17 +158,17 @@ const NavBar = () => {
         1: {
             items:
                 [
-                    { text: navText.WHAT_WE_SUPPORT, link: null },
-                    { text: navText.PRICING, link: null }
+                    { text: navText.WHAT_WE_SUPPORT, link: '/study-support' },
+                    { text: navText.PRICING, link: '/study-support/pricing' }
                 ]
         },
         2: {
             items:
                 [
-                    { text: navText.LANGUAGE_TOWN, link: null },
-                    { text: navText.INFO_CENTER, link: null },
+                    { text: navText.LANGUAGE_TOWN, link: '/language-town' },
+                    { text: navText.INFO_CENTER, link: '/info-center' },
                     { text: navText.STUDY_BUDDY, link: '/study-buddies' },
-                    { text: navText.MARKETPLACE, link: null }
+                    { text: navText.MARKETPLACE, link: '/marketplace' }
                 ]
         }
     }
@@ -164,7 +177,15 @@ const NavBar = () => {
     const closeNav = () => {
         setDropdown(false)
     }
+    const closeCommunityDropdown = () => {
+        setCommunityDropdown(false)
+    }
+    const closeStudySupportDropdown = () => {
+        setStudySupportDropdown(false)
+    }
     const ref = useClickOutside(closeNav)
+    const refCommunityDropdown = useClickOutside(closeCommunityDropdown)
+    const refStudySupportDropdown = useClickOutside(closeStudySupportDropdown)
 
     return (
 
@@ -174,8 +195,46 @@ const NavBar = () => {
                     <img src={logo} className="h-12" alt="Pebbles logo" />
                 </button>
             </Link>
-            <div className="flex flex-nowrap items-center gap-5">
-                <div className="flex  items-center px-4 flex-nowrap">
+            <div className="flex flex-nowrap items-center gap-5 md:grow">
+                <div className="hidden md:block grow">
+                    <div className="flex gap-5 justify-center items-center w-full grow text-primary-dark">
+
+
+                        {lang === "JA" ?
+                            <span onClick={handleStudySupportDropdown} className="relative select-none" ref={refStudySupportDropdown}>
+                                <CustomLinkPrimaryMedium text={navText.STUDY_SUPPORT} /> <AwesomeChevronDown />
+                                {studySupportDropdown && <DropdownOnce items={dropdownSubItems[2].items}
+                                    closeDropdown={handleStudySupportDropdown}
+                                    css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
+                                    pr="pr-8"
+                                    width='w-[180px]'
+                                    lang={lang}
+                                />}
+                            </span>
+                            : ''}
+
+                        <span onClick={handleCommunityDropdown} className="relative select-none" ref={refCommunityDropdown}>
+                            <CustomLinkPrimaryMedium text={navText.COMMUNITY} /> <AwesomeChevronDown />
+                            {communityDropdown && <DropdownOnce items={dropdownSubItems[3].items}
+                                closeDropdown={handleCommunityDropdown}
+                                css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
+                                pr="pr-8"
+                                width='w-[250px]'
+                                lang={lang}
+                            />}
+                        </span>
+
+                        <span >
+                            <CustomLinkPrimaryMedium path="/about" text={navText.ABOUT} className="select-none" />
+                        </span>
+                        <span><CustomLinkPrimaryMedium path="/contact" text={navText.CONTACT_US} className="select-none" /></span>
+
+
+                    </div>
+
+                </div>
+
+                <div className="flex  items-center px-4 flex-nowrap ">
                     <div className="flex gap-3 items-center">
                         <span className={`cursor-pointer text-primary-dark text-mobile-card-header font-poppins font-medium ${lang === "EN" ? 'border-b-2' : ''}`} onClick={() => setLang("EN")}>EN </span>
                         <span className={`cursor-pointer text-primary-dark text-mobile-card-header font-poppins font-medium ${lang === "JA" ? 'border-b-2' : ''}`} onClick={() => setLang("JA")}>JA</span>
@@ -184,24 +243,27 @@ const NavBar = () => {
                 {user.token ?
                     <Link to="/messages"><Mail /></Link>
                     : ""}
-                <span className="cursor-pointer relative" ref={ref} onClick={handleHamburger} >
-                    <Hamburger className="ml-5 " />
-                    {lang === "JA" ?
-                        dropdown && <Dropdown items={user.token ? dropdownItemsLoggedIn : dropdownItems}
-                            subitems={user.token ? dropdownSubItemsLoggedIn : dropdownSubItems}
-                            css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
-                            pr="pr-8"
-                            width='w-[250px]'
-                            lang={lang}
-                        /> :
-                        dropdown && <Dropdown items={user.token ? dropdownItemsLoggedInEN : dropdownItemsEN}
-                            subitems={user.token ? dropdownSubItemsLoggedInEN : dropdownSubItemsEN}
-                            css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
-                            pr="pr-8"
-                            width='w-[250px]'
-                            lang={lang}
-                        />
-                    }</span>
+                <div className="md:hidden">
+                    <span className="cursor-pointer relative" ref={ref} onClick={handleHamburger} >
+                        <Hamburger className="ml-5 " />
+                        {lang === "JA" ?
+                            dropdown && <Dropdown items={user.token ? dropdownItemsLoggedIn : dropdownItems}
+                                subitems={user.token ? dropdownSubItemsLoggedIn : dropdownSubItems}
+                                css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
+                                pr="pr-8"
+                                width='w-[250px]'
+                                lang={lang}
+                            /> :
+                            dropdown && <Dropdown items={user.token ? dropdownItemsLoggedInEN : dropdownItemsEN}
+                                subitems={user.token ? dropdownSubItemsLoggedInEN : dropdownSubItemsEN}
+                                css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
+                                pr="pr-8"
+                                width='w-[250px]'
+                                lang={lang}
+                            />
+                        }
+                    </span>
+                </div>
 
             </div>
         </nav >

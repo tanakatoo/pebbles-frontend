@@ -48,7 +48,7 @@ module.exports = {
       'gold-3': "#DDAC17",
       'gold-4': "#FFFF95",
       'green': 'green',
-      'star': '#ffdf1d'
+      'star': '#FFD233'
 
     },
     fontFamily: {

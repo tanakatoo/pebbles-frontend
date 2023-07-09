@@ -57,6 +57,12 @@ class UserApi extends PebblesApi {
         return res
     }
 
+    /* search users */
+    static async findUsers(word) {
+        console.log('got search word', word)
+        let res = await this.request(`users/search`, word)
+        return res
+    }
 
 }
 

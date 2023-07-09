@@ -16,7 +16,7 @@ import contactSchema from "../components/form/validation/contactSchema";
 import EmailApi from "../api/email";
 
 const Contact = () => {
-    const [flash, setFlash] = useState(null)
+    const [flash, setFlash] = useState(false)
     const [errors, setErrors] = useState([])
     const profile = useSelector(state => state.profile.profile)
     const [savedValues, setSavedValues] = useState({
@@ -55,15 +55,15 @@ const Contact = () => {
         <div className="mb-24">
             <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
             <div className="mt-8 flex flex-col justify-center items-center mx-8">
-                {flash && <p>{flash}</p>}
+                {flash && <p className="bg-accent-very-light text-primary-dark text-center p-4 mb-4">{pageText.FLASH_MSG}</p>}
                 {Object.keys(errors).length > 0 && <ServerError msg={errors} title={pageText.ERROR_TITLE} />}
                 {errors.length === 0 && <h1 className="mb-8 text-center text-mobile-header-2">{pageText.H1}</h1>}
-                <p className="mb-[56px] max-w-prose text-center">Feel free to email us at info@pebblescommunity.com or fill out the form below. We will reply within 2-3 business days.</p>
+                <p className="mb-[56px] max-w-prose text-center">{pageText.INFO}</p>
                 <Formik
                     initialValues={savedValues || INITIAL_DATA}
                     validationSchema={contactSchema}
                     enableReinitialize
-                    onSubmit={async (values, { setSubmitting }) => {
+                    onSubmit={async (values, { setSubmitting, resetForm }) => {
                         console.log('submitting')
                         setErrors([])
                         try {
@@ -77,6 +77,13 @@ const Contact = () => {
                             })
 
                             setFlash(pageText.FLASH_MSG)
+                            resetForm({
+                                values: {
+                                    ...INITIAL_DATA
+                                }
+                            })
+
+                            window.scrollTo(0, 0)
                         } catch (e) {
                             if (e instanceof TypeError) {
                                 //means server is down

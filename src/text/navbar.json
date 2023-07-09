@@ -1,6 +1,6 @@
 {
     "JA":{
-        "ABOUT": "Pebbles概要",
+        "ABOUT": "会社案内",
         "STUDY_SUPPORT":"学習サポート",
         "WHAT_WE_SUPPORT":"学習サポートとは",
         "PRICING":"価格",
@@ -17,9 +17,9 @@
         "SAVED":"お気に入り",
         "SETTINGS":"設定",
         "LOGOUT":"ログアウト",
-        "SLOGAN":"Connecting and supporting Japanese around the world.",
-        "COMPANY":"Pebbles Community概要",
-        "CONTACT_US":"連絡先",
+        "SLOGAN":"Jap Connecting and supporting Japanese around the world.",
+        "COMPANY":"Pebbles案内",
+        "CONTACT_US":"お問い合わせ",
         "PRIVACY":"個人情報保護方針",
         "TERMS":"Terms",
         "COPYRIGHT":"All rights reserved."

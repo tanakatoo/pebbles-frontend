@@ -2,7 +2,7 @@ import React from 'react'
 import dbText from "../../text/db.json"
 
 function DisplayInfo({ label, lang, data, checkExists = true, jsonName }) {
-    console.log('data to display', data)
+
     return (
         <>
             <p className={`mt-6 text-mobile-section-header font-medium`}>

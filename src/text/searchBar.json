@@ -1,9 +1,43 @@
 {
   "EN":{
-      "PLACEHOLDER":"Search"
+      "PLACEHOLDER":"Search",
+      "USERS":"Users",
+      "INFO_CENTER":"Regional Info Center",
+      "LANGUAGE_TOWN":"Japanese Town",
+      "MARKETPLACE":"Marketplace",
+      "NO_INFO":"No results",
+      "NO_INFO2":"Please modify your search criteria and try again.",
+      "MSG_1":"Use the search bar above to search for anything on the site.",
+      "MSG_2":"Currently the search only includes users, but in the future, items from the marketplace, resources and groups from Japanese Town and Regional Information Center will be displayed.",
+      "MSG_3":"Check back from time to time!",
+      "CHECK_BACK":"Check back soon!",
+      "INFO_CENTER1":"Future home of regional information center search results.",
+      "INFO_CENTER2":"You will be able to get resources and find others wherever you are in the world. Search for answers to questions related to travelling and living in an area.",
+      "TOWN1":"Future home of the Japanese Town search results.",
+      "TOWN2":"You will be able search for groups to practice writing and reading Japanese. Find answers questions related to the Japanese language.",
+      "MARKET1":"Future home of the Marketplace search results.",
+      "MARKET2":"You will be able search for items others are offering or selling. Help save the environment and reuse whenever possible."
+
+
   },
   "JA":{
-      "PLACEHOLDER":"検索"
+      "PLACEHOLDER":"検索",
+      "USERS":"ユーザー",
+      "INFO_CENTER":"地域案内センター",
+      "LANGUAGE_TOWN":"英語街",
+      "MARKETPLACE":"マーケット",
+      "NO_INFO":"当てはまる検索結果がありません",
+      "NO_INFO2":"検索用語を変更して、再度検索してください。",
+      "MSG_1":"上記の欄でサイトの情報が検索できます。",
+      "MSG_2":"現在ユーザーしか検索できませんが、マーケットのアイテム、英語街と地域案内センターのグループと情報が検索できます。",
+      "MSG_3":"出来上がるまで少々お待ちください！",
+      "CHECK_BACK":"少々お待ち下さい！",
+      "INFO_CENTER1":"将来の地域案内センター検索結果ページ",
+      "INFO_CENTER2":"Jap You will be able to get resources and find others wherever you are in the world. Search for answers to questions related to travelling and living in an area.",
+      "TOWN1":"将来の英語街検索結果ページ",
+      "TOWN2":"Jap You will be able search for groups to practice writing and reading Japanese. Find answers questions related to the Japanese language.",
+      "MARKET1":"将来のマーケット検索結果ページ",
+      "MARKET2":"Jap You will be able search for items others are offering or selling. Help save the environment and reuse whenever possible."
   }
 
 }
