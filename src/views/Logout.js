@@ -21,8 +21,8 @@ function Logout() {
 
     return (
         <>
-            <div className='flex items-center flex-col my-12'>
-                <p className='mb-8'>{pageText.LOGOUT}</p>
+            <div className='flex items-center flex-col py-24 border-t-2 border-gray'>
+                <p className='mb-8 text-mobile-page-header'>{pageText.LOGOUT}</p>
                 <CustomLink text={pageText.LOGOUT_LINK} path='/login' />
             </div>
         </>

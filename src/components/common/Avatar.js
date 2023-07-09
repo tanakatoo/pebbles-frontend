@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useNavigateToProfile from '../../hooks/useNavigateToProfile';
 
 
-function Avatar({ link = null, src, size = 'sm', username }) {
+function Avatar({ link = null, src, size = 'sm', username, noDropdownShadow = false }) {
     const goToProfile = useNavigateToProfile(username)
 
     let width
@@ -15,6 +15,8 @@ function Avatar({ link = null, src, size = 'sm', username }) {
             width = 'w-112'
         case 'user':
             width = 'w-80'
+        case 'navbar':
+            width = 'w-45'
         default:
             break;
     }
@@ -28,13 +30,16 @@ function Avatar({ link = null, src, size = 'sm', username }) {
             height = 'h-112'
         case 'user':
             height = 'h-80'
+        case 'navbar':
+            width = 'h-45'
+
         default:
             break;
     }
 
     return (
 
-        <div className={`bg-white shrink-0 pt-1 ${width} ${height} rounded-full border text-gray-stroke hover:shadow-dropdown`}>
+        <div className={`bg-white shrink-0 pt-1 ${width} ${height} rounded-full border text-gray-stroke ${noDropdownShadow ? '' : 'hover:shadow-dropdown'}`}>
             {link ?
                 <img className='rounded-full h-full mx-auto cursor-pointer' onClick={() => goToProfile(username)}
                     src={`../../avatars/${src}`} />

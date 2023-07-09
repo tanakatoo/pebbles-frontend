@@ -3,10 +3,10 @@ import { v4 as uuid } from "uuid"
 import { AwesomeChevronDown } from '../../styles/Icons'
 import { NavLink } from 'react-router-dom'
 
-function DropdownOnce({ lang, items, closeDropdown, divide = false, css = null, pr = null, width = null }) {
+function DropdownOnce({ lang, top = null, items, closeDropdown, divide = false, css = null, pr = null, width = null }) {
 
     return (
-        <div onClick={closeDropdown} className={`z-50 whitespace-nowrap absolute bg-white ${css}`}>
+        <div onClick={closeDropdown} className={`z-50 whitespace-nowrap absolute bg-white ${css} ${top}`}>
             <ul className={divide ? 'divide-gray divide-y' : ''}>
                 {items.map((i, idx) => {
                     console.log(i.link)

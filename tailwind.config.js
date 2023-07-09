@@ -137,12 +137,14 @@ module.exports = {
       width: {
         '112': '112px',
         '50': '50px',
+        '45': '45px',
         '80': '80px',
         'usercard': '358px',
         'messages': '500px'
       },
       height: {
         '50': '50px',
+        '45': '45px',
         '112': '112px',
         '80': '80px',
         'usercard': '358px'

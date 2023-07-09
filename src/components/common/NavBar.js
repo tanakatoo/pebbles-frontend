@@ -16,6 +16,8 @@ import useClickOutside from "../../hooks/useClickOutside"
 import text from "../../text/navbar.json"
 import CustomLinkPrimaryMedium from "../button/CustomLinkPrimaryMedium"
 import DropdownOnce from "./DropdownOnce"
+import { Button } from "../button/Button"
+import Avatar from "./Avatar"
 
 //text used to translate navbar has to be separate from the page so we can't use
 //text from the useState
@@ -28,6 +30,7 @@ const NavBar = () => {
     const user = useSelector(state => state.profile)
     const [communityDropdown, setCommunityDropdown] = useState(false)
     const [studySupportDropdown, setStudySupportDropdown] = useState(false)
+    const [profileDropdown, setProfileDropdown] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -48,6 +51,11 @@ const NavBar = () => {
     const handleStudySupportDropdown = () => {
         studySupportDropdown ? setStudySupportDropdown(false) : setStudySupportDropdown(true)
     }
+
+    const handleProfileDropdown = () => {
+        profileDropdown ? setProfileDropdown(false) : setProfileDropdown(true)
+    }
+
 
     const dropdownItemsEN = [
         { text: navText.SIGN_UP, link: `/register` },
@@ -183,20 +191,24 @@ const NavBar = () => {
     const closeStudySupportDropdown = () => {
         setStudySupportDropdown(false)
     }
+    const closeProfileDropdown = () => {
+        setProfileDropdown(false)
+    }
     const ref = useClickOutside(closeNav)
     const refCommunityDropdown = useClickOutside(closeCommunityDropdown)
     const refStudySupportDropdown = useClickOutside(closeStudySupportDropdown)
+    const refProfileDropdown = useClickOutside(closeProfileDropdown)
 
     return (
 
-        <nav className="my-4 mx-2 flex justify-between flex-no-wrap z-50">
+        <nav className="my-4 mx-2 md:mx-4 flex justify-between flex-no-wrap z-50">
             <Link to='/'>
                 <button className="flex items-center">
                     <img src={logo} className="h-12" alt="Pebbles logo" />
                 </button>
             </Link>
-            <div className="flex flex-nowrap items-center gap-5 md:grow">
-                <div className="hidden md:block grow">
+            <div className="flex flex-nowrap items-center gap-5 lg:grow">
+                <div className="hidden lg:block grow">
                     <div className="flex gap-5 justify-center items-center w-full grow text-primary-dark">
 
 
@@ -243,7 +255,7 @@ const NavBar = () => {
                 {user.token ?
                     <Link to="/messages"><Mail /></Link>
                     : ""}
-                <div className="md:hidden">
+                <div className="lg:hidden">
                     <span className="cursor-pointer relative" ref={ref} onClick={handleHamburger} >
                         <Hamburger className="ml-5 " />
                         {lang === "JA" ?
@@ -264,7 +276,43 @@ const NavBar = () => {
                         }
                     </span>
                 </div>
+                {!user.token ?
+                    <div className="hidden lg:block">
+                        <span >
+                            <Button link="/login"
+                                btnText={navText.LOGIN}
+                                extraClasses="select-none border border-primary-dark"
+                                py='py-1'
+                                bkColor="bg-white"
+                                textColor="text-primary-dark" />
+                        </span>
+                        <span className="ms-2">
+                            <Button link="/register"
+                                btnText={navText.SIGN_UP}
+                                extraClasses="select-none border border-primary-dark"
+                                py='py-1' />
+                        </span>
 
+                    </div>
+                    :
+                    <div onClick={handleProfileDropdown}
+                        className="relative cursor-pointer"
+                        ref={refProfileDropdown}>
+                        <Avatar username={user.profile.username}
+                            src={user.profile.avatar}
+                            noDropdownShadow={true}
+                            size='navbar'
+                        />
+                        {profileDropdown && <DropdownOnce items={dropdownSubItemsLoggedIn[0].items}
+                            closeDropdown={handleProfileDropdown}
+
+                            css="right-0 top-8 shadow-dropdown text-primary text-mobile-body-2"
+                            pr="pr-4"
+                            top='top-14'
+                            width='w-[180px]'
+                            lang={lang}
+                        />}
+                    </div>}
             </div>
         </nav >
         // <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
