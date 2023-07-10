@@ -5,7 +5,7 @@ import { JapanFlag, AmericanFlag } from '../../styles/Icons'
 function Card({ data, goToProfileOnClick, topRight, bottom, underUsername, buddy = false, topRightStatic = false }) {
 
   return (
-    <div className={`${buddy ? 'w-full md:w-[70%] lg:w-[45%]' : 'w-usercard'}  flex p-4 bg-primary-very-light rounded-ml `}>
+    <div className={`${buddy ? 'w-[450px] md:w-[70%] lg:w-[45%]' : 'w-usercard'}  flex p-4 bg-primary-very-light rounded-ml `}>
       <div className='flex flex-col grow gap-2'>
         <div className='flex gap-4 items-center'>
 

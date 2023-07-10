@@ -23,6 +23,7 @@ function Avatar({ link = null, src, size = 'sm', username, noDropdownShadow = fa
         default:
             break;
     }
+    console.log('width is now ', width)
 
     let height
     switch (size) {
@@ -36,7 +37,7 @@ function Avatar({ link = null, src, size = 'sm', username, noDropdownShadow = fa
             height = 'h-80'
             break;
         case 'navbar':
-            width = 'h-45'
+            height = 'h-45'
             break;
 
         default:
@@ -45,15 +46,17 @@ function Avatar({ link = null, src, size = 'sm', username, noDropdownShadow = fa
 
     return (
 
-        <div className={`bg-white shrink-0 pt-1 ${width} ${height} rounded-full border text-gray-stroke ${noDropdownShadow ? '' : 'hover:shadow-dropdown'}`}>
-            {link ?
-                <img className='rounded-full h-full mx-auto cursor-pointer' onClick={() => goToProfile(username)}
-                    src={`../../avatars/${src}`} />
-                :
-                <img className='  rounded-full h-full mx-auto'
-                    src={`../../avatars/${src}`} />
+        < div className={`bg-white shrink-0 pt-1 ${width} ${height} rounded-full border text-gray-stroke ${noDropdownShadow ? '' : 'hover:shadow-dropdown'}`
+        }>
+            {
+                link ?
+                    <img className='rounded-full h-full mx-auto cursor-pointer' onClick={() => goToProfile(username)}
+                        src={`/avatars/${src}`} />
+                    :
+                    <img className='  rounded-full h-full mx-auto'
+                        src={`/avatars/${src}`} />
             }
-        </div>
+        </div >
 
     )
 }

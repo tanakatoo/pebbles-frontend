@@ -15,18 +15,21 @@ import { Link } from 'react-router-dom'
 import CustomLink from '../components/button/CustomLink'
 
 function MessageMain() {
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
     const [errors, setErrors] = useState([])
     const [token = null] = useSetToken()
     const [dropdown, setDropdown] = useState(false)
     const [pageText, lang] = usePageText("messages")
+    const [doneGettingData, setDoneGettingData] = useState(false)
 
     useEffect(() => {
         const getData = async () => {
             try {
+                setDoneGettingData(false)
                 setErrors([])
                 const res = await MessageApi.getAllUsersLatestMsg()
                 setData(res)
+
             } catch (e) {
                 if (e instanceof TypeError) {
 
@@ -36,6 +39,8 @@ function MessageMain() {
 
                     setErrors(e)
                 }
+            } finally {
+                setDoneGettingData(true)
             }
         }
         getData()
@@ -65,10 +70,14 @@ function MessageMain() {
         // <Protected>
         <div className=' my-16 flex justify-center'>
 
-            {errors.length > 0 && <ServerError msg={errors} />}
-            {!data && errors.length === 0 ?
-                <Spinner />
-                : data.length === 0 ?
+            {errors.length > 0 &&
+                <div>
+                    <ServerError msg={errors} />
+
+                </div>}
+            {data.length === 0 && errors.length === 0 && doneGettingData === false ?
+                <div className='my-24'><Spinner /></div>
+                : data.length === 0 && errors.length === 0 && doneGettingData === true ?
                     <div className='flex flex-col items-center'>
                         <NoData msg={pageText.NO_MSG} link="/users/dashboard" linkText={pageText.BACK_TO_DASHBOARD} />
                         <div ><CustomLink text={pageText.UNBLOCK_CONTACTS} path={"/users/unblock"} /> </div>

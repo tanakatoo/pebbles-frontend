@@ -28,12 +28,14 @@
         "PREMIUM_CHECK4":"1 month free offline support",
         "PREMIUM_BTN":"Go premium now",
         "EXPLORE_COMMUNITY":"Explore the community",
+        "LEARN":"Learn how to use Pebbles",
         "SEE_ALL":"See all",
         "STUDY_BUDDY":"Newest Study Buddies",
-        "MARKETPLACE":"Marketplace",
-        "INFO_CENTER":"Regional Information Center",
-        "LANGUAGE_TOWN":"Japanese Town",
-        "NO_DATA":"Under construction. Please be patient!"
+        "MARKETPLACE":"Newest from Marketplace",
+        "INFO_CENTER":"Newest from Regional Information Center",
+        "LANGUAGE_TOWN":"Newest from Japanese Town",
+        "NO_DATA":"Under construction. Please be patient!",
+        "NO_DATA_STUDY_BUDDY":"No study buddies yet! Be the first one - edit your profile to become a study buddy!"
 
     },
     "JA":{
@@ -71,11 +73,13 @@
         "PREMIUM_CHECK4":"Unlimited access to the digital library",
         "PREMIUM_BTN":"プレミアムへGO！",
         "EXPLORE_COMMUNITY":"コミュニティを探検しよう",
+        "LEARN":"サイトの使い方はこちら",
         "SEE_ALL":"全て",
         "STUDY_BUDDY":"最新のスタディーバディー",
         "MARKETPLACE":"マーケット",
         "INFO_CENTER":"Regional Information Center",
         "LANGUAGE_TOWN":"Japanese Town",
-        "NO_DATA":"工事中。お待ちください！"
+        "NO_DATA":"工事中。お待ちください！",
+        "NO_DATA_STUDY_BUDDY":"スタディーバディーがまだありません。プロフィールを編集して、スタディーバディーになりましょう！"
     }
 }

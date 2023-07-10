@@ -277,7 +277,7 @@ const NavBar = () => {
                     </span>
                 </div>
                 {!user.token ?
-                    <div className="hidden lg:block">
+                    <div className="hidden lg:flex">
                         <span >
                             <Button link="/login"
                                 btnText={navText.LOGIN}
@@ -296,7 +296,7 @@ const NavBar = () => {
                     </div>
                     :
                     <div onClick={handleProfileDropdown}
-                        className="relative cursor-pointer"
+                        className="hidden lg:flex relative cursor-pointer shrink-0"
                         ref={refProfileDropdown}>
                         <Avatar username={user.profile.username}
                             src={user.profile.avatar}

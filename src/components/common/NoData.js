@@ -4,7 +4,7 @@ import CustomLink from '../button/CustomLink'
 
 function NoData({ msg, link, linkText }) {
     return (
-        <div className='text-center'>
+        <div className='text-center '>
             <span>
                 {msg}
             </span>

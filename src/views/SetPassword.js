@@ -62,7 +62,7 @@ const SetPassword = () => {
                 <Formik
                     initialValues={INITIAL_DATA}
                     validationSchema={setPasswordSchema}
-                    onSubmit={async (values, { setSubmitting }) => {
+                    onSubmit={async (values, { setSubmitting, resetForm }) => {
 
                         setSubmitting(false)
                         try {
@@ -73,12 +73,20 @@ const SetPassword = () => {
                             console.log(res)
                             dispatch(actionLogin(res))
                             setFlash(true)
+                            resetForm({
+                                values: {
+                                    ...INITIAL_DATA
+                                }
+                            })
 
                             // navigate('/system-message', { state: { type: "CHANGED_PASSWORD" } })
                         } catch (e) {
-                            console.log(e)
+                            console.log('Caught error setting pwd', e)
                             if (e[0] === ("jwt expired")) {
+                                console.log('in here')
                                 setErrors(["JWT_EXPIRED"])
+                            } else {
+                                setErrors(["UNKNOWN"])
                             }
 
 
@@ -87,6 +95,7 @@ const SetPassword = () => {
                 >{formik => {
                     return (
                         <Form className="flex flex-col w-full max-w-[500px] mb-12">
+
                             <Input
                                 label={pageText.PASSWORD}
                                 name="password"
@@ -104,6 +113,7 @@ const SetPassword = () => {
                                 type="submit"
                                 extraClasses="mt-12 mb-4"
                                 lang={lang}
+                                disabled={flash ? true : false}
                                 isSubmitting={formik.isSubmitting} />
                         </Form>
                     )

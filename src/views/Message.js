@@ -113,11 +113,13 @@ function Message() {
                 <div>
                     <ServerError msg={errors} />
                     {errors == "BLOCKED" ?
-                        <p className='text-center mb-12'><Link className='underline' to="/users/unblock">{pageText.UNBLOCK_CONTACTS}</Link></p> : ''}
+                        <p className='text-center mb-12'>
+                            <Link className='underline' to="/users/unblock">
+                                {pageText.UNBLOCK_CONTACTS}</Link></p> : ''}
 
                 </div>}
             {data.length === 0 && errors.length === 0 && doneGettingData === false ?
-                <Spinner />
+                <div className='my-24'><Spinner /></div>
                 : errors.length === 0 && data.length > 1 || doneGettingData === true ?
                     <>
                         <ConversationTitle link={`/users/${conversationWithUsername}`}

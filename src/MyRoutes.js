@@ -33,7 +33,7 @@ import Protected from "./components/common/Protected"
 import Contact from "./views/Contact"
 import Search from "./views/Search"
 import StudySupport from "./views/StudySupport"
-
+import HowToSite from "./views/HowToSite"
 
 const MyRoutes = () => {
     return (
@@ -43,6 +43,7 @@ const MyRoutes = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/learn-pebbles" element={<HowToSite />} />
             <Route path="/study-buddies" element={<StudyBuddies />} />
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/contact" element={<Contact />} />

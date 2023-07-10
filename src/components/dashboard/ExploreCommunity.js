@@ -81,10 +81,17 @@ function ExploreCommunity({ type }) {
                 </div>
                 :
                 doneGettingData === true && data.length === 0 ?
-                    <div className='my-12'>
-                        < NoData msg={pageText.NO_DATA} />
-                    </div>
+                    type === "studyBuddy" ?
+                        <div className='mx-auto px-2 my-12 max-w-prose'>
+                            < NoData msg={pageText.NO_DATA_STUDY_BUDDY} />
+                        </div>
+                        :
+                        <div className='my-12'>
+                            < NoData msg={pageText.NO_DATA} />
+                        </div>
+
                     : <>
+
                         <div className='grow flex justify-end mb-2'>
                             <p className=' text-mobile-card-body px-2 md:px-4'>
                                 <CustomLink text={pageText.SEE_ALL} path=

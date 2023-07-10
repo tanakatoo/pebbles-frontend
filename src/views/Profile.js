@@ -47,8 +47,8 @@ const Profile = () => {
 
                 setDoneGettingData(false);
                 res = await UserApi.getUserInfo(username);
+                console.log('is this me?', res.myProfile)
                 setCurrrentProfile(res);
-
                 setLocation(determineLocation(res, lang));
                 setEnabled(res.study_buddy_active)
                 if (res.myProfile) {
@@ -161,42 +161,57 @@ const Profile = () => {
                                 </div>
                                 <div className='col-span-2 flex flex-col items-center justify-center gap-4'>
                                     {currentProfile.myProfile ?
-                                        <>{lang === "JA"
-                                            ?
-                                            currentProfile.premium_join_date && !currentProfile.premium_end_date ?
+                                        <>
+                                            {lang === "JA"
+                                                ?
+                                                currentProfile.premium_join_date && !currentProfile.premium_end_date ?
+                                                    <>
+                                                        <Button px="px-8"
+                                                            py="py-1"
+                                                            btnText={pageText.CTA_BTN}
+                                                            lang={lang}
+                                                            extraClasses='border-primary border-2 text-mobile-body-2'
+                                                        />
+                                                        <p className='text-center text-mobile-label-2'>{pageText.CTA_TXT}</p>
+                                                    </>
+                                                    :
+                                                    currentProfile.free_trial_start_date ?
+                                                        <>
+                                                            <Button px="px-8"
+                                                                py="py-1"
+                                                                btnText={pageText.PREMIUM_BTN}
+                                                                lang={lang}
+                                                                extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
+                                                            />
+                                                            <p className='text-center  text-mobile-label-2'>{pageText.PREMIUM_TXT}</p>
+
+                                                        </>
+                                                        :
+                                                        <>
+                                                            <Button px="px-8"
+                                                                py="py-1"
+                                                                btnText={pageText.FREE_TRIAL_BTN}
+                                                                lang={lang}
+                                                                extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
+                                                            />
+                                                            <p className='text-center  text-mobile-label-2'>{pageText.FREE_TRIAL_TXT}</p>
+
+                                                        </>
+                                                :
                                                 <>
                                                     <Button px="px-8"
                                                         py="py-1"
                                                         btnText={pageText.CTA_BTN}
                                                         lang={lang}
+                                                        clickMethod={() => navigateToCTA(pageText.CTA_LINK)}
                                                         extraClasses='border-primary border-2 text-mobile-body-2'
                                                     />
-                                                    <p className='text-center text-mobile-label-2'>{pageText.CTA_TXT}</p>
+                                                    <p className='text-center  text-mobile-label-2'>{pageText.CTA_TXT}</p>
                                                 </>
-                                                :
-                                                currentProfile.free_trial_start_date ?
-                                                    <>
-                                                        <Button px="px-8"
-                                                            py="py-1"
-                                                            btnText={pageText.PREMIUM_BTN}
-                                                            lang={lang}
-                                                            extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
-                                                        />
-                                                        <p className='text-center  text-mobile-label-2'>{pageText.PREMIUM_TXT}</p>
+                                            }
 
-                                                    </>
-                                                    :
-                                                    <>
-                                                        <Button px="px-8"
-                                                            py="py-1"
-                                                            btnText={pageText.FREE_TRIAL_BTN}
-                                                            lang={lang}
-                                                            extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
-                                                        />
-                                                        <p className='text-center  text-mobile-label-2'>{pageText.FREE_TRIAL_TXT}</p>
-
-                                                    </>
-                                            :
+                                        </>
+                                        : currentProfile.role === "admin" ?
                                             <>
                                                 <Button px="px-8"
                                                     py="py-1"
@@ -206,32 +221,28 @@ const Profile = () => {
                                                     extraClasses='border-primary border-2 text-mobile-body-2'
                                                 />
                                                 <p className='text-center  text-mobile-label-2'>{pageText.CTA_TXT}</p>
-                                            </>
-                                        }
-
-                                        </>
-                                        :
-                                        <>
-                                            <Button px="px-8"
-                                                py="py-1"
-                                                bkColor="bg-white"
-                                                extraClasses=' w-[180px] text-mobile-body-2 '
-                                                textColor="text-primary-dark"
-                                                btnText={pageText.SAVE_BTN}
-                                                clickMethod={saveUser}
-                                                lang={lang}
-                                                noShadow={true}
-                                                disabled={token ? false : true}
-                                                icon={saved ? <AwesomeSolidHeart /> : <AwesomeEmptyHeart />} />
-                                            <Button px="px-8"
-                                                py="py-1"
-                                                link={`/messages/${currentProfile.username}`}
-                                                lang={lang}
-                                                btnText={pageText.MESSAGE_BTN}
-                                                extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
-                                                disabled={token ? false : true}
-                                                icon={<MailWhite />} />
-                                        </>}
+                                            </> :
+                                            <>
+                                                <Button px="px-8"
+                                                    py="py-1"
+                                                    bkColor="bg-white"
+                                                    extraClasses=' w-[180px] text-mobile-body-2 '
+                                                    textColor="text-primary-dark"
+                                                    btnText={pageText.SAVE_BTN}
+                                                    clickMethod={saveUser}
+                                                    lang={lang}
+                                                    noShadow={true}
+                                                    disabled={token ? false : true}
+                                                    icon={saved ? <AwesomeSolidHeart /> : <AwesomeEmptyHeart />} />
+                                                <Button px="px-8"
+                                                    py="py-1"
+                                                    link={`/messages/${currentProfile.username}`}
+                                                    lang={lang}
+                                                    btnText={pageText.MESSAGE_BTN}
+                                                    extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
+                                                    disabled={token ? false : true}
+                                                    icon={<MailWhite />} />
+                                            </>}
                                 </div>
                             </div>
                             <div className='w-full mt-6'>
@@ -306,7 +317,7 @@ const Profile = () => {
                                                                     } relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}
                                                             >
                                                                 <span
-                                                                    className={`${enabled ? 'translate-x-6' : 'translate-x-1'
+                                                                    className={`${enabled ? 'translate-x-6' : 'translate-x-1 ms-1'
                                                                         } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
                                                                 />
                                                             </Switch>

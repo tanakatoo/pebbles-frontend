@@ -16,7 +16,8 @@
         "LEARNING_LANG":"学習している言語を選択してください",
         "TIME_ZONE":"タイムゾーンを選択してください",
         "NAME_REQUIRED":"名前をご記入ください",
-        "MESSAGE_REQ":"メッセージをご記入ください"
+        "MESSAGE_REQ":"メッセージをご記入ください",
+        "JWT_EXPIRED":"日本語 Link expired. Please request a new one."
     },
     "EN":{
         "USERNAME_REQUIRED": "Username required",
@@ -35,6 +36,7 @@
         "LEARNING_LANG":"Please select the language you are learning",
         "TIME_ZONE":"Please select a time zone",
         "NAME_REQUIRED":"Please input your name",
-        "MESSAGE_REQ":"Please input your comments or questions"
+        "MESSAGE_REQ":"Please input your comments or questions",
+        "JWT_EXPIRED":"Link expired. Please request a new one."
     }
 }

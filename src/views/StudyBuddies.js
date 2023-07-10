@@ -32,7 +32,7 @@ import {
 const StudyBuddies = () => {
     const [pageText, lang] = usePageText("studyBuddy")
     const [doneGettingData, setDoneGettingData] = useState(false)
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
     const [errors, setErrors] = useState([])
     const goToProFile = useNavigateToProfile()
     const [isDialogOpen, setIsDialogOpen] = useState(false)
@@ -140,8 +140,13 @@ const StudyBuddies = () => {
             }
         })
         console.log('formik is now', formik.values)
+        setNumFilters(0)
     }
 
+    const closeDialogSearch = (formik) => {
+        setIsDialogOpen(false)
+        formik.submitForm()
+    }
 
     return (
         <>
@@ -151,10 +156,10 @@ const StudyBuddies = () => {
                 enableReinitialize
             >
                 {formik => {
-                    console.log('formik is', formik)
+
                     return (
                         <><Form>
-                            <Dialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)} className="relative z-50">
+                            <Dialog open={isDialogOpen} onClose={() => closeDialogSearch(formik)} className="relative z-50">
                                 <div className="fixed inset-0 bg-gray/75" aria-hidden="true" />
                                 <div className="fixed inset-0 overflow-y-auto">
                                     <div className="flex min-h-full max-w-full p-4 justify-center">
@@ -253,50 +258,72 @@ const StudyBuddies = () => {
                                 <PageTitle text={pageText.TITLE}
                                     extraClasses={`${lang === "EN" ? 'font-StudyBuddyEN' : 'font-StudyBuddyJA'}
                     my-3`} />
-                                {errors.length > 0 && <ServerError msg={errors} />}
-                                {!data && errors.length === 0 && doneGettingData === false ?
+                                {errors.length > 0 && <div><ServerError msg={errors} /></div>}
+                                {data.length === 0 && errors.length === 0 && doneGettingData === false ?
                                     <div className=' my-24'>
                                         <Spinner />
                                     </div>
-                                    :
-                                    <>
-                                        <div className="w-full px-4 mb-3">
-                                            <SearchBar
-                                                placeholder={pageText.SEARCH_PLACEHOLDER}
-                                                btn={
-                                                    <Button btnText={numFilters > 0 ? `${numFilters} ${pageText.HAS_FILTER}` : pageText.FILTER}
-                                                        icon={numFilters > 0 ? <Filter /> : ""}
-                                                        bkColor='bg-study-buddy-accent'
-                                                        textColor='text-primary-dark'
-                                                        px='px-8'
-                                                        lang={lang}
-                                                        clickMethod={() => setIsDialogOpen(true)} />
-                                                }
-                                                name='searchWord'
-                                                onSubmit={onSubmit}
-                                            />
-                                        </div>
-                                        {doneGettingData === true && data.length === 0 ?
-                                            <div className='my-12'>
-                                                < NoData msg={pageText.NO_USERS_MSG} />
-                                            </div>
-                                            : ""}
-                                        <div className='mt-4 flex flex-wrap justify-center mb-12 gap-4 px-2'>
-                                            {data.map(d =>
-                                                <Card data={d}
-                                                    goToProfileOnClick={goToProFile}
-                                                    key={uuid()}
-                                                    buddy={true}
-                                                    topRight={<StudyBuddyCardTopRight timeZone={d.time_zone} lang={lang} />}
-                                                    underUsername={<StudyBuddyCardUnderUsername data={d} lang={lang} pageText={pageText} />}
-                                                    bottom={<StudyBuddyCardBottom data={d} lang={lang} />}
-                                                />)}
+                                    : errors.length === 0 && data.length > 0 && doneGettingData === true ?
+                                        <>
 
-                                        </div>
-                                    </>
-                                }
+                                            <div className="w-full px-4 mb-3">
+                                                <SearchBar
+                                                    placeholder={pageText.SEARCH_PLACEHOLDER}
+                                                    btn={
+                                                        <Button btnText={numFilters > 0 ? `${numFilters} ${pageText.HAS_FILTER}` : pageText.FILTER}
+                                                            icon={numFilters > 0 ? <Filter /> : ""}
+                                                            bkColor='bg-study-buddy-accent'
+                                                            textColor='text-primary-dark'
+                                                            px='px-8'
+                                                            lang={lang}
+                                                            clickMethod={() => setIsDialogOpen(true)} />
+                                                    }
+                                                    name='searchWord'
+                                                    onSubmit={onSubmit}
+                                                />
+                                            </div>
+                                            <div className='mt-4 flex flex-wrap justify-center mb-12 gap-4 px-2'>
+                                                {data.map(d =>
+                                                    <Card data={d}
+                                                        goToProfileOnClick={goToProFile}
+                                                        key={uuid()}
+                                                        buddy={true}
+                                                        topRight={<StudyBuddyCardTopRight timeZone={d.time_zone} lang={lang} />}
+                                                        underUsername={<StudyBuddyCardUnderUsername data={d} lang={lang} pageText={pageText} />}
+                                                        bottom={<StudyBuddyCardBottom data={d} lang={lang} />}
+                                                    />)}
+
+                                            </div>
+                                        </> :
+                                        doneGettingData === true && data.length === 0 ?
+                                            <>
+
+                                                <div className="w-full px-4 mb-3">
+                                                    <SearchBar
+                                                        placeholder={pageText.SEARCH_PLACEHOLDER}
+                                                        btn={
+                                                            <Button btnText={numFilters > 0 ? `${numFilters} ${pageText.HAS_FILTER}` : pageText.FILTER}
+                                                                icon={numFilters > 0 ? <Filter /> : ""}
+                                                                bkColor='bg-study-buddy-accent'
+                                                                textColor='text-primary-dark'
+                                                                px='px-8'
+                                                                lang={lang}
+                                                                clickMethod={() => setIsDialogOpen(true)} />
+                                                        }
+                                                        name='searchWord'
+                                                        onSubmit={onSubmit}
+                                                    />
+                                                </div>
+
+                                                <div className='my-12'>
+                                                    < NoData msg={pageText.NO_USERS_MSG} />
+                                                </div>
+                                            </>
+
+
+                                            : <p>here</p>}
                             </div >
-                        </Form>
+                        </Form >
                         </>
                     )
                 }}

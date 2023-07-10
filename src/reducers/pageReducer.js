@@ -16,6 +16,7 @@ import infoCenter from "../text/infoCenter.json"
 import marketplace from "../text/marketplace.json"
 import languageTown from '../text/languageTown.json'
 import studySupport from "../text/studySupport.json"
+import howToSite from "../text/howToSite.json"
 
 const text = {
     home: home,
@@ -34,7 +35,8 @@ const text = {
     infoCenter: infoCenter,
     marketplace: marketplace,
     languageTown: languageTown,
-    studySupport: studySupport
+    studySupport: studySupport,
+    howToSite: howToSite
 }
 
 const INITIAL_STATE = { pageText: '' }

@@ -6,7 +6,8 @@ import StatisticsCard from '../components/dashboard/StatisticsCard'
 import { AwesomeCheck } from '../styles/Icons'
 import { Button } from '../components/button/Button'
 import ExploreCommunity from '../components/dashboard/ExploreCommunity'
-
+import CustomLink from '../components/button/CustomLink'
+import { AwesomeArrowRightLong } from '../styles/Icons'
 
 function Dashboard() {
     const [pageText, lang] = usePageText('dashboard')
@@ -87,7 +88,13 @@ function Dashboard() {
 
             }
 
-            <h2 className="py-2 my-8 text-primary-dark font-medium text-mobile-page-header px-4 text-center ">{pageText.EXPLORE_COMMUNITY}</h2>
+            <h2 className="py-2 my-2 text-primary-dark font-medium text-mobile-page-header px-4 text-center ">
+                {pageText.EXPLORE_COMMUNITY}
+            </h2>
+            <p className='mb-10 text-center group'>
+                <CustomLink text={pageText.LEARN} path='/learn-pebbles' /> <span className='group-hover:text-gray-text'>
+                    <AwesomeArrowRightLong /></span>
+            </p>
             <div className='flex flex-col pt-2 pb-12 bg-primary-super-light'>
                 <div className='flex items-center justify-center flex-1'>
                     <ExploreCommunity type="studyBuddy" />

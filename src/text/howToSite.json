@@ -1,0 +1,23 @@
+{
+    "EN":{
+        "TITLE":"Learn Pebbles",
+        "TOP":"Top",
+        "PROFILE":"Set up your profile",
+        "PROFILE_BODY":"Once you login, click on the avatar or open up the menu on the top right corner of the page. Click on 'Profile' and below your avatar, click on the 'Edit' link. All information except for your email is public.",
+        
+        "STUDY_BUDDY":"Becoming and delisting from study buddy",
+        "STUDY_BUDDY_BODY":"By default, you are not listed as a study buddy on Pebbles. To list yourself so others can find you on the Study Buddy Board, go to edit your profile, click on edit study buddy, and toggle the 'Join study buddy' on. To unlist, simply toggle it off and the information you input for study buddy will be hidden from public.",
+        "STUDY_BUDDY_USE":"Using the Study Buddy Board",
+        "STUDY_BUDDY_USE_BODY":"The board displays users in order of recently listed study buddies. To search using username, name, or their bio, type into the search bar and press Enter. To filter from categories, press the Filter button and choose the categories that you want to search for."
+    },
+    "JA":{
+        "TITLE":"Pebblesの使い方",
+        "TOP":"上",
+        "PROFILE":"プロフィールを変更する",
+        "PROFILE_BODY":"日本語Once you login, click on the avatar or open up the menu on the top right corner of the page. Click on 'Profile' and below your avatar, click on the 'Edit' link. All information except for your email is public.",
+        "STUDY_BUDDY":"スタディーバディーになる・解除する",
+        "STUDY_BUDDY_BODY":"日本語By default, you are not listed as a study buddy on Pebbles. To list yourself so others can find you on the Study Buddy Board, go to edit your profile, click on edit study buddy, and toggle the 'Join study buddy' on. To unlist, simply toggle it off and the information you input for study buddy will be hidden from public.",
+        "STUDY_BUDDY_USE":"スタディーバディー掲示板の使い方",
+        "STUDY_BUDDY_USE_BODY":"日本語The board displays users in order of recently listed study buddies. To search using username, name, or their bio, type into the search bar and press Enter. To filter from categories, press the Filter button and choose the categories that you want to search for."
+    }
+}
