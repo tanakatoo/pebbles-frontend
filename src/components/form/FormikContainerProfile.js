@@ -113,6 +113,13 @@ const FormikContainerProfile = ({ pageText }) => {
                                     name='name'
                                 />
                             </div>
+                            <div className="mb-4">
+                                <FormikControl control='input'
+                                    type='email'
+                                    label={pageText.EMAIL}
+                                    name='email'
+                                />
+                            </div>
 
                             <div className="mb-4">
                                 <FormikControl control='textarea' label='About' name='about' rows="5" />
