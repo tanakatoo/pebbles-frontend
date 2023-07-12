@@ -258,6 +258,7 @@ const StudyBuddies = () => {
                                 <PageTitle text={pageText.TITLE}
                                     extraClasses={`${lang === "EN" ? 'font-StudyBuddyEN' : 'font-StudyBuddyJA'}
                     my-3`} />
+
                                 {errors.length > 0 && <div><ServerError msg={errors} /></div>}
                                 {data.length === 0 && errors.length === 0 && doneGettingData === false ?
                                     <div className=' my-24'>
@@ -321,7 +322,7 @@ const StudyBuddies = () => {
                                             </>
 
 
-                                            : <p>here</p>}
+                                            : ''}
                             </div >
                         </Form >
                         </>

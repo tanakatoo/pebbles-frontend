@@ -165,7 +165,7 @@ const Profile = () => {
                                                 {lang === "JA"
                                                     ?
                                                     currentProfile.premium_join_date && !currentProfile.premium_end_date ?
-                                                        <>
+                                                        <><div className='flex justify-center md:w-[180px]'>
                                                             <Button px="px-8"
                                                                 py="py-1"
 
@@ -173,47 +173,55 @@ const Profile = () => {
                                                                 lang={lang}
                                                                 extraClasses='border-primary border-2 text-mobile-body-2'
                                                             />
+                                                        </div>
                                                             <p className='text-center text-mobile-label-2'>{pageText.CTA_TXT}</p>
                                                         </>
                                                         :
                                                         currentProfile.free_trial_start_date ?
                                                             <>
-                                                                <Button px="px-8"
-                                                                    py="py-1"
-                                                                    btnText={pageText.PREMIUM_BTN}
-                                                                    lang={lang}
-                                                                    extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
-                                                                />
+                                                                <div className='flex justify-center md:w-[180px]'>
+                                                                    <Button px="px-8"
+                                                                        py="py-1"
+                                                                        btnText={pageText.PREMIUM_BTN}
+                                                                        lang={lang}
+                                                                        extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
+                                                                    />
+                                                                </div>
                                                                 <p className='text-center  text-mobile-label-2'>{pageText.PREMIUM_TXT}</p>
 
                                                             </>
                                                             :
                                                             <>
-                                                                <Button px="px-8"
-                                                                    py="py-1"
-                                                                    btnText={pageText.FREE_TRIAL_BTN}
-                                                                    lang={lang}
-                                                                    extraClasses={`border-primary border-2 w-[180px] text-mobile-body-2`}
-                                                                />
+                                                                <div className='flex justify-center md:w-[180px]'>
+
+                                                                    <Button px="px-8"
+                                                                        py="py-1"
+                                                                        btnText={pageText.FREE_TRIAL_BTN}
+                                                                        lang={lang}
+                                                                        extraClasses={`w-full border-primary border-2 text-mobile-body-2`}
+                                                                    />
+                                                                </div>
                                                                 <p className='text-center  text-mobile-label-2'>{pageText.FREE_TRIAL_TXT}</p>
 
                                                             </>
                                                     :
                                                     <>
-                                                        <Button px="px-8"
-                                                            py="py-1"
-                                                            btnText={pageText.CTA_BTN}
-                                                            lang={lang}
-                                                            clickMethod={() => navigateToCTA(pageText.CTA_LINK)}
-                                                            extraClasses='border-primary border-2 text-mobile-body-2'
-                                                        />
+                                                        <div className='flex justify-center md:w-[180px]'>
+                                                            <Button px="px-8"
+                                                                py="py-1"
+                                                                btnText={pageText.CTA_BTN}
+                                                                lang={lang}
+                                                                clickMethod={() => navigateToCTA(pageText.CTA_LINK)}
+                                                                extraClasses='border-primary border-2 text-mobile-body-2'
+                                                            />
+                                                        </div>
                                                         <p className='text-center  text-mobile-label-2'>{pageText.CTA_TXT}</p>
                                                     </>
                                                 }
 
                                             </>
                                             : currentProfile.role === "admin" ?
-                                                <>
+                                                <><div className='flex justify-center md:w-[180px]'>
                                                     <Button px="px-8"
                                                         py="py-1"
                                                         btnText={pageText.CTA_BTN}
@@ -221,35 +229,40 @@ const Profile = () => {
                                                         clickMethod={() => navigateToCTA(pageText.CTA_LINK)}
                                                         extraClasses='border-primary border-2 text-mobile-body-2'
                                                     />
+                                                </div>
                                                     <p className='text-center  text-mobile-label-2'>{pageText.CTA_TXT}</p>
                                                 </> :
                                                 <>
-                                                    <Button px="px-8"
-                                                        py="py-1"
-                                                        bkColor="bg-white"
-                                                        extraClasses=' w-[180px] text-mobile-body-2 '
-                                                        textColor="text-primary-dark"
-                                                        btnText={pageText.SAVE_BTN}
-                                                        clickMethod={saveUser}
-                                                        lang={lang}
-                                                        noShadow={true}
-                                                        disabled={token ? false : true}
-                                                        icon={saved ? <AwesomeSolidHeart /> : <AwesomeEmptyHeart />} />
-                                                    <Button px="px-8"
-                                                        py="py-1"
-                                                        link={`/messages/${currentProfile.username}`}
-                                                        lang={lang}
-                                                        btnText={pageText.MESSAGE_BTN}
-                                                        extraClasses='border-primary border-2 w-[180px] text-mobile-body-2'
-                                                        disabled={token ? false : true}
-                                                        icon={<MailWhite />} />
+                                                    <div className='flex justify-center md:w-[180px]'>
+                                                        <Button px="px-8"
+                                                            py="py-1"
+                                                            bkColor="bg-white"
+                                                            extraClasses=' text-mobile-body-2 '
+                                                            textColor="text-primary-dark"
+                                                            btnText={pageText.SAVE_BTN}
+                                                            clickMethod={saveUser}
+                                                            lang={lang}
+                                                            noShadow={true}
+                                                            disabled={token ? false : true}
+                                                            icon={saved ? <AwesomeSolidHeart /> : <AwesomeEmptyHeart />} />
+                                                    </div>
+                                                    <div className='flex justify-center md:w-[180px]'>
+                                                        <Button px="px-8"
+                                                            py="py-1"
+                                                            link={`/messages/${currentProfile.username}`}
+                                                            lang={lang}
+                                                            btnText={pageText.MESSAGE_BTN}
+                                                            extraClasses='border-primary border-2  text-mobile-body-2'
+                                                            disabled={token ? false : true}
+                                                            icon={<MailWhite />} />
+                                                    </div>
                                                 </>}
                                     </div>
                                 </div>
                                 <div className='w-full mt-6'>
                                     <Tab.Group selectedIndex={selectedTabIndex} onChange={setSelectedTabIndex}>
                                         <Tab.List className="flex justify-between max-[500px]:flex-col">
-                                            <Tab className="w-full pb-3 border-b-2 
+                                            <Tab className="w-full max-[500px]:py-2 pb-3 border-b-2 
                                         ui-not-selected:border-b-gray-stroke
                                         text-gray-text
                                         ui-selected:text-primary-dark
@@ -257,7 +270,7 @@ const Profile = () => {
                                         ui-selected:outline-none">
                                                 {tabs[0]}</Tab>
                                             {currentProfile.myProfile && lang === "JA" &&
-                                                <Tab className={`w-full pb-3 border-b-2 
+                                                <Tab className={`w-full max-[500px]:py-2 pb-3 border-b-2 
                                             ui-not-selected:border-b-gray-stroke
                                             text-gray-text 
                                             ui-selected:text-primary-dark
@@ -265,7 +278,7 @@ const Profile = () => {
                                             ui-selected:outline-none`}>
                                                     {tabs[1]}</Tab>
                                             }
-                                            <Tab className="w-full pb-3 border-b-2 
+                                            <Tab className="w-full max-[500px]:py-2 pb-3 border-b-2 
                                         ui-not-selected:border-b-gray-stroke
                                         text-gray-text
                                         ui-selected:font-bold
@@ -310,7 +323,7 @@ const Profile = () => {
                                                     {currentProfile.myProfile ?
                                                         <Switch.Group>
                                                             <div className="flex items-center">
-                                                                <Switch.Label className="mr-4">{pageText.STUDY_BUDDY_JOIN_LABEL}</Switch.Label>
+                                                                <Switch.Label className="mr-4 font-medium text-mobile-section-header">{pageText.STUDY_BUDDY_JOIN_LABEL}</Switch.Label>
                                                                 <Switch
                                                                     checked={enabled}
                                                                     onChange={setEnabled}

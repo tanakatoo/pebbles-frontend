@@ -11,6 +11,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
     const [query, setQuery] = useState('')
     const [listOfLocations, setListOfLocations] = useState([])
     const [errors, setErrors] = useState([])
+    const [autoError, setAutoError] = useState([])
     const [sessionToken, setSessionToken] = useState('')
 
     const getLocationsFromAPI = async (q) => {
@@ -44,6 +45,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
 
                 setListOfLocations(res)
             } catch (e) {
+                console.error('error in autocomplete', e)
                 setErrors(e)
             }
 
@@ -54,12 +56,12 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
 
     }
 
-    const handleKeyDown = (e) => {
-        console.log(e.key)
-        if (e.key === 'backspace') {
-            //user pressed backspce, so if the data is less than
-        }
-    }
+    // const handleKeyDown = (e) => {
+    //     console.log(e.key)
+    //     if (e.key === 'backspace') {
+    //         //user pressed backspce, so if the data is less than
+    //     }
+    // }
 
 
     const handleSelection = async (val, setFieldValue) => {
@@ -102,7 +104,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
                                 <Combobox.Input
                                     displayValue={(val) => val.description}
                                     onChange={(event) => handleChange(event.target.value)}
-                                    onKeyDown={handleKeyDown}
+
                                     className={`grow rounded-ml py-3 px-4 text-black placeholder-gray `} />
                                 <Combobox.Options className=" w-max cursor-pointer">
                                     {listOfLocations.length === 0 && (query && query.length > 3) ? (
