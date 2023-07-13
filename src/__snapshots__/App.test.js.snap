@@ -1,0 +1,764 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App font-NotoSansJP"
+  >
+    <nav
+      class="my-4 mx-2 md:mx-4 flex justify-between flex-no-wrap z-50"
+    >
+      <a
+        href="/"
+      >
+        <button
+          class="flex items-center"
+        >
+          <img
+            alt="Pebbles logo"
+            class="h-12"
+            src="logo.png"
+          />
+        </button>
+      </a>
+      <div
+        class="flex flex-nowrap items-center gap-5 lg:grow"
+      >
+        <div
+          class="hidden lg:block grow"
+        >
+          <div
+            class="flex ps-10 gap-16 justify-center items-center w-full grow text-primary-dark"
+          >
+            <span
+              class="relative select-none"
+            >
+              <a
+                class="hover:underline hover:underline-offset-4 hover:text-primary
+        font-medium text-primary-dark"
+                href="/"
+              >
+                学習サポート
+              </a>
+               
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-chevron-down "
+                data-icon="chevron-down"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              class="relative select-none"
+            >
+              <a
+                class="hover:underline hover:underline-offset-4 hover:text-primary
+        font-medium text-primary-dark"
+                href="/"
+              >
+                コミュニティ
+              </a>
+               
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-chevron-down "
+                data-icon="chevron-down"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              <a
+                class="hover:underline hover:underline-offset-4 hover:text-primary
+        font-medium text-primary-dark"
+                href="/about"
+              >
+                会社案内
+              </a>
+            </span>
+            <span>
+              <a
+                class="hover:underline hover:underline-offset-4 hover:text-primary
+        font-medium text-primary-dark"
+                href="/contact"
+              >
+                お問い合わせ
+              </a>
+            </span>
+          </div>
+        </div>
+        <div
+          class="flex  items-center px-4 flex-nowrap "
+        >
+          <div
+            class="flex gap-3 items-center"
+          >
+            <span
+              class="cursor-pointer text-primary-dark text-mobile-card-header font-poppins font-medium "
+            >
+              EN 
+            </span>
+            <span
+              class="cursor-pointer text-primary-dark text-mobile-card-header font-poppins font-medium border-b-2"
+            >
+              JA
+            </span>
+          </div>
+        </div>
+        <div
+          class="lg:hidden"
+        >
+          <span
+            class="cursor-pointer relative"
+          >
+            <img
+              src="hamburger.svg"
+            />
+          </span>
+        </div>
+        <div
+          class="hidden lg:flex"
+        >
+          <span>
+            <button
+              class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-white 
+                text-primary-dark 
+                py-1 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 select-none border border-primary-dark
+                hover:opacity-75"
+              data-testid=""
+              type="button"
+            >
+              <a
+                class="font-medium"
+                href="/login"
+              >
+                ログイン
+              </a>
+            </button>
+          </span>
+          <span
+            class="ms-2"
+          >
+            <button
+              class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-primary border-primary 
+                text-white 
+                py-1 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 select-none border border-primary-dark
+                hover:opacity-75"
+              data-testid=""
+              type="button"
+            >
+              <a
+                class="font-medium"
+                href="/register"
+              >
+                無料登録
+              </a>
+            </button>
+          </span>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <div
+        class="bg-primary-dark py-6 px-4"
+      >
+        <form
+          action="#"
+        >
+          <div
+            class="w-full flex  null gap-3"
+          >
+            <input
+              class="rounded-ml grow placeholder-gray focus:ring-none"
+              name="word"
+              placeholder="検索"
+              type="text"
+              value=""
+            />
+          </div>
+        </form>
+      </div>
+      <div
+        class="flex justify-center bg-primary-super-light bg-homeHero md:bg-homeHeroTablet lg:bg-homeHeroDesktop bg-cover bg-center bg-no-repeat relative min-h-screen"
+      >
+        <div
+          class="bg-gradient-to-b absolute from-primary-super-light from-0% via-transparent via-1% to-transparent to-100% w-full h-screen"
+        />
+        <h1
+          class="text-primary-dark font-bold mx-4 text-center pt-10 md:pt-16 text-mobile-header-1 absolute"
+        >
+          英語の自己学習者、海外への旅行者＆任者をサポートするコミュニティー
+        </h1>
+      </div>
+      <section
+        class="pt-12 md:pt-24  mx-auto"
+      >
+        <h2
+          class="text-center text-mobile-header-2 text-primary-dark font-medium"
+        >
+          Our mission 日本語
+        </h2>
+        <div
+          class="mt-8 md:mt-12 lg:ps-8 lg:pe-8 flex flex-col justify-center items-center gap-8 lg:flex-row lg:w-full lg:space-around"
+        >
+          <div
+            class="mb-5 flex flex-col lg:w-full"
+          >
+            <div
+              class="mx-auto"
+            >
+              <img
+                src="connect.svg"
+              />
+            </div>
+            <p
+              class="text-center mt-6 mx-12"
+            >
+              日本語 Help you connect with other expats and immigrants in Japan
+            </p>
+          </div>
+          <div
+            class="mb-5  flex flex-col lg:w-full"
+          >
+            <div
+              class="mx-auto"
+            >
+              <img
+                src="travel.svg"
+              />
+            </div>
+            <p
+              class="text-center mt-6 mx-12"
+            >
+              日本語 Help you get information for living and travelling in Japan
+            </p>
+          </div>
+          <div
+            class="mb-5  flex flex-col lg:w-full"
+          >
+            <div
+              class="mx-auto"
+            >
+              <img
+                class="w-[60px] h-[60px]"
+                src="language.png"
+              />
+            </div>
+            <p
+              class="text-center mt-6 mx-12"
+            >
+              日本語 Help you find resources for studying Japanese
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="pt-[84px] flex flex-col items-center"
+      >
+        <div
+          class="w-full bg-homeHelp md:bg-homeHelpTablet lg:bg-homeHelpDesktop h-[160px] md:h-[200px] lg:h-[250px] bg-cover bg-center"
+        />
+        <div
+          class="w-full text-center py-4 px-4 bg-primary text-white font-medium inline-flex items-center justify-center"
+        >
+          <p>
+            日本語 Find connections. Share resources. Learn together.
+          </p>
+        </div>
+      </section>
+      <section
+        class=""
+      >
+        <h2
+          class=" py-16 md:py-24 px-4 text-mobile-header-2 font-medium text-center text-primary-dark"
+        >
+          コミュニティーをすべて探検しよう
+        </h2>
+        <div
+          class=""
+        >
+          <div
+            class="bg-background pt-8 pb-12 px-8 flex-col flex md:flex-row md:px-24 lg:px-48"
+          >
+            <div
+              class="mx-auto shrink-0 p-4"
+            >
+              <img
+                class="rounded-full object-cover w-48 h-48"
+                src="studysupport-square.jpg"
+              />
+            </div>
+            <div
+              class="flex flex-col grow lg:ps-8"
+            >
+              <p
+                class="text-center lg:text-left mt-6 mx-8 NotoSansJP font-medium text-mobile-page-header mb-4 text-primary-dark"
+              >
+                自己英語の学習サポート
+              </p>
+              <p
+                class="text-black text-center lg:text-left lg:mx-8"
+              >
+                日本語 Learn pronunciation, listening, speaking, and vocabulary by just reading! We show, and support how to supplement and fast-forward your English learning for both kids and adults. Free trial available.
+              </p>
+              <div
+                class="mx-auto lg:ms-8 mt-8"
+              >
+                <button
+                  class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-primary border-primary 
+                text-white 
+                py-2 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+                  data-testid=""
+                  type="button"
+                >
+                  <a
+                    class="font-medium"
+                    href="/study-support"
+                  >
+                    Tell me more
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-study-buddy-accent pt-8 pb-12 px-8 flex-col flex md:flex-row md:px-24 lg:px-48"
+          >
+            <div
+              class="mx-auto shrink-0 p-4"
+            >
+              <img
+                class="rounded-full object-cover w-48 h-48"
+                src="studyBuddy-square.jpg"
+              />
+            </div>
+            <div
+              class="flex flex-col grow lg:ps-8"
+            >
+              <p
+                class="text-center lg:text-left mt-6 mx-8 font-StudyBuddyJA font-bold text-mobile-page-header mb-4 text-primary-dark"
+              >
+                スタディーバディー掲示板
+              </p>
+              <p
+                class="text-black text-center lg:text-left lg:mx-8"
+              >
+                日本語 Become a study buddy and find like-minded students to study Japanese. Do a cultural and language exchange in the comfort of your home. Volunteer to teach Japanese people learn English.
+              </p>
+              <div
+                class="mx-auto lg:ms-8 mt-8"
+              >
+                <button
+                  class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-primary border-primary 
+                text-white 
+                py-2 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+                  data-testid=""
+                  type="button"
+                >
+                  <a
+                    class="font-medium"
+                    href="/study-buddies"
+                  >
+                    Tell me more
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-community-accent pt-8 pb-12 px-8 flex-col flex md:flex-row md:px-24 lg:px-48"
+          >
+            <div
+              class="mx-auto shrink-0 p-4"
+            >
+              <img
+                class="rounded-full object-cover w-48 h-48"
+                src="community-square.jpg"
+              />
+            </div>
+            <div
+              class="flex flex-col grow lg:ps-8"
+            >
+              <p
+                class="text-center lg:text-left mt-6 mx-8 font-Community font-medium text-gold-4 text-mobile-page-header mb-4 text-white"
+              >
+                英語街
+              </p>
+              <p
+                class="text-white text-center lg:text-left lg:mx-8"
+              >
+                日本語 Join groups to practice writing and reading Japanese. Ask and answer any questions related to the Japanese language.
+              </p>
+              <div
+                class="mx-auto lg:ms-8 mt-8"
+              >
+                <button
+                  class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-white 
+                text-primary-dark 
+                py-2 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+                  data-testid=""
+                  type="button"
+                >
+                  <span
+                    class="font-medium"
+                  >
+                    Tell me more
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-regional-accent pt-8 pb-12 px-8 flex-col flex md:flex-row md:px-24 lg:px-48"
+          >
+            <div
+              class="mx-auto shrink-0 p-4"
+            >
+              <img
+                class="rounded-full object-cover w-48 h-48"
+                src="regional-square.jpg"
+              />
+            </div>
+            <div
+              class="flex flex-col grow lg:ps-8"
+            >
+              <p
+                class="text-center lg:text-left mt-6 mx-8 font-Regional text-gold-4 text-mobile-page-header mb-4 text-white"
+              >
+                地域案内センター
+              </p>
+              <p
+                class="text-white text-center lg:text-left lg:mx-8"
+              >
+                日本語 Get resources and connect with others wherever you are in the world. Ask and answer questions related to travelling and living in an area.
+              </p>
+              <div
+                class="mx-auto lg:ms-8 mt-8"
+              >
+                <button
+                  class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-white 
+                text-primary-dark 
+                py-2 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+                  data-testid=""
+                  type="button"
+                >
+                  <span
+                    class="font-medium"
+                  >
+                    Tell me more
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-marketplace-accent pt-8 pb-12 px-8 flex-col flex md:flex-row md:px-24 lg:px-48"
+          >
+            <div
+              class="mx-auto shrink-0 p-4"
+            >
+              <img
+                class="rounded-full object-cover w-48 h-48"
+                src="marketplace-square.jpg"
+              />
+            </div>
+            <div
+              class="flex flex-col grow lg:ps-8"
+            >
+              <p
+                class="text-center lg:text-left mt-6 mx-8 font-EnglishMarketJA font-bold text-mobile-page-header mb-4 text-primary-dark"
+              >
+                マーケット
+              </p>
+              <p
+                class="text-black text-center lg:text-left lg:mx-8"
+              >
+                日本語 Going back home? Moving to Japan? Buy, sell or offer your used items to future expats and immigrants.
+              </p>
+              <div
+                class="mx-auto lg:ms-8 mt-8"
+              >
+                <button
+                  class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-primary border-primary 
+                text-white 
+                py-2 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+                  data-testid=""
+                  type="button"
+                >
+                  <span
+                    class="font-medium"
+                  >
+                    Tell me more
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="py-12"
+      >
+        <p
+          class="py-8 px-4 text-mobile-page-header text-center text-primary-dark"
+        >
+          日本語　Whether you're a traveller, a student, an expat, immigrant or citizen,
+        </p>
+        <p
+          class="px-4 text-mobile-page-header text-center text-primary-dark"
+        >
+          　日本語we are here to support you.
+        </p>
+        <div
+          class="flex justify-center"
+        >
+          <button
+            class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-primary border-primary 
+                text-white 
+                py-3 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 mt-12 w-[200px]
+                hover:opacity-75"
+            data-testid=""
+            type="button"
+          >
+            <span
+              class="font-medium"
+            >
+              More about us
+            </span>
+          </button>
+        </div>
+      </section>
+    </div>
+    <div
+      class=" bg-primary-dark text-white"
+    >
+      <div
+        class="px-8 pt-12  flex flex-col lg:flex-row items-center  lg:items-start  lg:justify-between py-8 xl:justify-around"
+      >
+        <div
+          class="flex flex-col items-center md:ms-4  lg:items-start  lg:max-w-[300px]"
+        >
+          <p
+            class="text-mobile-page-header font-bold text-center"
+          >
+            Pebbles Community
+          </p>
+          <p
+            class="pb-8 text-center lg:text-left"
+          >
+            Jap Connecting and supporting Japanese around the world.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center me-4 lg:items-start lg:ms-8"
+        >
+          <p
+            class="font-medium"
+          >
+            Pebbles案内
+          </p>
+          <p
+            class="text-background"
+          >
+            <a
+              class="hover:underline hover: underline-offset-4 hover:text-white"
+              href="/about"
+            >
+              会社案内
+            </a>
+          </p>
+          <p
+            class="pb-4 text-background"
+          >
+            <a
+              class="hover:underline hover: underline-offset-4 hover:text-white"
+              href="/contact"
+            >
+              お問い合わせ
+            </a>
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center lg:items-start lg:ms-8"
+        >
+          <p
+            class="font-medium"
+          >
+            学習サポート
+          </p>
+          <p
+            class=""
+          >
+            <a
+              class="hover:underline hover: underline-offset-4 hover:text-white"
+              href="/study-support"
+            >
+              学習サポートとは
+            </a>
+          </p>
+          <p
+            class=" pb-4"
+          >
+            <a
+              class="hover:underline hover: underline-offset-4 hover:text-white"
+              href="/study-support/pricing"
+            >
+              価格
+            </a>
+          </p>
+        </div>
+        <div
+          class="flex flex-col text-center justify-center items-center lg:items-start lg:ms-8"
+        >
+          <p
+            class="font-medium"
+          >
+            コミュニティ
+          </p>
+          <p
+            class="text-background"
+          >
+            <a
+              class="hover:underline hover: underline-offset-4 hover:text-white"
+              href="/language-town"
+            >
+              英語街
+            </a>
+          </p>
+          <p
+            class="text-background"
+          >
+            <a
+              class="hover:underline hover: underline-offset-4 hover:text-white"
+              href="/info-center"
+            >
+              地域案内センター
+            </a>
+          </p>
+          <p
+            class="text-background"
+          >
+            <a
+              class="hover:underline hover: underline-offset-4 hover:text-white"
+              href="/study-buddies"
+            >
+              スタディーバディー掲示板
+            </a>
+          </p>
+          <p
+            class="pb-4 text-background"
+          >
+            <a
+              class="hover:underline hover: underline-offset-4 hover:text-white"
+              href="/marketplace"
+            >
+              マーケット
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col-reverse md:flex-row items-center px-4 gap-2 "
+      >
+        <p
+          class="grow text-center md:text-left"
+        >
+          Copyright © 2023 All rights reserved.
+        </p>
+        <p>
+          Terms
+        </p>
+        <p>
+          個人情報保護方針
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

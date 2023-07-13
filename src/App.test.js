@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { renderWithProviders } from '../utils/testSetup';
-import Dashboard from './Dashboard';
+import { renderWithProviders } from './utils/testSetup';
+import App from './App';
 
 
 // Mock window.scrollTo()
@@ -11,11 +11,11 @@ afterAll(() => {
 });
 
 
-describe('Dashboard', () => {
+describe('App', () => {
     test('renders without crashing', () => {
         renderWithProviders(
             <MemoryRouter>
-                <Dashboard />
+                <App />
             </MemoryRouter>
         );
     });
@@ -23,7 +23,7 @@ describe('Dashboard', () => {
     test('matches snapshot', async () => {
         const { asFragment } = renderWithProviders(
             <MemoryRouter>
-                <Dashboard />
+                <App />
             </MemoryRouter>
         );
 

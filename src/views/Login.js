@@ -85,6 +85,7 @@ const Login = () => {
                             />
                             <Button btnText={pageText.SUBMIT}
                                 type="submit"
+                                testid='loginFormLogin'
                                 extraClasses="mt-12"
                                 lang={lang}
                                 isSubmitting={formik.isSubmitting} />

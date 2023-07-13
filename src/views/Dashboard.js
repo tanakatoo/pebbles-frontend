@@ -88,7 +88,7 @@ function Dashboard() {
 
             }
 
-            <h2 className="py-2 my-2 text-primary-dark font-medium text-mobile-page-header px-4 text-center ">
+            <h2 data-testid="wait-for-pagetext" className="py-2 my-2 text-primary-dark font-medium text-mobile-page-header px-4 text-center ">
                 {pageText.EXPLORE_COMMUNITY}
             </h2>
             <p className='mb-10 text-center group'>
@@ -97,23 +97,23 @@ function Dashboard() {
             </p>
             <div className='flex flex-col pt-2 pb-12 bg-primary-super-light'>
                 <div className='flex items-center justify-center flex-1'>
-                    <ExploreCommunity type="studyBuddy" />
+                    {/* <ExploreCommunity type="studyBuddy" /> */}
                 </div>
             </div >
 
             <div className='flex flex-col pt-2 pb-12 bg-regional-background'>
                 <div className='flex items-center justify-center flex-1'>
-                    <ExploreCommunity type="infoCenter" />
+                    {/* <ExploreCommunity type="infoCenter" /> */}
                 </div>
             </div >
             <div className='flex flex-col pt-2 pb-12 bg-accent-very-light'>
                 <div className='flex items-center justify-center flex-1'>
-                    <ExploreCommunity type="languageTown" />
+                    {/* <ExploreCommunity type="languageTown" /> */}
                 </div>
             </div >
             <div className='flex flex-col pt-2 pb-12 bg-marketplace-background'>
                 <div className='flex items-center justify-center flex-1'>
-                    <ExploreCommunity type="marketplace" />
+                    {/* <ExploreCommunity type="marketplace" /> */}
                 </div>
             </div >
         </div >

@@ -13,12 +13,14 @@ export const Button = ({
     extraClasses = '',
     link = null,
     noShadow = false,
-    disabled = false }
+    disabled = false,
+    testid = false }
 ) => {
 
     return (
         <>
             <button onClick={clickMethod}
+                data-testid={testid ? `data-testid=${testid}` : ''}
                 className={`${noShadow ? '' : 'drop-shadow'} 
                 inline-flex
                 items-center
