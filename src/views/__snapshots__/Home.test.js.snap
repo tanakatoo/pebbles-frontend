@@ -1,0 +1,424 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="bg-primary-dark py-6 px-4"
+    >
+      <form
+        action="#"
+      >
+        <div
+          class="w-full flex  null gap-3"
+        >
+          <input
+            class="rounded-ml grow placeholder-gray focus:ring-none"
+            name="word"
+            placeholder="検索"
+            type="text"
+            value=""
+          />
+        </div>
+      </form>
+    </div>
+    <div
+      class="flex justify-center bg-primary-super-light bg-homeHero md:bg-homeHeroTablet lg:bg-homeHeroDesktop bg-cover bg-center bg-no-repeat relative min-h-screen"
+    >
+      <div
+        class="bg-gradient-to-b absolute from-primary-super-light from-0% via-transparent via-1% to-transparent to-100% w-full h-screen"
+      />
+      <h1
+        class="text-primary-dark font-bold mx-4 text-center pt-10 md:pt-16 text-mobile-header-1 absolute"
+      >
+        英語の自己学習者、海外への旅行者＆任者をサポートするコミュニティー
+      </h1>
+    </div>
+    <section
+      class="pt-12 md:pt-24  mx-auto"
+    >
+      <h2
+        class="text-center text-mobile-header-2 text-primary-dark font-medium"
+      >
+        Our mission 日本語
+      </h2>
+      <div
+        class="mt-8 md:mt-12 lg:ps-8 lg:pe-8 flex flex-col justify-center items-center gap-8 lg:flex-row lg:w-full lg:space-around"
+      >
+        <div
+          class="mb-5 flex flex-col lg:w-full"
+        >
+          <div
+            class="mx-auto"
+          >
+            <img
+              src="connect.svg"
+            />
+          </div>
+          <p
+            class="text-center mt-6 mx-12"
+          >
+            日本語 Help you connect with other expats and immigrants in Japan
+          </p>
+        </div>
+        <div
+          class="mb-5  flex flex-col lg:w-full"
+        >
+          <div
+            class="mx-auto"
+          >
+            <img
+              src="travel.svg"
+            />
+          </div>
+          <p
+            class="text-center mt-6 mx-12"
+          >
+            日本語 Help you get information for living and travelling in Japan
+          </p>
+        </div>
+        <div
+          class="mb-5  flex flex-col lg:w-full"
+        >
+          <div
+            class="mx-auto"
+          >
+            <img
+              class="w-[60px] h-[60px]"
+              src="language.png"
+            />
+          </div>
+          <p
+            class="text-center mt-6 mx-12"
+          >
+            日本語 Help you find resources for studying Japanese
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="pt-[84px] flex flex-col items-center"
+    >
+      <div
+        class="w-full bg-homeHelp md:bg-homeHelpTablet lg:bg-homeHelpDesktop h-[160px] md:h-[200px] lg:h-[250px] bg-cover bg-center"
+      />
+      <div
+        class="w-full text-center py-4 px-4 bg-primary text-white font-medium inline-flex items-center justify-center"
+      >
+        <p>
+          日本語 Find connections. Share resources. Learn together.
+        </p>
+      </div>
+    </section>
+    <section
+      class=""
+    >
+      <h2
+        class=" py-16 md:py-24 px-4 text-mobile-header-2 font-medium text-center text-primary-dark"
+      >
+        コミュニティーをすべて探検しよう
+      </h2>
+      <div
+        class=""
+      >
+        <div
+          class="bg-background pt-8 pb-12 px-8 flex-col flex md:flex-row md:px-24 lg:px-48"
+        >
+          <div
+            class="mx-auto shrink-0 p-4"
+          >
+            <img
+              class="rounded-full object-cover w-48 h-48"
+              src="studysupport-square.jpg"
+            />
+          </div>
+          <div
+            class="flex flex-col grow lg:ps-8"
+          >
+            <p
+              class="text-center lg:text-left mt-6 mx-8 NotoSansJP font-medium text-mobile-page-header mb-4 text-primary-dark"
+            >
+              自己英語の学習サポート
+            </p>
+            <p
+              class="text-black text-center lg:text-left lg:mx-8"
+            >
+              日本語 Learn pronunciation, listening, speaking, and vocabulary by just reading! We show, and support how to supplement and fast-forward your English learning for both kids and adults. Free trial available.
+            </p>
+            <div
+              class="mx-auto lg:ms-8 mt-8"
+            >
+              <button
+                class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-primary border-primary 
+                text-white 
+                py-2 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+                type="button"
+              >
+                <a
+                  class="font-medium"
+                  href="/study-support"
+                >
+                  Tell me more
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-study-buddy-accent pt-8 pb-12 px-8 flex-col flex md:flex-row md:px-24 lg:px-48"
+        >
+          <div
+            class="mx-auto shrink-0 p-4"
+          >
+            <img
+              class="rounded-full object-cover w-48 h-48"
+              src="studyBuddy-square.jpg"
+            />
+          </div>
+          <div
+            class="flex flex-col grow lg:ps-8"
+          >
+            <p
+              class="text-center lg:text-left mt-6 mx-8 font-StudyBuddyJA font-bold text-mobile-page-header mb-4 text-primary-dark"
+            >
+              スタディーバディー掲示板
+            </p>
+            <p
+              class="text-black text-center lg:text-left lg:mx-8"
+            >
+              日本語 Become a study buddy and find like-minded students to study Japanese. Do a cultural and language exchange in the comfort of your home. Volunteer to teach Japanese people learn English.
+            </p>
+            <div
+              class="mx-auto lg:ms-8 mt-8"
+            >
+              <button
+                class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-primary border-primary 
+                text-white 
+                py-2 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+                type="button"
+              >
+                <a
+                  class="font-medium"
+                  href="/study-buddies"
+                >
+                  Tell me more
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-community-accent pt-8 pb-12 px-8 flex-col flex md:flex-row md:px-24 lg:px-48"
+        >
+          <div
+            class="mx-auto shrink-0 p-4"
+          >
+            <img
+              class="rounded-full object-cover w-48 h-48"
+              src="community-square.jpg"
+            />
+          </div>
+          <div
+            class="flex flex-col grow lg:ps-8"
+          >
+            <p
+              class="text-center lg:text-left mt-6 mx-8 font-Community font-medium text-gold-4 text-mobile-page-header mb-4 text-white"
+            >
+              英語街
+            </p>
+            <p
+              class="text-white text-center lg:text-left lg:mx-8"
+            >
+              日本語 Join groups to practice writing and reading Japanese. Ask and answer any questions related to the Japanese language.
+            </p>
+            <div
+              class="mx-auto lg:ms-8 mt-8"
+            >
+              <button
+                class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-white 
+                text-primary-dark 
+                py-2 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+                type="button"
+              >
+                <span
+                  class="font-medium"
+                >
+                  Tell me more
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-regional-accent pt-8 pb-12 px-8 flex-col flex md:flex-row md:px-24 lg:px-48"
+        >
+          <div
+            class="mx-auto shrink-0 p-4"
+          >
+            <img
+              class="rounded-full object-cover w-48 h-48"
+              src="regional-square.jpg"
+            />
+          </div>
+          <div
+            class="flex flex-col grow lg:ps-8"
+          >
+            <p
+              class="text-center lg:text-left mt-6 mx-8 font-Regional text-gold-4 text-mobile-page-header mb-4 text-white"
+            >
+              地域案内センター
+            </p>
+            <p
+              class="text-white text-center lg:text-left lg:mx-8"
+            >
+              日本語 Get resources and connect with others wherever you are in the world. Ask and answer questions related to travelling and living in an area.
+            </p>
+            <div
+              class="mx-auto lg:ms-8 mt-8"
+            >
+              <button
+                class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-white 
+                text-primary-dark 
+                py-2 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+                type="button"
+              >
+                <span
+                  class="font-medium"
+                >
+                  Tell me more
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-marketplace-accent pt-8 pb-12 px-8 flex-col flex md:flex-row md:px-24 lg:px-48"
+        >
+          <div
+            class="mx-auto shrink-0 p-4"
+          >
+            <img
+              class="rounded-full object-cover w-48 h-48"
+              src="marketplace-square.jpg"
+            />
+          </div>
+          <div
+            class="flex flex-col grow lg:ps-8"
+          >
+            <p
+              class="text-center lg:text-left mt-6 mx-8 font-EnglishMarketJA font-bold text-mobile-page-header mb-4 text-primary-dark"
+            >
+              マーケット
+            </p>
+            <p
+              class="text-black text-center lg:text-left lg:mx-8"
+            >
+              日本語 Going back home? Moving to Japan? Buy, sell or offer your used items to future expats and immigrants.
+            </p>
+            <div
+              class="mx-auto lg:ms-8 mt-8"
+            >
+              <button
+                class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-primary border-primary 
+                text-white 
+                py-2 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+                type="button"
+              >
+                <span
+                  class="font-medium"
+                >
+                  Tell me more
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="py-12"
+    >
+      <p
+        class="py-8 px-4 text-mobile-page-header text-center text-primary-dark"
+      >
+        日本語　Whether you're a traveller, a student, an expat, immigrant or citizen,
+      </p>
+      <p
+        class="px-4 text-mobile-page-header text-center text-primary-dark"
+      >
+        　日本語we are here to support you.
+      </p>
+      <div
+        class="flex justify-center"
+      >
+        <button
+          class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-primary border-primary 
+                text-white 
+                py-3 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 mt-12 w-[200px]
+                hover:opacity-75"
+          type="button"
+        >
+          <span
+            class="font-medium"
+          >
+            More about us
+          </span>
+        </button>
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
+`;

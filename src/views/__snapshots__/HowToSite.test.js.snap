@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HowToSite matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="py-8 flex flex-col border-t-2 border-gray"
+    id="top"
+  >
+    <h1
+      class="text-center font-bold text-mobile-header-1 mb-8"
+    >
+      Pebblesの使い方
+    </h1>
+    <div
+      class="w-full flex flex-col pt-4 md:pt-8 pb-12 px-2 bg-primary-super-light "
+    >
+      <div
+        class=" mx-auto flex flex-col "
+      >
+        <div
+          class="my-1 "
+        >
+          <div
+            class="group"
+          >
+            <a
+              class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
+              href="/#link-profile"
+            >
+              プロフィールを変更する
+              <span
+                class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-arrow-right-long fa-1x "
+                  data-icon="arrow-right-long"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div
+          class="my-1 "
+        >
+          <div
+            class="group"
+          >
+            <a
+              class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
+              href="/#link-studyBuddy"
+            >
+              スタディーバディーになる・解除する
+              <span
+                class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-arrow-right-long fa-1x "
+                  data-icon="arrow-right-long"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div
+          class="my-1 "
+        >
+          <div
+            class="group"
+          >
+            <a
+              class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
+              href="/#link-studyBuddyUse"
+            >
+              スタディーバディー掲示板の使い方
+              <span
+                class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-arrow-right-long fa-1x "
+                  data-icon="arrow-right-long"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container flex flex-col mx-auto"
+    >
+      <h2
+        class="max-w-prose me-auto text-mobile-section-header font-medium my-4"
+        id="link-profile"
+      >
+        プロフィールを変更する
+      </h2>
+      <p
+        class="max-w-prose mx-auto"
+      >
+        日本語Once you login, click on the avatar or open up the menu on the top right corner of the page. Click on 'Profile' and below your avatar, click on the 'Edit' link. All information except for your email is public.
+      </p>
+      <div
+        class="my-4 flex w-full justify-end"
+      >
+        <a
+          href="/#top"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-up-long "
+            data-icon="arrow-up-long"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="text-mobile-label-1 ms-1"
+          >
+            上
+          </span>
+        </a>
+      </div>
+      <h2
+        class="pt-4 max-w-prose me-auto text-mobile-section-header font-medium my-4"
+        id="link-studyBuddy"
+      >
+        スタディーバディーになる・解除する
+      </h2>
+      <p
+        class="max-w-prose mx-auto"
+      >
+        日本語By default, you are not listed as a study buddy on Pebbles. To list yourself so others can find you on the Study Buddy Board, go to edit your profile, click on edit study buddy, and toggle the 'Join study buddy' on. To unlist, simply toggle it off and the information you input for study buddy will be hidden from public.
+      </p>
+      <div
+        class="my-4 flex w-full justify-end"
+      >
+        <a
+          href="/#top"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-up-long "
+            data-icon="arrow-up-long"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="text-mobile-label-1 ms-1"
+          >
+            上
+          </span>
+        </a>
+      </div>
+      <h2
+        class="pt-4 max-w-prose me-auto text-mobile-section-header font-medium my-4"
+        id="link-studyBuddyUse"
+      >
+        スタディーバディー掲示板の使い方
+      </h2>
+      <p
+        class="max-w-prose mx-auto"
+      >
+        日本語The board displays users in order of recently listed study buddies. To search using username, name, or their bio, type into the search bar and press Enter. To filter from categories, press the Filter button and choose the categories that you want to search for.
+      </p>
+      <div
+        class="my-4 flex w-full justify-end"
+      >
+        <a
+          href="/#top"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-up-long "
+            data-icon="arrow-up-long"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="text-mobile-label-1 ms-1"
+          >
+            上
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

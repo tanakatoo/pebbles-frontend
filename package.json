@@ -64,6 +64,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@tailwindcss/forms": "^0.5.3",
+    "msw": "^1.2.2",
     "redux-mock-store": "^1.5.4"
   },
   "jest": {

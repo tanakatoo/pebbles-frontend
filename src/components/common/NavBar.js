@@ -209,9 +209,7 @@ const NavBar = () => {
             </Link>
             <div className="flex flex-nowrap items-center gap-5 lg:grow">
                 <div className="hidden lg:block grow">
-                    <div className="flex gap-5 justify-center items-center w-full grow text-primary-dark">
-
-
+                    <div className="flex ps-10 gap-16 justify-center items-center w-full grow text-primary-dark">
                         {lang === "JA" ?
                             <span onClick={handleStudySupportDropdown} className="relative select-none" ref={refStudySupportDropdown}>
                                 <CustomLinkPrimaryMedium text={navText.STUDY_SUPPORT} /> <AwesomeChevronDown />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { renderWithProviders } from '../utils/testSetup';
-import Home from './Home';
+import InfoCenter from './InfoCenter';
 
 
 // Mock window.scrollTo()
@@ -11,11 +11,11 @@ afterAll(() => {
 });
 
 
-describe('Home', () => {
+describe('LanguageTown', () => {
     test('renders without crashing', () => {
         renderWithProviders(
             <MemoryRouter>
-                <Home />
+                <InfoCenter />
             </MemoryRouter>
         );
     });
@@ -23,7 +23,7 @@ describe('Home', () => {
     test('matches snapshot', async () => {
         const { asFragment } = renderWithProviders(
             <MemoryRouter>
-                <Home />
+                <InfoCenter />
             </MemoryRouter>
         );
 

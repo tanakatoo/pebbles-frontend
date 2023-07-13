@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StudySupport matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="py-24 flex flex-col items-center border-t-2 border-gray"
+  >
+    <h1
+      class="text-center font-bold text-mobile-header-1 mb-12"
+    >
+      将来の学習サポートのホーム
+    </h1>
+    <p
+      class="mb-12 text-center"
+    >
+      少々お待ちください。
+    </p>
+  </div>
+</DocumentFragment>
+`;

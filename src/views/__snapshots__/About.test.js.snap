@@ -1,0 +1,1197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="flex justify-center bg-primary-super-light bg-aboutHeroMobile md:bg-aboutHeroTablet lg:bg-aboutHeroDesktop bg-cover bg-center bg-no-repeat relative min-h-[250px]"
+    />
+    <h1
+      class="text-primary-dark font-bold mx-4 px-4 rounded-ml text-center mt-8 md:mt-12 text-mobile-header-1"
+    >
+      Pebblesのお話
+    </h1>
+    <div
+      class="flex flex-col mt-8 mx-2"
+    >
+      <div
+        class="container flex flex-col items-center mx-auto"
+      >
+        <p
+          class="max-w-prose"
+        >
+          As an exchange student in Japan, I have had the privilege of using the University's exchange student services to get the items I needed to stay in Japan for a few months, a volunteer from the school to help improve my Japanese, and a lot of support from friends and teachers who gave me tips and other invaluable resources to make sure I felt at home.
+        </p>
+        <p
+          class="my-4 max-w-prose"
+        >
+          Many years later back in Canada, I was part of a network of Japanese families who moved here for a few years and while some companies do support their families before move, it was the lack of support they got after they arrived that gave me the idea for this community website. Specifically, Pebbles Community's goals are to:
+        </p>
+        <div>
+          <div
+            class="text-success my-2"
+          >
+            <span
+              class="text-green"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-check fa-1x "
+                data-icon="check"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                  fill="currentColor"
+                />
+              </svg>
+               
+            </span>
+            Support self-learning English
+          </div>
+          <div
+            class="text-success my-2"
+          >
+            <span
+              class="text-green"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-check fa-1x "
+                data-icon="check"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                  fill="currentColor"
+                />
+              </svg>
+               
+            </span>
+            Support living overseas
+          </div>
+          <div
+            class="text-success my-2"
+          >
+            <span
+              class="text-green"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-check fa-1x "
+                data-icon="check"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                  fill="currentColor"
+                />
+              </svg>
+               
+            </span>
+            Help make connections with others in the same area
+          </div>
+          <div
+            class="text-success my-2"
+          >
+            <span
+              class="text-green"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-check fa-1x "
+                data-icon="check"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                  fill="currentColor"
+                />
+              </svg>
+               
+            </span>
+            Help share knowledge
+          </div>
+        </div>
+        <p
+          class="my-4  max-w-prose"
+        >
+          So here it is, my effort to gather all personal experiences living overseas and teaching English with its failures and successes, to make a community that can show you new ways to improve and help you feel at home. Learn more about me by searching for 'ktoo' from the homepage.
+        </p>
+      </div>
+    </div>
+    <h2
+      class="font-medium text-mobile-page-header text-center p-2 mt-12 md:mt-24 bg-primary-dark text-white"
+      id="top"
+    >
+      Your Community
+    </h2>
+    <div
+      class="flex flex-col pt-4 md:pt-8 pb-12 md:pb-24 px-2 bg-primary-super-light "
+    >
+      <div
+        class="container mx-auto flex flex-col items-center"
+      >
+        <p
+          class="mb-2 text-center"
+        >
+          Learn about the 4 areas of support within your community below:
+        </p>
+        <div
+          class="text-center my-1"
+        >
+          <div
+            class="group"
+          >
+            <a
+              class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
+              href="/#link-support"
+            >
+              日本語Study Support
+              <span
+                class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-arrow-right-long fa-1x "
+                  data-icon="arrow-right-long"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div
+          class="text-center my-1 "
+        >
+          <div
+            class="group"
+          >
+            <a
+              class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
+              href="/#link-studyBuddy"
+            >
+              スタディーバディー掲示板
+              <span
+                class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-arrow-right-long fa-1x "
+                  data-icon="arrow-right-long"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div
+          class="text-center my-1 "
+        >
+          <div
+            class="group"
+          >
+            <a
+              class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
+              href="/#link-town"
+            >
+              英語街
+              <span
+                class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-arrow-right-long fa-1x "
+                  data-icon="arrow-right-long"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div
+          class="text-center my-1 "
+        >
+          <div
+            class="group"
+          >
+            <a
+              class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
+              href="/#link-info"
+            >
+              地域案内センター
+              <span
+                class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-arrow-right-long fa-1x "
+                  data-icon="arrow-right-long"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div
+          class="text-center my-1 "
+        >
+          <div
+            class="group"
+          >
+            <a
+              class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
+              href="/#link-marketplace"
+            >
+              マーケット
+              <span
+                class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-arrow-right-long fa-1x "
+                  data-icon="arrow-right-long"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex justify-center bg-primary-super-light bg-supportLongMobile md:bg-supportLongTablet lg:bg-supportLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]"
+      id="link-support"
+    />
+    <h2
+      class="font-medium text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-background text-primary-dark"
+    >
+      日本語Study Support
+    </h2>
+    <div
+      class="container flex flex-col items-center mx-auto my-8 md:my-12"
+    >
+      <p
+        class="max-w-prose"
+      >
+        日本語 From our survey of English learners, 90% of them did not know that reading could be a way to learn English, and that ALL of them found that reading books at their level is a great way to learn. Pebbles Community offers a digital library system called Raz Kids to help you self-learn. Raz Kids is currently used by North Americans to provide school children leveled books to improve their English reading. Pebbles Community found unique ways to help improve a foreigner's English level. Specifically, incorporating our way of using the system can help improve:
+      </p>
+      <div
+        class="flex flex-col my-4 max-w-prose"
+      >
+        <div
+          class="text-primary-dark  mb-2 mt-4"
+        >
+          <span
+            class="text-star"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-star "
+              data-icon="star"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 576 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+                fill="currentColor"
+              />
+            </svg>
+             
+          </span>
+          Vocabulary
+        </div>
+        <p>
+          Authors repeat words within a book to help you recall the meaning. Many different genres of books are available and reading about different topics can introduce you to specific vocabulary for that topic, giving you a wide range of vocabulary.
+        </p>
+        <div
+          class="text-primary-dark  mb-2 mt-4"
+        >
+          <span
+            class="text-star"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-star "
+              data-icon="star"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 576 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+                fill="currentColor"
+              />
+            </svg>
+             
+          </span>
+          Listening
+        </div>
+        <p>
+          Repeat listening to the book being read and you will pick up words you couldn't catch before. Closing your eyes to listen can allow you to practice listening on the phone, which can be hard for English learners.
+        </p>
+        <div
+          class="text-primary-dark  mb-2 mt-4"
+        >
+          <span
+            class="text-star"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-star "
+              data-icon="star"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 576 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+                fill="currentColor"
+              />
+            </svg>
+             
+          </span>
+          Fluency
+        </div>
+        <p>
+          Read along with the book to practice the speed at which you should be reading at your level. As you shadow the book, you will notice the words that get you tongue tied when you try to read fast.
+        </p>
+        <div
+          class="text-primary-dark mb-2 mt-4"
+        >
+          <span
+            class="text-star"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-star "
+              data-icon="star"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 576 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+                fill="currentColor"
+              />
+            </svg>
+             
+          </span>
+          Comprehension
+        </div>
+        <p>
+          Answer questions at the end of the book to check your understanding. These questions can give you an idea of what your weaknesses are - is it the lack of vocabulary, or is it grammar?
+        </p>
+        <div
+          class="text-primary-dark  mb-2 mt-4"
+        >
+          <span
+            class="text-star"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-star "
+              data-icon="star"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 576 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+                fill="currentColor"
+              />
+            </svg>
+             
+          </span>
+          Pronunciation
+        </div>
+        <p>
+          Everyone has mirror neurons (means we like to imitate people, rather we want to or not) so listening to perfect English everyday will help your brain recognize what is good English. This is especially good for little kids. In addition, record yourself reading and let PEC check for pronunciation.
+        </p>
+      </div>
+      <p
+        class="max-w-prose mt-4"
+      >
+        Pebbles Community offers a one week free trial of the digital library. This includes a free assessment to check your current reading level, and access to all leveled books for a week. After that, becoming a Premium member of Pebbles Community will give you unlimited access to the digital library and many other perks to help support your learning in the best possible way. Read about our Premium Membership here .
+      </p>
+      <div
+        class="my-4 flex w-full max-w-prose justify-end"
+      >
+        <a
+          href="/#top"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-up-long "
+            data-icon="arrow-up-long"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="text-mobile-label-1 ms-1"
+          >
+            Top
+          </span>
+        </a>
+      </div>
+      <div
+        class="mb-12 md:mb-24 mt-4"
+      >
+        <button
+          class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-background 
+                text-primary-dark 
+                py-3 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+          type="button"
+        >
+          <a
+            class="font-medium"
+            href="/study-support"
+          >
+            Get my free trial
+          </a>
+        </button>
+      </div>
+    </div>
+    <div
+      class="flex justify-center bg-primary-super-light bg-studyBuddyLongMobile md:bg-studyBuddyLongTablet lg:bg-studyBuddyLongDesktop bg-cover bg-bottom bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]"
+      id="link-studyBuddy"
+    />
+    <h2
+      class="font-bold text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-study-buddy-accent text-primary-dark
+            font-StudyBuddyJA"
+    >
+      スタディーバディー掲示板
+    </h2>
+    <div
+      class="container flex flex-col items-center mx-auto my-8"
+    >
+      <p
+        class="max-w-prose"
+      >
+        Like a bulletin board, this is a list of users who want to make friends, learn, practice, and keep their motivation. You can register to be 1 or all 3 types of study buddies:
+      </p>
+      <div
+        class="flex flex-col my-4 max-w-prose"
+      >
+        <div
+          class="text-primary-dark  mb-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-user-large "
+            data-icon="user-large"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 288A144 144 0 1 0 256 0a144 144 0 1 0 0 288zm-94.7 32C72.2 320 0 392.2 0 481.3c0 17 13.8 30.7 30.7 30.7H481.3c17 0 30.7-13.8 30.7-30.7C512 392.2 439.8 320 350.7 320H161.3z"
+              fill="currentColor"
+            />
+          </svg>
+           Study buddy
+        </div>
+        <p>
+          Share study ideas and setup a time to study or read together. If your friend can do it, so can you - motivation to keep you going!
+        </p>
+        <div
+          class="text-primary-dark  mb-2 mt-4"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-user-large "
+            data-icon="user-large"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 288A144 144 0 1 0 256 0a144 144 0 1 0 0 288zm-94.7 32C72.2 320 0 392.2 0 481.3c0 17 13.8 30.7 30.7 30.7H481.3c17 0 30.7-13.8 30.7-30.7C512 392.2 439.8 320 350.7 320H161.3z"
+              fill="currentColor"
+            />
+          </svg>
+           Language exchange
+        </div>
+        <p>
+          Find an English speaker and get help with your English while helping them with Japanese.
+        </p>
+        <div
+          class="text-primary-dark  mb-2 mt-4"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-user-large "
+            data-icon="user-large"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 288A144 144 0 1 0 256 0a144 144 0 1 0 0 288zm-94.7 32C72.2 320 0 392.2 0 481.3c0 17 13.8 30.7 30.7 30.7H481.3c17 0 30.7-13.8 30.7-30.7C512 392.2 439.8 320 350.7 320H161.3z"
+              fill="currentColor"
+            />
+          </svg>
+           Volunteer
+        </div>
+        <p>
+          Help an English speaker learn Japanese while immersing yourself in a new culture.
+        </p>
+      </div>
+      <div
+        class="my-4 flex w-full max-w-prose justify-end"
+      >
+        <a
+          href="/#top"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-up-long "
+            data-icon="arrow-up-long"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="text-mobile-label-1 ms-1"
+          >
+            Top
+          </span>
+        </a>
+      </div>
+      <div
+        class="mb-12 md:mb-24 mt-4"
+      >
+        <button
+          class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-study-buddy-accent 
+                text-primary-dark 
+                py-3 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+          type="button"
+        >
+          <a
+            class="font-medium"
+            href="/study-buddies"
+          >
+            View the Study Buddy Board
+          </a>
+        </button>
+      </div>
+    </div>
+    <div
+      class="flex justify-center bg-primary-super-light bg-townLongMobile md:bg-townLongTablet lg:bg-townLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]"
+      id="link-town"
+    />
+    <h2
+      class="font-medium font-Community text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-community-accent text-white"
+    >
+      英語街
+    </h2>
+    <div
+      class="container flex flex-col items-center mx-auto my-8"
+    >
+      <p
+        class="max-w-prose"
+      >
+        Have you ever studied by yourself and needed an answer to a question but have no where to ask? Do you feel like you are not making any improvement in English and need some motivation?
+      </p>
+      <p
+        class="mb-2 mt-4 max-w-prose"
+      >
+        This part of the community, the Japanese Town, is a place where you can join and create groups related learning Japanese - grammar groups, vocabulary groups, how to study for the Japanese Proficiency Test groups for example. Post your questions and get answers. Test out your knowledge and answer questions to strengthen your understanding of the language. Join the 'Once a day' group to practice using the grammar and vocabulary you recently learned to answer the question of the day. 
+      </p>
+      <div
+        class="my-4 flex w-full max-w-prose justify-end"
+      >
+        <a
+          href="/#top"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-up-long "
+            data-icon="arrow-up-long"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="text-mobile-label-1 ms-1"
+          >
+            Top
+          </span>
+        </a>
+      </div>
+      <div
+        class="mb-12 md:mb-24 mt-4"
+      >
+        <button
+          class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-community-accent 
+                text-white 
+                py-3 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+          type="button"
+        >
+          <a
+            class="font-medium"
+            href="/language-town"
+          >
+            Take me to Town
+          </a>
+        </button>
+      </div>
+    </div>
+    <div
+      class="flex justify-center bg-primary-super-light bg-infoLongMobile md:bg-infoLongTablet lg:bg-infoLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]"
+      id="link-info"
+    />
+    <h2
+      class="font-medium font-Regional  text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-regional-accent text-white"
+    >
+      地域案内センター
+    </h2>
+    <div
+      class="container flex flex-col items-center mx-auto my-8"
+    >
+      <p
+        class="max-w-prose"
+      >
+        This is the place where you can find valuable resources travelling to and living in an area. Do you have questions like:
+      </p>
+      <div
+        class="flex flex-col my-4 max-w-prose"
+      >
+        <div
+          class="text-primary-dark  mt-4"
+        >
+          <span>
+            How do I get a library card and use it 
+          </span>
+          <span
+            class="text-secondary"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-question "
+              data-icon="question"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="text-primary-dark  mt-4"
+        >
+          <span>
+            Does anyone know where I can find a good doctor for my child 
+          </span>
+          <span
+            class="text-secondary"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-question "
+              data-icon="question"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="text-primary-dark  mt-4"
+        >
+          <span>
+            Are there any free English lessons in London 
+          </span>
+          <span
+            class="text-secondary"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-question "
+              data-icon="question"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="text-primary-dark mb-4 mt-4"
+        >
+          <span>
+            When is the best time to go to the Rocky Mountains in Canada 
+          </span>
+          <span
+            class="text-secondary"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-question "
+              data-icon="question"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <p
+        class="max-w-prose mb-4"
+      >
+        Some resources are related to the whole of the country so if you are travelling to, for example Toronto, we recommend joining the Canada group, the Ontario group, AND the Toronto group. These groups all have a resource area, and a Q and A area where you can find information and answers to your questions. The resource area can be posted anonymously please post and share your knowledge!
+      </p>
+      <p
+        class="max-w-prose"
+      >
+        Another way to use this area is to create your own group and invite others to join. Make your own little community (same religion? same company?) and share resources and experience. Make it public and easy for newcomers to join or make it private and restrict it to make it exclusive with your own rules.
+      </p>
+      <div
+        class="my-4 flex w-full max-w-prose justify-end"
+      >
+        <a
+          href="/#top"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-up-long "
+            data-icon="arrow-up-long"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="text-mobile-label-1 ms-1"
+          >
+            Top
+          </span>
+        </a>
+      </div>
+      <div
+        class="mb-12 md:mb-24 mt-4"
+      >
+        <button
+          class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-regional-accent 
+                text-white 
+                py-3 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+          type="button"
+        >
+          <a
+            class="font-medium"
+            href="/info-center"
+          >
+            Explore the Info Center
+          </a>
+        </button>
+      </div>
+    </div>
+    <div
+      class="flex justify-center bg-primary-super-light bg-marketplaceLongMobile md:bg-marketplaceLongTablet lg:bg-marketplaceLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]"
+      id="link-marketplace"
+    />
+    <h2
+      class="font-EnglishMarketJA font-bold text-mobile-page-header text-center mb-4 p-2 bg-marketplace-accent text-primary-dark "
+    >
+      マーケット
+    </h2>
+    <div
+      class="container flex flex-col items-center mx-auto my-8"
+    >
+      <p
+        class="max-w-prose"
+      >
+        One man's garbage is another man's gold. This is the area for offering or selling used goods. We created this area because we understand that when you live in a new country you end up buying a lot of items that you only use there, and when you move to a new area, you don't want to spend too much money on items you will only use for the limited time you are overseas. The ultimate goal is to create less garbage for the world - so offer or sell your items to other expats and immigrants. Some items that are great to pass down are: 
+      </p>
+      <div
+        class="flex flex-col my-4 max-w-prose"
+      >
+        <div
+          class="text-primary-dark  mb-4 mt-4"
+        >
+          <span
+            class="text-primary"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-gift "
+              data-icon="gift"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z"
+                fill="currentColor"
+              />
+            </svg>
+             
+          </span>
+          <span>
+            Microwave, toaster ovens
+          </span>
+        </div>
+        <div
+          class="text-primary-dark  mb-4"
+        >
+          <span
+            class="text-primary"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-gift "
+              data-icon="gift"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z"
+                fill="currentColor"
+              />
+            </svg>
+             
+          </span>
+          <span>
+            BBQ grills
+          </span>
+        </div>
+        <div
+          class="text-primary-dark  mb-4"
+        >
+          <span
+            class="text-primary"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-gift "
+              data-icon="gift"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z"
+                fill="currentColor"
+              />
+            </svg>
+             
+          </span>
+          <span>
+            Bicycles, snowshoes, skis
+          </span>
+        </div>
+        <div
+          class="text-primary-dark  mb-4"
+        >
+          <span
+            class="text-primary"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-gift "
+              data-icon="gift"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z"
+                fill="currentColor"
+              />
+            </svg>
+             
+          </span>
+          <span>
+            Treadmill, trampoline
+          </span>
+        </div>
+        <div
+          class="text-primary-dark  mb-4"
+        >
+          <span
+            class="text-primary"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-gift "
+              data-icon="gift"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z"
+                fill="currentColor"
+              />
+            </svg>
+             
+          </span>
+          <span>
+            Mattresses, sofas, carpets
+          </span>
+        </div>
+        <div
+          class="text-primary-dark  mb-4"
+        >
+          <span
+            class="text-primary"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-gift "
+              data-icon="gift"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z"
+                fill="currentColor"
+              />
+            </svg>
+             
+          </span>
+          <span>
+            English studying materials
+          </span>
+        </div>
+      </div>
+      <div
+        class="mb-4 flex w-full max-w-prose justify-end"
+      >
+        <a
+          href="/#top"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-up-long "
+            data-icon="arrow-up-long"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="text-mobile-label-1 ms-1"
+          >
+            Top
+          </span>
+        </a>
+      </div>
+      <div
+        class="mb-12 mt-4"
+      >
+        <button
+          class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-marketplace-accent 
+                text-primary-dark 
+                py-3 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 
+                hover:opacity-75"
+          type="button"
+        >
+          <a
+            class="font-medium"
+            href="/marketplace"
+          >
+            Discover hidden treasures
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

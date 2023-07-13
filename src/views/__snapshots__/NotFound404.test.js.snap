@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound404 matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex bg-oopsMobile bg-cover bg-center bg-no-repeat relative h-[400px] mb-[300px] md:bg-oopsTablet md:h[500px] md:mb-0 lg:bg-oopsDesktop lg:h-[800px] lg:mb-0"
+  >
+    <div
+      class="text-primary-dark mx-4 text-center top-[400px] pt-4 text-mobile-header-1 absolute md:w-[40%]  md:top-[50px] md:pt-16 lg:top-[150px] lg:w-1/2 lg:pt-10 "
+    >
+      <h1
+        class="pb-12"
+      >
+        なんてこった！ページが見つかりません。
+      </h1>
+      <a
+        class="hover:underline hover:underline-offset-4 hover:text-primary"
+        href="/"
+      >
+        ホームに戻ります
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
