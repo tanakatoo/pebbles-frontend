@@ -9,7 +9,7 @@ exports[`HowToSite matches snapshot 1`] = `
     <h1
       class="text-center font-bold text-mobile-header-1 mb-8"
     >
-      Pebblesの使い方
+      Learn Pebbles
     </h1>
     <div
       class="w-full flex flex-col pt-4 md:pt-8 pb-12 px-2 bg-primary-super-light "
@@ -27,7 +27,7 @@ exports[`HowToSite matches snapshot 1`] = `
               class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
               href="/#link-profile"
             >
-              プロフィールを変更する
+              Set up your profile
               <span
                 class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
               >
@@ -60,7 +60,7 @@ exports[`HowToSite matches snapshot 1`] = `
               class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
               href="/#link-studyBuddy"
             >
-              スタディーバディーになる・解除する
+              Becoming and delisting from study buddy
               <span
                 class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
               >
@@ -93,7 +93,7 @@ exports[`HowToSite matches snapshot 1`] = `
               class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
               href="/#link-studyBuddyUse"
             >
-              スタディーバディー掲示板の使い方
+              Using the Study Buddy Board
               <span
                 class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
               >
@@ -125,12 +125,12 @@ exports[`HowToSite matches snapshot 1`] = `
         class="max-w-prose me-auto text-mobile-section-header font-medium my-4"
         id="link-profile"
       >
-        プロフィールを変更する
+        Set up your profile
       </h2>
       <p
         class="max-w-prose mx-auto"
       >
-        日本語Once you login, click on the avatar or open up the menu on the top right corner of the page. Click on 'Profile' and below your avatar, click on the 'Edit' link. All information except for your email is public.
+        Once you login, click on the avatar or open up the menu on the top right corner of the page. Click on 'Profile' and below your avatar, click on the 'Edit' link. All information except for your email is public.
       </p>
       <div
         class="my-4 flex w-full justify-end"
@@ -156,7 +156,7 @@ exports[`HowToSite matches snapshot 1`] = `
           <span
             class="text-mobile-label-1 ms-1"
           >
-            上
+            Top
           </span>
         </a>
       </div>
@@ -164,12 +164,12 @@ exports[`HowToSite matches snapshot 1`] = `
         class="pt-4 max-w-prose me-auto text-mobile-section-header font-medium my-4"
         id="link-studyBuddy"
       >
-        スタディーバディーになる・解除する
+        Becoming and delisting from study buddy
       </h2>
       <p
         class="max-w-prose mx-auto"
       >
-        日本語By default, you are not listed as a study buddy on Pebbles. To list yourself so others can find you on the Study Buddy Board, go to edit your profile, click on edit study buddy, and toggle the 'Join study buddy' on. To unlist, simply toggle it off and the information you input for study buddy will be hidden from public.
+        By default, you are not listed as a study buddy on Pebbles. To list yourself so others can find you on the Study Buddy Board, go to edit your profile, click on edit study buddy, and toggle the 'Join study buddy' on. To unlist, simply toggle it off and the information you input for study buddy will be hidden from public.
       </p>
       <div
         class="my-4 flex w-full justify-end"
@@ -195,7 +195,7 @@ exports[`HowToSite matches snapshot 1`] = `
           <span
             class="text-mobile-label-1 ms-1"
           >
-            上
+            Top
           </span>
         </a>
       </div>
@@ -203,12 +203,12 @@ exports[`HowToSite matches snapshot 1`] = `
         class="pt-4 max-w-prose me-auto text-mobile-section-header font-medium my-4"
         id="link-studyBuddyUse"
       >
-        スタディーバディー掲示板の使い方
+        Using the Study Buddy Board
       </h2>
       <p
         class="max-w-prose mx-auto"
       >
-        日本語The board displays users in order of recently listed study buddies. To search using username, name, or their bio, type into the search bar and press Enter. To filter from categories, press the Filter button and choose the categories that you want to search for.
+        The board displays users in order of recently listed study buddies. To search using username, name, or their bio, type into the search bar and press Enter. To filter from categories, press the Filter button and choose the categories that you want to search for.
       </p>
       <div
         class="my-4 flex w-full justify-end"
@@ -234,7 +234,7 @@ exports[`HowToSite matches snapshot 1`] = `
           <span
             class="text-mobile-label-1 ms-1"
           >
-            上
+            Top
           </span>
         </a>
       </div>

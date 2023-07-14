@@ -206,7 +206,7 @@ const Profile = () => {
                                                             </>
                                                     :
                                                     <>
-                                                        <div className='flex justify-center md:w-[180px]'>
+                                                        <div className='flex justify-center md:w-max'>
                                                             <Button px="px-8"
                                                                 py="py-1"
                                                                 btnText={pageText.CTA_BTN}

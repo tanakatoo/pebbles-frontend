@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import usePageText from "../hooks/usePageText";
 import { useDispatch, useSelector } from "react-redux";
 import AuthApi from "../api/auth";
@@ -6,15 +6,19 @@ import { LOGIN } from "../reducers/actionTypes";
 import ServerError from "../components/form/ServerError";
 import { Formik, Form, ErrorMessage } from "formik"
 import registerSchema from "../components/form/validation/registerSchema";
-// import { TextInput } from "../components/form/Fields";
 import Input from "../components/form/Input";
 import { Button } from "../components/button/Button";
 import CTA from "../components/common/CTA";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import useSetToken from "../hooks/useSetToken";
+import { actionLogin } from "../reducers/actionCreator";
 
 const Register = () => {
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
+    const navigate = useNavigate()
+    const token = useSelector(state => state.profile.token)
 
     const [pageText, lang] = usePageText("register")
     const INITIAL_DATA = {
@@ -23,6 +27,15 @@ const Register = () => {
         password_check: '',
         email: ''
     }
+
+    useEffect(() => {
+        if (token) {
+            //should go to their dashboard
+            navigate('/users/dashboard')
+        }
+    }, [token])
+
+
     return (
         <div className="mb-24">
             <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
@@ -41,9 +54,11 @@ const Register = () => {
                             console.log(values)
                             console.log('submitting')
                             const res = await AuthApi.register(values.username, values.password, values.email, lang)
+                            console.log('register res', res)
                             //call dispatch to set token in profileReducer
-                            dispatch({ type: LOGIN, token: res })
-
+                            dispatch(actionLogin(res))
+                            // console.log('token in local storage', window.localStorage.getItem("token"))
+                            // navigate('/users/dashboard')
 
                         } catch (e) {
                             if (e instanceof TypeError) {
@@ -91,7 +106,7 @@ const Register = () => {
                                     placeholder=""
                                 />
 
-                                <Button lang={lang} btnText={pageText.SUBMIT} type="submit" extraClasses="mt-12" isSubmitting={formik.isSubmitting} />
+                                <Button lang={lang} btnText={pageText.SUBMIT} type="submit" extraClasses="mt-12" isSubmitting={formik.isSubmitting} testid="registerBtn" />
                                 <p className="mt-4 text-center text-gray-text">{pageText.ALREADY_ACCT} <span className="text-link hover:text-primary"><Link to="/login">{pageText.LOGIN_HERE}</Link></span></p>
                             </Form>
                         )

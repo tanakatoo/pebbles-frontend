@@ -97,23 +97,23 @@ function Dashboard() {
             </p>
             <div className='flex flex-col pt-2 pb-12 bg-primary-super-light'>
                 <div className='flex items-center justify-center flex-1'>
-                    {/* <ExploreCommunity type="studyBuddy" /> */}
+                    <ExploreCommunity type="studyBuddy" />
                 </div>
             </div >
 
             <div className='flex flex-col pt-2 pb-12 bg-regional-background'>
                 <div className='flex items-center justify-center flex-1'>
-                    {/* <ExploreCommunity type="infoCenter" /> */}
+                    <ExploreCommunity type="infoCenter" />
                 </div>
             </div >
             <div className='flex flex-col pt-2 pb-12 bg-accent-very-light'>
                 <div className='flex items-center justify-center flex-1'>
-                    {/* <ExploreCommunity type="languageTown" /> */}
+                    <ExploreCommunity type="languageTown" />
                 </div>
             </div >
             <div className='flex flex-col pt-2 pb-12 bg-marketplace-background'>
                 <div className='flex items-center justify-center flex-1'>
-                    {/* <ExploreCommunity type="marketplace" /> */}
+                    <ExploreCommunity type="marketplace" />
                 </div>
             </div >
         </div >

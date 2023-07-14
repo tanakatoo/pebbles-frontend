@@ -12,7 +12,7 @@ const ServerError = ({ msg, title }) => {
     return (
         <div className="flex justify-center">
             <div className="text-error border rounded-ml p-4 mb-8 max-w-[400px]">
-                <div className="flex mb-2 justify-center">
+                <div data-testid="serverError" className="flex mb-2 justify-center">
                     <Exclamation />
                     {title ? <span className={`ms-5 text-mobile-section-header font-medium`}>{title}</span>
                         : ''}

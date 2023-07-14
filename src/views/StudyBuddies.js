@@ -146,6 +146,7 @@ const StudyBuddies = () => {
     const closeDialogSearch = (formik) => {
         setIsDialogOpen(false)
         formik.submitForm()
+        setIsDialogOpen(false)
     }
 
     return (
@@ -166,7 +167,7 @@ const StudyBuddies = () => {
                                         <Dialog.Panel className="grow max-w-[500px] w-full h-full rounded shadow-xl bg-white p-4">
                                             <div className="flex justify-end p-4">
                                                 <X classes='cursor-pointer'
-                                                    onClick={() => setIsDialogOpen(false)} />
+                                                    onClick={() => closeDialogSearch(formik)} />
                                             </div>
                                             <Dialog.Title className='font-medium text-center text-mobile-page-header pt-4 mb-5'>
                                                 {pageText.FILTER_SB}

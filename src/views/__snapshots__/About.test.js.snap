@@ -9,7 +9,7 @@ exports[`About matches snapshot 1`] = `
     <h1
       class="text-primary-dark font-bold mx-4 px-4 rounded-ml text-center mt-8 md:mt-12 text-mobile-header-1"
     >
-      Pebblesのお話
+      Our Story
     </h1>
     <div
       class="flex flex-col mt-8 mx-2"
@@ -51,32 +51,7 @@ exports[`About matches snapshot 1`] = `
               </svg>
                
             </span>
-            Support self-learning English
-          </div>
-          <div
-            class="text-success my-2"
-          >
-            <span
-              class="text-green"
-            >
-              <svg
-                aria-hidden="true"
-                class="svg-inline--fa fa-check fa-1x "
-                data-icon="check"
-                data-prefix="fas"
-                focusable="false"
-                role="img"
-                viewBox="0 0 448 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-                  fill="currentColor"
-                />
-              </svg>
-               
-            </span>
-            Support living overseas
+            Support living in Japan
           </div>
           <div
             class="text-success my-2"
@@ -132,7 +107,7 @@ exports[`About matches snapshot 1`] = `
         <p
           class="my-4  max-w-prose"
         >
-          So here it is, my effort to gather all personal experiences living overseas and teaching English with its failures and successes, to make a community that can show you new ways to improve and help you feel at home. Learn more about me by searching for 'ktoo' from the homepage.
+          So here it is, my effort to gather all personal experiences living overseas and learning a new language, with its failures and successes, to make a community that can help you improve your language skills and feel at home. Learn more about me by searching for 'ktoo' from the homepage.
         </p>
       </div>
     </div>
@@ -154,39 +129,6 @@ exports[`About matches snapshot 1`] = `
           Learn about the 4 areas of support within your community below:
         </p>
         <div
-          class="text-center my-1"
-        >
-          <div
-            class="group"
-          >
-            <a
-              class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
-              href="/#link-support"
-            >
-              日本語Study Support
-              <span
-                class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="svg-inline--fa fa-arrow-right-long fa-1x "
-                  data-icon="arrow-right-long"
-                  data-prefix="fas"
-                  focusable="false"
-                  role="img"
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div
           class="text-center my-1 "
         >
           <div
@@ -196,7 +138,7 @@ exports[`About matches snapshot 1`] = `
               class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
               href="/#link-studyBuddy"
             >
-              スタディーバディー掲示板
+              Study Buddy Board
               <span
                 class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
               >
@@ -229,7 +171,7 @@ exports[`About matches snapshot 1`] = `
               class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
               href="/#link-town"
             >
-              英語街
+              Japanese Town
               <span
                 class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
               >
@@ -262,7 +204,7 @@ exports[`About matches snapshot 1`] = `
               class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
               href="/#link-info"
             >
-              地域案内センター
+              Regional Info Center
               <span
                 class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
               >
@@ -295,7 +237,7 @@ exports[`About matches snapshot 1`] = `
               class=" group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text"
               href="/#link-marketplace"
             >
-              マーケット
+              Marketplace
               <span
                 class="inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1"
               >
@@ -321,236 +263,14 @@ exports[`About matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="flex justify-center bg-primary-super-light bg-supportLongMobile md:bg-supportLongTablet lg:bg-supportLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]"
-      id="link-support"
-    />
-    <h2
-      class="font-medium text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-background text-primary-dark"
-    >
-      日本語Study Support
-    </h2>
-    <div
-      class="container flex flex-col items-center mx-auto my-8 md:my-12"
-    >
-      <p
-        class="max-w-prose"
-      >
-        日本語 From our survey of English learners, 90% of them did not know that reading could be a way to learn English, and that ALL of them found that reading books at their level is a great way to learn. Pebbles Community offers a digital library system called Raz Kids to help you self-learn. Raz Kids is currently used by North Americans to provide school children leveled books to improve their English reading. Pebbles Community found unique ways to help improve a foreigner's English level. Specifically, incorporating our way of using the system can help improve:
-      </p>
-      <div
-        class="flex flex-col my-4 max-w-prose"
-      >
-        <div
-          class="text-primary-dark  mb-2 mt-4"
-        >
-          <span
-            class="text-star"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-star "
-              data-icon="star"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              viewBox="0 0 576 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-                fill="currentColor"
-              />
-            </svg>
-             
-          </span>
-          Vocabulary
-        </div>
-        <p>
-          Authors repeat words within a book to help you recall the meaning. Many different genres of books are available and reading about different topics can introduce you to specific vocabulary for that topic, giving you a wide range of vocabulary.
-        </p>
-        <div
-          class="text-primary-dark  mb-2 mt-4"
-        >
-          <span
-            class="text-star"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-star "
-              data-icon="star"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              viewBox="0 0 576 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-                fill="currentColor"
-              />
-            </svg>
-             
-          </span>
-          Listening
-        </div>
-        <p>
-          Repeat listening to the book being read and you will pick up words you couldn't catch before. Closing your eyes to listen can allow you to practice listening on the phone, which can be hard for English learners.
-        </p>
-        <div
-          class="text-primary-dark  mb-2 mt-4"
-        >
-          <span
-            class="text-star"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-star "
-              data-icon="star"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              viewBox="0 0 576 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-                fill="currentColor"
-              />
-            </svg>
-             
-          </span>
-          Fluency
-        </div>
-        <p>
-          Read along with the book to practice the speed at which you should be reading at your level. As you shadow the book, you will notice the words that get you tongue tied when you try to read fast.
-        </p>
-        <div
-          class="text-primary-dark mb-2 mt-4"
-        >
-          <span
-            class="text-star"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-star "
-              data-icon="star"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              viewBox="0 0 576 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-                fill="currentColor"
-              />
-            </svg>
-             
-          </span>
-          Comprehension
-        </div>
-        <p>
-          Answer questions at the end of the book to check your understanding. These questions can give you an idea of what your weaknesses are - is it the lack of vocabulary, or is it grammar?
-        </p>
-        <div
-          class="text-primary-dark  mb-2 mt-4"
-        >
-          <span
-            class="text-star"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-star "
-              data-icon="star"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              viewBox="0 0 576 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-                fill="currentColor"
-              />
-            </svg>
-             
-          </span>
-          Pronunciation
-        </div>
-        <p>
-          Everyone has mirror neurons (means we like to imitate people, rather we want to or not) so listening to perfect English everyday will help your brain recognize what is good English. This is especially good for little kids. In addition, record yourself reading and let PEC check for pronunciation.
-        </p>
-      </div>
-      <p
-        class="max-w-prose mt-4"
-      >
-        Pebbles Community offers a one week free trial of the digital library. This includes a free assessment to check your current reading level, and access to all leveled books for a week. After that, becoming a Premium member of Pebbles Community will give you unlimited access to the digital library and many other perks to help support your learning in the best possible way. Read about our Premium Membership here .
-      </p>
-      <div
-        class="my-4 flex w-full max-w-prose justify-end"
-      >
-        <a
-          href="/#top"
-        >
-          <svg
-            aria-hidden="true"
-            class="svg-inline--fa fa-arrow-up-long "
-            data-icon="arrow-up-long"
-            data-prefix="fas"
-            focusable="false"
-            role="img"
-            viewBox="0 0 384 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"
-              fill="currentColor"
-            />
-          </svg>
-          <span
-            class="text-mobile-label-1 ms-1"
-          >
-            Top
-          </span>
-        </a>
-      </div>
-      <div
-        class="mb-12 md:mb-24 mt-4"
-      >
-        <button
-          class="drop-shadow 
-                inline-flex
-                items-center
-                justify-center
-                gap-2
-                bg-background 
-                text-primary-dark 
-                py-3 
-                px-4 
-                rounded-xl
-                disabled:opacity-50 
-                hover:opacity-75"
-          data-testid=""
-          type="button"
-        >
-          <a
-            class="font-medium"
-            href="/study-support"
-          >
-            Get my free trial
-          </a>
-        </button>
-      </div>
-    </div>
-    <div
       class="flex justify-center bg-primary-super-light bg-studyBuddyLongMobile md:bg-studyBuddyLongTablet lg:bg-studyBuddyLongDesktop bg-cover bg-bottom bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]"
       id="link-studyBuddy"
     />
     <h2
       class="font-bold text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-study-buddy-accent text-primary-dark
-            font-StudyBuddyJA"
+            font-StudyBuddyEN"
     >
-      スタディーバディー掲示板
+      Study Buddy Board
     </h2>
     <div
       class="container flex flex-col items-center mx-auto my-8"
@@ -607,7 +327,7 @@ exports[`About matches snapshot 1`] = `
            Language exchange
         </div>
         <p>
-          Find an English speaker and get help with your English while helping them with Japanese.
+          Find a Japanese speaker and get help with your Japanese while helping them with English.
         </p>
         <div
           class="text-primary-dark  mb-2 mt-4"
@@ -630,7 +350,7 @@ exports[`About matches snapshot 1`] = `
            Volunteer
         </div>
         <p>
-          Help an English speaker learn Japanese while immersing yourself in a new culture.
+          Help a Japanese speaker learn English while immersing yourself in a new culture.
         </p>
       </div>
       <div
@@ -696,7 +416,7 @@ exports[`About matches snapshot 1`] = `
     <h2
       class="font-medium font-Community text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-community-accent text-white"
     >
-      英語街
+      Japanese Town
     </h2>
     <div
       class="container flex flex-col items-center mx-auto my-8"
@@ -704,12 +424,12 @@ exports[`About matches snapshot 1`] = `
       <p
         class="max-w-prose"
       >
-        Have you ever studied by yourself and needed an answer to a question but have no where to ask? Do you feel like you are not making any improvement in English and need some motivation?
+        Have you ever studied by yourself and needed an answer to a question but have no where to ask? Do you feel like you are not making any improvement in Japanese and need some motivation?
       </p>
       <p
         class="mb-2 mt-4 max-w-prose"
       >
-        This part of the community, the Japanese Town, is a place where you can join and create groups related learning Japanese - grammar groups, vocabulary groups, how to study for the Japanese Proficiency Test groups for example. Post your questions and get answers. Test out your knowledge and answer questions to strengthen your understanding of the language. Join the 'Once a day' group to practice using the grammar and vocabulary you recently learned to answer the question of the day. 
+        This part of the community, the Japanese Town, is a place where you can join and create groups related learning Japanese - grammar groups, vocabulary groups, how to study for the Japanese Proficiency Test groups for example. Post your questions and get answers. Test out your knowledge and answer questions to strengthen your understanding of the language.
       </p>
       <div
         class="my-4 flex w-full max-w-prose justify-end"
@@ -774,7 +494,7 @@ exports[`About matches snapshot 1`] = `
     <h2
       class="font-medium font-Regional  text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-regional-accent text-white"
     >
-      地域案内センター
+      Regional Info Center
     </h2>
     <div
       class="container flex flex-col items-center mx-auto my-8"
@@ -782,7 +502,7 @@ exports[`About matches snapshot 1`] = `
       <p
         class="max-w-prose"
       >
-        This is the place where you can find valuable resources travelling to and living in an area. Do you have questions like:
+        This is the place where you can find valuable resources travelling to and living in Japan. Do you have questions like:
       </p>
       <div
         class="flex flex-col my-4 max-w-prose"
@@ -843,7 +563,7 @@ exports[`About matches snapshot 1`] = `
           class="text-primary-dark  mt-4"
         >
           <span>
-            Are there any free English lessons in London 
+            Are there any free Japanese lessons in Nagoya 
           </span>
           <span
             class="text-secondary"
@@ -869,7 +589,7 @@ exports[`About matches snapshot 1`] = `
           class="text-primary-dark mb-4 mt-4"
         >
           <span>
-            When is the best time to go to the Rocky Mountains in Canada 
+            Where in Kyushu can I see the best sakura 
           </span>
           <span
             class="text-secondary"
@@ -895,7 +615,7 @@ exports[`About matches snapshot 1`] = `
       <p
         class="max-w-prose mb-4"
       >
-        Some resources are related to the whole of the country so if you are travelling to, for example Toronto, we recommend joining the Canada group, the Ontario group, AND the Toronto group. These groups all have a resource area, and a Q and A area where you can find information and answers to your questions. The resource area can be posted anonymously please post and share your knowledge!
+        Some resources are related to the whole of the country so if you are travelling to, for example Nagoya, we recommend joining the Japan group, the Aichi group, AND the Nagoya group. These groups all have a resource area, and a Q & A area where you can find information and answers to your questions. The resource area can be posted anonymously please post and share your knowledge!
       </p>
       <p
         class="max-w-prose"
@@ -963,9 +683,9 @@ exports[`About matches snapshot 1`] = `
       id="link-marketplace"
     />
     <h2
-      class="font-EnglishMarketJA font-bold text-mobile-page-header text-center mb-4 p-2 bg-marketplace-accent text-primary-dark "
+      class="font-EnglishMarketEN font-bold text-mobile-page-header text-center mb-4 p-2 bg-marketplace-accent text-primary-dark "
     >
-      マーケット
+      Marketplace
     </h2>
     <div
       class="container flex flex-col items-center mx-auto my-8"
@@ -973,7 +693,7 @@ exports[`About matches snapshot 1`] = `
       <p
         class="max-w-prose"
       >
-        One man's garbage is another man's gold. This is the area for offering or selling used goods. We created this area because we understand that when you live in a new country you end up buying a lot of items that you only use there, and when you move to a new area, you don't want to spend too much money on items you will only use for the limited time you are overseas. The ultimate goal is to create less garbage for the world - so offer or sell your items to other expats and immigrants. Some items that are great to pass down are: 
+        One man's garbage is another man's gold. This is the area for offering or selling used goods. We created this area because we understand that when you live in a new country you end up buying a lot of items that you only use for the limited time you are overseas. The ultimate goal is to create less garbage for the world while saving some money and helping others - so offer or sell your items to other expats and immigrants. Some items that are great to pass down are: 
       </p>
       <div
         class="flex flex-col my-4 max-w-prose"
@@ -1002,7 +722,7 @@ exports[`About matches snapshot 1`] = `
              
           </span>
           <span>
-            Microwave, toaster ovens
+            Microwave, toaster ovens, stoves 
           </span>
         </div>
         <div
@@ -1029,7 +749,7 @@ exports[`About matches snapshot 1`] = `
              
           </span>
           <span>
-            BBQ grills
+            Washing machines and dryers
           </span>
         </div>
         <div
@@ -1056,7 +776,7 @@ exports[`About matches snapshot 1`] = `
              
           </span>
           <span>
-            Bicycles, snowshoes, skis
+            Bicycles
           </span>
         </div>
         <div
@@ -1083,7 +803,7 @@ exports[`About matches snapshot 1`] = `
              
           </span>
           <span>
-            Treadmill, trampoline
+            Sporting goods that you won't use back home
           </span>
         </div>
         <div
@@ -1137,7 +857,7 @@ exports[`About matches snapshot 1`] = `
              
           </span>
           <span>
-            English studying materials
+            Japanese studying materials
           </span>
         </div>
       </div>

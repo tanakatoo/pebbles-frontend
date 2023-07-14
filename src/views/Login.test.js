@@ -5,6 +5,8 @@ import Login from './Login';
 import App from '../App';
 import { waitFor } from '../utils/testSetup';
 import { act } from 'react-dom/test-utils';
+import { server } from '../utils/server'
+import { errorHandlers } from '../utils/errorHandlers';
 
 
 // Mock window.scrollTo()
@@ -25,6 +27,11 @@ beforeEach(async () => {
     fireEvent.click(changeLang);
 })
 
+afterEach(() => {
+    window.localStorage.token = null
+})
+
+
 describe('Login', () => {
     test('renders without crashing', () => {
         renderWithProviders(
@@ -44,8 +51,38 @@ describe('Login', () => {
         expect(asFragment()).toMatchSnapshot();
     });
 
+    test('invalid user login', async () => {
+        server.use(...errorHandlers)
+
+        const { getByTestId, getByLabelText, getByText } = await renderWithProviders(
+            <MemoryRouter initialEntries={["/login"]}>
+                <App />
+            </MemoryRouter>
+        );
+
+
+        let elem = getByLabelText('Username or email', { exact: false });
+        fireEvent.change(elem, { target: { value: 'helloo' } });
+        elem = getByLabelText('Password', { exact: false });
+        fireEvent.change(elem, { target: { value: 'asdfasdf' } });
+
+        // Submit form
+        await act(async () => {
+            fireEvent.click(await getByTestId(/loginFormLogin/));
+        })
+        // fireEvent.click(getByTestId(/loginFormLogin/));
+
+        // Wait for pageText to be populated
+        await waitFor(() => {
+            // expect(getByTestId('serverError')).not.toBeEmptyDOMElement();
+            expect(getByText('Invalid')).toBeInTheDocument();
+        });
+
+
+    });
+
     test('valid user login', async () => {
-        const { getByTestId, getByLabelText, getByText } = renderWithProviders(
+        const { getByTestId, getByLabelText, getByText } = await renderWithProviders(
             <MemoryRouter initialEntries={["/login"]}>
                 <App />
             </MemoryRouter>
@@ -58,10 +95,10 @@ describe('Login', () => {
         fireEvent.change(elem, { target: { value: 'asdfasdf' } });
 
         // Submit form
-        // act(() => {
-        //     fireEvent.click(getByTestId(/loginFormLogin/));
-        // })
-        fireEvent.click(getByTestId(/loginFormLogin/));
+        await act(async () => {
+            fireEvent.click(await getByTestId(/loginFormLogin/));
+        })
+        // fireEvent.click(getByTestId(/loginFormLogin/));
 
         // Wait for pageText to be populated
         await waitFor(() => {
@@ -70,5 +107,9 @@ describe('Login', () => {
 
         // Are we on the Dashboard page?
         expect(getByText(/Learn how to use Pebbles/)).toBeInTheDocument();
+        //There should not be any study buddies
+        expect(getByText(/No study buddies yet! /)).toBeInTheDocument();
     });
+
+
 });

@@ -11,13 +11,13 @@ exports[`NotFound404 matches snapshot 1`] = `
       <h1
         class="pb-12"
       >
-        なんてこった！ページが見つかりません。
+        Oops! We can't find the page you requested.
       </h1>
       <a
         class="hover:underline hover:underline-offset-4 hover:text-primary"
         href="/"
       >
-        ホームに戻ります
+        Go back home
       </a>
     </div>
   </div>

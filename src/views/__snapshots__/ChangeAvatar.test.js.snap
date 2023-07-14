@@ -8,12 +8,12 @@ exports[`ChangeAvatar matches snapshot 1`] = `
     <h1
       class="text-center font-bold text-mobile-header-1 mb-12"
     >
-      アバターを変更
+      Change Avatar
     </h1>
     <p
       class="mb-12 text-center max-w-prose"
     >
-      Jap This is under construction, so Pebbles randomly chose an avatar for you. Sorry if it doesn't represent you at all! If it really bothers you please send a message to 'ktoo' or email Pebbles at info@pebblescommunity.com and tell us what kind of avatar you want and we will try to find one for you that matches. In the meantime, please sit tight as we are working hard to get you this functionality!
+      This is under construction, so Pebbles randomly chose an avatar for you. Sorry if it doesn't represent you at all! If it really bothers you please send a message to 'ktoo' or email Pebbles at info@pebblescommunity.com and tell us what kind of avatar you want and we will try to find one for you that matches. In the meantime, please sit tight as we are working hard to get you this functionality!
     </p>
   </div>
 </DocumentFragment>
