@@ -19,7 +19,6 @@ function Search() {
     // const [data, setData, handleChange, resetData] = useFormData({ word: location.state.word })
     const formRef = useRef()
     const [pageText, lang] = usePageText('searchBar')
-
     const [selectedTabIndex, setSelectedTabIndex] = useState(0)
     const tabs = [pageText.USERS, pageText.INFO_CENTER, pageText.LANGUAGE_TOWN, pageText.MARKETPLACE]
     const goToProFile = useNavigateToProfile()
@@ -29,33 +28,14 @@ function Search() {
 
     const initialValues = { word: '' }
     let formValues = {}
-    if (location.state.from === '/') {
-        console.log('settting this')
+    if (location.state && location.state.from === '/') {
         formValues = { word: location.state.word }
     }
-    console.log(formValues)
-
 
     useEffect(() => {
-        console.log('this is from', location.state.from)
-        if (location.state.from === '/') {
-            // console.log('in here', { word: location.state.word })
-            // const e = {
-            //     target: {
-            //         name: '',
-            //         value: ''
-            //     }
-            // }
-            // e.target.name = "word"
-            // e.target.value = location.state.word
-            // console.log('this is e', e)
-            // setData({ ...data, data: location.state.word })
-            // setData({ ...data, word: location.state.word })
-            // submitSearch()
-            // formRef.current.values.word = location.state.word
-            console.log(formRef.current.values)
-            formRef.current.handleSubmit();
 
+        if (location.state && location.state.from === '/') {
+            formRef.current.handleSubmit();
         }
     }, [])
 
@@ -184,7 +164,7 @@ function Search() {
                                     <Tab.Panels>
                                         <Tab.Panel>
                                             <div className=' mx-auto'>
-                                                <div className='mt-4 flex  flex-wrap justify-center mb-12 gap-4 px-2'>
+                                                <div data-testid="results" className='mt-4 flex  flex-wrap justify-center mb-12 gap-4 px-2'>
                                                     {results.map(d =>
                                                         <Card data={d}
                                                             goToProfileOnClick={goToProFile}

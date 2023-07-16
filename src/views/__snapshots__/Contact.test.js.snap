@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="mb-24"
+  >
+    <div
+      class="flex w-full bg-primary text-white px-4 py-3 mb-8 justify-center items-center"
+    >
+      <p
+        class="mr-8 font-medium"
+      >
+        Practice and learn Japanese
+      </p>
+      <a
+        href="/study-buddies"
+      >
+        <button
+          class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-white 
+                text-primary-dark 
+                py-2 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 text-mobile-card-header font-medium}
+                hover:opacity-75"
+          data-testid=""
+          type="button"
+        >
+          <span
+            class="font-medium"
+          >
+            Study buddies
+          </span>
+        </button>
+      </a>
+    </div>
+    <div
+      class="mt-8 flex flex-col justify-center items-center mx-8"
+    >
+      <h1
+        class="mb-8 text-center text-mobile-header-2"
+        data-testid="contactTitle"
+      >
+        Contact Us
+      </h1>
+      <p
+        class="mb-[56px] max-w-prose text-center"
+      >
+        Feel free to email us at info@pebblescommunity.com or fill out the form below. We will reply within 2-3 business days.
+      </p>
+      <form
+        action="#"
+        class="flex flex-col w-full md:max-w-[500px]"
+      >
+        <div
+          class="flex flex-col w-full"
+        >
+          <label
+            class="mb-2 
+            text-mobile-section-header
+            font-medium"
+            for="name"
+          >
+            Your name
+          </label>
+          <input
+            class="mb-2 
+            rounded-ml py-3 px-4 text-black
+             placeholder-gray
+             undefined"
+            id="name"
+            name="name"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="flex flex-col w-full"
+        >
+          <label
+            class="mb-2 
+            text-mobile-section-header
+            font-medium"
+            for="subject"
+          >
+            Subject
+          </label>
+          <input
+            class="mb-2 
+            rounded-ml py-3 px-4 text-black
+             placeholder-gray
+             undefined"
+            id="subject"
+            name="subject"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="flex flex-col w-full"
+        >
+          <label
+            class="mb-2 
+            text-mobile-section-header
+            font-medium"
+            for="email"
+          >
+            Email
+          </label>
+          <input
+            class="mb-2 
+            rounded-ml py-3 px-4 text-black
+             placeholder-gray
+             undefined"
+            id="email"
+            name="email"
+            placeholder="abc@pebblescomunity.com"
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          class="flex flex-col w-full"
+        >
+          <label
+            class="mb-2 text-mobile-section-header font-medium"
+            for="msg"
+          >
+            Message
+          </label>
+          <textarea
+            class="mb-2 rounded-ml py-3 px-4 text-black placeholder-gray undefined"
+            id="msg"
+            name="msg"
+            placeholder="Your comments or questions"
+            rows="5"
+          />
+        </div>
+        <button
+          class="drop-shadow 
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-primary border-primary 
+                text-white 
+                py-3 
+                px-4 
+                rounded-xl
+                disabled:opacity-50 mt-12
+                hover:opacity-75"
+          data-testid=""
+          type="submit"
+        >
+          <span
+            class="font-medium"
+          >
+            Send
+          </span>
+        </button>
+        <p
+          class="mt-4 text-center text-gray-text"
+        >
+          Ready to register? 
+          <span
+            class="text-link hover:text-primary"
+          >
+            <a
+              href="/login"
+            >
+              Sign up here
+            </a>
+          </span>
+        </p>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;

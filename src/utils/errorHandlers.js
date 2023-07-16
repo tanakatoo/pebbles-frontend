@@ -18,9 +18,25 @@ export const errorHandlers = [
 
     //login
     rest.post('http://localhost:3001/auth/login', (req, res, ctx) => {
+        const failLogin = {
+            "error": {
+                "message": "INVALID_CREDENTIALS",
+                "status": 401
+            }
+        }
+        console.log(res(ctx.json([failLogin])))
+        return res(ctx.json([failLogin]));
+    }),
 
-        console.log(res(ctx.json(['NOT_FOUND'])))
-        return res(ctx.json(['NOT_FOUND']));
+    rest.post('http://localhost:3001/email', (req, res, ctx) => {
+        console.log('MOCK error /email');
+        const noData = {
+            "error": {
+                "message": "no data",
+                "status": 400
+            }
+        }
+        return res(ctx.json(noData));
     }),
 
 ]

@@ -49,25 +49,32 @@ function HowToSite() {
                 </div>
             </div >
 
-            <div className='container flex flex-col mx-auto'>
-                <h2 id="link-profile" className='max-w-prose me-auto text-mobile-section-header font-medium my-4'>
-                    {pageText.PROFILE}</h2>
-                <p className='max-w-prose mx-auto'>{pageText.PROFILE_BODY}</p>
+            <div className='container flex flex-col mx-auto mt-8'>
+                <div className='max-w-prose mx-auto'>
+                    <h2 id="link-profile" className='me-auto text-mobile-section-header font-medium my-4'>
+                        {pageText.PROFILE}</h2>
+                    <p>{pageText.PROFILE_BODY}</p>
+                </div>
                 <div className='my-4 flex w-full justify-end' >
                     <HashLink to="#top">
                         <AwesomeArrowUpLong />
                         <span className='text-mobile-label-1 ms-1'>{pageText.TOP}</span></HashLink></div>
 
-                <h2 id="link-studyBuddy" className='pt-4 max-w-prose me-auto text-mobile-section-header font-medium my-4'>
-                    {pageText.STUDY_BUDDY}</h2>
-                <p className='max-w-prose mx-auto'>{pageText.STUDY_BUDDY_BODY}</p>
+                <div className='max-w-prose mx-auto'>
+                    <h2 id="link-studyBuddy" className='pt-4 max-w-prose me-auto text-mobile-section-header font-medium my-4'>
+                        {pageText.STUDY_BUDDY}</h2>
+                    <p>{pageText.STUDY_BUDDY_BODY}</p>
+                </div>
                 <div className='my-4 flex w-full justify-end' >
                     <HashLink to="#top">
                         <AwesomeArrowUpLong />
                         <span className='text-mobile-label-1 ms-1'>{pageText.TOP}</span></HashLink></div>
-                <h2 id="link-studyBuddyUse" className='pt-4 max-w-prose me-auto text-mobile-section-header font-medium my-4'>
-                    {pageText.STUDY_BUDDY_USE}</h2>
-                <p className='max-w-prose mx-auto'>{pageText.STUDY_BUDDY_USE_BODY}</p>
+
+                <div className='max-w-prose mx-auto'>
+                    <h2 id="link-studyBuddyUse" className='pt-4 max-w-prose me-auto text-mobile-section-header font-medium my-4'>
+                        {pageText.STUDY_BUDDY_USE}</h2>
+                    <p>{pageText.STUDY_BUDDY_USE_BODY}</p>
+                </div>
                 <div className='my-4 flex w-full justify-end' >
                     <HashLink to="#top">
                         <AwesomeArrowUpLong />

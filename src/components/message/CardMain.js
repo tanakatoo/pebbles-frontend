@@ -23,10 +23,10 @@ function CardMain({ data }) {
       <div className='flex flex-col flex-grow px-4'>
 
         <Link to={`/messages/${username === data.from ? data.to : data.from}`}>
-          <p className={`whitespace-pre-wrap text-mobile-body-2  ${(!data.read && username === data.to) ? "text-link" : ""}`} >
+          <p className={`whitespace-pre-wrap text-mobile-body-2  ${(!data.read && username === data.to) ? "text-secondary-dark" : ""}`} >
             {username === data.from ? data.to : data.from}
           </p>
-          <p className={`${(!data.read && username === data.to) ? "text-link" : ""}`} >{message}</p>
+          <p className={`${(!data.read && username === data.to) ? "text-secondary-dark" : ""}`} >{message}</p>
         </Link >
 
       </div>

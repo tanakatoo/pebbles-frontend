@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="bg-primary-dark py-6 px-4"
+    >
+      <form
+        action="#"
+      >
+        <div
+          class="w-full flex  null gap-3"
+        >
+          <input
+            class="rounded-ml grow placeholder-gray focus:ring-none"
+            name="word"
+            placeholder="Search"
+            type="text"
+            value=""
+          />
+        </div>
+      </form>
+    </div>
+    <div
+      class="my-24 max-w-prose mx-auto w-full"
+    >
+      <p
+        class="text-center mb-8"
+      >
+        Use the search bar above to search for anything on the site.
+      </p>
+      <p
+        class="text-center mb-8"
+      >
+         Currently the search only includes users, but in the future, items from the marketplace, resources and groups from Japanese Town and Regional Information Center will be displayed.
+      </p>
+      <p
+        class="text-center"
+      >
+         Check back from time to time!
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

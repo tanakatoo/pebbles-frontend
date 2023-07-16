@@ -47,9 +47,9 @@ function Message() {
                 console.error('Type error in getting data', e)
                 setErrors(["UNKNOWN"])
             } else {
-                console.log(e[0] == 'blocked')
+
                 if (e[0] == 'blocked') {
-                    console.log('in setting errors blocked')
+
                     setErrors(["BLOCKED"])
                 } else {
                     console.error('Error getting data', e)

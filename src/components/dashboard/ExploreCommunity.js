@@ -21,7 +21,7 @@ function ExploreCommunity({ type }) {
             setErrors([])
             setDoneGettingData(false);
             const res = await StudyBuddyApi.getStudyBuddies();
-            console.log('got buddies in dashboadr', res)
+            console.log('study budy', res)
             setData(res);
             setDoneGettingData(true);
 
@@ -65,7 +65,6 @@ function ExploreCommunity({ type }) {
         func()
     }, [])
 
-    console.log(doneGettingData, data)
 
     return (
         <div className='w-full  flex flex-col'>
@@ -82,7 +81,7 @@ function ExploreCommunity({ type }) {
                 :
                 doneGettingData === true && data.length === 0 ?
                     type === "studyBuddy" ?
-                        <div className='mx-auto px-2 my-12 max-w-prose'>
+                        <div data-testid="dashStudyBuddyNoData" className='mx-auto px-2 my-12 max-w-prose'>
                             < NoData msg={pageText.NO_DATA_STUDY_BUDDY} />
                         </div>
                         :
@@ -92,7 +91,7 @@ function ExploreCommunity({ type }) {
 
                     : <>
 
-                        <div className='grow flex justify-end mb-2'>
+                        <div data-testid="dashStudyBuddyWithData" className='grow flex justify-end mb-2'>
                             <p className=' text-mobile-card-body px-2 md:px-4'>
                                 <CustomLink text={pageText.SEE_ALL} path=
                                     {type === "studyBuddy" ? `/study-buddies` :

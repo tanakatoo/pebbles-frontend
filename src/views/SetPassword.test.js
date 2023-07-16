@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { fireEvent, renderWithProviders } from '../utils/testSetup';
-import Login from './Login';
+import SetPassword from './SetPassword';
 import App from '../App';
 import { waitFor } from '../utils/testSetup';
 import { act } from 'react-dom/test-utils';
@@ -32,11 +32,11 @@ afterEach(() => {
 })
 
 
-describe('Login', () => {
+describe('SetPassword', () => {
     test('renders without crashing', () => {
         renderWithProviders(
             <MemoryRouter>
-                <Login />
+                <SetPassword />
             </MemoryRouter>
         );
     });
@@ -44,61 +44,30 @@ describe('Login', () => {
     test('matches snapshot', async () => {
         const { asFragment } = renderWithProviders(
             <MemoryRouter>
-                <Login />
+                <SetPassword />
             </MemoryRouter>
         );
 
         expect(asFragment()).toMatchSnapshot();
     });
 
-    test('invalid user login', async () => {
-        server.use(...errorHandlers)
-
+    test('valid reset password', async () => {
         const { getByTestId, getByLabelText, getByText } = await renderWithProviders(
-            <MemoryRouter initialEntries={["/login"]}>
-                <App />
+            <MemoryRouter >
+                <SetPassword />
             </MemoryRouter>
         );
 
 
-        let elem = getByLabelText('Username or email', { exact: false });
-        fireEvent.change(elem, { target: { value: 'helloo' } });
-        elem = getByLabelText('Password', { exact: false });
-        fireEvent.change(elem, { target: { value: 'asdfasdf' } });
+        let elem = getByLabelText('Password', { exact: false });
+        fireEvent.change(elem, { target: { value: 'newpassword' } });
+        elem = getByLabelText('Re-enter password', { exact: false });
+        fireEvent.change(elem, { target: { value: 'newpassword' } });
 
         // Submit form
         await act(async () => {
-            fireEvent.click(await getByTestId(/loginFormLogin/));
+            fireEvent.click(await getByText(/Reset password/));
         })
-        // fireEvent.click(getByTestId(/loginFormLogin/));
-
-        // Wait for pageText to be populated
-        await waitFor(async () => {
-            expect(getByTestId('serverError')).not.toBeEmptyDOMElement();
-            expect(await getByText('Invalid')).toBeInTheDocument();
-        });
-
-
-    });
-
-    test('valid user login', async () => {
-        const { getByTestId, getByLabelText, getByText } = await renderWithProviders(
-            <MemoryRouter initialEntries={["/login"]}>
-                <App />
-            </MemoryRouter>
-        );
-
-
-        let elem = getByLabelText('Username or email', { exact: false });
-        fireEvent.change(elem, { target: { value: 'hello' } });
-        elem = getByLabelText('Password', { exact: false });
-        fireEvent.change(elem, { target: { value: 'asdfasdf' } });
-
-        // Submit form
-        await act(async () => {
-            fireEvent.click(await getByTestId(/loginFormLogin/));
-        })
-        // fireEvent.click(getByTestId(/loginFormLogin/));
 
         // Wait for pageText to be populated
         await waitFor(() => {

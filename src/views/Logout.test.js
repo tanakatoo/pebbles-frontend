@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { renderWithProviders } from '../utils/testSetup';
-import Dashboard from './Dashboard';
+import Logout from './Logout';
 
 
 // Mock window.scrollTo()
@@ -11,19 +11,19 @@ afterAll(() => {
 });
 
 
-describe('Dashboard', () => {
-    // test('renders without crashing', () => {
-    //     renderWithProviders(
-    //         <MemoryRouter>
-    //             <Dashboard />
-    //         </MemoryRouter>
-    //     );
-    // });
+describe('Logout', () => {
+    test('renders without crashing', () => {
+        renderWithProviders(
+            <MemoryRouter>
+                <Logout />
+            </MemoryRouter>
+        );
+    });
 
     test('matches snapshot', async () => {
         const { asFragment } = renderWithProviders(
             <MemoryRouter>
-                <Dashboard />
+                <Logout />
             </MemoryRouter>
         );
 

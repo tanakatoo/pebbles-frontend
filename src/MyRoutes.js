@@ -43,7 +43,7 @@ const MyRoutes = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/learn-pebbles" element={<HowToSite />} />
+            <Route path="/faq" element={<HowToSite />} />
             <Route path="/study-buddies" element={<StudyBuddies />} />
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/contact" element={<Contact />} />

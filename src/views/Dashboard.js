@@ -92,7 +92,7 @@ function Dashboard() {
                 {pageText.EXPLORE_COMMUNITY}
             </h2>
             <p className='mb-10 text-center group'>
-                <CustomLink text={pageText.LEARN} path='/learn-pebbles' /> <span className='group-hover:text-gray-text'>
+                <CustomLink text={pageText.LEARN} path='/faq' /> <span className='group-hover:text-gray-text'>
                     <AwesomeArrowRightLong /></span>
             </p>
             <div className='flex flex-col pt-2 pb-12 bg-primary-super-light'>

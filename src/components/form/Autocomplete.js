@@ -23,9 +23,13 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
 
             res = await ExternalApi.autocompleteLocation(q, lang, newSessionToken)
 
+
+
         } else {
             //use the current sessionToken
+
             res = await ExternalApi.autocompleteLocation(q, lang, sessionToken)
+
         }
 
         return res
@@ -45,7 +49,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
 
                 setListOfLocations(res)
             } catch (e) {
-                console.error('error in autocomplete', e)
+                console.error('error gettting location', e)
                 setErrors(e)
             }
 
@@ -69,69 +73,77 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
 
         setFieldValue(name, val)
         //now need to get the long namesof the selected place using the same sessiontoken 
+        try {
+            const res = await ExternalApi.autocompleteSelectLocation(val.place_id, sessionToken)
+            setFieldValue("country_en", res.EN.country)
+            setFieldValue("state_en", res.EN.state)
+            setFieldValue("city_en", res.EN.city)
+            setFieldValue("country_ja", res.JA.country)
+            setFieldValue("state_ja", res.JA.state)
+            setFieldValue("city_ja", res.JA.city)
 
-        const res = await ExternalApi.autocompleteSelectLocation(val.place_id, sessionToken)
+            setSessionToken(undefined)
+            //reset the session token as we can't use it anymore for the next call because we used it to call already
+        } catch (e) {
+            console.error('error setting location', e)
+            setErrors(e)
+        }
 
 
-        setFieldValue("country_en", res.EN.country)
-        setFieldValue("state_en", res.EN.state)
-        setFieldValue("city_en", res.EN.city)
-        setFieldValue("country_ja", res.JA.country)
-        setFieldValue("state_ja", res.JA.state)
-        setFieldValue("city_ja", res.JA.city)
 
-        setSessionToken(undefined)
-        //reset the session token as we can't use it anymore for the next call because we used it to call already
+
     }
 
     return (
         <div className=' flex flex-col w-full'>
             <label className={`mb-2  text-mobile-section-header font-medium`} htmlFor={name}>Location</label>
-            <Field name={name} {...props}>
-                {
-                    ({ field, form }) => {
+            {console.log('errors to send is', errors)}
+            {errors.length > 0 ? <ServerError msg={errors} /> :
+                <Field name={name} {...props}>
+                    {
+                        ({ field, form }) => {
 
-                        const { setFieldValue } = form
-                        const { value } = field
+                            const { setFieldValue } = form
+                            const { value } = field
 
-                        return (
+                            return (
 
-                            < Combobox value={value.description}
-                                as='div' {...field}
-                                onChange={val => handleSelection(val, setFieldValue)}
-                                className='flex flex-col'
-                            >
-                                <Combobox.Input
-                                    displayValue={(val) => val.description}
-                                    onChange={(event) => handleChange(event.target.value)}
+                                < Combobox value={value.description}
+                                    as='div' {...field}
+                                    onChange={val => handleSelection(val, setFieldValue)}
+                                    className='flex flex-col'
+                                >
+                                    <Combobox.Input
+                                        displayValue={(val) => val.description}
+                                        onChange={(event) => handleChange(event.target.value)}
 
-                                    className={`grow rounded-ml py-3 px-4 text-black placeholder-gray `} />
-                                <Combobox.Options className=" w-max cursor-pointer">
-                                    {listOfLocations.length === 0 && (query && query.length > 3) ? (
-                                        <div className="cursor-default select-none py-2 px-4 text-gray-700">
-                                            Nothing found.
-                                        </div>)
-                                        : listOfLocations.length > 0 ?
-                                            (<div >
-                                                {listOfLocations.map((l) => (
-                                                    <Combobox.Option key={l.place_id} value={l} id={l.place_id}
-                                                        className='py-1 px-4 ui-active:bg-gray rounded-ml'>
-                                                        {l.description}
-                                                    </Combobox.Option>
-                                                ))}
-                                            </div>
-                                            )
-                                            : null
-                                    }
-                                </Combobox.Options>
-                            </Combobox>
+                                        className={`grow rounded-ml py-3 px-4 text-black placeholder-gray `} />
+                                    <Combobox.Options className=" w-max cursor-pointer">
+                                        {listOfLocations.length === 0 && (query && query.length > 3) ? (
+                                            <div className="cursor-default select-none py-2 px-4 text-gray-700">
+                                                Nothing found.
+                                            </div>)
+                                            : listOfLocations.length > 0 ?
+                                                (<div >
+                                                    {listOfLocations.map((l) => (
+                                                        <Combobox.Option key={l.place_id} value={l} id={l.place_id}
+                                                            className='py-1 px-4 ui-active:bg-gray rounded-ml'>
+                                                            {l.description}
+                                                        </Combobox.Option>
+                                                    ))}
+                                                </div>
+                                                )
+                                                : null
+                                        }
+                                    </Combobox.Options>
+                                </Combobox>
 
 
-                        )
+                            )
+                        }
                     }
-                }
-            </Field>
-            {errors.length > 0 ? <ServerError value={errors} /> : null}
+                </Field>
+            }
 
         </div >
     )

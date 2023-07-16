@@ -151,7 +151,7 @@ const Profile = () => {
                                         <div className='flex flex-col items-center gap-2'>
                                             <Avatar src={currentProfile.avatar} size='profile' link={true} username={currentProfile.username} />
 
-                                            <p>{currentProfile.username}</p>
+                                            <p data-testid="profileUsername">{currentProfile.username}</p>
                                             {currentProfile.myProfile &&
                                                 <p className='text-link text-mobile-label-2'>
                                                     <Link to="/users/profile/edit">{pageText.EDIT}</Link>

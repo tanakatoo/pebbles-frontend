@@ -18,7 +18,7 @@ const ChangePassword = () => {
     const [errors, setErrors] = useState([])
     const [flash, setFlash] = useState(null)
 
-    console.log(pageText, lang)
+
     return (
         <>
             <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
@@ -53,7 +53,7 @@ const ChangePassword = () => {
                             />
 
                             <Button
-
+                                disabled={formik.isSubmitting}
                                 btnText={pageText.SUBMIT}
                                 type="submit"
                                 lang={lang}

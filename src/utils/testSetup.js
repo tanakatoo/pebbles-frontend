@@ -15,7 +15,8 @@ const AllProviders = ({ children }) => {
 }
 
 const renderWithProviders = (ui, options) =>
-    render(ui, { wrapper: AllProviders, ...options })
+    render(ui,
+        { wrapper: AllProviders, ...options })
 
 // re-export everything
 export * from '@testing-library/react';

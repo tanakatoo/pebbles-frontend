@@ -8,18 +8,18 @@ import { Exclamation } from "../../styles/Icons"
 
 const ServerError = ({ msg, title }) => {
     const lang = useSelector(state => state.langFont.lang)
-
+    console.log('msg received in servererror', msg)
     return (
         <div className="flex justify-center">
             <div className="text-error border rounded-ml p-4 mb-8 max-w-[400px]">
-                <div data-testid="serverError" className="flex mb-2 justify-center">
+                <div className="flex mb-2 justify-center">
                     <Exclamation />
                     {title ? <span className={`ms-5 text-mobile-section-header font-medium`}>{title}</span>
                         : ''}
                 </div>
 
                 {msg.map(m =>
-                    <p className="text-black text-center text-mobile-body-3" key={uuid()}>
+                    <p data-testid="serverError" className="text-black text-center text-mobile-body-3" key={uuid()}>
                         {lang === "EN" ? serverErrors[m] ?
                             serverErrors[m].EN : serverErrors.UNKNOWN[lang]
                             : serverErrors[m] ?

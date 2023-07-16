@@ -55,9 +55,9 @@ const Contact = () => {
         <div className="mb-24">
             <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
             <div className="mt-8 flex flex-col justify-center items-center mx-8">
-                {flash && <p className="bg-accent-very-light text-primary-dark text-center p-4 mb-4">{pageText.FLASH_MSG}</p>}
+                {flash && <p data-testid="flashMsg" className="bg-accent-very-light text-primary-dark text-center p-4 mb-4">{pageText.FLASH_MSG}</p>}
                 {Object.keys(errors).length > 0 && <ServerError msg={errors} title={pageText.ERROR_TITLE} />}
-                {errors.length === 0 && <h1 className="mb-8 text-center text-mobile-header-2">{pageText.H1}</h1>}
+                {errors.length === 0 && <h1 data-testid="contactTitle" className="mb-8 text-center text-mobile-header-2">{pageText.H1}</h1>}
                 <p className="mb-[56px] max-w-prose text-center">{pageText.INFO}</p>
                 <Formik
                     initialValues={savedValues || INITIAL_DATA}
@@ -75,7 +75,7 @@ const Contact = () => {
                                 msg: values.msg,
                                 email: values.email
                             })
-
+                            console.log(res)
                             setFlash(pageText.FLASH_MSG)
                             resetForm({
                                 values: {

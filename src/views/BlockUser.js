@@ -100,7 +100,7 @@ function BlockUser() {
                             >{formik => {
                                 return (
                                     <>
-                                        <div className='col-span-full w-full m-4 flex gap-4'>
+                                        <div data-testid='blockUserError' className='col-span-full w-full m-4 flex gap-4 justify-center'>
                                             <ErrorMessage name='username' component={TextError} exclamation={true} />
                                         </div>
                                         <div className='col-span-full sticky top-0 mb-4'>
@@ -117,7 +117,7 @@ function BlockUser() {
                                                                     <AvatarWithName src={`../avatars/${d.avatar}`} username={d.username} />
                                                                 </div>
 
-                                                                <Field name='username' type="radio" value={d.username} >{
+                                                                <Field data-testid="blockUserData" name='username' type="radio" value={d.username} >{
                                                                     ({ field }) => < input type="radio" className='checked:bg-primary'  {...field} />
                                                                 }
                                                                 </Field>

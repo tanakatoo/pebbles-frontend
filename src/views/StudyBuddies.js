@@ -255,7 +255,7 @@ const StudyBuddies = () => {
 
 
                             </Dialog >
-                            <div className={`border-t border-t-gray-stroke `}>
+                            <div data-testid="pageTitlepageText" className={`border-t border-t-gray-stroke `}>
                                 <PageTitle text={pageText.TITLE}
                                     extraClasses={`${lang === "EN" ? 'font-StudyBuddyEN' : 'font-StudyBuddyJA'}
                     my-3`} />
@@ -267,8 +267,7 @@ const StudyBuddies = () => {
                                     </div>
                                     : errors.length === 0 && data.length > 0 && doneGettingData === true ?
                                         <>
-
-                                            <div className="w-full px-4 mb-3">
+                                            <div className="w-full px-4 mb-3" data-testid="studyBuddiespageText">
                                                 <SearchBar
                                                     placeholder={pageText.SEARCH_PLACEHOLDER}
                                                     btn={
@@ -317,7 +316,7 @@ const StudyBuddies = () => {
                                                     />
                                                 </div>
 
-                                                <div className='my-12'>
+                                                <div data-testid="studyBuddiesNoData" className='my-12'>
                                                     < NoData msg={pageText.NO_USERS_MSG} />
                                                 </div>
                                             </>
