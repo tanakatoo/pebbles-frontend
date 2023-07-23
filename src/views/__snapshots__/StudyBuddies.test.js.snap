@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StudyBuddies matches snapshot 1`] = `
+<DocumentFragment>
+  <form
+    action="#"
+  >
+    <div
+      style="position: fixed; top: 1px; left: 1px; width: 1px; height: 0px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px; display: none;"
+    />
+    <div
+      class="border-t border-t-gray-stroke "
+      data-testid="pageTitlepageText"
+    >
+      <h1
+        class="font-StudyBuddyEN
+                    my-3 py-4 px-2 text-center text-mobile-header-2 font-bold text-primary-dark"
+        data-testid="pageTitle"
+      >
+        Study Buddy Board
+      </h1>
+      <div
+        class=" my-24"
+      >
+        <div
+          class="w-full flex justify-center"
+        >
+          <div
+            class="inline-block h-8 w-8 rounded-full animate-spin border-r-4 border-t-4 border-l-4  align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status"
+          >
+            <span
+              class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+            >
+              Loading...
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;

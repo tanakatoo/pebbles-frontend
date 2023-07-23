@@ -1,3 +1,4 @@
+
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from "../reducers/rootReducer"
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
@@ -13,7 +14,7 @@ export const persistConfig = {
 };
 
 export const persistedReducer = persistReducer(persistConfig, rootReducer);
-let config = {
+export const store = configureStore({
     reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
@@ -21,33 +22,5 @@ let config = {
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
             }
         })
-}
-export const store = configureStore(config);
-export const persistedStore = persistStore(store);
-
-
-//
-// Do everything that's done above, except do it in a function so it can be
-// called before each test.
-//
-
-export function setupTestStore(preloadedState = null) {
-    const persistedReducer = persistReducer(persistConfig, rootReducer);
-    let config = {
-        reducer: persistedReducer,
-        middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware({
-                serializableCheck: {
-                    ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
-                }
-            })
-    }
-    if (preloadedState) {
-        config.preloadedState = preloadedState;
-    }
-
-    const store = configureStore(config);
-    const persistedStore = persistStore(store);
-
-    return [store, persistedStore];
-}
+})
+export const persistedStore = persistStore(store)

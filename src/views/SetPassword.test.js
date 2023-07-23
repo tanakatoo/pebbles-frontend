@@ -59,14 +59,14 @@ describe('SetPassword', () => {
         );
 
 
-        let elem = getByLabelText('Password', { exact: false });
+        let elem = getByLabelText('Password', { exact: true });
         fireEvent.change(elem, { target: { value: 'newpassword' } });
         elem = getByLabelText('Re-enter password', { exact: false });
         fireEvent.change(elem, { target: { value: 'newpassword' } });
 
         // Submit form
         await act(async () => {
-            fireEvent.click(await getByText(/Reset password/));
+            fireEvent.click(await getByTestId(/resetPassword/));
         })
 
         // Wait for pageText to be populated
@@ -74,11 +74,8 @@ describe('SetPassword', () => {
             expect(getByTestId('wait-for-pagetext')).not.toBeEmptyDOMElement();
         });
 
-        // Are we on the Dashboard page?
-        expect(getByText(/Learn how to use Pebbles/)).toBeInTheDocument();
-        //There should not be any study buddies
-        expect(getByText(/No study buddies yet! /)).toBeInTheDocument();
-    });
+        expect(getByText(/Password has been reset/)).toBeInTheDocument();
 
+    });
 
 });

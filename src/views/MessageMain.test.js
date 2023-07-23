@@ -43,22 +43,22 @@ beforeEach(async () => {
     fireEvent.click(changeLang);
 
     //login first - this one doesn't work
-    await act(() => {
-        store.dispatch({
-            type: LOGIN,
+    // await act(() => {
+    //     store.dispatch({
+    //         type: LOGIN,
 
-            token: 'abced',
-            profile: {
-                id: 2,
-                username: 'hello',
-                role: 'regular',
-                premium_join_date: '',
-                premium_end_date: '',
-                free_trial_start_date: '',
+    //         token: 'abced',
+    //         profile: {
+    //             id: 2,
+    //             username: 'hello',
+    //             role: 'regular',
+    //             premium_join_date: '',
+    //             premium_end_date: '',
+    //             free_trial_start_date: '',
 
-            }
-        })
-    })
+    //         }
+    //     })
+    // })
 
 
 })

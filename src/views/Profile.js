@@ -12,7 +12,7 @@ import NoData from '../components/common/NoData'
 import useSetToken from '../hooks/useSetToken'
 import Avatar from '../components/common/Avatar'
 import { Button } from "../components/button/Button"
-import { AwesomeEmptyHeart, AwesomeSolidHeart, MailWhite } from '../styles/Icons'
+import { AwesomeEmptyHeart, AwesomePenToSquare, AwesomeSolidHeart, MailWhite } from '../styles/Icons'
 import DisplayInfo from '../components/profile/DisplayInfo'
 import { actionSaveProfile } from '../reducers/actionCreator'
 import { Link } from 'react-router-dom'
@@ -102,6 +102,11 @@ const Profile = () => {
     useEffect(() => {
         //if user switches from study buddy in JA to EN, there is no 3rd tab in EN so we have to 
         //set it ourselves
+        if (lang === "JA" && selectedTabIndex === 1) {
+            setSelectedTabIndex(2)
+            // setTabs(currentProfile.myProfile && lang === "JA" ? [pageText.PROFILE, pageText.MYWAY, pageText.STUDY_BUDDY] : [pageText.PROFILE, pageText.STUDY_BUDDY])
+        }
+        console.log('selectedTabIndex is', selectedTabIndex)
         if (selectedTabIndex === 2) {
             setSelectedTabIndex(1)
         }
@@ -133,7 +138,7 @@ const Profile = () => {
     }
 
     return (
-        <div className='border-t-2 pt-4 border-gray'>
+        <div className='Profile border-t-2 pt-4 border-gray'>
             <div className={`container mx-auto mt-2 ${lang === "EN" ? 'font-poppins' : 'font-NotoSansJPRegular'}`}>
                 {errors.length > 0 ? <ServerError msg={errors} /> :
 
@@ -153,8 +158,8 @@ const Profile = () => {
 
                                             <p data-testid="profileUsername">{currentProfile.username}</p>
                                             {currentProfile.myProfile &&
-                                                <p className='text-link text-mobile-label-2'>
-                                                    <Link to="/users/profile/edit">{pageText.EDIT}</Link>
+                                                <p className='text-link hover:text-primary'>
+                                                    <Link to="/users/profile/edit"><AwesomePenToSquare /> {pageText.EDIT}</Link>
                                                 </p>}
 
                                         </div>
@@ -300,6 +305,7 @@ const Profile = () => {
                                                 {currentProfile.myProfile && lang === "JA" &&
 
                                                     <Tab.Panel>
+                                                        <p className='mb-2'>{pageText.PRIVACY_JAP_ONLY}</p>
                                                         <p>{pageText.PRIVACY}</p>
                                                         {lang === "JA" ? <>
                                                             <DisplayInfo label={pageText.ADVICE} lang={lang} data={currentProfile.myway_advice} checkExists={false} />

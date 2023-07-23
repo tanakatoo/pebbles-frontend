@@ -39,4 +39,10 @@ export const errorHandlers = [
         return res(ctx.json(noData));
     }),
 
+
+    rest.post('http://localhost:3001/auth/set-password', (req, res, ctx) => {
+        console.log('MOCK error /auth/set-password');
+        return res(ctx.json(loginResponse));
+    }),
+
 ]

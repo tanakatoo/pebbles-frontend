@@ -20,7 +20,7 @@ export const Button = ({
     return (
         <>
             <button onClick={clickMethod}
-                data-testid={testid ? `data-testid=${testid}` : ''}
+                data-testid={testid ? testid : ''}
                 className={`${noShadow ? '' : 'drop-shadow'} 
                 inline-flex
                 items-center

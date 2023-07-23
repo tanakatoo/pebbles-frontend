@@ -22,26 +22,36 @@ const ChangePassword = () => {
     return (
         <>
             <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
-            <div className="mt-8 flex flex-col justify-center items-center px-8">
+            <div className="mt-8 flex flex-col justify-center items-center px-2 md:px-8">
+                <h1 className="text-center mb-[56px] text-mobile-header-2">{pageText.H1}</h1>
+                {console.log(errors)}
                 {flash && <p className="bg-accent-very-light text-primary-dark text-center p-4 mb-4">{flash}</p>}
-                {Object.keys(errors).length > 0 && <ServerError msg={errors} />}
-                {errors.length === 0 && <h1 className="text-center mb-[56px] text-mobile-header-2">{pageText.H1}</h1>}
-                {Object.keys(errors).length > 0 && <ServerError msg={errors} />}
+                {errors.length > 0 && <ServerError msg={errors} />}
+
                 <Formik
                     initialValues={{ username: '' }}
                     validationSchema={passwordSchema}
                     onSubmit={async (values, { setSubmitting }) => {
                         setErrors([])
-                        setSubmitting(false)
+                        setFlash(null)
                         try {
                             const res = await AuthApi.changePassword(values.username, lang)
-
+                            console.log('res is', res)
                             setFlash(pageText.FLASH_MSG)
                         } catch (e) {
-                            console.log(e)
-                            setErrors(e)
+                            if (e instanceof TypeError) {
+                                //means server is down
+                                console.error("Typeerror at change password page", e)
+                                setErrors(["UNKNOWN"])
+                            } else {
+                                // console.log(e)
+                                setErrors(e)
+                            }
+                        } finally {
+                            setSubmitting(false)
                         }
-                    }}
+                    }
+                    }
                 >{(formik) => {
                     return (
                         <Form className="flex flex-col w-full max-w-[500px] mb-12">
@@ -58,7 +68,7 @@ const ChangePassword = () => {
                                 type="submit"
                                 lang={lang}
                                 extraClasses="my-8 "
-                                isSubmitting={formik.isSubmitting}
+
                             />
                         </Form>
 

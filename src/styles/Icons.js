@@ -15,6 +15,8 @@ import {
     faQuestion,
     faGift,
     faStar,
+    faPenToSquare,
+    faFilter
 } from '@fortawesome/free-solid-svg-icons'
 import exclamation from "../images/icons/exclamation.svg"
 import hamburger from "../images/icons/hamburger.svg"
@@ -46,7 +48,9 @@ export const AwesomeChevronDown = ({ onClick }) => { return (<FontAwesomeIcon ic
 export const AwesomeArrowUpLong = ({ onClick }) => { return (<FontAwesomeIcon icon={faArrowUpLong} onClick={onClick} />) }
 export const AwesomeChevronLeft = ({ onClick }) => { return (<FontAwesomeIcon icon={faChevronLeft} onClick={onClick} />) }
 export const AwesomeChevronRight = () => { return (<FontAwesomeIcon icon={faChevronRight} />) }
+export const AwesomeFilter = () => { return (<FontAwesomeIcon icon={faFilter} />) }
 export const AwesomeGift = () => { return (<FontAwesomeIcon icon={faGift} />) }
+export const AwesomePenToSquare = () => { return (<FontAwesomeIcon icon={faPenToSquare} />) }
 export const AwesomeStar = () => { return (<FontAwesomeIcon icon={faStar} />) }
 export const AwesomeQuestion = () => { return (<FontAwesomeIcon icon={faQuestion} />) }
 export const AwesomeFilterX = () => { return (<FontAwesomeIcon icon={faFilterCircleXmark} />) }

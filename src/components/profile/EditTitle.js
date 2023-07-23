@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 function EditTitle({ title, backLink }) {
     const lang = useSelector(state => state.langFont.lang)
     return (
-        <div className='flex mx-4 py-4'>
+        <div className='flex mx-4 py-8'>
             <div className='w-max'>
                 <Link to={backLink}><AwesomeChevronLeft /></Link>
             </div>

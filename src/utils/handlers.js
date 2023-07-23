@@ -151,6 +151,48 @@ const returnUser = [
     }
 ]
 
+const myProfile = {
+    "id": 2,
+    "username": "hello",
+    "name": "",
+    "email": "karmen.tanakaa@gmail.com",
+    "role": "regular",
+    "avatar": "9.jpg",
+    "sign_up_date": "2023-05-01T00:00:00.000Z",
+    "last_login_date": "2023-05-01T00:00:00.000Z",
+    "language_preference": "English",
+    "country_en": "",
+    "country_ja": "",
+    "city_en": "",
+    "city_ja": "",
+    "state_en": "",
+    "state_ja": "",
+    "gender": "male",
+    "about": "",
+    "myway_advice": "",
+    "myway_habits": "",
+    "motivational_level": "",
+    "study_time": "",
+    "premium_join_date": null,
+    "premium_end_date": null,
+    "raz_reading_level": "",
+    "study_buddy_bio": "",
+    "native_language": "",
+    "learning_language": "",
+    "language_level": "",
+    "myway_language_level": "",
+    "time_zone": "",
+    "age_range": "",
+    "study_buddy_active": false,
+    "study_buddy_purpose": "",
+    "free_trial_start_date": null,
+    "study_buddy_activate_date": null,
+    "study_buddy_types": [],
+    "goals": [],
+    "myProfile": true
+}
+
+
 export const handlers = [
 
     //login
@@ -221,6 +263,13 @@ export const handlers = [
         return res(ctx.json(continuingMsg));
     }),
 
+
+    //for continuing conversation
+    rest.post('http://localhost:3001/messages/:username/send', (req, res, ctx) => {
+        console.log('MOCK /messages/:username/send');
+        console.log(req.params)
+        return res(ctx.json(continuingMsg));
+    }),
     //get latest message from all users
     rest.get('http://localhost:3001/messages', (req, res, ctx) => {
         console.log('MOCK /messages');
@@ -231,5 +280,16 @@ export const handlers = [
     rest.get('http://localhost:3001/users/saved-users', (req, res, ctx) => {
         console.log('MOCK /users/saved-users');
         return res(ctx.json(returnUser));
+    }),
+
+
+    rest.post('http://localhost:3001/auth/set-password', (req, res, ctx) => {
+        console.log('MOCK /auth/set-password');
+        return res(ctx.json(loginResponse));
+    }),
+
+    rest.get('http://localhost:3001/users/hello', (req, res, ctx) => {
+        console.log('MOCK /users/hello');
+        return res(ctx.json(myProfile));
     }),
 ]

@@ -5,10 +5,10 @@
        "SPEAKS":"Native",
        "LEARNS":"Learning",
        "SELECT":"Select",
-       "FILTER":"Search filter",
+       "FILTER":"Filter",
        "HAS_FILTER":"Filter(s)",
        "FILTER_SB":"Filter study buddies",
-       "SEARCH_PLACEHOLDER":"Search",
+       "SEARCH_PLACEHOLDER":"Search bio, username, name",
        "FILTER_LANG_LEVEL":"Language level",
        "FILTER_TYPE":"Study buddy type",
         "FILTER_GENDER":"Gender",
@@ -16,6 +16,7 @@
         "FILTER_NATIVE_LANG":"Native language",
         "FILTER_LEARN_LANG":"Learning language",
         "APPLY_FILTERS":"Apply filters",
+        "REMOVE_FILTERS":"Remove filters",
         "NO_USERS_MSG":"No users found. Please widen your search.",
         "NO_USERS_LINK_TXT":""
         
@@ -29,7 +30,7 @@
        "FILTER":"検索フィルター",
        "HAS_FILTER":"フィルター",
        "FILTER_SB":"検索フィルター",
-       "SEARCH_PLACEHOLDER":"検索",
+       "SEARCH_PLACEHOLDER":"ユーザー名、名前、検索",
        "FILTER_LANG_LEVEL":"学習している言語レベル",
        "FILTER_TYPE":"スタディーバディータイプ",
         "FILTER_GENDER":"性別",
@@ -37,6 +38,7 @@
         "FILTER_NATIVE_LANG":"母国語",
         "FILTER_LEARN_LANG":"学習している言語",
         "APPLY_FILTERS":"フィルターを適用",
+        "REMOVE_FILTERS":"フィルターをクリア",
         "NO_USERS_MSG":"ユーザーが見つかりません。",
         "NO_USERS_LINK_TXT":""
     }

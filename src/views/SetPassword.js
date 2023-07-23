@@ -40,10 +40,10 @@ const SetPassword = () => {
         <>
 
             <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
-            <div className="mt-8 flex flex-col justify-center items-center px-8">
+            <div className="mt-8 flex flex-col justify-center items-center px-2 md:px-8">
                 {flash &&
                     <div className="bg-accent-very-light mb-4 text-primary-dark text-center p-4">
-                        <p className="">
+                        <p data-testid='wait-for-pagetext' className="">
                             {pageText.FLASH_MSG}
                         </p>
                         <p className=""><Link className="hover:underline hover:text-primary hover:underline-offset-4" to={pageText.FLASH_MSG_LINK}>{pageText.FLASH_MSG_LINK_TEXT}</Link>
@@ -67,7 +67,7 @@ const SetPassword = () => {
                         setSubmitting(false)
                         try {
                             setErrors([])
-                            console.log('submitting')
+
                             const res = await AuthApi.setPassword(values.password, lang, token)
                             //call dispatch to set token in profileReducer
                             console.log(res)
@@ -114,7 +114,9 @@ const SetPassword = () => {
                                 extraClasses="mt-12 mb-4"
                                 lang={lang}
                                 disabled={flash ? true : false}
-                                isSubmitting={formik.isSubmitting} />
+                                isSubmitting={formik.isSubmitting}
+                                testid='resetPassword'
+                            />
                         </Form>
                     )
                 }}

@@ -16,7 +16,7 @@ import StudyBuddyCardBottom from "../components/studyBuddy/StudyBuddyCardBottom"
 import { Dialog } from '@headlessui/react'
 import { Button } from "../components/button/Button"
 import SearchBar from "../components/form/SearchBar"
-import { X, AwesomeFilterX } from "../styles/Icons"
+import { X, AwesomeFilterX, AwesomeFilter } from "../styles/Icons"
 import FormikControl from "../components/form/FormikControl"
 import { Formik, Form } from "formik"
 import { Filter } from "../styles/Icons"
@@ -175,7 +175,7 @@ const StudyBuddies = () => {
                                             <div className="flex justify-end mb-6 md:mb-4 items-center hover:text-gray-text "
                                                 onClick={() => removeFilters(formik)}>
                                                 <span ><AwesomeFilterX /></span>
-                                                <span className="ps-2 cursor-pointer underline underline-offset-2">Remove filters</span>
+                                                <span className="ps-2 cursor-pointer underline underline-offset-2">{pageText.REMOVE_FILTERS}</span>
                                             </div>
                                             <div className="flex flex-col">
                                                 <div className="mb-4">
@@ -271,7 +271,7 @@ const StudyBuddies = () => {
                                                 <SearchBar
                                                     placeholder={pageText.SEARCH_PLACEHOLDER}
                                                     btn={
-                                                        <Button btnText={numFilters > 0 ? `${numFilters} ${pageText.HAS_FILTER}` : pageText.FILTER}
+                                                        <Button btnText={numFilters > 0 ? `${numFilters} ${pageText.HAS_FILTER}` : <><AwesomeFilter /> {pageText.FILTER}</>}
                                                             icon={numFilters > 0 ? <Filter /> : ""}
                                                             bkColor='bg-study-buddy-accent'
                                                             textColor='text-primary-dark'

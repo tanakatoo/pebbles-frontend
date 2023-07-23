@@ -23,7 +23,7 @@ function Avatar({ link = null, src, size = 'sm', username, noDropdownShadow = fa
         default:
             break;
     }
-    console.log('width is now ', width)
+
 
     let height
     switch (size) {
