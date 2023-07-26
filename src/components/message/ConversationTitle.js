@@ -15,7 +15,7 @@ function ConversationTitle({ src, link, username }) {
                 <Link to="/messages"><p className='ms-2'>Back</p></Link>
             </div>
             <div className='grow py-4 flex justify-center items-center gap-2 w-full pe-10'>
-                <Avatar src={src} link={link} /> <CustomLink text={username} path={link} />
+                <Avatar src={src} link={link} username={username} /> <CustomLink text={username} path={link} />
             </div>
         </div>
     )

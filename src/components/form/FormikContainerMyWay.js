@@ -15,7 +15,7 @@ import { actionSaveProfile } from "../../reducers/actionCreator"
 import useSetToken from "../../hooks/useSetToken"
 import ServerError from "./ServerError"
 import dbText from "../../text/db.json"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 const FormikContainerMyWay = ({ pageText }) => {
     const navigate = useNavigate()
@@ -25,6 +25,7 @@ const FormikContainerMyWay = ({ pageText }) => {
     const profile = useSelector(state => state.profile.profile)
     const lang = useSelector(state => state.langFont.lang)
     const [token = null] = useSetToken()
+    const location = useLocation()
 
 
     useEffect(() => {
@@ -36,6 +37,7 @@ const FormikContainerMyWay = ({ pageText }) => {
                 place_id: ''
             }
         })
+        window.scrollTo(0, 0)
     }, [])
 
 
@@ -67,7 +69,11 @@ const FormikContainerMyWay = ({ pageText }) => {
             }
         } finally {
             setSubmitting(false)
-            navigate(`/users/${profile.username}`)
+            navigate(`/users/${profile.username}`, {
+                state: {
+                    fromLocation: location.pathname
+                }
+            })
         }
 
 
@@ -149,7 +155,7 @@ const FormikContainerMyWay = ({ pageText }) => {
                                 : ''}
                             <div className="mb-4">
                                 <FormikControl control='textarea'
-
+                                    data-testid='textarea'
                                     label={pageText.HABITS}
                                     name='myway_habits'
                                     rows="5"
@@ -158,6 +164,7 @@ const FormikContainerMyWay = ({ pageText }) => {
                             <div className="mb-4">
                                 <FormikControl
                                     control='dropdown'
+                                    data-testid='mywayDropdown'
                                     label={pageText.MYWAY_LANGUAGE_LEVEL}
                                     name='myway_language_level'
                                     options={englishLevelDropdown} />
@@ -166,6 +173,7 @@ const FormikContainerMyWay = ({ pageText }) => {
                                 <FormikControl control='checkbox'
                                     label={pageText.GOALS}
                                     name='goals'
+
                                     options={goalsCheckboxes} />
                             </div>
                             <div className="mb-4">
@@ -186,7 +194,7 @@ const FormikContainerMyWay = ({ pageText }) => {
 
 
                             <div className="mb-24 mt-12 flex">
-                                <Button lang={lang} type="submit" btnText={pageText.SAVE_BTN} extraClasses="grow" />
+                                <Button testid='save' lang={lang} type="submit" btnText={pageText.SAVE_BTN} extraClasses="grow" />
                             </div>
                         </Form>
                     </div>

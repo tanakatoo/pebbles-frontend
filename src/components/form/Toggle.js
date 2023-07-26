@@ -42,6 +42,7 @@ const Toggle = ({ extraClasses = '', label, name, options, ...rest }) => {
                                                             text-mobile-section-header
                                                             font-medium'} mr-4`}>{label}</Switch.Label>
                                                 <Switch
+                                                    data-testid="studybuddyToggle"
                                                     checked={field.value}
                                                     onChange={() => handleChange(form.setFieldValue, field.value)}
                                                     className={`${field.value ? 'bg-primary' : 'bg-gray'

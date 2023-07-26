@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 import usePageText from '../hooks/usePageText'
 import EditTitle from '../components/profile/EditTitle'
 
-const ProfileEditMyWay = () => {
+const ProfileEditStudyBuddy = () => {
 
     const [pageText, lang] = usePageText("profile")
     return (
@@ -15,4 +15,4 @@ const ProfileEditMyWay = () => {
     )
 }
 
-export default ProfileEditMyWay
+export default ProfileEditStudyBuddy

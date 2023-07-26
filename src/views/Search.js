@@ -43,7 +43,7 @@ function Search() {
     const submitSearch = async (values, { setSubmitting }) => {
 
         if (values.word === '') {
-
+            console.log('no word to search')
             setDoneGettingData(true)
             setResults(null)
             setErrors([])
@@ -52,6 +52,7 @@ function Search() {
             setErrors([])
             try {
                 const res = await UserApi.findUsers({ word: values.word })
+                console.log('results of search', res)
                 setResults(res)
             } catch (e) {
                 if (e instanceof TypeError) {

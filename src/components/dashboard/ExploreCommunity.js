@@ -81,18 +81,18 @@ function ExploreCommunity({ type }) {
                 :
                 doneGettingData === true && data.length === 0 ?
                     type === "studyBuddy" ?
-                        <div data-testid="dashStudyBuddyNoData" className='mx-auto px-2 my-12 max-w-prose'>
+                        <div data-testid="dashStudyBuddyNoData" className='mx-auto px-2 md:px-4 my-12 max-w-prose'>
                             < NoData msg={pageText.NO_DATA_STUDY_BUDDY} />
                         </div>
                         :
-                        <div className='my-12'>
+                        <div className='my-12 px-2 md:px-4'>
                             < NoData msg={pageText.NO_DATA} />
                         </div>
 
-                    : <>
+                    : <div className='px-2 md:px-4'>
 
                         <div data-testid="dashStudyBuddyWithData" className='grow flex justify-end mb-2'>
-                            <p className=' text-mobile-card-body px-2 md:px-4'>
+                            <p className=' text-mobile-card-body '>
                                 <CustomLink text={pageText.SEE_ALL} path=
                                     {type === "studyBuddy" ? `/study-buddies` :
                                         type === "marketplace" ? `/marketplace` :
@@ -110,7 +110,7 @@ function ExploreCommunity({ type }) {
 
                         </div>
 
-                    </>}
+                    </div>}
         </div>
     )
 }

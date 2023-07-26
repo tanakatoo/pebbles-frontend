@@ -67,7 +67,7 @@ function Message() {
         if (msgRef.current) {
             msgRef.current.style.height = '0px';
             const scrollHeight = msgRef.current.scrollHeight;
-            console.log('scrollheight is', scrollHeight)
+
             msgRef.current.style.height = `${scrollHeight}px`;
         }
 
@@ -132,7 +132,7 @@ function Message() {
                                     <textarea ref={msgRef} id='msg' name='msg' value={msg.msg} onChange={handleChange} rows="1"
                                         className={`overflow-hidden mb-2 rounded-ml py-3 px-4 text-black placeholder-gray`} />
                                 </div>
-                                <div className='text-primary flex mx-2 cursor-pointer'><AwesomeSend size="xl" onClick={handleSubmit} /></div>
+                                <div className='text-primary flex mx-2 cursor-pointer'  ><AwesomeSend size="xl" onClick={handleSubmit} /></div>
 
                             </form>
 

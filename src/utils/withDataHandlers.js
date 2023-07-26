@@ -38,7 +38,7 @@ export const withDataHandlers = [
     //get some study buddies
     rest.get('http://localhost:3001/study-buddies/1', (req, res, ctx) => {
         console.log('MOCK with data /study-buddies/1')
-        console.log(ctx.json(studybuddyResponse))
+        console.log(studybuddyResponse)
         return res(ctx.json(studybuddyResponse));
     }),
 

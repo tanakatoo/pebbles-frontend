@@ -9,42 +9,53 @@ import { server } from '../utils/server'
 import { errorHandlers } from '../utils/errorHandlers';
 
 
+
 // Mock window.scrollTo()
 window.scrollTo = jest.fn();
 afterAll(() => {
     jest.clearAllMocks();
 });
 
-beforeEach(async () => {
-    const { getByTestId, getByLabelText, getByText } = renderWithProviders(
-        <MemoryRouter >
-            <App />
-        </MemoryRouter>
-    );
 
-    // Populate form
-    let changeLang = getByText('EN', { exact: true });
-    fireEvent.click(changeLang);
+beforeEach(async () => {
+    window.localStorage.clear()
+
 })
 
 afterEach(() => {
-    window.localStorage.token = null
+    window.localStorage.clear()
 })
 
+
+let loginResponse = {
+    token: 'abcdefg',
+    profile: {
+        id: 2,
+        username: 'hello',
+        name: 'Hello World',
+        email: "karmen.tanakaa@gmail.com",
+        role: 'regular',
+        premium_join_date: '',
+        premium_end_date: '',
+        free_trial_start_date: '',
+        study_buddy_types: [],
+        study_buddy_active: false
+    }
+};
 
 describe('ChangePassword', () => {
     test('renders without crashing', () => {
         renderWithProviders(
-            <MemoryRouter>
-                <ChangePassword />
+            <MemoryRouter initialEntries={["/change-password"]}>
+                <App />
             </MemoryRouter>
         );
     });
 
     test('matches snapshot', async () => {
         const { asFragment } = renderWithProviders(
-            <MemoryRouter>
-                <ChangePassword />
+            <MemoryRouter initialEntries={["/change-password"]}>
+                <App />
             </MemoryRouter>
         );
 
@@ -53,26 +64,46 @@ describe('ChangePassword', () => {
 
 
     test('valid email', async () => {
-        const { getByTestId, getByLabelText, getByText } = await renderWithProviders(
-            <MemoryRouter >
-                <ChangePassword />
-            </MemoryRouter >
+        const { getByTestId, findByLabelText, findByText } = renderWithProviders(
+            <MemoryRouter initialEntries={["/change-password"]}>
+                <App />
+            </MemoryRouter>
         );
 
 
-        let elem = getByLabelText('Email or username', { exact: false });
+        let elem = await findByLabelText('Email or username', { exact: false });
         fireEvent.change(elem, { target: { value: 'hello' } });
 
-        // Submit form
-        await act(async () => {
-            fireEvent.click(await getByText(/Submit/));
-        })
+        elem = await findByText(/Submit/)
+        fireEvent.click(elem);
+        elem = await findByText(/has been sent/)
+        expect(elem).toBeInTheDocument();
 
-        await waitFor(() => {
-            expect(getByText(/has been sent/)).toBeInTheDocument();
-        });
 
     });
+
+    test('works with logged in users', async () => {
+        const { getByTestId, findByLabelText, findByText } = renderWithProviders(
+            <MemoryRouter initialEntries={["/change-password"]}>
+                <App />
+            </MemoryRouter>,
+            {
+                preloadedState: { profile: loginResponse }
+            }
+        );
+
+
+        let elem = await findByLabelText('Email or username', { exact: false });
+        fireEvent.change(elem, { target: { value: 'hello' } });
+
+        elem = await findByText(/Submit/)
+        fireEvent.click(elem);
+        elem = await findByText(/has been sent/)
+        expect(elem).toBeInTheDocument();
+
+
+    });
+
 
 
 });

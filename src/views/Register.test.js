@@ -5,6 +5,10 @@ import Register from './Register';
 import App from '../App';
 import { waitFor } from '../utils/testSetup';
 import { act } from 'react-dom/test-utils';
+import {
+    server
+} from '../utils/server';
+import { rest } from 'msw';
 
 
 // Mock window.scrollTo()
@@ -14,34 +18,27 @@ afterAll(() => {
 });
 
 beforeEach(async () => {
-    const { getByTestId, getByLabelText, getByText } = renderWithProviders(
-        <MemoryRouter >
-            <App />
-        </MemoryRouter>
-    );
+    window.localStorage.clear()
 
-    // Populate form
-    let changeLang = getByText('EN', { exact: true });
-    fireEvent.click(changeLang);
 })
 
 afterEach(() => {
-    window.localStorage.token = null
+    window.localStorage.clear()
 })
 
 describe('Register', () => {
     test('renders without crashing', () => {
         renderWithProviders(
-            <MemoryRouter>
-                <Register />
+            <MemoryRouter initialEntries={["/register"]}>
+                <App />
             </MemoryRouter>
         );
     });
 
     test('matches snapshot', async () => {
         const { asFragment } = renderWithProviders(
-            <MemoryRouter>
-                <Register />
+            <MemoryRouter initialEntries={["/register"]}>
+                <App />
             </MemoryRouter>
         );
 
@@ -49,69 +46,66 @@ describe('Register', () => {
     });
 
     test('valid user registration', async () => {
-        const { getByTestId, getByLabelText, getByText } = await renderWithProviders(
+        const { findByTestId, findByLabelText, findByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/register"]}>
                 <App />
             </MemoryRouter>
         );
 
 
-        let elem = getByLabelText('Username', { exact: false });
+        let elem = await findByLabelText('Username', { exact: false });
         fireEvent.change(elem, { target: { value: 'testUser' } });
-        elem = getByLabelText('Email', { exact: false });
+        elem = await findByLabelText('Email', { exact: false });
         fireEvent.change(elem, { target: { value: 'testUser@test.com' } });
-        elem = getByLabelText('Password', { exact: true });
+        elem = await findByLabelText('Password', { exact: true });
         fireEvent.change(elem, { target: { value: 'asdfasdf' } });
-        elem = getByLabelText('Re-enter password', { exact: false });
+        elem = await findByLabelText('Re-enter password', { exact: false });
         fireEvent.change(elem, { target: { value: 'asdfasdf' } });
 
         // Submit form
-        await act(async () => {
-            fireEvent.click(await getByTestId(/registerBtn/));
-        })
-        // fireEvent.click(getByTestId(/loginFormLogin/));
+        elem = await findByTestId(/registerBtn/)
+        fireEvent.click(elem);
 
-        // Wait for pageText to be populated
-        await waitFor(() => {
-            expect(getByTestId('wait-for-pagetext')).not.toBeEmptyDOMElement();
-        });
+        // Are we on the edit?
+        elem = await findByText(/Edit account/)
+        expect(elem).toBeInTheDocument();
 
-        // Are we on the Dashboard page?
-        expect(getByText(/Learn how to use Pebbles/)).toBeInTheDocument();
-        //There should not be any study buddies
-        expect(getByText(/No study buddies yet! /)).toBeInTheDocument();
     });
 
-    // test('valid user registration', async () => {
-    //     const { getByTestId, getByLabelText, getByText } = await renderWithProviders(
-    //         <MemoryRouter initialEntries={["/register"]}>
-    //             <App />
-    //         </MemoryRouter>
-    //     );
+    test('invalid user registration', async () => {
+        const { findByTestId, findByLabelText, findByText } = renderWithProviders(
+            <MemoryRouter initialEntries={["/register"]}>
+                <App />
+            </MemoryRouter>
+        );
 
-    //     let elem = getByLabelText('Username', { exact: false });
-    //     fireEvent.change(elem, { target: { value: 'testUser' } });
-    //     elem = getByLabelText('Email', { exact: false });
-    //     fireEvent.change(elem, { target: { value: 'testUser@test.com' } });
-    //     elem = getByLabelText('Password', { exact: true });
-    //     fireEvent.change(elem, { target: { value: 'asdfasdf' } });
-    //     elem = getByLabelText('Re-enter password', { exact: false });
-    //     fireEvent.change(elem, { target: { value: 'asdfasdf' } });
+        let elem = await findByLabelText('Username', { exact: false });
+        fireEvent.change(elem, { target: { value: 'testUser' } });
+        elem = await findByLabelText('Email', { exact: false });
+        fireEvent.change(elem, { target: { value: 'testUser@test.com' } });
+        elem = await findByLabelText('Password', { exact: true });
+        fireEvent.change(elem, { target: { value: 'asdfasdf' } });
+        elem = await findByLabelText('Re-enter password', { exact: false });
+        fireEvent.change(elem, { target: { value: 'asdfasdf' } });
 
-    //     // Submit form
-    //     await act(async () => {
-    //         fireEvent.click(await getByTestId(/registerBtn/));
-    //     })
-    //     // fireEvent.click(getByTestId(/loginFormLogin/));
+        // Submit form
+        elem = await findByTestId(/registerBtn/)
+        fireEvent.click(elem);
+        server.use(
+            rest.post('http://localhost:3001/auth/register', (req, res, ctx) => {
+                console.log('MOCK invalid /auth/register');
 
-    //     // Wait for pageText to be populated
-    //     await waitFor(() => {
-    //         expect(getByTestId('wait-for-pagetext')).not.toBeEmptyDOMElement();
-    //     });
+                return res(ctx.json({
+                    "error": {
+                        "message": "INVALID_CREDENTIALS",
+                        "status": 401
+                    }
+                }).status(401));
+            }),
+        )
 
-    //     // Are we on the Dashboard page?
-    //     expect(getByText(/Learn how to use Pebbles/)).toBeInTheDocument();
-    //     //There should not be any study buddies
-    //     expect(getByText(/No study buddies yet! /)).toBeInTheDocument();
-    // });
+        elem = await findByText(/Server error/)
+        expect(elem).toBeInTheDocument();
+
+    });
 });

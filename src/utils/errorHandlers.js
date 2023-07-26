@@ -25,7 +25,7 @@ export const errorHandlers = [
             }
         }
         console.log(res(ctx.json([failLogin])))
-        return res(ctx.json([failLogin]));
+        return res(ctx.json([failLogin]).status(500));
     }),
 
     rest.post('http://localhost:3001/email', (req, res, ctx) => {
@@ -33,16 +33,21 @@ export const errorHandlers = [
         const noData = {
             "error": {
                 "message": "no data",
-                "status": 400
+                "status": 500
             }
         }
-        return res(ctx.json(noData));
+        return res(ctx.json(noData).status(500));
     }),
 
 
     rest.post('http://localhost:3001/auth/set-password', (req, res, ctx) => {
         console.log('MOCK error /auth/set-password');
-        return res(ctx.json(loginResponse));
+        return res(ctx.json(loginResponse).status(500));
     }),
 
+    rest.get('http://localhost:3001/users/blocked', (req, res, ctx) => {
+        console.log('MOCK no data /users/blocked');
+
+        return res(ctx.json([]));
+    }),
 ]

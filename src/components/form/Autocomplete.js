@@ -13,6 +13,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
     const [errors, setErrors] = useState([])
     const [autoError, setAutoError] = useState([])
     const [sessionToken, setSessionToken] = useState('')
+    const [isOpen, setIsOpen] = useState(false)
 
     const getLocationsFromAPI = async (q) => {
         let res
@@ -46,8 +47,9 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
             try {
 
                 const res = await getLocationsFromAPI(q)
-
+                console.log('res is', res)
                 setListOfLocations(res)
+                setIsOpen(true)
             } catch (e) {
                 console.error('error gettting location', e)
                 setErrors(e)
@@ -56,6 +58,12 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
         } else if (q.length === 0) {
             //user cleared locations so clear location
             setListOfLocations([])
+            setIsOpen(false)
+            console.log('isopen is set to false')
+        } else if (listOfLocations.length === 0) {
+            setIsOpen(false)
+        } else {
+            setIsOpen(true)
         }
 
     }
@@ -72,6 +80,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
         //sets the value of the place id and description
 
         setFieldValue(name, val)
+
         //now need to get the long namesof the selected place using the same sessiontoken 
         try {
             const res = await ExternalApi.autocompleteSelectLocation(val.place_id, sessionToken)
@@ -87,15 +96,20 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
         } catch (e) {
             console.error('error setting location', e)
             setErrors(e)
+        } finally {
+            console.log('in here')
+            setIsOpen(false)
         }
 
 
 
 
     }
-
+    console.log('is open is', isOpen)
+    console.log('listOfLocations', listOfLocations)
+    console.log('query', query)
     return (
-        <div className=' flex flex-col w-full'>
+        <div className='Autocomplete flex flex-col w-full'>
             <label className={`mb-2  text-mobile-section-header font-medium`} htmlFor={name}>Location</label>
             {console.log('errors to send is', errors)}
             {errors.length > 0 ? <ServerError msg={errors} /> :
@@ -110,24 +124,27 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
 
                                 < Combobox value={value.description}
                                     as='div' {...field}
+                                    data-testid="autocompleteCombo"
                                     onChange={val => handleSelection(val, setFieldValue)}
-                                    className='flex flex-col'
+                                    className='flex flex-col '
                                 >
                                     <Combobox.Input
                                         displayValue={(val) => val.description}
                                         onChange={(event) => handleChange(event.target.value)}
+                                        data-testid='autocompleteInput'
+                                        className={`grow focus:outline-none focus:ring-0 ${isOpen ? 'rounded-t-ml rounded-r-ml' : 'rounded-ml'} py-3 px-4 text-black placeholder-gray`} />
+                                    <Combobox.Options className={`${isOpen ? 'border-b border-l border-r' : ''}  w-max cursor-pointer`}>
+                                        {listOfLocations.length === 0 && (query && query.length >= 3 && isOpen) ? (
+                                            <div data-testid="autocompleteDropdown" className="cursor-default select-none py-2 px-4 text-gray-700">
 
-                                        className={`grow rounded-ml py-3 px-4 text-black placeholder-gray `} />
-                                    <Combobox.Options className=" w-max cursor-pointer">
-                                        {listOfLocations.length === 0 && (query && query.length > 3) ? (
-                                            <div className="cursor-default select-none py-2 px-4 text-gray-700">
                                                 Nothing found.
                                             </div>)
                                             : listOfLocations.length > 0 ?
                                                 (<div >
+
                                                     {listOfLocations.map((l) => (
-                                                        <Combobox.Option key={l.place_id} value={l} id={l.place_id}
-                                                            className='py-1 px-4 ui-active:bg-gray rounded-ml'>
+                                                        <Combobox.Option key={l.place_id} value={l} id={l.place_id} data-testid="autocompleteDropdown"
+                                                            className='py-1 px-4 ui-active:bg-gray-background'>
                                                             {l.description}
                                                         </Combobox.Option>
                                                     ))}

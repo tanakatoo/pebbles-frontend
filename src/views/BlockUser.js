@@ -114,7 +114,7 @@ function BlockUser() {
                                                         <React.Fragment key={uuid()} >
                                                             <div className='mx-4 py-3 flex items-center'>
                                                                 <div className='grow'>
-                                                                    <AvatarWithName src={`../avatars/${d.avatar}`} username={d.username} />
+                                                                    <AvatarWithName noDropdownShadow={true} src={`../avatars/${d.avatar}`} username={d.username} />
                                                                 </div>
 
                                                                 <Field data-testid="blockUserData" name='username' type="radio" value={d.username} >{

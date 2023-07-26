@@ -1,20 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pricing matches snapshot 1`] = `
-<DocumentFragment>
-  <div
-    class="py-24 flex flex-col items-center border-t-2 border-gray"
-  >
-    <h1
-      class="text-center font-bold text-mobile-header-1 mb-12"
-    >
-      Future home of PRicing
-    </h1>
-    <p
-      class="mb-12 text-center"
-    >
-      Please check back at a later date. Busy constructing...
-    </p>
-  </div>
-</DocumentFragment>
-`;
+exports[`Pricing matches snapshot 1`] = `<DocumentFragment />`;

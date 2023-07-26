@@ -159,151 +159,120 @@ const StudyBuddies = () => {
                 {formik => {
 
                     return (
-                        <><Form>
-                            <Dialog open={isDialogOpen} onClose={() => closeDialogSearch(formik)} className="relative z-50">
-                                <div className="fixed inset-0 bg-gray/75" aria-hidden="true" />
-                                <div className="fixed inset-0 overflow-y-auto">
-                                    <div className="flex min-h-full max-w-full p-4 justify-center">
-                                        <Dialog.Panel className="grow max-w-[500px] w-full h-full rounded shadow-xl bg-white p-4">
-                                            <div className="flex justify-end p-4">
-                                                <X classes='cursor-pointer'
-                                                    onClick={() => closeDialogSearch(formik)} />
-                                            </div>
-                                            <Dialog.Title className='font-medium text-center text-mobile-page-header pt-4 mb-5'>
-                                                {pageText.FILTER_SB}
-                                            </Dialog.Title>
-                                            <div className="flex justify-end mb-6 md:mb-4 items-center hover:text-gray-text "
-                                                onClick={() => removeFilters(formik)}>
-                                                <span ><AwesomeFilterX /></span>
-                                                <span className="ps-2 cursor-pointer underline underline-offset-2">{pageText.REMOVE_FILTERS}</span>
-                                            </div>
-                                            <div className="flex flex-col">
-                                                <div className="mb-4">
-                                                    <FormikControl
-                                                        control='listbox'
-                                                        label={pageText.FILTER_TYPE}
-                                                        select={pageText.SELECT}
-                                                        name='study_buddy_types'
-                                                        data={formik.values.study_buddy_types}
-                                                        options={studyBuddyTypeOptions} />
+                        <div data-testid="studyBuddyPage" className="StudyBuddies">
+                            <Form>
+                                <Dialog open={isDialogOpen} onClose={() => closeDialogSearch(formik)} className="relative z-50">
+                                    <div className="fixed inset-0 bg-gray/75" aria-hidden="true" />
+                                    <div className="fixed inset-0 overflow-y-auto">
+                                        <div className="flex min-h-full max-w-full p-4 justify-center">
+                                            <Dialog.Panel className="grow max-w-[500px] w-full h-full rounded shadow-xl bg-white p-4">
+                                                <div className="flex justify-end p-4">
+                                                    <X classes='cursor-pointer'
+                                                        onClick={() => closeDialogSearch(formik)} />
+                                                </div>
+                                                <Dialog.Title className='font-medium text-center text-mobile-page-header pt-4 mb-5'>
+                                                    {pageText.FILTER_SB}
+                                                </Dialog.Title>
+                                                <div className="flex justify-end mb-6 md:mb-4 items-center hover:text-gray-text "
+                                                    onClick={() => removeFilters(formik)}>
+                                                    <span ><AwesomeFilterX /></span>
+                                                    <span className="ps-2 cursor-pointer underline underline-offset-2">{pageText.REMOVE_FILTERS}</span>
+                                                </div>
+                                                <div className="flex flex-col">
+                                                    <div className="mb-4">
+                                                        <FormikControl
+                                                            control='listbox'
+                                                            label={pageText.FILTER_TYPE}
+                                                            select={pageText.SELECT}
+                                                            name='study_buddy_types'
+                                                            data={formik.values.study_buddy_types}
+                                                            options={studyBuddyTypeOptions} />
 
-                                                </div>
-                                                <div className="mb-4">
-                                                    <FormikControl
-                                                        control='listbox'
-                                                        label={pageText.FILTER_NATIVE_LANG}
-                                                        select={pageText.SELECT}
-                                                        name='native_language'
-                                                        data={formik.values.native_language}
-                                                        options={languageOptions} />
-                                                </div>
-                                                <div className="mb-4">
-                                                    <FormikControl
-                                                        control='listbox'
-                                                        label={pageText.FILTER_LEARN_LANG}
-                                                        select={pageText.SELECT}
-                                                        name='learning_language'
-                                                        data={formik.values.learning_language}
-                                                        options={languageOptions} />
-                                                </div>
-                                                <div className="mb-4">
-                                                    <FormikControl
-                                                        control='listbox'
-                                                        label={pageText.FILTER_LANG_LEVEL}
-                                                        name='language_level'
-                                                        select={pageText.SELECT}
-                                                        data={formik.values.language_level}
-                                                        options={englishLevelOptions} />
+                                                    </div>
+                                                    <div className="mb-4">
+                                                        <FormikControl
+                                                            control='listbox'
+                                                            label={pageText.FILTER_NATIVE_LANG}
+                                                            select={pageText.SELECT}
+                                                            name='native_language'
+                                                            data={formik.values.native_language}
+                                                            options={languageOptions} />
+                                                    </div>
+                                                    <div className="mb-4">
+                                                        <FormikControl
+                                                            control='listbox'
+                                                            label={pageText.FILTER_LEARN_LANG}
+                                                            select={pageText.SELECT}
+                                                            name='learning_language'
+                                                            data={formik.values.learning_language}
+                                                            options={languageOptions} />
+                                                    </div>
+                                                    <div className="mb-4">
+                                                        <FormikControl
+                                                            control='listbox'
+                                                            label={pageText.FILTER_LANG_LEVEL}
+                                                            name='language_level'
+                                                            select={pageText.SELECT}
+                                                            data={formik.values.language_level}
+                                                            options={englishLevelOptions} />
+                                                    </div>
+
+                                                    <div className="mb-4">
+                                                        <FormikControl
+                                                            control='listbox'
+                                                            label={pageText.TIME_ZONE}
+                                                            name='time_zone'
+                                                            select={pageText.SELECT}
+                                                            data={formik.values.time_zone}
+                                                            options={timezoneOptions} />
+                                                    </div>
+                                                    <div className="mb-4">
+                                                        <FormikControl
+                                                            control='listbox'
+                                                            label={pageText.FILTER_AGE_RANGE}
+                                                            name='age_range'
+                                                            select={pageText.SELECT}
+                                                            data={formik.values.age_range}
+                                                            options={ageOptions} />
+                                                    </div>
+                                                    <div className="mb-4">
+                                                        <FormikControl
+                                                            control='listbox'
+                                                            label={pageText.FILTER_GENDER}
+                                                            name='gender'
+                                                            select={pageText.SELECT}
+                                                            data={formik.values.gender}
+                                                            options={genderOptions} />
+                                                    </div>
+
+                                                    <div className="mb-24 mt-12 flex">
+                                                        <Button lang={lang} type="button" btnText={pageText.APPLY_FILTERS} extraClasses="grow bg-study-buddy-accent " textColor="text-primary-dark" clickMethod={formik.submitForm} />
+                                                    </div>
                                                 </div>
 
-                                                <div className="mb-4">
-                                                    <FormikControl
-                                                        control='listbox'
-                                                        label={pageText.TIME_ZONE}
-                                                        name='time_zone'
-                                                        select={pageText.SELECT}
-                                                        data={formik.values.time_zone}
-                                                        options={timezoneOptions} />
-                                                </div>
-                                                <div className="mb-4">
-                                                    <FormikControl
-                                                        control='listbox'
-                                                        label={pageText.FILTER_AGE_RANGE}
-                                                        name='age_range'
-                                                        select={pageText.SELECT}
-                                                        data={formik.values.age_range}
-                                                        options={ageOptions} />
-                                                </div>
-                                                <div className="mb-4">
-                                                    <FormikControl
-                                                        control='listbox'
-                                                        label={pageText.FILTER_GENDER}
-                                                        name='gender'
-                                                        select={pageText.SELECT}
-                                                        data={formik.values.gender}
-                                                        options={genderOptions} />
-                                                </div>
-
-                                                <div className="mb-24 mt-12 flex">
-                                                    <Button lang={lang} type="button" btnText={pageText.APPLY_FILTERS} extraClasses="grow bg-study-buddy-accent " textColor="text-primary-dark" clickMethod={formik.submitForm} />
-                                                </div>
-                                            </div>
-
-                                        </Dialog.Panel>
-                                    </div >
-                                </div>
+                                            </Dialog.Panel>
+                                        </div >
+                                    </div>
 
 
-                            </Dialog >
-                            <div data-testid="pageTitlepageText" className={`border-t border-t-gray-stroke `}>
-                                <PageTitle text={pageText.TITLE}
-                                    extraClasses={`${lang === "EN" ? 'font-StudyBuddyEN' : 'font-StudyBuddyJA'}
+                                </Dialog >
+                                <div data-testid="pageTitlepageText" className={`border-t border-t-gray-stroke `}>
+                                    <PageTitle text={pageText.TITLE}
+                                        extraClasses={`${lang === "EN" ? 'font-StudyBuddyEN' : 'font-StudyBuddyJA'}
                     my-3`} />
 
-                                {errors.length > 0 && <div><ServerError msg={errors} /></div>}
-                                {data.length === 0 && errors.length === 0 && doneGettingData === false ?
-                                    <div className=' my-24'>
-                                        <Spinner />
-                                    </div>
-                                    : errors.length === 0 && data.length > 0 && doneGettingData === true ?
-                                        <>
-                                            <div className="w-full px-4 mb-3" data-testid="studyBuddiespageText">
-                                                <SearchBar
-                                                    placeholder={pageText.SEARCH_PLACEHOLDER}
-                                                    btn={
-                                                        <Button btnText={numFilters > 0 ? `${numFilters} ${pageText.HAS_FILTER}` : <><AwesomeFilter /> {pageText.FILTER}</>}
-                                                            icon={numFilters > 0 ? <Filter /> : ""}
-                                                            bkColor='bg-study-buddy-accent'
-                                                            textColor='text-primary-dark'
-                                                            px='px-8'
-                                                            lang={lang}
-                                                            clickMethod={() => setIsDialogOpen(true)} />
-                                                    }
-                                                    name='searchWord'
-                                                    onSubmit={onSubmit}
-                                                />
-                                            </div>
-                                            <div className='mt-4 flex flex-wrap justify-center mb-12 gap-4 px-2'>
-                                                {data.map(d =>
-                                                    <Card data={d}
-                                                        goToProfileOnClick={goToProFile}
-                                                        key={uuid()}
-                                                        buddy={true}
-                                                        topRight={<StudyBuddyCardTopRight timeZone={d.time_zone} lang={lang} />}
-                                                        underUsername={<StudyBuddyCardUnderUsername data={d} lang={lang} pageText={pageText} />}
-                                                        bottom={<StudyBuddyCardBottom data={d} lang={lang} />}
-                                                    />)}
-
-                                            </div>
-                                        </> :
-                                        doneGettingData === true && data.length === 0 ?
+                                    {errors.length > 0 && <div><ServerError msg={errors} /></div>}
+                                    {data.length === 0 && errors.length === 0 && doneGettingData === false ?
+                                        <div className=' my-24'>
+                                            <Spinner />
+                                        </div>
+                                        : errors.length === 0 && data.length > 0 && doneGettingData === true ?
                                             <>
-
-                                                <div className="w-full px-4 mb-3">
+                                                <div className="w-full px-4 mb-3" data-testid="studyBuddiespageText">
                                                     <SearchBar
                                                         placeholder={pageText.SEARCH_PLACEHOLDER}
                                                         btn={
-                                                            <Button btnText={numFilters > 0 ? `${numFilters} ${pageText.HAS_FILTER}` : pageText.FILTER}
+                                                            <Button btnText={numFilters > 0 ? `${numFilters} ${pageText.HAS_FILTER}` : <><AwesomeFilter /> {pageText.FILTER}</>}
                                                                 icon={numFilters > 0 ? <Filter /> : ""}
                                                                 bkColor='bg-study-buddy-accent'
                                                                 textColor='text-primary-dark'
@@ -315,17 +284,49 @@ const StudyBuddies = () => {
                                                         onSubmit={onSubmit}
                                                     />
                                                 </div>
+                                                <div className='mt-4 flex flex-wrap justify-center mb-12 gap-4 px-2'>
+                                                    {data.map(d =>
+                                                        <Card data={d}
+                                                            goToProfileOnClick={goToProFile}
+                                                            key={uuid()}
+                                                            buddy={true}
+                                                            topRight={<StudyBuddyCardTopRight timeZone={d.time_zone} lang={lang} />}
+                                                            underUsername={<StudyBuddyCardUnderUsername data={d} lang={lang} pageText={pageText} />}
+                                                            bottom={<StudyBuddyCardBottom data={d} lang={lang} />}
+                                                        />)}
 
-                                                <div data-testid="studyBuddiesNoData" className='my-12'>
-                                                    < NoData msg={pageText.NO_USERS_MSG} />
                                                 </div>
-                                            </>
+                                            </> :
+                                            doneGettingData === true && data.length === 0 ?
+                                                <>
+
+                                                    <div className="w-full px-4 mb-3">
+                                                        <SearchBar
+                                                            placeholder={pageText.SEARCH_PLACEHOLDER}
+                                                            btn={
+                                                                <Button btnText={numFilters > 0 ? `${numFilters} ${pageText.HAS_FILTER}` : pageText.FILTER}
+                                                                    icon={numFilters > 0 ? <Filter /> : ""}
+                                                                    bkColor='bg-study-buddy-accent'
+                                                                    textColor='text-primary-dark'
+                                                                    px='px-8'
+                                                                    lang={lang}
+                                                                    clickMethod={() => setIsDialogOpen(true)} />
+                                                            }
+                                                            name='searchWord'
+                                                            onSubmit={onSubmit}
+                                                        />
+                                                    </div>
+
+                                                    <div data-testid="studyBuddiesNoData" className='my-12'>
+                                                        < NoData msg={pageText.NO_USERS_MSG} />
+                                                    </div>
+                                                </>
 
 
-                                            : ''}
-                            </div >
-                        </Form >
-                        </>
+                                                : ''}
+                                </div >
+                            </Form >
+                        </div>
                     )
                 }}
 

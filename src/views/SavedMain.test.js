@@ -13,60 +13,76 @@ afterAll(() => {
     jest.clearAllMocks();
 });
 
-beforeEach(async () => {
-    const { getByTestId, getByLabelText, getByText } = renderWithProviders(
-        <MemoryRouter >
-            <App />
-        </MemoryRouter>
-    );
 
-    // Populate form
-    let changeLang = getByText('EN', { exact: true });
-    fireEvent.click(changeLang);
+beforeEach(async () => {
+    window.localStorage.clear()
+
 })
 
 afterEach(() => {
-    window.localStorage.token = null
+    window.localStorage.clear()
 })
+
+let loginResponse = {
+    token: 'abcdefg',
+    profile: {
+        id: 2,
+        username: 'hello',
+        name: 'Hello World',
+        email: "karmen.tanakaa@gmail.com",
+        role: 'regular',
+        premium_join_date: '',
+        premium_end_date: '',
+        free_trial_start_date: '',
+        study_buddy_types: [],
+        study_buddy_active: false
+    }
+};
 
 describe('SavedMain', () => {
     test('renders without crashing', () => {
         renderWithProviders(
-            <MemoryRouter>
-                <SavedMain />
-            </MemoryRouter>
+            <MemoryRouter initialEntries={["/users/saved"]}>
+                <App />
+            </MemoryRouter>,
+            {
+                preloadedState: { profile: loginResponse }
+            }
         );
     });
 
     test('matches snapshot', async () => {
         const { asFragment } = renderWithProviders(
-            <MemoryRouter>
-                <SavedMain />
-            </MemoryRouter>
+            <MemoryRouter initialEntries={["/users/saved"]}>
+                <App />
+            </MemoryRouter>,
+            {
+                preloadedState: { profile: loginResponse }
+            }
         );
 
         expect(asFragment()).toMatchSnapshot();
     });
 
     test('Click on users and displays users that were saved', async () => {
-        const { getByTestId, getByLabelText, getByText } = await renderWithProviders(
-            <MemoryRouter >
-                <SavedMain />
-            </MemoryRouter>
+        const { findByTestId, findByLabelText, findByText } = renderWithProviders(
+            <MemoryRouter initialEntries={["/users/saved"]}>
+                <App />
+            </MemoryRouter>,
+            {
+                preloadedState: { profile: loginResponse }
+            }
         );
 
 
-        // Submit form
-        // await act(async () => {
-        //     fireEvent.click(await getByText(/Users/));
-        // })
-        fireEvent.click(await getByText(/Users/));
+        let elem = await findByText(/Users/)
+        fireEvent.click(elem);
         // fireEvent.click(getByTestId(/loginFormLogin/));
 
         // Wait for pageText to be populated
-        await waitFor(() => {
-            expect(getByTestId('pageTitle')).not.toBeEmptyDOMElement();
-        });
+        elem = await findByText(/Saved users/)
+        expect(elem).toBeInTheDocument();
+
 
     });
 

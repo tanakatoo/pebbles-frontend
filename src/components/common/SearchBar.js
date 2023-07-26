@@ -23,6 +23,7 @@ function SearchBar({ name, data, onSubmit, handleChange, btn = false }) {
             {btn ? btn : null}
             <Field name={name} value={data} >{
                 ({ field }) => < input type="text"
+                    data-testid='searchinput'
                     className={`rounded-ml grow placeholder-gray focus:ring-none`}
                     placeholder={searchText[lang].PLACEHOLDER}
                     {...field} />

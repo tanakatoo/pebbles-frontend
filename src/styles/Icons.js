@@ -56,7 +56,7 @@ export const AwesomeQuestion = () => { return (<FontAwesomeIcon icon={faQuestion
 export const AwesomeFilterX = () => { return (<FontAwesomeIcon icon={faFilterCircleXmark} />) }
 export const AwesomeUser = () => { return (<FontAwesomeIcon icon={faUserLarge} />) }
 export const AwesomeSquareCheck = () => { return (<FontAwesomeIcon icon={faSquareCheck} />) }
-export const AwesomeSend = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faPaperPlane} onClick={onClick} size={size} />) }
+export const AwesomeSend = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon data-testid='send' icon={faPaperPlane} onClick={onClick} size={size} />) }
 export const AwesomeEmptyHeart = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faHeartEmpty} onClick={onClick} size={size} />) }
 export const AwesomeSolidHeart = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faHeart} onClick={onClick} size={size} />) }
 export const AwesomeCaretRight = ({ onClick, size = '1x' }) => { return (<FontAwesomeIcon icon={faCaretRight} onClick={onClick} size={size} />) }

@@ -15,10 +15,10 @@ function CardMain({ data }) {
 
   return (
     <div className={`pb-8 col-span-full flex items-center`}>
-
+      {console.log('what is username', username)}
       <Avatar link={`/messages/${username === data.from ? data.to : data.from}`}
-        src={username === data.from ? data.toavatar : data.fromavatar} />
-
+        src={username === data.from ? data.toavatar : data.fromavatar}
+        username={username === data.from ? data.to : data.from} />
 
       <div className='flex flex-col flex-grow px-4'>
 

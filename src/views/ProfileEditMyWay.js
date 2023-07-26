@@ -8,7 +8,7 @@ const ProfileEditMyWay = () => {
 
     const [pageText, lang] = usePageText("profile")
     return (
-        <div>
+        <div data-testid="profileEditMyWay" className='ProfileEditMyWay'>
             <EditTitle title={pageText.EDIT_MYWAY} backLink={`/users/profile/edit`} />
             <FormikContainerMyWay pageText={pageText} />
 

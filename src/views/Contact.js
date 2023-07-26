@@ -57,32 +57,32 @@ const Contact = () => {
             <div className="mt-8 flex flex-col justify-center items-center mx-8">
                 {flash && <p data-testid="flashMsg" className="bg-accent-very-light text-primary-dark text-center p-4 mb-4">{pageText.FLASH_MSG}</p>}
                 {Object.keys(errors).length > 0 && <ServerError msg={errors} title={pageText.ERROR_TITLE} />}
-                {errors.length === 0 && <h1 data-testid="contactTitle" className="mb-8 text-center text-mobile-header-2">{pageText.H1}</h1>}
+                {errors.length === 0 && <h1 className="mb-8 text-center text-mobile-header-2">{pageText.H1}</h1>}
                 <p className="mb-[56px] max-w-prose text-center">{pageText.INFO}</p>
                 <Formik
                     initialValues={savedValues || INITIAL_DATA}
                     validationSchema={contactSchema}
                     enableReinitialize
                     onSubmit={async (values, { setSubmitting, resetForm }) => {
-                        console.log('submitting')
+
                         setErrors([])
                         try {
                             console.log(values)
-                            console.log('submitting')
+
                             const res = await EmailApi.sendToInfo({
                                 name: values.name,
                                 subject: values.subject,
                                 msg: values.msg,
                                 email: values.email
                             })
-                            console.log(res)
+
                             setFlash(pageText.FLASH_MSG)
                             resetForm({
                                 values: {
                                     ...INITIAL_DATA
                                 }
                             })
-
+                            console.log('should not be here')
                             window.scrollTo(0, 0)
                         } catch (e) {
                             if (e instanceof TypeError) {
@@ -93,6 +93,7 @@ const Contact = () => {
                                 console.error("Unknown error at contact us page", e)
                                 setErrors(e)
                             }
+                            console.log('yeah got error')
                         } finally {
                             setSubmitting(false)
                         }

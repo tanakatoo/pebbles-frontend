@@ -16,19 +16,12 @@ afterAll(() => {
 });
 
 beforeEach(async () => {
-    const { getByTestId, getByLabelText, getByText } = renderWithProviders(
-        <MemoryRouter >
-            <App />
-        </MemoryRouter>
-    );
+    window.localStorage.clear()
 
-    // Populate form
-    let changeLang = getByText('EN', { exact: true });
-    fireEvent.click(changeLang);
 })
 
 afterEach(() => {
-    window.localStorage.token = null
+    window.localStorage.clear()
 })
 
 
@@ -52,29 +45,29 @@ describe('SetPassword', () => {
     });
 
     test('valid reset password', async () => {
-        const { getByTestId, getByLabelText, getByText } = await renderWithProviders(
+        const { findByTestId, findByLabelText, findByText } = renderWithProviders(
             <MemoryRouter >
                 <SetPassword />
             </MemoryRouter>
         );
 
 
-        let elem = getByLabelText('Password', { exact: true });
+        let elem = await findByLabelText('Password', { exact: true });
         fireEvent.change(elem, { target: { value: 'newpassword' } });
-        elem = getByLabelText('Re-enter password', { exact: false });
+        elem = await findByLabelText('Re-enter password', { exact: false });
         fireEvent.change(elem, { target: { value: 'newpassword' } });
 
         // Submit form
-        await act(async () => {
-            fireEvent.click(await getByTestId(/resetPassword/));
-        })
+        elem = await findByTestId(/resetPassword/)
+        fireEvent.click(elem);
+
 
         // Wait for pageText to be populated
-        await waitFor(() => {
-            expect(getByTestId('wait-for-pagetext')).not.toBeEmptyDOMElement();
-        });
+        elem = await findByTestId('wait-for-pagetext')
+        expect(elem).not.toBeEmptyDOMElement();
 
-        expect(getByText(/Password has been reset/)).toBeInTheDocument();
+        elem = await findByText(/Password has been reset/)
+        expect(elem).toBeInTheDocument();
 
     });
 

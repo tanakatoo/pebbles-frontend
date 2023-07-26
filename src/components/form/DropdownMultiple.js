@@ -21,7 +21,6 @@ const DropdownMultiple = ({ name, label, options, data, select }) => {
     const [selectedItem, setSelectedItem] = useState(data)
 
     const handleSelectedLevel = (setFieldValue, val) => {
-
         setSelectedItem(val);
         setFieldValue(name, val)
         setIsOpen(true);

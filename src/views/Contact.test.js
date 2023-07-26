@@ -1,7 +1,8 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { renderWithProviders } from '../utils/testSetup';
+import { findByText, renderWithProviders } from '../utils/testSetup';
 import Contact from './Contact';
+import App from '../App';
 import { waitFor } from '../utils/testSetup';
 import { fireEvent } from '../utils/testSetup';
 import { act } from 'react-dom/test-utils';
@@ -14,20 +15,29 @@ afterAll(() => {
     jest.clearAllMocks();
 });
 
+beforeEach(async () => {
+    window.localStorage.clear()
+
+})
+
+afterEach(() => {
+    window.localStorage.clear()
+})
+
 
 describe('Contact', () => {
     test('renders without crashing', () => {
         renderWithProviders(
-            <MemoryRouter>
-                <Contact />
+            <MemoryRouter initialEntries={["/contact"]}>
+                <App />
             </MemoryRouter>
         );
     });
 
     test('matches snapshot', async () => {
         const { asFragment } = renderWithProviders(
-            <MemoryRouter>
-                <Contact />
+            <MemoryRouter initialEntries={["/contact"]}>
+                <App />
             </MemoryRouter>
         );
 
@@ -35,69 +45,57 @@ describe('Contact', () => {
     });
 
     test('when email is sent a message is shown on screen', async () => {
-        const { getByTestId, getByText, getByLabelText } = renderWithProviders(
-            <MemoryRouter>
-                <Contact />
+        const { findByTestId, getByText, findByText, findByLabelText } = renderWithProviders(
+            <MemoryRouter initialEntries={["/contact"]}>
+                <App />
             </MemoryRouter>
         );
 
-        // Wait for pageText to be populated
-        await waitFor(() => {
-            expect(getByTestId('contactTitle')).not.toBeEmptyDOMElement();
-        });
 
-
-        let elem = getByLabelText('Your name', { exact: false });
+        let elem = await findByLabelText('Your name', { exact: false });
         fireEvent.change(elem, { target: { value: 'hello' } });
-        elem = getByLabelText('Email', { exact: false });
+        elem = await findByLabelText('Email', { exact: false });
         fireEvent.change(elem, { target: { value: 'hello@test.com' } });
-        elem = getByLabelText('Message', { exact: false });
+        elem = await findByLabelText('Message', { exact: false });
         fireEvent.change(elem, { target: { value: 'The message to send you' } });
 
         // Submit form
-        await act(async () => {
-            fireEvent.click(await getByText(/Send/));
-        })
+        elem = await findByText(/Send/)
+        fireEvent.click(elem);
+
 
         // Wait for pageText to be populated
-        await waitFor(async () => {
+        elem = await findByText(/comments or questions/)
+        expect(elem).toBeInTheDocument();
 
-            expect(await getByText(/comments or questions/)).toBeInTheDocument();
-        });
 
     });
 
-    test('when error, error is displayed on scren', async () => {
+    test('when error, error is displayed on screen', async () => {
         server.use(...errorHandlers)
-        const { getByTestId, getByText, getByLabelText } = renderWithProviders(
-            <MemoryRouter>
-                <Contact />
+        const { getByTestId, findByText, findByLabelText } = renderWithProviders(
+            <MemoryRouter initialEntries={["/contact"]}>
+                <App />
             </MemoryRouter>
         );
 
-        // Wait for pageText to be populated
-        await waitFor(() => {
-            expect(getByTestId('contactTitle')).not.toBeEmptyDOMElement();
-        });
 
 
-        let elem = getByLabelText('Your name', { exact: false });
+        let elem = await findByLabelText('Your name', { exact: false });
         fireEvent.change(elem, { target: { value: 'hello' } });
-        elem = getByLabelText('Email', { exact: false });
+        elem = await findByLabelText('Email', { exact: false });
         fireEvent.change(elem, { target: { value: 'hello@test.com' } });
-        elem = getByLabelText('Message', { exact: false });
+        elem = await findByLabelText('Message', { exact: false });
         fireEvent.change(elem, { target: { value: 'The message to send you' } });
 
         // Submit form
-        await act(async () => {
-            fireEvent.click(await getByText(/Send/));
-        })
+        elem = await findByText(/Send/)
+        fireEvent.click(elem);
 
         // Wait for pageText to be populated
-        await waitFor(async () => {
+        elem = await findByText(/Error sending your message/)
+        expect(elem).toBeInTheDocument();
 
-            expect(await getByText(/Error sending your message/)).toBeInTheDocument();
-        });
 
     });
 });

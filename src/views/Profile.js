@@ -47,7 +47,6 @@ const Profile = () => {
 
                 setDoneGettingData(false);
                 res = await UserApi.getUserInfo(username);
-                console.log('is this me?', res.myProfile)
                 setCurrrentProfile(res);
                 setLocation(determineLocation(res, lang));
                 setEnabled(res.study_buddy_active)
@@ -84,6 +83,11 @@ const Profile = () => {
                     (locationRouter.state.fromLocation === '/study-buddies' ||
                         locationRouter.state.fromLocation === '/users/profile/edit/study-buddy')) {
                     setSelectedTabIndex(lang === "JA" ? 2 : 1)
+                } else if (locationRouter.state &&
+                    (locationRouter.state.fromLocation === '/study-buddies' ||
+                        locationRouter.state.fromLocation === '/users/profile/edit/myway')
+                ) {
+                    setSelectedTabIndex(1)
                 }
             }
         }
@@ -111,6 +115,10 @@ const Profile = () => {
             setSelectedTabIndex(1)
         }
     }, [lang])
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const saveUser = async () => {
         try {
@@ -267,7 +275,7 @@ const Profile = () => {
                                 <div className='w-full mt-6'>
                                     <Tab.Group selectedIndex={selectedTabIndex} onChange={setSelectedTabIndex}>
                                         <Tab.List className="flex justify-between max-[500px]:flex-col">
-                                            <Tab className="w-full max-[500px]:py-2 pb-3 border-b-2 
+                                            <Tab data-testid="profileTab1" className="w-full max-[500px]:py-2 pb-3 border-b-2 
                                         ui-not-selected:border-b-gray-stroke
                                         text-gray-text
                                         ui-selected:text-primary-dark
@@ -275,7 +283,7 @@ const Profile = () => {
                                         ui-selected:outline-none">
                                                 {tabs[0]}</Tab>
                                             {currentProfile.myProfile && lang === "JA" &&
-                                                <Tab className={`w-full max-[500px]:py-2 pb-3 border-b-2 
+                                                <Tab data-testid="profileTab2" className={`w-full max-[500px]:py-2 pb-3 border-b-2 
                                             ui-not-selected:border-b-gray-stroke
                                             text-gray-text 
                                             ui-selected:text-primary-dark
@@ -346,7 +354,7 @@ const Profile = () => {
                                                         </Switch.Group>
                                                         : ''}
                                                     {currentProfile.study_buddy_active || currentProfile.myProfile ?
-                                                        <>
+                                                        <div data-testid="profileTab3">
                                                             <p className='mt-1'>{pageText.HIDDEN}</p>
                                                             <DisplayInfo label={pageText.BUDDY_TYPE} lang={lang} data={currentProfile.study_buddy_types.map(
                                                                 (t, idx) => idx === currentProfile.study_buddy_types.length - 1 ?
@@ -360,7 +368,7 @@ const Profile = () => {
                                                             <DisplayInfo label={pageText.TIME_ZONE} lang={lang} jsonName='timezones' data={currentProfile.time_zone} />
                                                             <DisplayInfo label={pageText.AGE_RANGE} lang={lang} jsonName='age_ranges' data={currentProfile.age_range} />
                                                             <DisplayInfo label={pageText.GENDER} lang={lang} jsonName='genders' data={currentProfile.gender} />
-                                                        </>
+                                                        </div>
                                                         :
                                                         <div className='my-12'>
                                                             <p className='text-center'>{currentProfile.username} is not currently participating in study buddy.</p>

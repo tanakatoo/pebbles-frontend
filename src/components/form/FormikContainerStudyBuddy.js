@@ -55,7 +55,9 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
                 place_id: ''
             }
         })
+        window.scrollTo(0, 0)
     }, [])
+
 
     const initialValues = {
         study_buddy_active: false,
@@ -72,6 +74,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
 
     const onSubmit = async (values, { setSubmitting }) => {
         try {
+            console.log('in submit')
             setErrors([])
             console.log('edit submit values', values)
             const res = await UserApi.updateUserInfo(values)
@@ -106,7 +109,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
             enableReinitialize
         >
             {formik => {
-                console.log(!formik.values.study_buddy_types.includes("Volunteer"))
+
                 return (
                     <div className="container flex flex-col mt-4 mx-auto">
                         {Object.keys(errors).length > 0 &&
@@ -139,6 +142,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
                             <div className="mb-4">
                                 <FormikControl
                                     control='dropdown'
+
                                     label={pageText.LEARNING_LANG}
                                     name='learning_language'
                                     options={languageOptionsDropdown} />
@@ -146,6 +150,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
                             <div className="mb-4">
                                 <FormikControl
                                     control='dropdown'
+                                    data-testid='languageLevel'
                                     label={pageText.LANGUAGE_LEVEL}
                                     name='language_level'
                                     options={englishLevelOptions} />
@@ -189,7 +194,7 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
                                     options={genderOptions} />
                             </div>
                             <div className="mb-24 mt-12 flex">
-                                <Button lang={lang} type="submit" btnText={pageText.SAVE_BTN} extraClasses="grow" />
+                                <Button testid='save' lang={lang} type="submit" btnText={pageText.SAVE_BTN} extraClasses="grow" />
                             </div>
                         </Form>
                     </div>

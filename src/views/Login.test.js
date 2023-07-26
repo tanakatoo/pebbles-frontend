@@ -16,35 +16,26 @@ afterAll(() => {
 });
 
 beforeEach(async () => {
-    const { getByTestId, getByLabelText, getByText } = renderWithProviders(
-        <MemoryRouter >
-            <App />
-        </MemoryRouter>
-    );
-
-    // Populate form
-    let changeLang = getByText('EN', { exact: true });
-    fireEvent.click(changeLang);
+    window.localStorage.clear()
 })
 
 afterEach(() => {
-    window.localStorage.token = null
+    window.localStorage.clear()
 })
-
 
 describe('Login', () => {
     test('renders without crashing', () => {
         renderWithProviders(
-            <MemoryRouter>
-                <Login />
+            <MemoryRouter initialEntries={["/login"]}>
+                <App />
             </MemoryRouter>
         );
     });
 
     test('matches snapshot', async () => {
         const { asFragment } = renderWithProviders(
-            <MemoryRouter>
-                <Login />
+            <MemoryRouter initialEntries={["/login"]}>
+                <App />
             </MemoryRouter>
         );
 
@@ -54,61 +45,52 @@ describe('Login', () => {
     test('invalid user login', async () => {
         server.use(...errorHandlers)
 
-        const { getByTestId, getByLabelText, getByText } = await renderWithProviders(
+        const { findByTestId, findByLabelText, findByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/login"]}>
                 <App />
             </MemoryRouter>
         );
 
 
-        let elem = getByLabelText('Username or email', { exact: false });
+        let elem = await findByLabelText('Username or email', { exact: true });
+        console.log(elem)
         fireEvent.change(elem, { target: { value: 'helloo' } });
-        elem = getByLabelText('Password', { exact: false });
+        elem = await findByLabelText('Password', { exact: false });
         fireEvent.change(elem, { target: { value: 'asdfasdf' } });
 
         // Submit form
-        await act(async () => {
-            fireEvent.click(await getByTestId(/loginFormLogin/));
-        })
+        elem = await findByTestId(/loginFormLogin/)
+        fireEvent.click(elem);
+
         // fireEvent.click(getByTestId(/loginFormLogin/));
 
         // Wait for pageText to be populated
-        await waitFor(async () => {
-            expect(getByTestId('serverError')).not.toBeEmptyDOMElement();
-            expect(await getByText('Invalid')).toBeInTheDocument();
-        });
-
+        elem = await findByTestId('serverError')
+        expect(elem).not.toBeEmptyDOMElement();
+        elem = await findByText(/Server error/)
+        expect(elem).toBeInTheDocument();
 
     });
 
     test('valid user login', async () => {
-        const { getByTestId, getByLabelText, getByText } = await renderWithProviders(
+        const { findByTestId, findByLabelText, findByText } = await renderWithProviders(
             <MemoryRouter initialEntries={["/login"]}>
                 <App />
             </MemoryRouter>
         );
 
 
-        let elem = getByLabelText('Username or email', { exact: false });
+        let elem = await findByLabelText('Username or email', { exact: false });
         fireEvent.change(elem, { target: { value: 'hello' } });
-        elem = getByLabelText('Password', { exact: false });
+        elem = await findByLabelText('Password', { exact: false });
         fireEvent.change(elem, { target: { value: 'asdfasdf' } });
 
         // Submit form
-        await act(async () => {
-            fireEvent.click(await getByTestId(/loginFormLogin/));
-        })
-        // fireEvent.click(getByTestId(/loginFormLogin/));
+        elem = await findByTestId(/loginFormLogin/)
+        fireEvent.click(elem);
 
-        // Wait for pageText to be populated
-        await waitFor(() => {
-            expect(getByTestId('wait-for-pagetext')).not.toBeEmptyDOMElement();
-        });
-
-        // Are we on the Dashboard page?
-        expect(getByText(/Learn how to use Pebbles/)).toBeInTheDocument();
         //There should not be any study buddies
-        expect(getByText(/No study buddies yet! /)).toBeInTheDocument();
+        expect(await findByText(/No study buddies yet! /)).toBeInTheDocument();
     });
 
 

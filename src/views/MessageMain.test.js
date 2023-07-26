@@ -17,96 +17,86 @@ window.scrollTo = jest.fn();
 afterAll(() => {
     jest.clearAllMocks();
 });
+// let loginResponse = {
+//     token: 'abcdefg',
+//     user: {
+//         id: 2,
+//         username: 'hello',
+//         role: 'regular',
+//         premium_join_date: '',
+//         premium_end_date: '',
+//         free_trial_start_date: '',
+//     }
+// }
+
 let loginResponse = {
     token: 'abcdefg',
-    user: {
+    profile: {
         id: 2,
         username: 'hello',
+        name: 'Hello World',
+        email: "karmen.tanakaa@gmail.com",
         role: 'regular',
         premium_join_date: '',
         premium_end_date: '',
         free_trial_start_date: '',
+        study_buddy_types: [],
+        study_buddy_active: false
     }
-}
+};
+
 
 beforeEach(async () => {
-    // const dispatch = useDispatch()
-
-    const { getByTestId, getByLabelText, getByText } = renderWithProviders(
-        <MemoryRouter >
-            <App />
-        </MemoryRouter>
-    );
-
-    // Populate form
-    let changeLang = getByText('EN', { exact: true });
-    fireEvent.click(changeLang);
-
-    //login first - this one doesn't work
-    // await act(() => {
-    //     store.dispatch({
-    //         type: LOGIN,
-
-    //         token: 'abced',
-    //         profile: {
-    //             id: 2,
-    //             username: 'hello',
-    //             role: 'regular',
-    //             premium_join_date: '',
-    //             premium_end_date: '',
-    //             free_trial_start_date: '',
-
-    //         }
-    //     })
-    // })
-
+    window.localStorage.clear()
 
 })
 
 afterEach(() => {
-    window.localStorage.token = null
+    window.localStorage.clear()
 })
 
 
 describe('MessageMain', () => {
     test('renders without crashing', async () => {
-        await act(() => {
-            renderWithProviders(
-                <MemoryRouter>
-                    <MessageMain />
-                </MemoryRouter>
-                , {
-                    preloadedState: {
-                        profile: {
-                            token: 'abced',
-                            profile: loginResponse
-                        }
-                    }
-                });
-        })
+
+        renderWithProviders(
+            <MemoryRouter initialEntries={["/messages"]}>
+                <App />
+            </MemoryRouter>,
+            {
+                preloadedState: { profile: loginResponse }
+            });
+
 
     });
 
     test('matches snapshot', async () => {
-        await act(() => {
-            const { asFragment } = renderWithProviders(
-                <MemoryRouter>
-                    <MessageMain />
-                </MemoryRouter>
-            );
-            expect(asFragment()).toMatchSnapshot();
-        })
+
+        const { asFragment } = renderWithProviders(
+            <MemoryRouter initialEntries={["/messages"]}>
+                <App />
+            </MemoryRouter>,
+            {
+                preloadedState: { profile: loginResponse }
+            });
+
+
+        expect(asFragment()).toMatchSnapshot();
 
 
     });
 
 
     test('unread messages are orange and read are black', async () => {
-        const { getByTestId, getByRole, getByLabelText, getByText } = await renderWithProviders(
-            <MemoryRouter >
-                <MessageMain />
-            </MemoryRouter >
-        );
+        const { getByTestId, getByRole, getByLabelText, getByText } = renderWithProviders(
+            <MemoryRouter initialEntries={["/messages"]}>
+                <App />
+            </MemoryRouter>,
+            {
+                preloadedState: { profile: loginResponse }
+            });
+
+
 
 
         await waitFor(() => {
