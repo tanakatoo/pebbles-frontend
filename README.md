@@ -25,8 +25,8 @@ You will need to clone both pebbles-frontend and pebbles-backend. The system run
 
 ## Testing
 
-Tests to be completed soon...
+Backend testing was completed on all routes and models using jest. Frontend testing was completed for all views using RTL and jest.
 
 ## Deployment
 
-The site is deployed at pebblescommunity.com (currently with some issues).
+The site is deployed at http://www.pebblescommunity.com using Render.com for the backend, surge for the frontend, and ElephantSQL for PostgreSQL. It might be slow due to using the free tier, so please be patient!

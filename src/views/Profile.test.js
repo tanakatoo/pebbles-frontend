@@ -26,27 +26,6 @@ jest.mock("react-router-dom", () => ({
 beforeEach(async () => {
     window.localStorage.clear()
 
-
-    // const { getByTestId, getByLabelText, findByText } = renderWithProviders(
-
-    //     < MemoryRouter >
-    //         <App />
-    //     </MemoryRouter >,
-    //     {
-    //         preloadedState: {
-    //             profile: {
-    //                 token: null,
-    //                 profile: null
-    //             }
-    //         }
-    //     }
-    // );
-
-    // // Populate form
-    // let changeLang = await findByText('EN', { exact: true });
-    // fireEvent.click(changeLang);
-
-
 })
 
 afterEach(() => {
@@ -132,7 +111,7 @@ describe('Profile', () => {
     });
 
     test('logged-in user visits Profile Edit page', async () => {
-        jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
+        // jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
         let loginResponse = {
             token: 'abcdefg',
             profile: {
@@ -150,8 +129,10 @@ describe('Profile', () => {
 
         const { findByText, findAllByText, findByLabelText, getByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/hello"]}>
-
-                <App />
+                <Routes>
+                    <Route path="/users/:username" element={<Profile />} />
+                </Routes>
+                {/* <App /> */}
             </MemoryRouter>,
             {
                 preloadedState: { profile: loginResponse }

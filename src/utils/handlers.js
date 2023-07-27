@@ -163,6 +163,7 @@ const returnUser = [
         "time_zone": "NewYork",
         "age_range": "26-35",
         "study_buddy_active": true,
+        "study_buddy_types": ['Volunteer'],
         "study_buddy_activate_date": "2023-07-13T04:00:00.000Z"
     }
 ]

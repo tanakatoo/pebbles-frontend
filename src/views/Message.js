@@ -48,7 +48,7 @@ function Message() {
                 setErrors(["UNKNOWN"])
             } else {
 
-                if (e[0] == 'blocked') {
+                if (e[0] === 'blocked') {
 
                     setErrors(["BLOCKED"])
                 } else {

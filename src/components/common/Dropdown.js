@@ -4,10 +4,11 @@ import { AwesomeChevronDown } from '../../styles/Icons'
 import { NavLink } from 'react-router-dom'
 
 function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr = null, width = null }) {
+    console.log('subitems', subitems)
     const [dropdown, setDropdown] = useState({ id: null, display: false })
 
     const handleClickingItself = (e) => {
-        console.log('clicked', e.target.parentElement.id)
+        console.log('a drpodown so not close', e.target.parentElement.id)
         if (e.target.id ||
             e.target.parentElement.id ||
             e.target.parentElement.parentElement.id ||
@@ -20,17 +21,19 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
     const handleDropdown = (e) => {
         //only the dropdown menus with subitems have IDs so we are checking whether something clicked has an id
         let theID
+
         theID = e.target.parentElement.id ? e.target.parentElement.id :
             e.target.parentElement.parentElement.id ? e.target.parentElement.parentElement.id :
                 e.target.parentElement.parentElement.parentElement.id
+
         if (e.target.parentElement.id ||
             e.target.parentElement.parentElement.id ||
             e.target.parentElement.parentElement.parentElement.id) {
-
+            console.log('dropping down display is', dropdown.display)
             dropdown.display ? setDropdown({ id: null, display: false }) : setDropdown({ id: theID, display: true })
         }
     }
-
+    console.log('dropdown display is', dropdown)
     return (
         <div onClick={handleClickingItself} className={`z-50 whitespace-nowrap absolute bg-white ${css}`}>
             <ul className={divide ? 'divide-gray divide-y' : ''}>
@@ -67,6 +70,7 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
                                     subitems[idx].items.map(j => {
                                         return (
                                             <li key={uuid()} className='ms-4 py-3 px-4 text-gray-text'>
+
                                                 {j.link
                                                     ?
                                                     <NavLink to={`${j.link}`} className={({ isActive }) => isActive ? 'text-secondary-dark font-bold flex' : "hover:underline hover:underline-offset-4 flex"}  >
@@ -74,6 +78,7 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
                                                     </NavLink>
                                                     :
                                                     <span className=' text-gray cursor-default'>
+
                                                         {j.text}
                                                     </span>}
                                             </li>
