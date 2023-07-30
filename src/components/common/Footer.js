@@ -23,7 +23,8 @@ function Footer() {
                 <div className='flex flex-col justify-center items-center me-4 lg:items-start lg:ms-8'>
                     <p className='font-medium'>{text.COMPANY}</p>
                     <p className='text-background'><Link to="/about" className='hover:underline hover: underline-offset-4 hover:text-white'>{text.ABOUT}</Link></p>
-                    <p className='pb-4 text-background'><Link to="/contact" className='hover:underline hover: underline-offset-4 hover:text-white'>{text.CONTACT_US}</Link></p>
+                    <p className=' text-background'><Link to="/contact" className='hover:underline hover: underline-offset-4 hover:text-white'>{text.CONTACT_US}</Link></p>
+                    <p className='pb-4 text-background'><Link to="/faq" className='hover:underline hover: underline-offset-4 hover:text-white'>FAQ</Link></p>
                 </div>
                 {lang === "JA" ?
                     (<div className='flex flex-col justify-center items-center lg:items-start lg:ms-8'>
