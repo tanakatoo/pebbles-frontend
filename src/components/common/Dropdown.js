@@ -33,7 +33,7 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
             dropdown.display ? setDropdown({ id: null, display: false }) : setDropdown({ id: theID, display: true })
         }
     }
-    console.log('dropdown display is', dropdown)
+
     return (
         <div onClick={handleClickingItself} className={`z-50 whitespace-nowrap absolute bg-white ${css}`}>
             <ul className={divide ? 'divide-gray divide-y' : ''}>

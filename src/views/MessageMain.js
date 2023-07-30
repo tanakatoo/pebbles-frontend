@@ -13,6 +13,7 @@ import Protected from '../components/common/Protected'
 import NoData from '../components/common/NoData'
 import { Link } from 'react-router-dom'
 import CustomLink from '../components/button/CustomLink'
+import CustomLinkPrimaryMedium from '../components/button/CustomLinkPrimaryMedium'
 
 function MessageMain() {
     const [data, setData] = useState([])
@@ -80,7 +81,7 @@ function MessageMain() {
                 : data.length === 0 && errors.length === 0 && doneGettingData === true ?
                     <div className='flex flex-col items-center'>
                         <NoData msg={pageText.NO_MSG} link="/users/dashboard" linkText={pageText.BACK_TO_DASHBOARD} />
-                        <div ><CustomLink text={pageText.UNBLOCK_CONTACTS} path={"/users/unblock"} /> </div>
+                        <div ><CustomLinkPrimaryMedium text={pageText.UNBLOCK_CONTACTS} path={"/users/unblock"} /> </div>
                     </div>
                     :
                     errors.length === 0 ?

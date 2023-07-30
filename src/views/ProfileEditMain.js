@@ -20,7 +20,7 @@ function ProfileEditMain() {
                 <div className='w-full py-2 inline-flex justify-center mb-6'>
                     <Link to="/users/profile/edit/avatar"><div className='relative' >
                         <Avatar src={user.avatar} size='profile' username={user.username} />
-                        <div className='absolute bottom-0 right-0 p-1.5 bg-gray-background rounded-full'>
+                        <div data-testid="profileEditMain" className='absolute bottom-0 right-0 p-1.5 bg-gray-background rounded-full'>
                             <Camera />
                         </div>
                     </div>

@@ -41,14 +41,14 @@ afterEach(() => {
 })
 
 
-jest.mock("react-router-dom", () => ({
-    ...jest.requireActual("react-router-dom"),
-    useParams: jest.fn(),
-}));
+// jest.mock("react-router-dom", () => ({
+//     ...jest.requireActual("react-router-dom"),
+//     useParams: jest.fn(),
+// }));
 
 describe('Message', () => {
     test('renders without crashing', async () => {
-        jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
+        // jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
         renderWithProviders(
             <MemoryRouter initialEntries={["/messages/ktoo"]}>
                 <App />
@@ -61,7 +61,7 @@ describe('Message', () => {
     });
 
     test('matches snapshot', async () => {
-        jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
+        // jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
         const { asFragment } = renderWithProviders(
             <MemoryRouter initialEntries={["/messages/ktoo"]}>
                 <App />
@@ -74,7 +74,7 @@ describe('Message', () => {
 
 
     test('add to conversation', async () => {
-        jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
+        // jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
         const { findByTestId, findByRole, getByLabelText, findByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/messages/ktoo"]}>
                 <App />

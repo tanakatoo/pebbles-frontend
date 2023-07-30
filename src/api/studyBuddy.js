@@ -6,6 +6,7 @@ class StudyBuddyApi extends PebblesApi {
     static async getStudyBuddies(pageNum) {
         console.log('got studybuddies going to get request')
         let res = await this.request(`study-buddies/1`)
+
         return res
     }
 

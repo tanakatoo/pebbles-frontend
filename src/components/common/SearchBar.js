@@ -11,12 +11,7 @@ function SearchBar({ name, data, onSubmit, handleChange, btn = false }) {
 
     const lang = useSelector(state => state.langFont.lang)
 
-    const handleKeyDown = (e) => {
-        if (e.key === 'Enter') {
 
-            onSubmit()
-        }
-    }
 
     return (
         <div className={`w-full flex  ${btn ? 'flex-col-reverse md:flex-row' : null} gap-3`}>
@@ -24,6 +19,7 @@ function SearchBar({ name, data, onSubmit, handleChange, btn = false }) {
             <Field name={name} value={data} >{
                 ({ field }) => < input type="text"
                     data-testid='searchinput'
+
                     className={`rounded-ml grow placeholder-gray focus:ring-none`}
                     placeholder={searchText[lang].PLACEHOLDER}
                     {...field} />

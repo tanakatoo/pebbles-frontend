@@ -67,7 +67,7 @@ function UnblockUser() {
 
     return (
         // <Protected>
-        <div className='mb-12 flex justify-center '>
+        <div className={`mb-12 flex justify-center border-t-2 border-t-gray`}>
 
             {errors.length > 0 && <ServerError msg={errors} />}
             {data.length === 0 && errors.length === 0 && doneGettingData === false ?

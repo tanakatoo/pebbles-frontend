@@ -3,6 +3,7 @@
         "EMAIL_REQUIRED":"メールをご記入ください",
         "USERNAME_REQUIRED": "ユーザー名をご記入ください",
         "USERNAME_MAX":"25桁以下のユーザー名をご記入ください",
+        "WHITESPACE":"スペースを入れないでください",
         "PASSWORD_REQUIRED":"パスワードをご記入ください",
         "PASSWORD_MIN":"8桁以上のパスワードをご記入ください",
         "PASSWORD_MAX":"20桁以内のパスワードをご記入ください",
@@ -23,6 +24,7 @@
     "EN":{
         "USERNAME_REQUIRED": "Username required",
         "USERNAME_MAX":"Username must be less than 25 characters",
+        "WHITESPACE":"Spaces are not allowed",
         "PASSWORD_REQUIRED":"Password required",
         "PASSWORD_MIN":"Password must be 8 charcters or more",
         "PASSWORD_MAX":"Password must be 20 charcters or less",

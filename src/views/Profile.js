@@ -167,7 +167,7 @@ const Profile = () => {
                                             <p data-testid="profileUsername">{currentProfile.username}</p>
                                             {currentProfile.myProfile &&
                                                 <p className='text-link hover:text-primary'>
-                                                    <Link to="/users/profile/edit"><AwesomePenToSquare /> {pageText.EDIT}</Link>
+                                                    <Link to="/users/profile/edit" data-testid="profileEditBtn"><AwesomePenToSquare /> {pageText.EDIT}</Link>
                                                 </p>}
 
                                         </div>
@@ -291,7 +291,7 @@ const Profile = () => {
                                             ui-selected:outline-none`}>
                                                     {tabs[1]}</Tab>
                                             }
-                                            <Tab className="w-full max-[500px]:py-2 pb-3 border-b-2 
+                                            <Tab data-testid="profileTab3" className="w-full max-[500px]:py-2 pb-3 border-b-2 
                                         ui-not-selected:border-b-gray-stroke
                                         text-gray-text
                                         ui-selected:font-bold
@@ -354,7 +354,7 @@ const Profile = () => {
                                                         </Switch.Group>
                                                         : ''}
                                                     {currentProfile.study_buddy_active || currentProfile.myProfile ?
-                                                        <div data-testid="profileTab3">
+                                                        <div data-testid="profileStudyBuddyContent">
                                                             <p className='mt-1'>{pageText.HIDDEN}</p>
                                                             <DisplayInfo label={pageText.BUDDY_TYPE} lang={lang} data={currentProfile.study_buddy_types.map(
                                                                 (t, idx) => idx === currentProfile.study_buddy_types.length - 1 ?

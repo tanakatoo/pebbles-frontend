@@ -53,7 +53,10 @@ const Register = () => {
                             setErrors([])
                             console.log(values)
                             console.log('submitting')
-                            const res = await AuthApi.register(values.username, values.password, values.email, lang)
+                            const username = values.username.trim()
+                            const password = values.password.trim()
+                            const email = values.email.trim()
+                            const res = await AuthApi.register(username, password, email, lang)
                             console.log('register res', res)
                             //call dispatch to set token in profileReducer
                             dispatch(actionLogin(res))

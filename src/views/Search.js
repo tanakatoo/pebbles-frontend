@@ -71,9 +71,14 @@ function Search() {
 
         }
     }
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            submitSearch()
+        }
+    }
 
     return (
-        <div>
+        <div className='Search'>
             <div className="bg-primary-dark py-6 px-4">
                 <Formik
                     initialValues={formValues || initialValues}
@@ -82,9 +87,9 @@ function Search() {
                     enableReinitialize
 
                 >{formik => {
-                    console.log('formvalues are', formValues)
+                    console.log('formik values are', formik.values)
                     return (
-                        <Form>
+                        <Form data-testid="searchForm" onKeyDown={handleKeyDown}>
                             <SearchBar
                                 placeholder={pageText.PLACEHOLDER}
                                 name='word'
@@ -92,7 +97,6 @@ function Search() {
                                 onSubmit={submitSearch}
                             />
                         </Form>
-
                     )
                 }}
                 </Formik>

@@ -209,6 +209,46 @@ const myProfile = {
     "myProfile": true
 }
 
+const notmyProfile = {
+    "id": 3,
+    "username": "ktoo",
+    "name": "",
+    "email": "ktoo@gmail.com",
+    "role": "regular",
+    "avatar": "9.jpg",
+    "sign_up_date": "2023-05-01T00:00:00.000Z",
+    "last_login_date": "2023-05-01T00:00:00.000Z",
+    "language_preference": "English",
+    "country_en": "",
+    "country_ja": "",
+    "city_en": "",
+    "city_ja": "",
+    "state_en": "",
+    "state_ja": "",
+    "gender": "male",
+    "about": "",
+    "myway_advice": "",
+    "myway_habits": "",
+    "motivational_level": "",
+    "study_time": "",
+    "premium_join_date": null,
+    "premium_end_date": null,
+    "raz_reading_level": "",
+    "study_buddy_bio": "",
+    "native_language": "",
+    "learning_language": "",
+    "language_level": "",
+    "myway_language_level": "",
+    "time_zone": "",
+    "age_range": "",
+    "study_buddy_active": false,
+    "study_buddy_purpose": "",
+    "free_trial_start_date": null,
+    "study_buddy_activate_date": null,
+    "study_buddy_types": [],
+    "goals": []
+}
+
 
 export const handlers = [
 
@@ -328,9 +368,16 @@ export const handlers = [
         return res(ctx.json(loginResponse));
     }),
 
+    ///get profile for hello
     rest.get('http://localhost:3001/users/hello', (req, res, ctx) => {
         console.log('MOCK /users/hello');
         return res(ctx.json(myProfile));
+    }),
+
+    //get profile for ktoo
+    rest.get('http://localhost:3001/users/ktoo', (req, res, ctx) => {
+        console.log('MOCK /users/ktoo');
+        return res(ctx.json(notmyProfile));
     }),
 
     //mock the google api
@@ -343,5 +390,25 @@ export const handlers = [
     rest.patch('http://localhost:3001/users/:username', (req, res, ctx) => {
         console.log('MOCK patch /users/:username');
         return res(ctx.json(myProfile));
-    })
+    }),
+
+
+    //get profile for ktoo
+    rest.get('http://localhost:3001/users/profile/edit/profile', (req, res, ctx) => {
+        console.log('MOCK /users/profile/edit/profile');
+        return res(ctx.json(myProfile));
+    }),
+
+    //unauthorized
+    rest.get('http://localhost:3001/unauthorized', (req, res, ctx) => {
+        console.log('MOCK /unauthorized');
+        const failLogin = {
+            "error": {
+                "message": "UNAUTHORIZED",
+                "status": 401
+            }
+        }
+        console.log(res(ctx.json([failLogin])))
+        return res(ctx.json([failLogin]).status(500));
+    }),
 ]

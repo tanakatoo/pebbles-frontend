@@ -88,6 +88,7 @@ const StudyBuddies = () => {
             console.log('sub this values: ', values)
             setIsDialogOpen(false)
             setErrors([])
+            setData([])
             //get only values
             const criteria = {
                 age: values.age_range.map(a => a.value),
@@ -262,6 +263,7 @@ const StudyBuddies = () => {
                     my-3`} />
 
                                     {errors.length > 0 && <div><ServerError msg={errors} /></div>}
+                                    {console.log('why not spinner', data.length, errors.length, doneGettingData)}
                                     {data.length === 0 && errors.length === 0 && doneGettingData === false ?
                                         <div className=' my-24'>
                                             <Spinner />

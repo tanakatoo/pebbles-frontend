@@ -1,5 +1,5 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, Route } from 'react-router-dom';
 import { findByTestId, findByText, fireEvent, getByTestId, renderWithProviders } from '../utils/testSetup';
 import ProfileEdit from './ProfileEdit';
 import App from '../App';
@@ -8,6 +8,10 @@ import { act, getByText } from '@testing-library/react';
 import { server } from '../utils/server'
 import { errorHandlers } from '../utils/errorHandlers';
 import Router from "react-router-dom";
+import { Routes } from "react-router-dom"
+import Protected from '../components/common/Protected';
+import Unauthorized from './Unauthorized';
+import Profile from './Profile';
 
 // Mock window.scrollTo()
 window.scrollTo = jest.fn();
@@ -15,10 +19,10 @@ afterAll(() => {
     jest.clearAllMocks();
 });
 
-jest.mock("react-router-dom", () => ({
-    ...jest.requireActual("react-router-dom"),
-    useParams: jest.fn(),
-}));
+// jest.mock("react-router-dom", () => ({
+//     ...jest.requireActual("react-router-dom"),
+//     useParams: jest.fn(),
+// }));
 
 beforeEach(async () => {
     window.localStorage.clear()
@@ -50,6 +54,12 @@ describe('Edit Profile', () => {
         renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit/profile"]}>
                 <App />
+                {/* <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit/profile" element={<ProfileEdit />} />
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes> */}
             </MemoryRouter>,
             {
                 preloadedState: { profile: loginResponse }
@@ -63,6 +73,13 @@ describe('Edit Profile', () => {
         const { asFragment } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit/profile"]}>
                 <App />
+                {/*
+                <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit/profile" element={<ProfileEdit />} />
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes> */}
             </MemoryRouter>,
             {
                 preloadedState: { profile: loginResponse }
@@ -81,6 +98,12 @@ describe('Edit Profile', () => {
         const { findByText, getByTestId, getByLabelText, getByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit/profile"]}>
                 <App />
+                {/* <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit/profile" element={<ProfileEdit />} />
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes> */}
             </MemoryRouter>,
             {
                 preloadedState: {
@@ -102,6 +125,14 @@ describe('Edit Profile', () => {
         const { findByText, getByTestId, getByLabelText, getByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit/profile"]}>
                 <App />
+                {/* <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit/profile" element={<ProfileEdit />} />
+
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes> */}
+
             </MemoryRouter>,
             {
                 preloadedState: { profile: loginResponse }
@@ -118,6 +149,14 @@ describe('Edit Profile', () => {
         const { findByText, findByTestId, findByLabelText, getByLabelText, getByTestId } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit/profile"]}>
                 <App />
+                {/* <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit/profile" element={<ProfileEdit />} />
+
+                    </Route>
+                    <Route path="/users/:username" element={<Profile />} />
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes> */}
             </MemoryRouter>,
             {
                 preloadedState: { profile: loginResponse }
@@ -148,7 +187,9 @@ describe('Edit Profile', () => {
 
         elem = await findByText(/Save/)
         fireEvent.click(elem)
-        jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
+        // jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
+
+        //so this is not going to profile...? 
 
         //we are redirected to the profile
         let editLink = await findByText(/Edit/)

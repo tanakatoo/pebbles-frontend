@@ -49,22 +49,20 @@ describe('Search', () => {
             </MemoryRouter>
         );
 
-
-        //this doesn't seem to be inputting into the textbox
-        // let elem = await findByTestId('searchinput');
-        // fireEvent.change(elem, { target: { value: 'hello' } })
-
-
+        let elem = await findByTestId('searchinput');
+        fireEvent.change(elem, { target: { value: 'hello' } })
         // fireEvent.keyDown(elem, { key: 'Enter', code: 'Enter', charCode: 13 })
+        elem = await findByTestId('searchForm')
+        fireEvent.submit()
 
-        // // Wait for pageText to be populated
-        // elem = await findByTestId('results');
-        // expect(elem).toBeInTheDocument();
+        // Wait for pageText to be populated
+        elem = await findByTestId('results');
+        expect(elem).toBeInTheDocument();
 
-        // elem = await findByRole('textbox');
-        // expect(elem.innerHTML).toEqual('');
-        // elem = await findByText('helloo');
-        // expect(elem).toBeInTheDocument();
+        elem = await findByRole('textbox');
+        expect(elem.innerHTML).toEqual('');
+        elem = await findByText('helloo');
+        expect(elem).toBeInTheDocument();
 
 
     })

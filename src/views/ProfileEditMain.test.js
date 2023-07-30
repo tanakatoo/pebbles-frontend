@@ -8,6 +8,14 @@ import { act } from 'react-dom/test-utils';
 import { server } from '../utils/server'
 import { errorHandlers } from '../utils/errorHandlers';
 import Router from "react-router-dom";
+import { Routes } from 'react-router-dom';
+import Protected from '../components/common/Protected';
+import { Route } from 'react-router-dom';
+import Unauthorized from './Unauthorized';
+import ProfileEdit from './ProfileEdit';
+import ProfileEditStudyBuddy from './ProfileEditStudyBuddy';
+import ProfileEditMyWay from './ProfileEditMyWay';
+import NavBar from '../components/common/NavBar';
 
 // Mock window.scrollTo()
 window.scrollTo = jest.fn();
@@ -15,10 +23,10 @@ afterAll(() => {
     jest.clearAllMocks();
 });
 
-jest.mock("react-router-dom", () => ({
-    ...jest.requireActual("react-router-dom"),
-    useParams: jest.fn(),
-}));
+// jest.mock("react-router-dom", () => ({
+//     ...jest.requireActual("react-router-dom"),
+//     useParams: jest.fn(),
+// }));
 
 beforeEach(() => {
     window.localStorage.clear()
@@ -44,9 +52,16 @@ let loginResponse = {
 };
 describe('Profile', () => {
     test('renders without crashing', () => {
-        jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
+        // jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
         renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit/"]}>
+                {/* <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit" element={<ProfileEditMain />} />
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes>
+                 */}
                 <App />
             </MemoryRouter>,
             {
@@ -56,9 +71,15 @@ describe('Profile', () => {
     });
 
     test('matches snapshot', async () => {
-        jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
+        // jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
         const { asFragment } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit/"]}>
+                {/* <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit" element={<ProfileEditMain />} />
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes> */}
                 <App />
             </MemoryRouter>,
             {
@@ -74,6 +95,13 @@ describe('Profile', () => {
 
         const { findByText, getByTestId, getByLabelText, getByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit/"]}>
+                {/* <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit" element={<ProfileEditMain />} />
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes>
+                 */}
                 <App />
             </MemoryRouter>,
             {
@@ -93,7 +121,7 @@ describe('Profile', () => {
 
     // this works
     test('logged-in user visits Profile Edit Main Menu page', async () => {
-        jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
+        // jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
         let loginResponse = {
             token: 'abcdefg',
             profile: {
@@ -111,6 +139,12 @@ describe('Profile', () => {
 
         const { findByText, getByTestId, getByLabelText, getByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit"]}>
+                {/* <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit" element={<ProfileEditMain />} />
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes> */}
                 <App />
             </MemoryRouter>,
             {
@@ -125,7 +159,8 @@ describe('Profile', () => {
 
     // this works
     test('logged-in user clicks Profile takes them to edit profile page', async () => {
-        jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
+
+        // jest.spyOn(Router, 'useParams').mockReturnValue({ username: 'hello' })
         let loginResponse = {
             token: 'abcdefg',
             profile: {
@@ -143,6 +178,13 @@ describe('Profile', () => {
 
         const { findByText, getByTestId, getByLabelText, getByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit"]}>
+                {/* <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit" element={<ProfileEditMain />} />
+                        <Route path="/users/profile/edit/profile" element={<ProfileEdit />} />
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes> */}
                 <App />
             </MemoryRouter>,
             {
@@ -179,6 +221,13 @@ describe('Profile', () => {
 
         const { findByText, findByTestId, getByLabelText, getByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit"]}>
+                {/* <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit" element={<ProfileEditMain />} />
+                        <Route path="/users/profile/edit/study-buddy" element={<ProfileEditStudyBuddy />} />
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes> */}
                 <App />
             </MemoryRouter>,
             {
@@ -215,6 +264,14 @@ describe('Profile', () => {
 
         const { findByText, findByTestId, getByLabelText, getByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit"]}>
+                {/* <NavBar />
+                <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit" element={<ProfileEditMain />} />
+                        <Route path="/users/profile/edit/myway" element={<ProfileEditMyWay />} />
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes> */}
                 <App />
             </MemoryRouter>,
             {
@@ -252,6 +309,14 @@ describe('Profile', () => {
 
         const { findByText, findByTestId, getByLabelText, getByText } = renderWithProviders(
             <MemoryRouter initialEntries={["/users/profile/edit"]}>
+                {/* <NavBar />
+                <Routes>
+                    <Route path='' element={<Protected />}>
+                        <Route path="/users/profile/edit" element={<ProfileEditMain />} />
+                        <Route path="/users/profile/edit/myway" element={<ProfileEditMyWay />} />
+                    </Route>
+                    <Route path="/unauthorized" element={<Unauthorized />} />
+                </Routes> */}
                 <App />
             </MemoryRouter>,
             {
@@ -268,7 +333,7 @@ describe('Profile', () => {
         // expect(await findByText(/Edit account/)).toBeInTheDocument();
         let clickonEN = await findByText(/EN/)
         fireEvent.click(clickonEN)
-        // Are we on Profile Edit page?
+        // Are we on Profile Myway edit page?
         expect(await findByText(/MyWay is a service for/)).toBeInTheDocument();
 
     });
