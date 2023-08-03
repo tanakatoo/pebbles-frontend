@@ -145,13 +145,16 @@ describe('Edit Study buddy', () => {
 
 
         //change dropdown box for language level
-        let elem = await findByTestId('languageLevel');
-        fireEvent.click(elem);
-        elem = await findByText("Beginner");
+        let elem = getByLabelText('Why do you want to join', { exact: false });
         fireEvent.click(elem)
-        expect(elem).toBeInTheDocument();
-        elem = getByLabelText('Why do you want to join', { exact: false });
         fireEvent.change(elem, { target: { value: 'Why I want to join' } });
+        elem = await findByTestId('languageLevel');
+        fireEvent.click(elem);
+        // elem = await findByText("Beginner");
+        // fireEvent.click(elem)
+        fireEvent.change(elem, { target: { value: "Beginner" } })
+        expect(elem).toBeInTheDocument();
+
 
         elem = await findByTestId('save')
         console.log(elem)

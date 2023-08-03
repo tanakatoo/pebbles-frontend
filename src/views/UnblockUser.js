@@ -65,6 +65,29 @@ function UnblockUser() {
 
     }
 
+    const handleSubmit = async (values, onSubmitProps) => {
+
+        setErrors([])
+        try {
+            console.log('vlues to submit', values)
+            const res = await UserApi.unblockUser(values.username)
+            getData()
+        } catch (e) {
+            if (e instanceof TypeError) {
+                //means server is down
+                console.log(e)
+                setErrors(["UNKNOWN"])
+            } else {
+                console.log(e)
+                setErrors(e)
+            }
+        } finally {
+            onSubmitProps.setSubmitting(false)
+            onSubmitProps.resetForm()
+        }
+
+    }
+
     return (
         // <Protected>
         <div className={`mb-12 flex justify-center border-t-2 border-t-gray`}>
@@ -83,26 +106,7 @@ function UnblockUser() {
                             <Formik
                                 initialValues={INITIAL_DATA}
                                 validationSchema={blockUnblockSchema}
-                                onSubmit={async (values, onSubmitProps) => {
-                                    setErrors([])
-                                    try {
-                                        console.log('vlues to submit', values)
-                                        const res = await UserApi.unblockUser(values.username)
-                                        getData()
-                                    } catch (e) {
-                                        if (e instanceof TypeError) {
-                                            //means server is down
-                                            console.log(e)
-                                            setErrors(["UNKNOWN"])
-                                        } else {
-                                            console.log(e)
-                                            setErrors(e)
-                                        }
-                                    } finally {
-                                        onSubmitProps.setSubmitting(false)
-                                        onSubmitProps.resetForm()
-                                    }
-                                }}
+                                onSubmit={handleSubmit}
                             >{formik => {
                                 return (
                                     <>

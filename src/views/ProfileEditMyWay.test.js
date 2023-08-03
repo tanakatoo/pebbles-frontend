@@ -174,19 +174,13 @@ describe('Edit MyWay', () => {
         let elem = await findByText("JA");
         fireEvent.click(elem)
 
-        // //change dropdown box for language level
-        // elem = await findByRole('checkbox', { name: 'goals', value: 'Vocabulary' });
-        // fireEvent.click(elem);
 
-        // elem = await findByText("Beginner");
-        // fireEvent.click(elem)
-        // expect(elem).toBeInTheDocument();
-
-        //don't know how to change textarea value
         elem = await findByTestId('textarea');
+        fireEvent.click(elem)
         fireEvent.change(elem, { target: { value: 'My habits' } });
 
         elem = await findByTestId('mywayDropdown')
+        fireEvent.click(elem)
         fireEvent.change(elem, { target: { value: "Beginner" } })
 
         elem = await findByTestId('save')

@@ -51,9 +51,7 @@ describe('Search', () => {
 
         let elem = await findByTestId('searchinput');
         fireEvent.change(elem, { target: { value: 'hello' } })
-        // fireEvent.keyDown(elem, { key: 'Enter', code: 'Enter', charCode: 13 })
-        elem = await findByTestId('searchForm')
-        fireEvent.submit()
+        fireEvent.keyDown(elem, { key: 'Enter', code: 'Enter', charCode: 13 })
 
         // Wait for pageText to be populated
         elem = await findByTestId('results');

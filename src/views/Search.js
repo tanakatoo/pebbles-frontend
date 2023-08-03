@@ -71,9 +71,11 @@ function Search() {
 
         }
     }
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e, formik) => {
+        console.log('in handle key down', e.key)
         if (e.key === 'Enter') {
-            submitSearch()
+
+            submitSearch(formik.values, formik)
         }
     }
 
@@ -89,7 +91,7 @@ function Search() {
                 >{formik => {
                     console.log('formik values are', formik.values)
                     return (
-                        <Form data-testid="searchForm" onKeyDown={handleKeyDown}>
+                        <Form data-testid="searchForm" onKeyDown={(e) => handleKeyDown(e, formik)}>
                             <SearchBar
                                 placeholder={pageText.PLACEHOLDER}
                                 name='word'

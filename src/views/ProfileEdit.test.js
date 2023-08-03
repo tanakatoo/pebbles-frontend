@@ -163,14 +163,19 @@ describe('Edit Profile', () => {
             }
         );
 
-        //first one doesn't get changed...why?
+        // If the first elem changed is an <input> it seems to require a click (for focus?)
+        // If the first elem changed is a <textarea> it works fine. Heh?
 
         expect(await findByText(/Edit profile/)).toBeInTheDocument();
         let elem = await findByLabelText('Email', { exact: true });
+        fireEvent.click(elem)
         fireEvent.change(elem, { target: { value: 'hello2@test.com' } });
+
         elem = await findByLabelText('About', { exact: true });
+        fireEvent.click(elem)
         fireEvent.change(elem, { target: { value: 'Hello2 about' } });
         elem = await findByLabelText('Name', { exact: true });
+        fireEvent.click(elem)
         fireEvent.change(elem, { target: { value: 'My name is hello' } });
         expect(await findByLabelText(/Username/)).toBeDisabled();
 

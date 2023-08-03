@@ -19,6 +19,7 @@ afterAll(() => {
 
 beforeEach(async () => {
     window.localStorage.clear()
+    // jest.spyOn(global, 'handleSubmit')
 
 })
 
@@ -71,6 +72,7 @@ describe('UnblockUser', () => {
 
     test('able to Unblock a user', async () => {
 
+        // global.handleSubmit.mockImplementation((callback) => callback());
         const { findByRole, findByText } =
 
             renderWithProviders(
@@ -88,18 +90,17 @@ describe('UnblockUser', () => {
 
         let btn = await findByText(/Unblock/)
         fireEvent.click(btn);
+        console.log('before')
+        // this one doesn't work
+        server.use(
+            rest.get('http://localhost:3001/users/blocked', (req, res, ctx) => {
+                console.log('MOCK no data /users/blocked');
+                return res.once(ctx.json([]));
+            }),
+        )
 
-        //this one doesn't work
-        // server.use(
-        //     rest.get('http://localhost:3001/users/blocked', (req, res, ctx) => {
-        //         console.log('MOCK no data /users/blocked');
-
-        //         return res.once(ctx.json([]));
-        //     }),
-        // )
-
-        // myRadio = await findByText(/blockMe/)
-        // expect(myRadio).not.toBeInTheDocument();
+        myRadio = await findByText(/blockMe/)
+        expect(myRadio).not.toBeInTheDocument();
 
     })
 })
