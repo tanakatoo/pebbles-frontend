@@ -16,6 +16,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 import { Formik, Form } from "formik"
 
 const Home = () => {
+    window.scrollTo(0, 0);
     const [pageText, lang] = usePageText("home")
     // const [data, setData, handleChange, resetData] = useFormData('')
     const navigate = useNavigate()

@@ -9,7 +9,7 @@ import EditSection from '../components/profile/EditSection'
 import { Link } from 'react-router-dom'
 
 function ProfileEditMain() {
-
+    window.scrollTo(0, 0);
     const user = useSelector(state => state.profile.profile)
     const [pageText, lang] = usePageText('profile')
 

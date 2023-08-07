@@ -5,7 +5,7 @@ import usePageText from '../hooks/usePageText'
 import EditTitle from '../components/profile/EditTitle'
 
 const ProfileEditStudyBuddy = () => {
-
+    window.scrollTo(0, 0);
     const [pageText, lang] = usePageText("profile")
     return (
         <div>

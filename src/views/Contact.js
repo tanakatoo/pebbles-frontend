@@ -130,7 +130,7 @@ const Contact = () => {
                                 />
 
                                 <Button lang={lang} btnText={pageText.SUBMIT} type="submit" extraClasses="mt-12" isSubmitting={formik.isSubmitting} />
-                                <p className="mt-4 text-center text-gray-text">{pageText.REGISTER_TEXT} <span className="text-link hover:text-primary"><Link to="/login">{pageText.REGISTER_HERE}</Link></span></p>
+                                <p className="mt-4 text-center text-gray-text">{pageText.REGISTER_TEXT} <span className="text-link hover:text-primary"><Link to="/register">{pageText.REGISTER_HERE}</Link></span></p>
                             </Form>
                         )
                     }}

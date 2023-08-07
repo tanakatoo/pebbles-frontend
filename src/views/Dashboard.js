@@ -10,6 +10,7 @@ import CustomLink from '../components/button/CustomLink'
 import { AwesomeArrowRightLong } from '../styles/Icons'
 
 function Dashboard() {
+    window.scrollTo(0, 0);
     const [pageText, lang] = usePageText('dashboard')
     const profile = useSelector(state => state.profile.profile)
     console.log('in dashboa')

@@ -60,6 +60,7 @@ function Message() {
         }
     }
     useEffect(() => {
+        window.scrollTo(0, 0);
         getData()
     }, [])
 
@@ -95,6 +96,10 @@ function Message() {
                 //means server is down
                 console.log('Type error in submit', e)
                 setErrors(["UNKNOWN"])
+            } else if (e[0] === 'blocked') {
+
+
+                setErrors(["BLOCKED_ME"])
             } else {
                 console.log('Error in submit', e)
                 setErrors(e)

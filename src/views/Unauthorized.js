@@ -6,7 +6,7 @@ import CustomLink from '../components/button/CustomLink'
 import { useSelector } from 'react-redux'
 
 function Unauthorized() {
-
+    window.scrollTo(0, 0);
     console.log('are we logged in?', useSelector(state => state.profile))
     const [pageText, lang] = usePageText('home')
 

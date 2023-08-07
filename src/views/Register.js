@@ -15,6 +15,7 @@ import useSetToken from "../hooks/useSetToken";
 import { actionLogin } from "../reducers/actionCreator";
 
 const Register = () => {
+    window.scrollTo(0, 0);
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
     const navigate = useNavigate()

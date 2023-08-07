@@ -48,6 +48,7 @@ function SavedUsers() {
         }
     }
     useEffect(() => {
+        window.scrollTo(0, 0);
         getSavedUsers()
     }, [])
 

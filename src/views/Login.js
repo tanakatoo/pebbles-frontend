@@ -17,6 +17,7 @@ import CTA from "../components/common/CTA";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+    window.scrollTo(0, 0);
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
     const navigate = useNavigate()

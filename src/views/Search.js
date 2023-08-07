@@ -33,7 +33,7 @@ function Search() {
     }
 
     useEffect(() => {
-
+        window.scrollTo(0, 0);
         if (location.state && location.state.from === '/') {
             formRef.current.handleSubmit();
         }

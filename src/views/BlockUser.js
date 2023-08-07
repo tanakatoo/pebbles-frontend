@@ -42,7 +42,7 @@ function BlockUser() {
     }
 
     useEffect(() => {
-
+        window.scrollTo(0, 0);
         getData()
     }, [])
 

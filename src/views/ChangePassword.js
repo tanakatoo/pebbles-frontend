@@ -12,6 +12,7 @@ import CTA from "../components/common/CTA";
 import { useNavigate } from "react-router-dom";
 
 const ChangePassword = () => {
+    window.scrollTo(0, 0);
     const dispatch = useDispatch()
     const [pageText, lang] = usePageText("changePassword")
     const navigate = useNavigate()

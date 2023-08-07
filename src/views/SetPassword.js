@@ -28,6 +28,7 @@ const SetPassword = () => {
 
     //verify password and get user id from it
     useEffect(() => {
+        window.scrollTo(0, 0);
         //verify token first
 
         if (searchParams.size === 0) {

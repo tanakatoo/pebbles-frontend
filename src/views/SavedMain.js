@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 
 function SavedMain() {
     const [pageText, lang] = usePageText('saved')
-
+    window.scrollTo(0, 0);
     return (
         <div className='px-2 border-t border-t-gray-stroke'>
             <div className='flex flex-col justify-center mb-12'>

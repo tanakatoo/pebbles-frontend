@@ -24,6 +24,7 @@ function MessageMain() {
     const [doneGettingData, setDoneGettingData] = useState(false)
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const getData = async () => {
             try {
                 setDoneGettingData(false)

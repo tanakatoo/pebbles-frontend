@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 
 function NotFound404() {
+    window.scrollTo(0, 0);
     const [pageText, lang] = usePageText("home")
     return (
         <div className='flex bg-oopsMobile bg-cover bg-center bg-no-repeat relative h-[400px] mb-[300px]
