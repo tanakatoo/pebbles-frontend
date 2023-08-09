@@ -14,7 +14,7 @@ function ProfileEditMain() {
     const [pageText, lang] = usePageText('profile')
 
     return (
-        <div className='ProfileEditMain border-t-2 border-gray'>
+        <div className='ProfileEditMain'>
             <div className='pb-24 max-w-[800px] mx-auto '>
                 <EditTitle title={pageText.EDIT_ACCT} backLink={`/users/${user.username}`} />
                 <div className='w-full py-2 inline-flex justify-center mb-6'>

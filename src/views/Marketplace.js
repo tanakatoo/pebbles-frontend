@@ -8,7 +8,7 @@ function Marketplace() {
     }, [])
 
     return (
-        <div className='py-24 flex flex-col items-center border-t-2 border-gray'>
+        <div className='py-24 flex flex-col items-center '>
             <h1 className='text-center font-bold text-mobile-header-1 mb-12'>{pageText.TITLE}</h1>
             <p className='mb-12 text-center'>{pageText.CHECK_BACK}</p>
         </div>

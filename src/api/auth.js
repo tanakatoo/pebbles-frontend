@@ -19,6 +19,14 @@ class AuthApi extends PebblesApi {
         return res
     }
 
+    /* Login as test user*/
+    static async loginTestUser() {
+        let res = await this.request(`auth/login/testuser`, {}, "POST")
+        // this.token = res.token
+
+        return res
+    }
+
     /*check if username or email is in db, if so, send email */
     static async changePassword(username, lang) {
 

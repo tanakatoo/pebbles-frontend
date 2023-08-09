@@ -23,7 +23,7 @@
         "TOWN_TITLE":"Japanese Town",
         "TOWN_TEXT1":"Have you ever studied by yourself and needed an answer to a question but have no where to ask? Do you feel like you are not making any improvement in Japanese and need some motivation?",
         "TOWN_TEXT2":"This part of the community, the Japanese Town, is a place where you can join and create groups related learning Japanese - grammar groups, vocabulary groups, how to study for the Japanese Proficiency Test groups for example. Post your questions and get answers. Test out your knowledge and answer questions to strengthen your understanding of the language.",
-        "TOWN_BTN":"Take me to Town",
+        "TOWN_BTN":"Take me to Town (under construction)",
         "INFO_CENTER_TITLE":"Regional Info Center",
         "INFO1":"This is the place where you can find valuable resources travelling to and living in Japan. Do you have questions like:",
         "INFO_Q1":"How do I get a library card and use it ",
@@ -32,7 +32,7 @@
         "INFO_Q4":"Where in Kyushu can I see the best sakura ",
         "INFO2":"Some resources are related to the whole of the country so if you are travelling to, for example Nagoya, we recommend joining the Japan group, the Aichi group, AND the Nagoya group. These groups all have a resource area, and a Q & A area where you can find information and answers to your questions. The resource area can be posted anonymously please post and share your knowledge!",
         "INFO3":"Another way to use this area is to create your own group and invite others to join. Make your own little community (same religion? same company?) and share resources and experience. Make it public and easy for newcomers to join or make it private and restrict it to make it exclusive with your own rules.",
-        "INFO_BTN":"Explore the Info Center",
+        "INFO_BTN":"Explore the Info Center  (under construction)",
         "MARKETPLACE_TITLE":"Marketplace",
         "MARKET1":"One man's garbage is another man's gold. This is the area for offering or selling used goods. We created this area because we understand that when you live in a new country you end up buying a lot of items that you only use for the limited time you are overseas. The ultimate goal is to create less garbage for the world while saving some money and helping others - so offer or sell your items to other expats and immigrants. Some items that are great to pass down are: ",
         "ITEM1":"Microwave, toaster ovens, stoves ",
@@ -41,9 +41,10 @@
         "ITEM4":"Sporting goods that you won't use back home",
         "ITEM5":"Mattresses, sofas, carpets",
         "ITEM6":"Japanese studying materials",
-        "MARKET_BTN":"Discover hidden treasures",
+        "MARKET_BTN":"Discover hidden treasures  (under construction)",
         "STUDY_SUPPORT_TITLE":"Study Support",
-        "SUPPORT1":"This part of the community is for Japanese people learning English only. "
+        "SUPPORT1":"This part of the community is for Japanese people learning English only. ",
+        "UNDER_CONSTRUCTION":"Under construction!"
     },
     "JA":{
       "TITLE":"Pebblesのお話",
@@ -70,7 +71,7 @@
       "TOWN_TITLE":"英語街",
       "TOWN_TEXT1":"Have you ever studied by yourself and needed an answer to a question but have no where to ask? Do you feel like you are not making any improvement in English and need some motivation?",
       "TOWN_TEXT2":"This part of the community, the Japanese Town, is a place where you can join and create groups related learning Japanese - grammar groups, vocabulary groups, how to study for the Japanese Proficiency Test groups for example. Post your questions and get answers. Test out your knowledge and answer questions to strengthen your understanding of the language. Join the 'Once a day' group to practice using the grammar and vocabulary you recently learned to answer the question of the day. ",
-      "TOWN_BTN":"Take me to Town",
+      "TOWN_BTN":"Take me to Town　（工事中）",
       "INFO_CENTER_TITLE":"地域案内センター",
       "INFO1":"This is the place where you can find valuable resources travelling to and living in an area. Do you have questions like:",
       "INFO_Q1":"How do I get a library card and use it ",
@@ -79,7 +80,7 @@
       "INFO_Q4":"When is the best time to go to the Rocky Mountains in Canada ",
       "INFO2":"Some resources are related to the whole of the country so if you are travelling to, for example Toronto, we recommend joining the Canada group, the Ontario group, AND the Toronto group. These groups all have a resource area, and a Q and A area where you can find information and answers to your questions. The resource area can be posted anonymously please post and share your knowledge!",
       "INFO3":"Another way to use this area is to create your own group and invite others to join. Make your own little community (same religion? same company?) and share resources and experience. Make it public and easy for newcomers to join or make it private and restrict it to make it exclusive with your own rules.",
-      "INFO_BTN":"Explore the Info Center",
+      "INFO_BTN":"Explore the Info Center　（工事中）",
       "MARKETPLACE_TITLE":"マーケット",
       "MARKET1":"One man's garbage is another man's gold. This is the area for offering or selling used goods. We created this area because we understand that when you live in a new country you end up buying a lot of items that you only use there, and when you move to a new area, you don't want to spend too much money on items you will only use for the limited time you are overseas. The ultimate goal is to create less garbage for the world - so offer or sell your items to other expats and immigrants. Some items that are great to pass down are: ",
       "ITEM1":"Microwave, toaster ovens",
@@ -88,7 +89,7 @@
       "ITEM4":"Treadmill, trampoline",
       "ITEM5":"Mattresses, sofas, carpets",
       "ITEM6":"English studying materials",
-      "MARKET_BTN":"Discover hidden treasures",
+      "MARKET_BTN":"Discover hidden treasures　（工事中）",
         "STUDY_SUPPORT_TITLE":"日本語Study Support",
         "SUPPORT1":"日本語 From our survey of English learners, 90% of them did not know that reading could be a way to learn English, and that ALL of them found that reading books at their level is a great way to learn. Pebbles Community offers a digital library system called Raz Kids to help you self-learn. Raz Kids is currently used by North Americans to provide school children leveled books to improve their English reading. Pebbles Community found unique ways to help improve a foreigner's English level. Specifically, incorporating our way of using the system can help improve:",
         "IMPROVE1_TITLE":"Vocabulary",
@@ -102,6 +103,7 @@
         "IMPROVE5_TITLE":"Pronunciation",
         "IMPROVE5":"Everyone has mirror neurons (means we like to imitate people, rather we want to or not) so listening to perfect English everyday will help your brain recognize what is good English. This is especially good for little kids. In addition, record yourself reading and let PEC check for pronunciation.",
         "SUPPORT_ENDING":"Pebbles Community offers a one week free trial of the digital library. This includes a free assessment to check your current reading level, and access to all leveled books for a week. After that, becoming a Premium member of Pebbles Community will give you unlimited access to the digital library and many other perks to help support your learning in the best possible way. Read about our Premium Membership here .",
-        "SUPPORT_BTN":"Get my free trial"
+        "SUPPORT_BTN":"Get my free trial　（工事中）",
+        "UNDER_CONSTRUCTION":"工事中!"
     }
 }

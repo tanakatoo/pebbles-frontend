@@ -52,7 +52,7 @@ function About() {
                     {lang === "JA" ?
                         <div className='text-center my-1' >
                             <div className='group'>
-                                <HashLink to="#link-support" className=' group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text'>
+                                <HashLink to="#support" className=' group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text'>
                                     {pageText.STUDY_SUPPORT_TITLE}
                                     <span className='inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1'>
                                         <AwesomeArrowRightLong />
@@ -64,7 +64,7 @@ function About() {
                     }
                     <div className='text-center my-1 ' >
                         <div className='group'>
-                            <HashLink to="#link-studyBuddy" className=' group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text'>
+                            <HashLink to="#study-buddy" className=' group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text'>
                                 {pageText.STUDY_BUDDY_TITLE}
                                 <span className='inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1'>
                                     <AwesomeArrowRightLong />
@@ -74,7 +74,7 @@ function About() {
                     </div>
                     <div className='text-center my-1 '>
                         <div className='group'>
-                            <HashLink to="#link-town" className=' group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text'>
+                            <HashLink to="#language-town" className=' group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text'>
                                 {pageText.TOWN_TITLE}
                                 <span className='inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1'>
                                     <AwesomeArrowRightLong />
@@ -84,7 +84,7 @@ function About() {
                     </div>
                     <div className='text-center my-1 '>
                         <div className='group'>
-                            <HashLink to="#link-info" className=' group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text'>
+                            <HashLink to="#info-center" className=' group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text'>
                                 {pageText.INFO_CENTER_TITLE}
                                 <span className='inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1'>
                                     <AwesomeArrowRightLong />
@@ -94,7 +94,7 @@ function About() {
                     </div>
                     <div className='text-center my-1 '>
                         <div className='group'>
-                            <HashLink to="#link-marketplace" className=' group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text'>
+                            <HashLink to="#marketplace" className=' group-hover:underline group-hover:underline-offset-4 group-hover:text-gray-text'>
                                 {pageText.MARKETPLACE_TITLE}
                                 <span className='inline-block group-hover:translate-x-2 group-hover:text-gray-text transition text-black ps-1'>
                                     <AwesomeArrowRightLong />
@@ -107,7 +107,7 @@ function About() {
             </div >
             {lang === "JA" ?
                 <>
-                    <div id="link-support" className='flex justify-center bg-primary-super-light bg-supportLongMobile md:bg-supportLongTablet lg:bg-supportLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
+                    <div id="support" className='flex justify-center bg-primary-super-light bg-supportLongMobile md:bg-supportLongTablet lg:bg-supportLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
                     </div>
                     <h2 className="font-medium text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-background text-primary-dark">{pageText.STUDY_SUPPORT_TITLE}</h2>
                     <div className='container flex flex-col items-center mx-auto my-8 md:my-12'>
@@ -144,7 +144,7 @@ function About() {
                 </>
                 : ''
             }
-            <div id="link-studyBuddy" className='flex justify-center bg-primary-super-light bg-studyBuddyLongMobile md:bg-studyBuddyLongTablet lg:bg-studyBuddyLongDesktop bg-cover bg-bottom bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
+            <div id="study-buddy" className='flex justify-center bg-primary-super-light bg-studyBuddyLongMobile md:bg-studyBuddyLongTablet lg:bg-studyBuddyLongDesktop bg-cover bg-bottom bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
             </div>
             <h2 className={`font-bold text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-study-buddy-accent text-primary-dark
             ${lang === "EN" ? 'font-StudyBuddyEN' : "font-StudyBuddyJA"}`}>{pageText.STUDY_BUDDY_TITLE}</h2>
@@ -164,7 +164,7 @@ function About() {
                 </div>
             </div>
 
-            <div id="link-town" className='flex justify-center bg-primary-super-light bg-townLongMobile md:bg-townLongTablet lg:bg-townLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
+            <div id="language-town" className='flex justify-center bg-primary-super-light bg-townLongMobile md:bg-townLongTablet lg:bg-townLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
             </div>
             <h2 className="font-medium font-Community text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-community-accent text-white">{pageText.TOWN_TITLE}</h2>
             <div className='container flex flex-col items-center mx-auto my-8'>
@@ -176,7 +176,7 @@ function About() {
                 </div>
             </div>
 
-            <div id="link-info" className='flex justify-center bg-primary-super-light bg-infoLongMobile md:bg-infoLongTablet lg:bg-infoLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
+            <div id="info-center" className='flex justify-center bg-primary-super-light bg-infoLongMobile md:bg-infoLongTablet lg:bg-infoLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
             </div>
             <h2 className="font-medium font-Regional  text-mobile-page-header text-center mb-4 md:mb-12 p-2 bg-regional-accent text-white">{pageText.INFO_CENTER_TITLE}</h2>
             <div className='container flex flex-col items-center mx-auto my-8'>
@@ -207,7 +207,7 @@ function About() {
                 </div>
             </div>
 
-            <div id="link-marketplace" className='flex justify-center bg-primary-super-light bg-marketplaceLongMobile md:bg-marketplaceLongTablet lg:bg-marketplaceLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
+            <div id="marketplace" className='flex justify-center bg-primary-super-light bg-marketplaceLongMobile md:bg-marketplaceLongTablet lg:bg-marketplaceLongDesktop bg-cover bg-center bg-no-repeat relative min-h-[150px] md:min-h-[200px] lg:min-h-[250px]' >
             </div>
             <h2 className={`${lang === "EN" ? 'font-EnglishMarketEN' : 'font-EnglishMarketJA'} font-bold text-mobile-page-header text-center mb-4 p-2 bg-marketplace-accent text-primary-dark `}>{pageText.MARKETPLACE_TITLE}</h2>
             <div className='container flex flex-col items-center mx-auto my-8'>

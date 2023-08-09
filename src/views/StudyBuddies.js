@@ -257,7 +257,7 @@ const StudyBuddies = () => {
 
 
                                 </Dialog >
-                                <div data-testid="pageTitlepageText" className={`border-t border-t-gray-stroke `}>
+                                <div data-testid="pageTitlepageText" className={``}>
                                     <PageTitle text={pageText.TITLE}
                                         extraClasses={`${lang === "EN" ? 'font-StudyBuddyEN' : 'font-StudyBuddyJA'}
                     my-3`} />

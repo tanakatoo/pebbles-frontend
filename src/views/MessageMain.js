@@ -70,7 +70,7 @@ function MessageMain() {
 
     return (
         // <Protected>
-        <div className=' my-16 flex justify-center'>
+        <div className=' py-16 flex justify-center'>
 
             {errors.length > 0 &&
                 <div>

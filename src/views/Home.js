@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import usePageText from "../hooks/usePageText"
 import SearchBar from "../components/common/SearchBar"
 import { Connect, Language, Travel } from "../styles/Icons"
@@ -9,23 +9,59 @@ import communitysquare from "../images/community-square.jpg"
 import regionalsquare from "../images/regional-square.jpg"
 import marketplacesquare from "../images/marketplace-square.jpg"
 import studysupportsquare from "../images/studysupport-square.jpg"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Button } from "../components/button/Button"
 import useFormData from "../hooks/useFormData"
 import { useLocation, useNavigate } from "react-router-dom"
 import { Formik, Form } from "formik"
+import { HashLink } from 'react-router-hash-link';
+import AuthApi from "../api/auth"
+import { actionLogin } from "../reducers/actionCreator"
+import ServerError from "../components/form/ServerError"
+import { Link } from "react-router-dom"
+
 
 const Home = () => {
     window.scrollTo(0, 0);
     const [pageText, lang] = usePageText("home")
+    const dispatch = useDispatch()
+    const token = useSelector(state => state.profile.token) //to check if user is logged in
     // const [data, setData, handleChange, resetData] = useFormData('')
     const navigate = useNavigate()
     const location = useLocation()
+    const [errors, setErrors] = useState([])
+
+    console.log('token is', token)
 
     const submitSearch = async (values, { setSubmitting }) => {
         console.log('this is just the word to send',)
         navigate('/search', { state: { word: values.word, from: location.pathname } })
         setSubmitting(false)
+    }
+
+    const loginTestUser = async () => {
+
+        if (!token) {
+            //if user is not yet already logged in log them in with test user
+            try {
+                const res = await AuthApi.loginTestUser()
+                console.log('res is', res)
+                //call dispatch to set token in profileReducer
+                dispatch(actionLogin(res)) //save token and then profile
+                // setFlashMessage('LOGIN')
+
+                navigate('/users/dashboard')
+            } catch (e) {
+                if (e instanceof TypeError) {
+                    //means server is down
+                    console.error('TypeError at login', e)
+                    setErrors(["UNKNOWN"])
+                } else {
+                    console.error('Error at login', e)
+                    setErrors(e)
+                }
+            }
+        }
     }
 
     return (
@@ -49,6 +85,10 @@ const Home = () => {
             </div>
             <div className='flex justify-center bg-primary-super-light bg-homeHero md:bg-homeHeroTablet lg:bg-homeHeroDesktop bg-cover bg-center bg-no-repeat relative min-h-screen' >
                 <div className="bg-gradient-to-b absolute from-primary-super-light from-0% via-transparent via-1% to-transparent to-100% w-full h-screen"></div>
+                {!token && <div className="absolute pt-5 cursor-pointer z-40 underline underline-offset-4 hover:text-gray-text">
+                    <p onClick={loginTestUser}>{pageText.LOGIN_TESTUSER}</p></div>}
+                {Object.keys(errors).length > 0 && <div className="z-40 absolute top-40"><ServerError msg={errors} title='Error logging in as test user' /></div>}
+
                 <h1 className="text-primary-dark font-bold mx-4 text-center pt-10 md:pt-16 text-mobile-header-1 absolute">{pageText.H1}</h1>
             </div>
             <section className="pt-12 md:pt-24  mx-auto">
@@ -83,6 +123,7 @@ const Home = () => {
                             link="/study-support"
                             img={studysupportsquare}
                             title={pageText.HELP5_TITLE}
+                            construction={pageText.UNDER_CONSTRUCTION}
                             desc={pageText.HELP5_DESC} />
                         : ''
                     }
@@ -92,7 +133,9 @@ const Home = () => {
                         link="/study-buddies"
                         img={studybuddysquare}
                         title={pageText.HELP3_TITLE}
-                        desc={pageText.HELP3_DESC} />
+                        desc={pageText.HELP3_DESC}
+                        button=
+                        {<Button lang={lang} btnText="Tell me more" hashLink={'/about#study-buddy'} textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
                     <Supports
                         font={`font-Community font-medium text-gold-4`}
                         img={communitysquare}
@@ -101,8 +144,9 @@ const Home = () => {
                         bgColor={'bg-community-accent'}
                         titleColor="text-white"
                         descColor='text-white'
+                        construction={pageText.UNDER_CONSTRUCTION}
                         button=
-                        {<Button lang={lang} btnText="Tell me more" textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
+                        {<Button lang={lang} btnText="Tell me more" hashLink={'/about#language-town'} textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
                     <Supports
                         font={`font-Regional text-gold-4`}
                         img={regionalsquare}
@@ -111,16 +155,18 @@ const Home = () => {
                         bgColor={'bg-regional-accent'}
                         titleColor="text-white"
                         descColor='text-white'
+                        construction={pageText.UNDER_CONSTRUCTION}
                         button=
-                        {<Button lang={lang} btnText="Tell me more" textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
+                        {<Button lang={lang} btnText="Tell me more" hashLink={'/about#info-center'} textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
                     <Supports
                         font={`${lang === "EN" ? 'font-EnglishMarketEN' : 'font-EnglishMarketJA'} font-bold`}
                         bgColor='bg-marketplace-accent'
                         img={marketplacesquare}
                         title={pageText.HELP4_TITLE}
-                        desc={pageText.HELP4_DESC} />
-
-
+                        desc={pageText.HELP4_DESC}
+                        construction={pageText.UNDER_CONSTRUCTION}
+                        button=
+                        {<Button lang={lang} btnText="Tell me more" hashLink={'/about#marketplace'} textColor="text-primary-dark" py="py-2" bkColor="bg-white" type="button" />} />
                 </div>
             </section>
             <section className="py-12">
@@ -130,7 +176,7 @@ const Home = () => {
                 </div> */}
                 <p className="px-4 text-mobile-page-header text-center text-primary-dark">{pageText.HERO3_BOTTOM}</p>
                 <div className="flex justify-center">
-                    <Button lang={lang} btnText="More about us" extraClasses="mt-12 w-[200px]"></Button>
+                    <Button lang={lang} btnText="More about us" extraClasses="mt-12 w-[200px]" link='/about'></Button>
                 </div>
             </section>
         </div >

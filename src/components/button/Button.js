@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link"
 
 export const Button = ({
     icon = null,
@@ -14,6 +15,7 @@ export const Button = ({
     link = null,
     noShadow = false,
     disabled = false,
+    hashLink = null,
     testid = false }
 ) => {
 
@@ -34,20 +36,23 @@ export const Button = ({
                 disabled:opacity-50 ${extraClasses}
                 hover:opacity-75`}
                 type={type} disabled={isSubmitting || disabled}>
-                {(link && !disabled) ?
-                    icon ? <>
-                        {icon}
-
-                        <Link to={link} className={`font-medium`}>{btnText}</Link>
-                    </>
-                        :
-                        <Link to={link} className={`font-medium`}>{btnText}</Link>
+                {hashLink ?
+                    <HashLink to={hashLink} className={`font-medium`}>{btnText}</HashLink>
                     :
-                    icon ? <>
-                        {icon}
-                        <span className={`font-medium`}>{btnText}</span>
-                    </>
-                        : <span className={`font-medium`}>{btnText}</span>
+                    (link && !disabled) ?
+                        icon ? <>
+                            {icon}
+
+                            <Link to={link} className={`font-medium`}>{btnText}</Link>
+                        </>
+                            :
+                            <Link to={link} className={`font-medium`}>{btnText}</Link>
+                        :
+                        icon ? <>
+                            {icon}
+                            <span className={`font-medium`}>{btnText}</span>
+                        </>
+                            : <span className={`font-medium`}>{btnText}</span>
                 }
 
 

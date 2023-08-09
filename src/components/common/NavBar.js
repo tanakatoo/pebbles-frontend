@@ -201,7 +201,7 @@ const NavBar = () => {
 
     return (
 
-        <nav className="my-4 mx-2 md:mx-4 flex justify-between flex-no-wrap z-50">
+        <nav className="py-4 px-2 md:px-4 flex justify-between flex-no-wrap z-50 border-b border-gray-stroke">
             <Link to='/'>
                 <button className="flex items-center">
                     <img src={logo} className="h-12" alt="Pebbles logo" />

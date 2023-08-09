@@ -106,13 +106,16 @@ const Profile = () => {
     useEffect(() => {
         //if user switches from study buddy in JA to EN, there is no 3rd tab in EN so we have to 
         //set it ourselves
-        if (lang === "JA" && selectedTabIndex === 1) {
-            setSelectedTabIndex(2)
-            // setTabs(currentProfile.myProfile && lang === "JA" ? [pageText.PROFILE, pageText.MYWAY, pageText.STUDY_BUDDY] : [pageText.PROFILE, pageText.STUDY_BUDDY])
-        }
-        console.log('selectedTabIndex is', selectedTabIndex)
-        if (selectedTabIndex === 2) {
-            setSelectedTabIndex(1)
+
+        if (currentProfile && currentProfile.myProfile) {
+            if (lang === "JA" && selectedTabIndex === 1) {
+                setSelectedTabIndex(2)
+                // setTabs(currentProfile.myProfile && lang === "JA" ? [pageText.PROFILE, pageText.MYWAY, pageText.STUDY_BUDDY] : [pageText.PROFILE, pageText.STUDY_BUDDY])
+            }
+            console.log('selectedTabIndex is', selectedTabIndex)
+            if (selectedTabIndex === 2) {
+                setSelectedTabIndex(1)
+            }
         }
     }, [lang])
 
@@ -146,7 +149,7 @@ const Profile = () => {
     }
 
     return (
-        <div className='Profile border-t-2 pt-4 border-gray'>
+        <div className='Profile pt-4 '>
             <div className={`container mx-auto mt-2 ${lang === "EN" ? 'font-poppins' : 'font-NotoSansJPRegular'}`}>
                 {errors.length > 0 ? <ServerError msg={errors} /> :
 

@@ -12,7 +12,7 @@ function ChangeAvatar() {
 
 
     return (
-        <div className='py-24 flex flex-col items-center border-t-2 border-gray'>
+        <div className='py-24 flex flex-col items-center'>
             <h1 className='text-center font-bold text-mobile-header-1 mb-12'>{pageText.CHANGE_AVATAR_TITLE}</h1>
             <p className='mb-12 text-center max-w-prose'>{pageText.CHANGE_AVATAR_MSG}</p>
         </div>

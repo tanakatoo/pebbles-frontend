@@ -68,7 +68,7 @@ function BlockUser() {
 
             {errors.length > 0 && <ServerError msg={errors} />}
             {data.length === 0 && errors.length === 0 && doneGettingData === false ?
-                <Spinner />
+                <div className='my-24'><Spinner /></div>
                 : doneGettingData === true && data.length === 0 ?
                     <NoData msg={pageText.NO_CONTACTS_BLOCK} link='/messages' linkText={pageText.BACK_TO_CONTACT_LINK} />
                     :

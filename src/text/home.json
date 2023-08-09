@@ -22,7 +22,9 @@
         "HERO3_BOTTOM":"　日本語we are here to support you.",
         "OOPS":"なんてこった！ページが見つかりません。",
         "OOPS_GO_HOME":"ホームに戻ります",
-        "UNAUTHORIZED":"日本語 you are not logged in or do not have authorization"
+        "UNAUTHORIZED":"日本語 you are not logged in or do not have authorization",
+        "UNDER_CONSTRUCTION":"(工事中!)",
+        "LOGIN_TESTUSER":"テストユーザーからログインしてサイトを体験しましょう！"
     },
     "EN":{
         "H1": "Community for learning Japanese and living in Japan",
@@ -47,6 +49,8 @@
         "HERO3_BOTTOM":"we are here to support you.",
         "OOPS":"Oops! We can't find the page you requested.",
         "OOPS_GO_HOME":"Go back home",
-        "UNAUTHORIZED":"You are not logged in or do not have authorization to view this page"
+        "UNAUTHORIZED":"You are not logged in or do not have authorization to view this page",
+        "UNDER_CONSTRUCTION":"(Under construction!)",
+        "LOGIN_TESTUSER":"Login as a test user to explore!"
     }
 }

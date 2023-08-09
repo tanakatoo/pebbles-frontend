@@ -58,7 +58,7 @@ function SavedUsers() {
     }
 
     return (
-        <div className={`px-2 border-t border-t-gray-stroke `}>
+        <div className={`px-2 `}>
             <PageTitle text={pageText.SAVED_USERS} extraClasses='my-3' />
             {errors.length > 0 && <ServerError msg={errors} />}
             {!data && errors.length === 0 && doneGettingData === false ?

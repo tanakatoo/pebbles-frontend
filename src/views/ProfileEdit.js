@@ -8,7 +8,7 @@ const ProfileEdit = () => {
     window.scrollTo(0, 0);
     const [pageText, lang] = usePageText("profile")
     return (
-        <div className='ProfileEdit border-t-2 border-gray'>
+        <div className='ProfileEdit '>
             <div className='container mx-auto'>
                 <EditTitle title={pageText.EDIT_PROFILE} backLink={`/users/profile/edit`} />
             </div>
