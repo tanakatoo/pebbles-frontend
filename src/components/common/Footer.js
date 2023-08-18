@@ -14,7 +14,7 @@ function Footer() {
     }, [lang])
     return (
         <div className=' bg-primary-dark text-white'>
-            <div className='px-8 pt-12  flex flex-col lg:flex-row items-center  lg:items-start  lg:justify-between py-8 xl:justify-around'>
+            <div className='px-8 pt-8  flex flex-col lg:flex-row items-center  lg:items-start  lg:justify-between py-8 xl:justify-around'>
                 <div className='flex flex-col items-center md:ms-4  lg:items-start  lg:max-w-[300px]'>
                     <p className='text-mobile-page-header font-bold text-center'>Pebbles Community</p>
                     <p className='pb-8 text-center lg:text-left'>{text.SLOGAN}</p>

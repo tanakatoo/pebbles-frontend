@@ -123,10 +123,10 @@ const StudyBuddies = () => {
         } catch (e) {
             if (e instanceof TypeError) {
                 //means server is down
-                console.error('TypeError saving edit profile data', e)
+                console.error('TypeError getting study buddy data', e)
                 setErrors(["UNKNOWN"])
             } else {
-                console.error('Error saving edit profile data', e)
+                console.error('Error getting study buddy data', e)
                 setErrors(e)
             }
         } finally {
