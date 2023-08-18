@@ -4,7 +4,7 @@ class StudyBuddyApi extends PebblesApi {
 
     /* Get list of study buddies for main screen */
     static async getStudyBuddies(pageNum) {
-        console.log('got studybuddies going to get request')
+
         let res = await this.request(`study-buddies/1`)
 
         return res

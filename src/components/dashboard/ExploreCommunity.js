@@ -21,17 +21,18 @@ function ExploreCommunity({ type }) {
             setErrors([])
             setDoneGettingData(false);
             const res = await StudyBuddyApi.getStudyBuddies();
-            console.log('study budy', res)
+
             setData(res);
             setDoneGettingData(true);
 
         } catch (e) {
+            console.log('getting error')
             if (e instanceof TypeError) {
                 //means server is down
                 console.error(e)
                 setErrors(["UNKNOWN"])
             } else {
-                console.error(e)
+                console.error('error getting data', e)
                 setErrors(e)
             }
         }
@@ -64,7 +65,7 @@ function ExploreCommunity({ type }) {
         }
         func()
     }, [])
-
+    console.log('errorlength', errors.length, 'done data', doneGettingData, 'data is', data)
 
     return (
         <div className='w-full  flex flex-col'>
@@ -73,44 +74,47 @@ function ExploreCommunity({ type }) {
                     : type === "marketplace" ? pageText.MARKETPLACE :
                         type === "infoCenter" ? pageText.INFO_CENTER :
                             type === "languageTown" ? pageText.LANGUAGE_TOWN : ''}</h3>
-            {errors.length > 0 && <ServerError msg={errors} />}
-            {!data && errors.length === 0 && doneGettingData === false ?
-                <div className=' my-24'>
-                    <Spinner />
-                </div>
-                :
-                doneGettingData === true && data.length === 0 ?
-                    type === "studyBuddy" ?
-                        <div data-testid="dashStudyBuddyNoData" className='mx-auto px-2 md:px-4 my-12 max-w-prose'>
-                            < NoData msg={pageText.NO_DATA_STUDY_BUDDY} />
-                        </div>
+            {errors.length > 0 ? <ServerError msg={errors} /> :
+                !data && errors.length === 0 && doneGettingData === false ?
+                    <div className=' my-24'>
+                        <Spinner />
+                    </div>
+                    :
+                    doneGettingData === true && data !== null && data.length === 0 ?
+                        type === "studyBuddy" ?
+                            <div data-testid="dashStudyBuddyNoData" className='mx-auto px-2 md:px-4 my-12 max-w-prose'>
+                                < NoData msg={pageText.NO_DATA_STUDY_BUDDY} />
+                            </div>
+                            :
+                            <div className='my-12 px-2 md:px-4'>
+                                < NoData msg={pageText.NO_DATA} />
+                            </div>
+
                         :
-                        <div className='my-12 px-2 md:px-4'>
-                            < NoData msg={pageText.NO_DATA} />
-                        </div>
+                        <div className='px-2 md:px-4'>
+                            {console.log('data is', data)}
+                            <div data-testid="dashStudyBuddyWithData" className='grow flex justify-end mb-2'>
+                                <p className=' text-mobile-card-body '>
+                                    <CustomLink text={pageText.SEE_ALL} path=
+                                        {type === "studyBuddy" ? `/study-buddies` :
+                                            type === "marketplace" ? `/marketplace` :
+                                                type === "infoCenter" ? '/info-center' :
+                                                    type === "languageTown" ? 'language-town' : ''}
+                                    /> <AwesomeCaretRight /></p>
+                            </div>
+                            <div className={`flex flex-wrap gap-2 items-center `}>
 
-                    : <div className='px-2 md:px-4'>
+                                {data.length === 0 ? <p>Under construction</p>
+                                    :
+                                    data.map(d =>
+                                        <div key={uuid()} className='flex-1 flex-grow flex justify-center'>
+                                            <ExploreCommunityCard data={d} lang={lang} />
+                                        </div>)}
 
-                        <div data-testid="dashStudyBuddyWithData" className='grow flex justify-end mb-2'>
-                            <p className=' text-mobile-card-body '>
-                                <CustomLink text={pageText.SEE_ALL} path=
-                                    {type === "studyBuddy" ? `/study-buddies` :
-                                        type === "marketplace" ? `/marketplace` :
-                                            type === "infoCenter" ? '/info-center' :
-                                                type === "languageTown" ? 'language-town' : ''}
-                                /> <AwesomeCaretRight /></p>
-                        </div>
-                        <div className={`flex flex-wrap gap-2 items-center `}>
-                            {data.length === 0 ? <p>under construciton</p>
-                                :
-                                data.map(d =>
-                                    <div key={uuid()} className='flex-1 flex-grow flex justify-center'>
-                                        <ExploreCommunityCard data={d} lang={lang} />
-                                    </div>)}
+                            </div>
 
-                        </div>
+                        </div>}
 
-                    </div>}
         </div>
     )
 }

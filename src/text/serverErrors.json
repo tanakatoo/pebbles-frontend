@@ -1,35 +1,35 @@
     {
         "DUPLICATE_EMAIL":{
             "EN":"Email is already registered",
-            "JA":"Jap Email is already registered"
+            "JA":"メールアドレスはすでに登録されています"
         },
         "USERNAME_TAKEN":{
             "EN":"Username is already taken",
-            "JA":"Jap Username is already taken"
+            "JA":"ユーザー名は既に使われています"
         },
         "INVALID_CREDENTIALS":{
             "EN":"Invalid username or password",
-            "JA":"ユーザー名、またはパスワードが正しくありません"
+            "JA":"ユーザー名かパスワードが無効です"
         },
         "NOT_FOUND":{
             "EN":"Requested data cannot be found",
-            "JA":"Jap Requested data cannot be found"
+            "JA":"要求されたデータが見つかりません"
         },
         "UNAUTHORIZED":{
             "EN":"No permissions to view content",
-            "JA":"Jap not allowed to view content"
+            "JA":"コンテンツを表示する権限がありません"
         },
         "BAD_REQUEST":{
             "EN":"Not a proper request",
-            "JA":"Jap not allowed to view content"
+            "JA":"適切なリクエストではありません"
         },
         "FORBIDDEN":{
             "EN":"No permissions to view content",
-            "JA":"Jap not allowed to view content"
+            "JA":"コンテンツを表示する権限がありません"
         },
         "UNKNOWN":{
             "EN":"Server error. Please contact us to solve.",
-            "JA":"Jap server error. Contact us to solve"
+            "JA":"サーバーエラー。解決するにはお問い合わせください。"
         },
         "BLOCKED":{
             "EN":"You blocked this user. Unblock to send a message.",

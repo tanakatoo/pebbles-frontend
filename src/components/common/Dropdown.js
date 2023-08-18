@@ -4,11 +4,11 @@ import { AwesomeChevronDown } from '../../styles/Icons'
 import { NavLink } from 'react-router-dom'
 
 function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr = null, width = null }) {
-    console.log('subitems', subitems)
+
     const [dropdown, setDropdown] = useState({ id: null, display: false })
 
     const handleClickingItself = (e) => {
-        console.log('a drpodown so not close', e.target.parentElement.id)
+
         if (e.target.id ||
             e.target.parentElement.id ||
             e.target.parentElement.parentElement.id ||
@@ -29,7 +29,7 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
         if (e.target.parentElement.id ||
             e.target.parentElement.parentElement.id ||
             e.target.parentElement.parentElement.parentElement.id) {
-            console.log('dropping down display is', dropdown.display)
+
             dropdown.display ? setDropdown({ id: null, display: false }) : setDropdown({ id: theID, display: true })
         }
     }
@@ -41,7 +41,7 @@ function Dropdown({ lang, items, subitems = {}, divide = false, css = null, pr =
                     return (
                         <div key={uuid()} className={`text-primary-dark  `} >
                             <li className={`py-3 px-4 font-medium`} >
-                                {console.log('link is', i.text, i.link)}
+
                                 {i.link ?
                                     <NavLink to={`${i.link}`} className={({ isActive }) => isActive ? "text-secondary-dark" : " hover:underline hover:underline-offset-4"}>
 

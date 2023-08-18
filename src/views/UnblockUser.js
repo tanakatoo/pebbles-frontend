@@ -69,7 +69,7 @@ function UnblockUser() {
 
         setErrors([])
         try {
-            console.log('vlues to submit', values)
+
             const res = await UserApi.unblockUser(values.username)
             getData()
         } catch (e) {

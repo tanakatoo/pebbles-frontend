@@ -71,7 +71,7 @@ const SetPassword = () => {
 
                             const res = await AuthApi.setPassword(values.password, lang, token)
                             //call dispatch to set token in profileReducer
-                            console.log(res)
+
                             dispatch(actionLogin(res))
                             setFlash(true)
                             resetForm({
@@ -82,9 +82,9 @@ const SetPassword = () => {
 
                             // navigate('/system-message', { state: { type: "CHANGED_PASSWORD" } })
                         } catch (e) {
-                            console.log('Caught error setting pwd', e)
+
                             if (e[0] === ("jwt expired")) {
-                                console.log('in here')
+
                                 setErrors(["JWT_EXPIRED"])
                             } else {
                                 setErrors(["UNKNOWN"])

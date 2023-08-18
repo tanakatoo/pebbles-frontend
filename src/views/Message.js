@@ -38,7 +38,7 @@ function Message() {
             setDoneGettingData(false)
             //makes data all be read when getting data
             const res = await MessageApi.getConversation(username)
-            console.log(res)
+
             setData(res)
             setDoneGettingData(true)
         } catch (e) {
@@ -87,7 +87,7 @@ function Message() {
     const handleSubmit = async () => {
         setErrors([])
         try {
-            console.log('data to send', msg.msg)
+
             const res = await MessageApi.sendMsg(username, msg.msg)
             getData()
 

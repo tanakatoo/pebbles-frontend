@@ -112,7 +112,7 @@ const Profile = () => {
                 setSelectedTabIndex(2)
                 // setTabs(currentProfile.myProfile && lang === "JA" ? [pageText.PROFILE, pageText.MYWAY, pageText.STUDY_BUDDY] : [pageText.PROFILE, pageText.STUDY_BUDDY])
             }
-            console.log('selectedTabIndex is', selectedTabIndex)
+
             if (selectedTabIndex === 2) {
                 setSelectedTabIndex(1)
             }

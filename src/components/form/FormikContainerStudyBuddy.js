@@ -74,9 +74,9 @@ const FormikContainerStudyBuddy = ({ pageText }) => {
 
     const onSubmit = async (values, { setSubmitting }) => {
         try {
-            console.log('in submit')
+
             setErrors([])
-            console.log('edit submit values', values)
+
             const res = await UserApi.updateUserInfo(values)
             //call dispatch to set token in profileReducer
             dispatch(actionSaveProfile(values))

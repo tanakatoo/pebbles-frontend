@@ -29,7 +29,7 @@ function SavedUsers() {
             const res = await UserApi.getSavedUsers();
 
             setData(res);
-            console.log(res)
+
             setDoneGettingData(true);
 
 

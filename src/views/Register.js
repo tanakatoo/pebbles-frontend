@@ -48,21 +48,19 @@ const Register = () => {
                     initialValues={INITIAL_DATA}
                     validationSchema={registerSchema}
                     onSubmit={async (values, { setSubmitting }) => {
-                        console.log('submitting')
+
 
                         try {
                             setErrors([])
-                            console.log(values)
-                            console.log('submitting')
+
                             const username = values.username.trim()
                             const password = values.password.trim()
                             const email = values.email.trim()
                             const res = await AuthApi.register(username, password, email, lang)
-                            console.log('register res', res)
+
                             //call dispatch to set token in profileReducer
                             dispatch(actionLogin(res))
-                            // console.log('token in local storage', window.localStorage.getItem("token"))
-                            // navigate('/users/dashboard')
+
 
                         } catch (e) {
                             if (e instanceof TypeError) {

@@ -17,7 +17,7 @@ import { Field } from 'formik'
 const DropdownMultiple = ({ name, label, options, data, select }) => {
     const lang = useSelector(state => state.langFont.lang)
     const [isOpen, setIsOpen] = useState(false)
-    console.log('data coming in is', name, data)
+
     const [selectedItem, setSelectedItem] = useState(data)
 
     const handleSelectedLevel = (setFieldValue, val) => {

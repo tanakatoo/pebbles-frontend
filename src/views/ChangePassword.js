@@ -25,7 +25,7 @@ const ChangePassword = () => {
             <CTA msg={pageText.CTA} msgBtn={pageText.CTA_BTN} btnLink={pageText.CTA_LINK} />
             <div className="mt-8 flex flex-col justify-center items-center px-2 md:px-8">
                 <h1 className="text-center mb-[56px] text-mobile-header-2">{pageText.H1}</h1>
-                {console.log(errors)}
+
                 {flash && <p className="bg-accent-very-light text-primary-dark text-center p-4 mb-4">{flash}</p>}
                 {errors.length > 0 && <ServerError msg={errors} />}
 
@@ -37,7 +37,7 @@ const ChangePassword = () => {
                         setFlash(null)
                         try {
                             const res = await AuthApi.changePassword(values.username, lang)
-                            console.log('res is', res)
+
                             setFlash(pageText.FLASH_MSG)
                         } catch (e) {
                             if (e instanceof TypeError) {
@@ -45,7 +45,7 @@ const ChangePassword = () => {
                                 console.error("Typeerror at change password page", e)
                                 setErrors(["UNKNOWN"])
                             } else {
-                                // console.log(e)
+
                                 setErrors(e)
                             }
                         } finally {

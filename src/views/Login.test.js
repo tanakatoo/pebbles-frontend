@@ -53,7 +53,7 @@ describe('Login', () => {
 
 
         let elem = await findByLabelText('Username or email', { exact: true });
-        console.log(elem)
+
         fireEvent.change(elem, { target: { value: 'helloo' } });
         elem = await findByLabelText('Password', { exact: false });
         fireEvent.change(elem, { target: { value: 'asdfasdf' } });

@@ -9,7 +9,7 @@ function DropdownOnce({ lang, top = null, items, closeDropdown, divide = false, 
         <div onClick={closeDropdown} className={`z-50 whitespace-nowrap absolute bg-white ${css} ${top}`}>
             <ul className={divide ? 'divide-gray divide-y' : ''}>
                 {items.map((i, idx) => {
-                    console.log(i.link)
+
                     return (
                         <div key={uuid()} className={`text-primary-dark  `} >
                             <li className={`py-3 px-4`} >

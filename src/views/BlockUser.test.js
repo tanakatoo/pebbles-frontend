@@ -88,7 +88,7 @@ describe('BlockUser', () => {
             );
 
         let myRadio = await findAllByRole('radio', { value: 'june' })
-        console.log(myRadio[0])
+
         fireEvent.click(myRadio[0])
 
         // Submit form

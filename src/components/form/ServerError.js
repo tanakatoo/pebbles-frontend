@@ -8,7 +8,7 @@ import { Exclamation } from "../../styles/Icons"
 
 const ServerError = ({ msg, title }) => {
     const lang = useSelector(state => state.langFont.lang)
-    console.log('msg received in servererror', msg)
+
     return (
         <div className="flex justify-center">
             <div className="text-error border rounded-ml p-4 mb-8 max-w-[400px]">

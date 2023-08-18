@@ -24,7 +24,7 @@ export const errorHandlers = [
                 "status": 401
             }
         }
-        console.log(res(ctx.json([failLogin])))
+
         return res(ctx.json([failLogin]).status(500));
     }),
 

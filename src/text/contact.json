@@ -22,9 +22,9 @@
         "CTA":"毎日少しの時間で英語をレベルアップしよう",
         "CTA_BTN":"無料体験",
         "CTA_LINK":"/supports",
-        "ERROR_TITLE":"Jap Error sending your message",
+        "ERROR_TITLE":"メッセージを送信するエラーが出ました",
         "H1":"お問い合わせ",
-        "INFO":"Jap Feel free to email us at info@pebblescommunity.com or fill out the form below. We will reply within 2-3 business days.",
+        "INFO":"info@pebblescommunity.com までお気軽にメールでお問い合わせいただくか、以下のフォームにご記入ください。 2～3営業日以内にご返信させていただきます。",
         "NAME":"名前",
         "NAME_PLACEHOLDER":"",
         "SUBJECT":"サブジェクト",
@@ -35,6 +35,6 @@
         "SUBMIT":"送信",
         "REGISTER_TEXT":"登録しますか？",
         "REGISTER_HERE":"ここからサインアップしてください",
-        "FLASH_MSG":"メッセージありがとうございました。We will get back to you within 2-3 business days."
+        "FLASH_MSG":"メッセージありがとうございました。2～3営業日以内にお返事させていただきます。"
     }
 }

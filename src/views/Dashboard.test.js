@@ -102,7 +102,7 @@ describe('Dashboard', () => {
         expect(elem).toBeInTheDocument();
         //There should not be any study buddies
         elem = await findByText(/hello/);
-        console.log(elem)
+
         expect(elem).toBeInTheDocument();
 
         //try clicking on see All

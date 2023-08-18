@@ -90,7 +90,7 @@ describe('UnblockUser', () => {
 
         let btn = await findByText(/Unblock/)
         fireEvent.click(btn);
-        console.log('before')
+
         // this one doesn't work
         server.use(
             rest.get('http://localhost:3001/users/blocked', (req, res, ctx) => {

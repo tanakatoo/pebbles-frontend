@@ -31,10 +31,10 @@ const Home = () => {
     const location = useLocation()
     const [errors, setErrors] = useState([])
 
-    console.log('token is', token)
+
 
     const submitSearch = async (values, { setSubmitting }) => {
-        console.log('this is just the word to send',)
+
         navigate('/search', { state: { word: values.word, from: location.pathname } })
         setSubmitting(false)
     }
@@ -45,7 +45,7 @@ const Home = () => {
             //if user is not yet already logged in log them in with test user
             try {
                 const res = await AuthApi.loginTestUser()
-                console.log('res is', res)
+
                 //call dispatch to set token in profileReducer
                 dispatch(actionLogin(res)) //save token and then profile
                 // setFlashMessage('LOGIN')

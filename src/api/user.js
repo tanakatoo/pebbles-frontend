@@ -34,7 +34,7 @@ class UserApi extends PebblesApi {
 
     /* Update user info */
     static async updateUserInfo(userData) {
-        console.log('frontened api data', userData)
+
         let res = await this.request(`users/${userData.username}`, { ...userData }, "PATCH")
         return res
     }

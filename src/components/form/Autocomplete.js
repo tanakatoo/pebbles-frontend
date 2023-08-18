@@ -47,7 +47,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
             try {
 
                 const res = await getLocationsFromAPI(q)
-                console.log('res is', res)
+
                 setListOfLocations(res)
                 setIsOpen(true)
             } catch (e) {
@@ -59,7 +59,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
             //user cleared locations so clear location
             setListOfLocations([])
             setIsOpen(false)
-            console.log('isopen is set to false')
+
         } else if (listOfLocations.length === 0) {
             setIsOpen(false)
         } else {
@@ -67,13 +67,6 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
         }
 
     }
-
-    // const handleKeyDown = (e) => {
-    //     console.log(e.key)
-    //     if (e.key === 'backspace') {
-    //         //user pressed backspce, so if the data is less than
-    //     }
-    // }
 
 
     const handleSelection = async (val, setFieldValue) => {
@@ -97,7 +90,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
             console.error('error setting location', e)
             setErrors(e)
         } finally {
-            console.log('in here')
+
             setIsOpen(false)
         }
 
@@ -105,9 +98,7 @@ const Autocomplete = ({ name, onSelect, ...props }) => {
 
 
     }
-    console.log('is open is', isOpen)
-    console.log('listOfLocations', listOfLocations)
-    console.log('query', query)
+
     return (
         <div className='Autocomplete flex flex-col w-full'>
             <label className={`mb-2  text-mobile-section-header font-medium`} htmlFor={name}>Location</label>

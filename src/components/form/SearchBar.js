@@ -10,7 +10,7 @@ function SearchBar({ name, btn = false, onSubmit, placeholder }) {
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
-            console.log('go search')
+
             onSubmit()
         }
     }

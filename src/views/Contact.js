@@ -67,7 +67,7 @@ const Contact = () => {
 
                         setErrors([])
                         try {
-                            console.log(values)
+
 
                             const res = await EmailApi.sendToInfo({
                                 name: values.name,
@@ -82,7 +82,7 @@ const Contact = () => {
                                     ...INITIAL_DATA
                                 }
                             })
-                            console.log('should not be here')
+
                             window.scrollTo(0, 0)
                         } catch (e) {
                             if (e instanceof TypeError) {
@@ -93,7 +93,7 @@ const Contact = () => {
                                 console.error("Unknown error at contact us page", e)
                                 setErrors(e)
                             }
-                            console.log('yeah got error')
+
                         } finally {
                             setSubmitting(false)
                         }

@@ -49,7 +49,7 @@ const StudyBuddies = () => {
             setErrors([])
             setDoneGettingData(false);
             const res = await StudyBuddyApi.getStudyBuddies();
-            console.log(res)
+
             setData(res);
             setDoneGettingData(true);
 
@@ -85,7 +85,7 @@ const StudyBuddies = () => {
 
     const onSubmit = async (values, { setSubmitting }) => {
         try {
-            console.log('sub this values: ', values)
+
             setIsDialogOpen(false)
             setErrors([])
             setData([])
@@ -140,7 +140,7 @@ const StudyBuddies = () => {
                 ...initialValues
             }
         })
-        console.log('formik is now', formik.values)
+
         setNumFilters(0)
     }
 
@@ -263,7 +263,7 @@ const StudyBuddies = () => {
                     my-3`} />
 
                                     {errors.length > 0 && <div><ServerError msg={errors} /></div>}
-                                    {console.log('why not spinner', data.length, errors.length, doneGettingData)}
+
                                     {data.length === 0 && errors.length === 0 && doneGettingData === false ?
                                         <div className=' my-24'>
                                             <Spinner />

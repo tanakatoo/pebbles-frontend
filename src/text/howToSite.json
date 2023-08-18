@@ -1,22 +1,22 @@
 {
     "EN":{
-        "TITLE":"FAQ",
-        "TOP":"Top",
-        "PROFILE":"How do I set up my profile?",
-        "PROFILE_BODY":"Click on the avatar or open up the menu on the top right corner of the page. Click on 'Profile' and below your avatar, click on the 'Edit' link. All information except for your email is public.",
-        "STUDY_BUDDY":"How do I list or delisting from study buddy?",
-        "STUDY_BUDDY_BODY":"By default, you are not listed as a study buddy on Pebbles. To list yourself so others can find you on the Study Buddy Board, go to edit your profile, click on edit study buddy, and toggle the 'Join study buddy' on. To unlist, simply toggle it off and the information you input for study buddy will be hidden from public.",
-        "STUDY_BUDDY_USE":"How do I use the Study Buddy Board?",
-        "STUDY_BUDDY_USE_BODY":"The board displays users in order of recently listed study buddies. To search using username, name, or their bio, type into the search bar and press Enter. To filter from categories, press the Filter button and choose the categories that you want to search for. Click on an avatar or username to look at their profile in detail. If you want to connect, send them a message and setup an online meeting or just continue chatting via our messaging system."
+        "TITLE": "FAQ",
+        "TOP": "Top",
+        "PROFILE": "How do I set up my profile?",
+        "PROFILE_BODY": "Select your avatar or open up the menu on the top right corner of the page. Select 'Profile' and below your avatar, click on the 'Edit' link. All information except for your email is public.",
+        "STUDY_BUDDY": "How do I list or delist from study buddy?",
+        "STUDY_BUDDY_BODY": "By default, you are not listed as a study buddy on Pebbles Community. To list yourself so others can find you on the Study Buddy Board, go to edit your profile, selectt edit study buddy, and toggle 'Join study buddy' on. To unlist, simply toggle off and the information you input for study buddy will be hidden from public view.",
+        "STUDY_BUDDY_USE": "How do I use the Study Buddy Board?",
+        "STUDY_BUDDY_USE_BODY": "The board displays users in order of recently listed study buddies. To search using username, name, or their bio, search via the search bar. To filter categories, select the Filter button and choose the categories that you want to search for."
     },
     "JA":{
         "TITLE":"FAQ",
         "TOP":"上",
         "PROFILE":"プロフィールを変更するには？",
-        "PROFILE_BODY":"日本語Once you login, click on the avatar or open up the menu on the top right corner of the page. Click on 'Profile' and below your avatar, click on the 'Edit' link. All information except for your email is public.",
+        "PROFILE_BODY":"アバターをクリック、またはページの右上のメニューを開きます。「プロフィール」を選択し、ページに表示されているアバターの下に「編集」リンクをクリックしてください。メール以外の情報はすべてパブリック情報になります。",
         "STUDY_BUDDY":"スタディーバディーになる・解除するには？",
-        "STUDY_BUDDY_BODY":"日本語By default, you are not listed as a study buddy on Pebbles. To list yourself so others can find you on the Study Buddy Board, go to edit your profile, click on edit study buddy, and toggle the 'Join study buddy' on. To unlist, simply toggle it off and the information you input for study buddy will be hidden from public.",
+        "STUDY_BUDDY_BODY":"最初のプロフィールの設定は、スタディーバディーとしてリストされません。他の人がスタディーバディー掲示板であなたを見つけられるように自分をリストするには、プロフィールの編集に移動し、スタディーバディーの編集を選択して、「Study Buddy に参加」をオンに切り替えます。リストを解除するには、スイッチをオフにするだけで、スタディーバディーに入力した情報が一般公開されなくなります。",
         "STUDY_BUDDY_USE":"スタディーバディー掲示板の使い方を教えてください",
-        "STUDY_BUDDY_USE_BODY":"日本語The board displays users in order of recently listed study buddies. To search using username, name, or their bio, type into the search bar and press Enter. To filter from categories, press the Filter button and choose the categories that you want to search for. Click on an avatar or username to look at their profile in detail. If you want to connect, send them a message and setup an online meeting or just continue chatting via our messaging system."
+        "STUDY_BUDDY_USE_BODY":"スタディーバディー掲示板には、最近リストされた学習仲間の順にユーザーが表示されます。ユーザー名、名前、または個人情報を使用して検索するには、検索バーを使用して検索します。カテゴリをフィルタするには、[フィルタ] ボタンを選択し、検索するカテゴリを選択します。"
     }
 }

@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 // import FlashMessageContext from "../../contexts/FlashMessageContext"
 
 const Protected = ({ children, redirectPath = "/unauthorized", roleIs = null }) => {
-    console.log('in hee')
+
     const user = useSelector((state) => state.profile);
     let location = useLocation();
     // const [setFlashMessage, setTypeOfMessage] = useContext(FlashMessageContext)

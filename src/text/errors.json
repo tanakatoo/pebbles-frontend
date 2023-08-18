@@ -19,7 +19,7 @@
         "TIME_ZONE":"タイムゾーンを選択してください",
         "NAME_REQUIRED":"名前をご記入ください",
         "MESSAGE_REQ":"メッセージをご記入ください",
-        "JWT_EXPIRED":"日本語 Link expired. Please request a new one."
+        "JWT_EXPIRED":"リンクの使用期限が過ぎました。再度新しいリンクを作成してください。"
     },
     "EN":{
         "USERNAME_REQUIRED": "Username required",
