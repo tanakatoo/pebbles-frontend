@@ -17,6 +17,7 @@ import marketplace from "../text/marketplace.json"
 import languageTown from '../text/languageTown.json'
 import studySupport from "../text/studySupport.json"
 import howToSite from "../text/howToSite.json"
+import pricing from "../text/pricing.json"
 
 const text = {
     home: home,
@@ -36,7 +37,8 @@ const text = {
     marketplace: marketplace,
     languageTown: languageTown,
     studySupport: studySupport,
-    howToSite: howToSite
+    howToSite: howToSite,
+    pricing: pricing
 }
 
 const INITIAL_STATE = { pageText: '' }

@@ -358,7 +358,8 @@ const Profile = () => {
                                                         : ''}
                                                     {currentProfile.study_buddy_active || currentProfile.myProfile ?
                                                         <div data-testid="profileStudyBuddyContent">
-                                                            <p className='mt-1'>{pageText.HIDDEN}</p>
+
+                                                            {currentProfile.myProfile ? <p className='mt-1'>{pageText.HIDDEN}</p> : null}
                                                             <DisplayInfo label={pageText.BUDDY_TYPE} lang={lang} data={currentProfile.study_buddy_types.map(
                                                                 (t, idx) => idx === currentProfile.study_buddy_types.length - 1 ?
                                                                     dbText.study_buddy_types[t][lang] : dbText.study_buddy_types[t][lang] + ', '

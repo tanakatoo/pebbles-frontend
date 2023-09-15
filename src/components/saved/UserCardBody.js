@@ -14,7 +14,7 @@ function UserCardBody({ data }) {
         about = data.about.slice(0, 50) + "..."
     }
     return (
-        <p className='mt-1'>{about}This would be the about section</p>
+        <p className='mt-1'>{data.about}</p>
     )
 }
 

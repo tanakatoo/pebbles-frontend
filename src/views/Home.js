@@ -32,7 +32,6 @@ const Home = () => {
     const [errors, setErrors] = useState([])
 
 
-
     const submitSearch = async (values, { setSubmitting }) => {
 
         navigate('/search', { state: { word: values.word, from: location.pathname } })
@@ -87,6 +86,7 @@ const Home = () => {
                 <div className="bg-gradient-to-b absolute from-primary-super-light from-0% via-transparent via-1% to-transparent to-100% w-full h-screen"></div>
                 {!token && <div className="absolute pt-5 cursor-pointer z-40 underline underline-offset-4 hover:text-gray-text">
                     <p onClick={loginTestUser}>{pageText.LOGIN_TESTUSER}</p></div>}
+
                 {Object.keys(errors).length > 0 && <div className="z-40 absolute top-40"><ServerError msg={errors} title='Error logging in as test user' /></div>}
 
                 <h1 className="text-primary-dark font-bold mx-4 text-center pt-10 md:pt-16 text-mobile-header-1 absolute">{pageText.H1}</h1>

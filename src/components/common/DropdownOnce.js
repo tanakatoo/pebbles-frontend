@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid"
 import { AwesomeChevronDown } from '../../styles/Icons'
 import { NavLink } from 'react-router-dom'
 
-function DropdownOnce({ lang, top = null, items, closeDropdown, divide = false, css = null, pr = null, width = null }) {
+function DropdownOnce({ top = null, items, closeDropdown, divide = false, css = null, pr = null, width = null }) {
 
     return (
         <div onClick={closeDropdown} className={`z-50 whitespace-nowrap absolute bg-white ${css} ${top}`}>
@@ -15,7 +15,7 @@ function DropdownOnce({ lang, top = null, items, closeDropdown, divide = false, 
                             <li className={`py-3 px-4`} >
                                 <NavLink to={`${i.link}`}
                                     className={({ isActive }) => isActive ? "text-secondary-dark" :
-                                        " hover:underline hover:underline-offset-4"}>
+                                        " hover:underline hover:underline-offset-4"} end>
 
                                     <div className={`flex `} >
                                         <span className={`grow ${width ? width : ''} ${pr ? pr : ''} `}>

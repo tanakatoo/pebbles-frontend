@@ -47,8 +47,8 @@ const MyRoutes = () => {
             <Route path="/study-buddies" element={<StudyBuddies />} />
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/study-support" element={<StudySupport />} />
             <Route path="/study-support/pricing" element={<Pricing />} />
+            <Route path="/study-support" element={<StudySupport />} />
             <Route path="/info-center" element={<InfoCenter />} />
             <Route path="/language-town" element={<LanguageTown />} />
             <Route path='/messages' element={<Protected />}>

@@ -60,29 +60,29 @@ function SavedUsers() {
     return (
         <div className={`px-2 `}>
             <PageTitle text={pageText.SAVED_USERS} extraClasses='my-3' />
-            {errors.length > 0 && <ServerError msg={errors} />}
-            {!data && errors.length === 0 && doneGettingData === false ?
-                <div className=' my-24'>
-                    <Spinner />
-                </div>
-                : doneGettingData === true && data.length === 0 ?
-                    <div className='my-12'>
-                        < NoData msg={pageText.NO_USERS_MSG} link='/users/saved' linkText={pageText.NO_USERS_LINK_TXT} />
+            {errors.length > 0 ? <ServerError msg={errors} />
+                : !data && errors.length === 0 && doneGettingData === false ?
+                    <div className=' my-24'>
+                        <Spinner />
                     </div>
-                    :
-                    <>
-                        <div className='flex flex-wrap justify-center mb-12 gap-4'>
-                            {data.map(d =>
-                                <Card data={d}
-                                    key={uuid()}
-                                    goToProfileOnClick={goToProFile}
-                                    lang={lang}
-                                    topRight={<Save handleClick={handleClick} parameter={d.username} />}
-                                    main={<UserCardBody data={d} />}
-                                />)}
-
+                    : doneGettingData === true && data.length === 0 ?
+                        <div className='my-12'>
+                            < NoData msg={pageText.NO_USERS_MSG} link='/users/saved' linkText={pageText.NO_USERS_LINK_TXT} />
                         </div>
-                    </>
+                        :
+                        <>
+                            <div className='flex flex-wrap justify-center mb-12 gap-4'>
+                                {data.map(d =>
+                                    <Card data={d}
+                                        key={uuid()}
+                                        goToProfileOnClick={goToProFile}
+                                        lang={lang}
+                                        topRight={<Save handleClick={handleClick} parameter={d.username} />}
+                                        main={<UserCardBody data={d} />}
+                                    />)}
+
+                            </div>
+                        </>
             }
         </div >
 

@@ -46,7 +46,7 @@ function About() {
                 </div>
             </div >
             <h2 id="top" className="font-medium text-mobile-page-header text-center p-2 mt-12 md:mt-24 bg-primary-dark text-white">{pageText.COMMUNITIES}</h2>
-            <div className='flex flex-col pt-4 md:pt-8 pb-12 md:pb-24 px-2 bg-primary-super-light '>
+            <div className='flex flex-col pt-4 md:pt-8 pb-12 md:pb-12 px-2 bg-primary-super-light '>
                 <div className='container mx-auto flex flex-col items-center'>
                     <p className='mb-2 text-center'>{pageText.EXPLORE}</p>
                     {lang === "JA" ?
@@ -158,6 +158,7 @@ function About() {
                     <div className='text-primary-dark  mb-2 mt-4'><AwesomeUser /> {pageText.STUDY_BUDDY_TYPE3_TITLE}</div>
                     <p>{pageText.STUDY_BUDDY_TYPE3}</p>
                 </div>
+                <p className='max-w-prose'>{pageText.STUDY_BUDDY_TEXT_2}</p>
                 <div className='my-4 flex w-full max-w-prose justify-end' ><HashLink to="#top"><AwesomeArrowUpLong /><span className='text-mobile-label-1 ms-1'>{pageText.TOP}</span></HashLink></div>
                 <div className='mb-12 md:mb-24 mt-4'>
                     <Button btnText={pageText.STUDY_BUDDY_BTN} link={'/study-buddies'} bkColor='bg-study-buddy-accent' textColor='text-primary-dark' />
