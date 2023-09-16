@@ -28,7 +28,4 @@ class PebblesApi {
     }
 }
 
-// for now, put token ("asdffffff" / "stupid" on class)
-// PebblesApi.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6InJlZ3VsYXIiLCJpYXQiOjE2ODU0NjQ5ODZ9.mHJv4S-rTMIplmRdpOAzkLwcAnG_68i1GwzEx6oo22U";
-
 export default PebblesApi
