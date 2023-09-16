@@ -1,11 +1,11 @@
 # Community for learning Japanese and living in Japan
-This app connects Japanese learners and people living in Japan to each other to share resources. There are 4 areas of the community the users can access: the Study Buddy Board for users to find other users to study together or do a language exchange; the Regional Information Center to get resources and join groups for a certain region in Japan; the Japanese Town to join groups about studying the Japanese language, and for users to ask/answer questions related to the Japanese language; and the Marketplace for users to offer/buy/sell items as leaving a country creates lots of hand-me-downs that future expats can make use of.  
+This is a bilingual app connects English speakers living in Japan to each other to share resources, and Japanese people living overseas to connect with each other and share resources. There are 4 areas of the community the users can access: the Study Buddy Board for users to find other users to study together or do a language exchange; the Regional Information Center to get resources and join groups for a certain region in Japan; the Japanese Town to join groups about studying the Japanese language, and for users to ask/answer questions related to the Japanese language; and the Marketplace for users to offer/buy/sell items as leaving a country creates lots of hand-me-downs that future expats can make use of.  
   
 Currently users are able to create an account, set up their profile and access the Study Buddy Board to message or save users.
 
 ## About the app
 
-This is a react app that uses Tailwind CSS, Formik, moment, headless UI to create a site that can be used by both Japanese users and English speaking users with an custom translation component.
+This is a React app that uses Redux, Tailwind CSS, Formik, headless UI to create a site that can be used by both Japanese users and English speaking users with an custom translation component.
 
 ## APIs
 
