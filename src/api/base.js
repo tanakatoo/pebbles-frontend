@@ -1,7 +1,7 @@
 import axios from "axios";
 
-//const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
-const BASE_URL = "https://pebblescommunity.onrender.com" || "http://localhost:3001";
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+//const BASE_URL = "https://pebblescommunity.onrender.com" || "http://localhost:3001";
 
 class PebblesApi {
     // the token for interaction with the API will be stored here.
@@ -9,6 +9,7 @@ class PebblesApi {
 
     static async request(endpoint, data = {}, method = "get") {
         console.debug("API Call:", endpoint, data, method);
+        console.debug("base url is", BASE_URL)
 
         //pass authorization token in the header
         const url = `${BASE_URL}/${endpoint}`;
