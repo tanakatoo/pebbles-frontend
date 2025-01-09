@@ -8,8 +8,7 @@ class PebblesApi {
     static token;
 
     static async request(endpoint, data = {}, method = "get") {
-        console.debug("API Call:", endpoint, data, method);
-        console.debug("base url is", BASE_URL)
+        console.debug("API Call:", BASE_URL, endpoint, data, method);
 
         //pass authorization token in the header
         const url = `${BASE_URL}/${endpoint}`;

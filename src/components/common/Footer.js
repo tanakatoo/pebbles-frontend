@@ -43,7 +43,7 @@ function Footer() {
 
             </div >
             <div className='flex flex-col-reverse md:flex-row items-center px-4 gap-2 '>
-                <p className='grow text-center md:text-left'>Copyright &#169; 2023 {text.COPYRIGHT}</p>
+                <p className='grow text-center md:text-left'>Copyright &#169; 2025 {text.COPYRIGHT}</p>
                 <p>{text.TERMS}</p>
                 <p>{text.PRIVACY}</p>
             </div>
